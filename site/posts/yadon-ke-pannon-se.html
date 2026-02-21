@@ -307,6 +307,25 @@ footer{background:var(--ink)}
   .pnav-prev{border-right:none!important;border-bottom:1px solid rgba(0,0,0,0.05)}
   .pnav-item{padding:20px}
 }
+
+/* PDF MODAL */
+.pdf-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);z-index:9999;display:flex;flex-direction:column;pointer-events:none;transition:background .3s}
+.pdf-modal-overlay.open{background:rgba(0,0,0,.88);pointer-events:all}
+.pdf-modal-bar{background:#1C1410;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;transform:translateY(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);border-bottom:1px solid rgba(255,255,255,.08)}
+.pdf-modal-overlay.open .pdf-modal-bar{transform:translateY(0)}
+.pdf-modal-title{font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:white;font-weight:400;letter-spacing:0!important;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:20px}
+.pdf-modal-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.pdf-modal-download{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-family:monospace;font-size:11px;letter-spacing:1px;text-decoration:none;border:1px solid rgba(255,255,255,.12);transition:background .2s}
+.pdf-modal-download:hover{background:rgba(255,255,255,.15);color:white}
+.pdf-modal-close{width:40px;height:40px;background:rgba(255,255,255,.06);border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pdf-modal-close:hover{background:#9B0E0E;color:white}
+.pdf-modal-frame-wrap{flex:1;position:relative;transform:translateY(20px);opacity:0;transition:all .35s cubic-bezier(.4,0,.2,1) .1s}
+.pdf-modal-overlay.open .pdf-modal-frame-wrap{transform:translateY(0);opacity:1}
+.pdf-modal-frame{width:100%;height:100%;border:none;display:block;background:#F7F2EA}
+.pdf-modal-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1C1410;gap:16px;transition:opacity .3s}
+.pdf-loading-spinner{width:40px;height:40px;border:2px solid rgba(255,255,255,.1);border-top-color:rgba(184,135,58,.7);border-radius:50%;animation:pdfspin .8s linear infinite}
+@keyframes pdfspin{to{transform:rotate(360deg)}}
+.pdf-loading-text{font-family:monospace;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px}
 </style>
 </head>
 <body>
@@ -353,57 +372,57 @@ footer{background:var(--ink)}
   <div class="section-wrap">
     <p class="tribute-intro">पिताजी की स्मृति में — परिवार के हर सदस्य ने अपनी यादें साझा की हैं। ये पन्ने उनके प्यार और उनकी विरासत का प्रमाण हैं।</p>
     <div class="tribute-grid">
-      <a href="../pdfs/Papa-90th-birthday-Ready-for-WEBSITE-FINAL.pdf" class="tribute-card" target="_blank" rel="noopener">
+      <a href="../pdfs/Papa-90th-birthday-Ready-for-WEBSITE-FINAL.pdf" onclick="openPDF('Papa 90th birthday Ready for WEBSITE FINAL', '../pdfs/Papa-90th-birthday-Ready-for-WEBSITE-FINAL.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">पापा का ९०वाँ जन्मदिन</div>
         <div class="tribute-card-desc">जन्मदिन की शुभकामनाएं</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/Papa-Sahernama-.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/Papa-Sahernama-.pdf" onclick="openPDF('Papa Sahernama ', '../pdfs/Papa-Sahernama-.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">पापा का सहरनामा</div>
         <div class="tribute-card-desc">जीवन की कहानी</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/Bhuli-Bisri-Yadain-Banner.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/Bhuli-Bisri-Yadain-Banner.pdf" onclick="openPDF('Bhuli Bisri Yadain Banner', '../pdfs/Bhuli-Bisri-Yadain-Banner.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">भूली-बिसरी यादें</div>
         <div class="tribute-card-desc">पुरानी यादें</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/Anoop-Saxena-Remembering-Papa-on-his-94th-birthday.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/Anoop-Saxena-Remembering-Papa-on-his-94th-birthday.pdf" onclick="openPDF('Anoop Saxena Remembering Papa on his 94th birthday', '../pdfs/Anoop-Saxena-Remembering-Papa-on-his-94th-birthday.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">पापा याद आते हैं</div>
         <div class="tribute-card-desc">९४वें जन्मदिन पर</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/Man-of-Style.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/Man-of-Style.pdf" onclick="openPDF('Man of Style', '../pdfs/Man-of-Style.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">Man of Style</div>
         <div class="tribute-card-desc">व्यक्तित्व</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/Ishita-Write-up-.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/Ishita-Write-up-.pdf" onclick="openPDF('Ishita Write up ', '../pdfs/Ishita-Write-up-.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">इशिता का संस्मरण</div>
         <div class="tribute-card-desc">परिवार की आवाज़</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/alpana_yadoan.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/alpana_yadoan.pdf" onclick="openPDF('alpana yadoan', '../pdfs/alpana_yadoan.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">अल्पना की यादें</div>
         <div class="tribute-card-desc">परिवार</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/arun_yadoan.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/arun_yadoan.pdf" onclick="openPDF('arun yadoan', '../pdfs/arun_yadoan.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">अरुण की यादें</div>
         <div class="tribute-card-desc">परिवार</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/isha_yadoan.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/isha_yadoan.pdf" onclick="openPDF('isha yadoan', '../pdfs/isha_yadoan.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">ईशा की यादें</div>
         <div class="tribute-card-desc">परिवार</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/maitri_yadoan.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/maitri_yadoan.pdf" onclick="openPDF('maitri yadoan', '../pdfs/maitri_yadoan.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">मैत्री की यादें</div>
         <div class="tribute-card-desc">परिवार</div>
         <div class="tribute-card-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/rachit_yadoan.pdf" class="tribute-card" target="_blank" rel="noopener">
+<a href="../pdfs/rachit_yadoan.pdf" onclick="openPDF('rachit yadoan', '../pdfs/rachit_yadoan.pdf'); return false;"  class="tribute-card"  rel="noopener">
         <div class="tribute-card-title">रचित की यादें</div>
         <div class="tribute-card-desc">परिवार</div>
         <div class="tribute-card-cta">पढ़ें →</div>
@@ -415,6 +434,24 @@ footer{background:var(--ink)}
 <div class="post-nav-bar">
   <a href="./kavya.html" class="pnav-item pnav-prev"><span class="pnav-dir">← पिछली</span><span class="pnav-title">काव्य-धारा</span></a>
   <a href="./jivan-darshan.html" class="pnav-item pnav-next"><span class="pnav-dir">अगली →</span><span class="pnav-title">जीवन दर्शन</span></a>
+</div>
+
+<!-- PDF MODAL -->
+<div class="pdf-modal-overlay" id="pdfOverlay">
+  <div class="pdf-modal-bar">
+    <div class="pdf-modal-title" id="pdfTitle"></div>
+    <div class="pdf-modal-actions">
+      <a class="pdf-modal-download" id="pdfDownload" href="#">⬇ डाउनलोड</a>
+      <button class="pdf-modal-close" onclick="closePDF()">✕</button>
+    </div>
+  </div>
+  <div class="pdf-modal-frame-wrap">
+    <div class="pdf-modal-loading" id="pdfLoading">
+      <div class="pdf-loading-spinner"></div>
+      <div class="pdf-loading-text">PDF लोड हो रहा है...</div>
+    </div>
+    <iframe class="pdf-modal-frame" id="pdfFrame" src="" onload="hidePdfLoading()"></iframe>
+  </div>
 </div>
 <footer>
   <div class="footer-main">
@@ -446,5 +483,36 @@ footer{background:var(--ink)}
 <script>
 const nav=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+
+<script>
+function openPDF(title, url) {
+  // Auto-encode non-ASCII filename
+  const parts = url.split('/');
+  const filename = parts[parts.length - 1];
+  if (!filename.includes('%')) {
+    parts[parts.length - 1] = encodeURIComponent(filename);
+    url = parts.join('/');
+  }
+  document.getElementById('pdfTitle').textContent = title;
+  document.getElementById('pdfDownload').href = url;
+  document.getElementById('pdfDownload').download = title;
+  document.getElementById('pdfLoading').style.opacity = '1';
+  document.getElementById('pdfLoading').style.pointerEvents = 'all';
+  document.getElementById('pdfFrame').src = url;
+  document.getElementById('pdfOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePDF() {
+  document.getElementById('pdfOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { document.getElementById('pdfFrame').src = ''; }, 350);
+}
+function hidePdfLoading() {
+  const el = document.getElementById('pdfLoading');
+  el.style.opacity = '0'; el.style.pointerEvents = 'none';
+}
+document.getElementById('pdfOverlay').addEventListener('click', function(e) { if(e.target===this) closePDF(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closePDF(); });
 </script>
 </body></html>

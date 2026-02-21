@@ -506,10 +506,10 @@ footer{background:var(--ink)}
   </div>
 
   <div class="featured-grid" style="grid-template-columns:repeat(3,1fr)">
-    <div class="featured-card" onclick="openPDF('कविता — २०२३', '../pdfs/????-???????-2023.pdf')" style="background:#2D1540;border-top:2px solid #9B6ABF">
+    <div class="featured-card" onclick="openPDF('कवनी — जन्मदिन', '../pdfs/%E0%A4%95%E0%A4%B5%E0%A4%A8%E0%A5%80-%E0%A4%9C%E0%A4%A8%E0%A5%8D%E0%A4%AE%E0%A4%A6%E0%A4%BF%E0%A4%A8-2023.pdf')" style="background:#2D1540;border-top:2px solid #9B6ABF">
       <div class="fc-num">०१</div>
       <div class="fc-cat">कविता</div>
-      <div class="featured-title">कविता — २०२३</div>
+      <div class="featured-title">कवनी — जन्मदिन</div>
       <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
     </div>
   </div>
@@ -544,15 +544,15 @@ footer{background:var(--ink)}
       <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
     </div>
 
-    <div class="poem-card" onclick="openPDF('कविता — २०२२', '../pdfs/?????-???????-2022.pdf')" style="border-left-color:#3A6A9B">
+    <div class="poem-card" onclick="openPDF('सालगिरह कविता', '../pdfs/%E0%A4%95%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A4%BE-%E0%A4%B8%E0%A4%BE%E0%A4%B2%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A4%B9-2022.pdf')" style="border-left-color:#3A6A9B">
       <div class="poem-cat">कविता · २०२२</div>
-      <div class="poem-title">कविता — २०२२</div>
+      <div class="poem-title">सालगिरह कविता — २०२२</div>
       <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
     </div>
 
-    <div class="poem-card" onclick="openPDF('गीतांजलि — २०२२', '../pdfs/7.??????-?????-2022-by-gitanjali-for-web.pdf')" style="border-left-color:var(--gold)">
+    <div class="poem-card" onclick="openPDF('कोविड़ कविता', '../pdfs/7.%E0%A4%95%E0%A5%8B%E0%A4%B5%E0%A4%BF%E0%A4%A1%E0%A4%BC-%E0%A4%95%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A4%BE-2022-by-gitanjali-for-web.pdf')" style="border-left-color:var(--gold)">
       <div class="poem-cat">कविता · २०२२</div>
-      <div class="poem-title">गीतांजलि — २०२२</div>
+      <div class="poem-title">कोविड़ कविता — २०२२</div>
       <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
     </div>
 
@@ -723,6 +723,13 @@ document.querySelectorAll('.yn-tab').forEach(tab => {
 
 // ── PDF MODAL ────────────────────────────────────
 function openPDF(title, url) {
+  // Auto-encode non-ASCII characters in the filename
+  const parts = url.split('/');
+  const filename = parts[parts.length - 1];
+  if (!filename.includes('%')) {
+    parts[parts.length - 1] = encodeURIComponent(filename);
+    url = parts.join('/');
+  }
   document.getElementById('pdfTitle').textContent = title;
   document.getElementById('pdfDownload').href = url;
   document.getElementById('pdfDownload').download = title + '.pdf';
