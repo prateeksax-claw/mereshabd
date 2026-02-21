@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>सभी रचनाएं — मेरे शब्द</title>
+  <title>सभी रचनाएं — मेरे शब्द | गीतांजलि सक्सेना</title>
   <meta name="description" content="गीतांजलि सक्सेना की सभी कविताएं, लेख, संस्मरण और रचनाएं।">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,188 +175,243 @@ footer{background:var(--ink)}
   .filter-btn{font-size:11px;padding:7px 12px}
 }
 </style>
+  
+<style>
+@media(max-width:900px){
+  nav{padding:14px 24px}
+  .arch-hero{min-height:300px;height:44vh}
+  .ah-content{padding:0 28px 48px}
+  .hero-title{font-size:48px}
+  .filter-inner{padding:0 20px}
+  .results-bar{padding:20px 20px 0}
+  .archive-grid{padding:20px 20px 60px;gap:1px}
+  .card-xl{grid-column:1/-1;min-height:380px}
+  .card-lg{grid-column:span 6;min-height:300px}
+  .card-md{grid-column:span 6;min-height:280px}
+  .card-sm{grid-column:span 6;min-height:240px}
+  .card-wide{grid-column:1/-1}
+  .footer-main{grid-template-columns:1fr 1fr;padding:40px 20px;gap:28px}
+  .fbrand{grid-column:1/-1}
+  .footer-bottom,.footer-sub-strip{padding:16px 20px}
+}
+@media(max-width:600px){
+  .hero-title{font-size:36px}
+  .ah-content{padding:0 20px 36px}
+  .card-xl,.card-lg,.card-md,.card-sm,.card-wide,.card-sq{grid-column:1/-1}
+  .card-xl{min-height:320px}
+  .card-lg,.card-md{min-height:260px}
+  .filter-bar{top:72px}
+  .footer-main{grid-template-columns:1fr;padding:36px 20px}
+}
+</style>
 </head>
 <body>
 
-<nav id="mainNav">
+<!-- NAV -->
+<nav id="mainNav" class="scrolled">
   <a href="index.html" class="nav-logo">
     <img src="images/logo.png" alt="मेरे शब्द">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">होम</a></li>
     <li><a href="about.html">परिचय</a></li>
-    <li><a href="archive.html">रचनाएं</a></li>
+    <li><a href="archive.html" class="active">रचनाएं</a></li>
     <li><a href="gallery.html">गैलरी</a></li>
     <li><a href="contact.html">संपर्क</a></li>
     <li><a href="archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="archive-hero">
-  <div class="archive-hero-bg"></div>
-  <div class="archive-hero-inner">
-    <div class="archive-hero-tag">संग्रह</div>
-    <h1 class="archive-hero-title">सभी रचनाएं</h1>
-    <p class="archive-hero-sub">कविता · लेख · संस्मरण · प्रवासी मन · विशेष</p>
+<!-- HERO — uses .arch-hero CSS -->
+<section class="arch-hero">
+  <div class="ah-bg"></div>
+  <div class="ah-texture"></div>
+  <div class="ah-art">र</div>
+  <div class="ah-content">
+    <div class="hero-overline">संग्रह</div>
+    <h1 class="hero-title">सभी रचनाएं</h1>
+    <p class="hero-desc">कविता · लेख · संस्मरण · प्रवासी मन · विशेष — गीतांजलि सक्सेना का संपूर्ण लेखन संग्रह</p>
   </div>
 </section>
 
-<!-- FILTER TABS -->
-<div class="filter-wrap" id="filterWrap">
-  <div class="filter-bar">
-    <button class="filter-btn active" data-cat="all">सभी <span class="fcount" id="count-all">12</span></button>
-    <button class="filter-btn" data-cat="kavita">कविता <span class="fcount" id="count-kavita">3</span></button>
-    <button class="filter-btn" data-cat="lekh">लेख <span class="fcount" id="count-lekh">5</span></button>
-    <button class="filter-btn" data-cat="sansmaran">संस्मरण <span class="fcount" id="count-sansmaran">2</span></button>
-    <button class="filter-btn" data-cat="pravasi">प्रवासी मन <span class="fcount" id="count-pravasi">1</span></button>
-    <button class="filter-btn" data-cat="vishesh">विशेष <span class="fcount" id="count-vishesh">1</span></button>
+<!-- FILTER BAR — uses .filter-bar > .filter-inner > .filter-btn CSS -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-cat="all">सभी <span class="filter-count">12</span></button>
+    <button class="filter-btn" data-cat="kavita">कविता <span class="filter-count">3</span></button>
+    <button class="filter-btn" data-cat="lekh">लेख <span class="filter-count">5</span></button>
+    <button class="filter-btn" data-cat="sansmaran">संस्मरण <span class="filter-count">2</span></button>
+    <button class="filter-btn" data-cat="pravasi">प्रवासी मन <span class="filter-count">1</span></button>
+    <button class="filter-btn" data-cat="vishesh">विशेष <span class="filter-count">1</span></button>
   </div>
 </div>
 
-<!-- POSTS GRID -->
-<section class="posts-section">
-  <div class="posts-grid" id="postsGrid">
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <span class="arch-count">दिखाई जा रही हैं <span class="arch-count-num" id="visibleCount">12</span> रचनाएं</span>
+</div>
+
+<!-- ARCHIVE GRID — uses .archive-grid CSS -->
+<div class="archive-grid" id="archiveGrid">
 
     <a href="posts/guru-mahattva.html" class="post-card card-xl" data-cat="sansmaran" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-yaden.png')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">स</div>
       <div class="card-inner">
         <span class="card-cat sansmaran">संस्मरण</span>
-        <h3 class="card-title xl">शाश्वत... शिक्षकों को नमन</h3>
-        <p class="card-excerpt">गुरु-गोविंद दोऊ खड़े, काके लागूं पांय — भारतीय गुरु-शिष्य परंपरा की अनूठी कहानी...</p>
-        <div class="card-meta">सितम्बर २०२५</div>
+        <h3 class="card-title">शाश्वत... शिक्षकों को नमन</h3>
+        <p class="card-excerpt">"गुरु-गोविंद दोऊ खड़े, काके लागूं पांय" — भारतीय गुरु-शिष्य परंपरा की अनूठी महिमा और डिजिटल युग में गुरु की प्रासंगिकता।</p>
+        <div class="card-date">सितम्बर २०२५</div>
       </div>
     </a>
 
     <a href="posts/mammi-amma-nani.html" class="post-card card-lg" data-cat="kavita" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-bday.png')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">क</div>
       <div class="card-inner">
-        <span class="card-cat">कविता</span>
+        <span class="card-cat kavita">कविता</span>
         <h3 class="card-title">मम्मी, अम्मा, नानी... जीवन सफ़र</h3>
-        <p class="card-excerpt">तीन नामों में समेटी एक जीवन की कहानी...</p>
-        <div class="card-meta">अक्टूबर २०२५</div>
+        <p class="card-excerpt">उतार-चढ़ाव भरी हिचकोले खाती नौका, हिम्मत विश्वास पतवार ने किनारे दिखाए — माँ को जन्मदिन पर समर्पित।</p>
+        <div class="card-date">अक्टूबर २०२५</div>
       </div>
     </a>
 
-    <a href="posts/yadon-mein-rahenge.html" class="post-card card-lg" data-cat="sansmaran" style="text-decoration:none">
+    <a href="posts/yadon-mein-rahenge.html" class="post-card card-md" data-cat="sansmaran" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/gallery/papa-with-me.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">स</div>
       <div class="card-inner">
         <span class="card-cat sansmaran">संस्मरण</span>
-        <h3 class="card-title">यादों में रहेंगे...</h3>
-        <p class="card-excerpt">काफ़ाशॉप के गलियारों में छाया एक शख़्सियत... परिवार की श्रद्धांजलियाँ</p>
-        <div class="card-meta">जुलाई २०२५</div>
-      </div>
-    </a>
-
-    <a href="posts/jivan-darshan.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
-      <div class="card-img" style="background-image:url('images/post-kavya.jpg')"></div>
-      <div class="card-overlay"></div>
-      <div class="card-inner">
-        <span class="card-cat lekh">लेख</span>
-        <h3 class="card-title">जीवन दर्शन — इंद्रधनुषी रंग</h3>
-        <p class="card-excerpt">जीवन के १४ दार्शनिक निबंध — अनुभव, प्रेम, संबंध, और आत्म-खोज</p>
-        <div class="card-meta">जुलाई २०२५</div>
+        <h3 class="card-title">यादों में रहेंगे बसे...</h3>
+        <p class="card-excerpt">कॉफी मॉर्निंग्स, पापा की जीवनशैली और एक शख़्सियत की अनूठी विरासत — ९७वें जन्मदिन पर श्रद्धांजलि।</p>
+        <div class="card-date">जुलाई २०२५</div>
       </div>
     </a>
 
     <a href="posts/health-is-wealth.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-health.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">ल</div>
       <div class="card-inner">
         <span class="card-cat lekh">लेख</span>
         <h3 class="card-title">Health is Wealth, So Invest Wisely</h3>
-        <p class="card-excerpt">स्वास्थ्य ही सच्ची दौलत है — इसे सँभालें, बढ़ाएं, कभी न गँवाएं।</p>
-        <div class="card-meta">जुलाई २०२५</div>
+        <p class="card-excerpt">स्वास्थ्य ही सच्ची दौलत है — नेक तंदुरुस्ती लाख नियामत। जानें कैसे करें अपने स्वास्थ्य में सबसे स्मार्ट निवेश।</p>
+        <div class="card-date">जुलाई २०२५</div>
+      </div>
+    </a>
+
+    <a href="posts/jivan-darshan.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
+      <div class="card-img" style="background-image:url('images/post-kavya.jpg')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-art">ल</div>
+      <div class="card-inner">
+        <span class="card-cat lekh">लेख</span>
+        <h3 class="card-title">जीवन दर्शन — इंद्रधनुषी रंग</h3>
+        <p class="card-excerpt">जीवन के १४ दार्शनिक निबंध — अनुभव, प्रेम, संबंध और आत्म-खोज के रंगीन पहलू।</p>
+        <div class="card-date">जुलाई २०२५</div>
       </div>
     </a>
 
     <a href="posts/jane-doctor-jubani.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-health.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">ल</div>
       <div class="card-inner">
         <span class="card-cat lekh">लेख</span>
         <h3 class="card-title">जानें डॉक्टर ज़ुबानी</h3>
-        <p class="card-excerpt">स्वास्थ्य के बारे में डॉक्टरों की ज़ुबानी — ६ स्वास्थ्य लेख</p>
-        <div class="card-meta">जुलाई २०२५</div>
+        <p class="card-excerpt">विशेषज्ञ डॉक्टरों की ज़ुबानी स्वास्थ्य की महत्वपूर्ण जानकारियां — ६ स्वास्थ्य लेखों का संग्रह।</p>
+        <div class="card-date">जुलाई २०२५</div>
       </div>
     </a>
 
     <a href="posts/kalam-se-utare.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-najrana.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">ल</div>
       <div class="card-inner">
         <span class="card-cat lekh">लेख</span>
         <h3 class="card-title">क़लम से उतरे</h3>
-        <p class="card-excerpt">शब्दों के बिछाए चक्रव्यूह में घुसने का दुस्साहस सिर्फ कलम ही तो कर सकती है।</p>
-        <div class="card-meta">जून २०२२</div>
+        <p class="card-excerpt">शब्दों के बिछाए चक्रव्यूह में घुसने का दुस्साहस सिर्फ कलम ही तो कर सकती है — लेखों का संग्रह।</p>
+        <div class="card-date">जून २०२४</div>
       </div>
     </a>
 
     <a href="posts/najrana-pardesh-se.html" class="post-card card-md" data-cat="pravasi" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-najrana.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">प</div>
       <div class="card-inner">
         <span class="card-cat pravasi">प्रवासी मन</span>
         <h3 class="card-title">नज़राना परदेश से</h3>
-        <p class="card-excerpt">परदेस में बसी हर खुशी में छुपी है देस की खुशबू...</p>
-        <div class="card-meta">जुलाई २०२२</div>
+        <p class="card-excerpt">परदेस में बसी हर खुशी में छुपी है देस की खुशबू — प्रवासी जीवन की अनकही कहानियां।</p>
+        <div class="card-date">जुलाई २०२२</div>
       </div>
     </a>
 
     <a href="posts/kavya.html" class="post-card card-lg" data-cat="kavita" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-kavya.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">क</div>
       <div class="card-inner">
-        <span class="card-cat">कविता</span>
-        <h3 class="card-title">काव्य-धारा — २३ कविताएं</h3>
-        <p class="card-excerpt">शब्दों का प्रवाह, भावनाओं का उफान — पूरा काव्य संग्रह</p>
-        <div class="card-meta">जुलाई २०२२</div>
+        <span class="card-cat kavita">कविता</span>
+        <h3 class="card-title">काव्य-धारा — संपूर्ण काव्य संग्रह</h3>
+        <p class="card-excerpt">२३ कविताओं का संग्रह — प्रेम, प्रकृति, देश और जीवन के अनेक रंग। शब्दों का प्रवाह, भावनाओं का उफान।</p>
+        <div class="card-date">जुलाई २०२२</div>
       </div>
     </a>
 
     <a href="posts/naritva.html" class="post-card card-md" data-cat="kavita" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/post-naritva.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">क</div>
       <div class="card-inner">
-        <span class="card-cat">कविता</span>
-        <h3 class="card-title">नारीत्व</h3>
-        <p class="card-excerpt">स्त्री के संघर्ष और शक्ति का काव्य-चित्रण...</p>
-        <div class="card-meta">जुलाई २०२२</div>
+        <span class="card-cat kavita">कविता</span>
+        <h3 class="card-title">दुनिया तुमसे... नारीत्व</h3>
+        <p class="card-excerpt">"तू ही तो शक्ति, है ईश्वरीय वरदान!" — स्त्री के संघर्ष, साहस और शक्ति का काव्य-चित्रण।</p>
+        <div class="card-date">जुलाई २०२२</div>
       </div>
     </a>
 
-    <a href="posts/yadon-ke-pannon-se.html" class="post-card card-md" data-cat="vishesh" style="text-decoration:none">
+    <a href="posts/yadon-ke-pannon-se.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/gallery/Dr.-Anil-Poem.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">ल</div>
       <div class="card-inner">
-        <span class="card-cat vishesh">विशेष</span>
+        <span class="card-cat lekh">लेख</span>
         <h3 class="card-title">यादों के पन्नों से</h3>
-        <p class="card-excerpt">पिताजी की स्मृति में — परिवार की श्रद्धांजलि</p>
-        <div class="card-meta">जुलाई २०२२</div>
+        <p class="card-excerpt">डॉ. अनिल सक्सेना की स्मृति में — परिवार की श्रद्धांजलि। पिताजी के साथ बिताए अनमोल पलों की यादें।</p>
+        <div class="card-date">जुलाई २०२४</div>
       </div>
     </a>
 
     <a href="posts/kshanikayen-anil-saxena.html" class="post-card card-md" data-cat="vishesh" style="text-decoration:none">
       <div class="card-img" style="background-image:url('images/gallery/Dr.-Anil-Poem.jpg')"></div>
       <div class="card-overlay"></div>
+      <div class="card-art">व</div>
       <div class="card-inner">
         <span class="card-cat vishesh">विशेष</span>
         <h3 class="card-title">क्षणिकायें — डॉ. अनिल सक्सेना</h3>
-        <p class="card-excerpt">डॉ. अनिल सक्सेना की क्षणिकाओं का संग्रह — परिवार की श्रद्धांजलि</p>
-        <div class="card-meta">जुलाई २०२२</div>
+        <p class="card-excerpt">डॉ. अनिल सक्सेना द्वारा लिखी गई क्षणिकाओं का संग्रह — परिवार द्वारा संकलित एक विशेष श्रद्धांजलि।</p>
+        <div class="card-date">जुलाई २०२४</div>
       </div>
     </a>
 
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">📚</div>
+    <div class="empty-title">इस श्रेणी में कोई रचना नहीं</div>
+    <div class="empty-text">अन्य श्रेणियां देखें</div>
   </div>
-</section>
 
+</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="fbrand">
-      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द"></div>
       <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
       <div class="fblinks">
         <a href="about.html">परिचय</a>
@@ -392,45 +447,58 @@ footer{background:var(--ink)}
   </div>
   <div class="footer-sub-strip"></div>
   <div class="footer-bottom">
-    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
-    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+    <span class="fbcopy">© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks">
+      <a href="index.html">होम</a>
+      <a href="about.html">परिचय</a>
+      <a href="contact.html">संपर्क</a>
+    </div>
   </div>
 </footer>
-<script>
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
-</script>
 
 <script>
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+// Nav scroll effect — starts scrolled (cream bg on this page)
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
 
 // Filter functionality
-const btns=document.querySelectorAll('.filter-btn');
-const cards=document.querySelectorAll('.post-card');
-btns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    btns.forEach(b=>b.classList.remove('active'));
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.post-card');
+const countEl = document.getElementById('visibleCount');
+const emptyState = document.getElementById('emptyState');
+
+function updateGrid(selectedCat) {
+  let visible = 0;
+  cards.forEach(card => {
+    const matches = selectedCat === 'all' || card.dataset.cat === selectedCat;
+    if (matches) {
+      card.classList.remove('hidden');
+      card.style.opacity = '0';
+      setTimeout(() => { card.style.transition = 'opacity 0.3s'; card.style.opacity = '1'; }, 10);
+      visible++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  countEl.textContent = visible;
+  emptyState.classList.toggle('visible', visible === 0);
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const cat=btn.dataset.cat;
-    cards.forEach(card=>{
-      if(cat==='all'||card.dataset.cat===cat){
-        card.style.display='';
-        card.style.opacity='0';
-        setTimeout(()=>{card.style.transition='opacity 0.3s';card.style.opacity='1'},10);
-      } else {
-        card.style.display='none';
-      }
-    });
+    updateGrid(btn.dataset.cat);
   });
 });
 
-// URL param routing
-const params=new URLSearchParams(window.location.search);
-const cat=params.get('cat');
-if(cat){
-  const btn=document.querySelector('[data-cat="'+cat+'"]');
-  if(btn) btn.click();
+// URL param routing (?cat=kavita etc.)
+const urlCat = new URLSearchParams(window.location.search).get('cat');
+if (urlCat) {
+  const targetBtn = document.querySelector('[data-cat="' + urlCat + '"]');
+  if (targetBtn) targetBtn.click();
 }
 </script>
 </body>
