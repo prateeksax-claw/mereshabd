@@ -185,9 +185,52 @@ footer{background:var(--ink)}
   .about-inner{flex-direction:column!important}
 }
 </style>
+  
+<style>
+/* ABOUT PAGE ADDITIONAL MOBILE */
+@media(max-width:900px){
+  nav{padding:14px 24px}
+  .hero-content{max-width:100%;padding:0 24px 60px}
+  .hero-photo-side{right:0;width:45%;opacity:0.3}
+  .hero-name{font-size:52px}
+  .bio-section{grid-template-columns:1fr}
+  .bio-side{display:none}
+  .bio-body{padding:56px 32px}
+  .bio-headline{font-size:34px}
+  .pull-quote{padding:56px 32px 56px 72px}
+  .pq-text{font-size:26px}
+  .timeline-section{padding:72px 32px}
+  .timeline{grid-template-columns:100px 1fr}
+  .creds-section{padding:72px 32px}
+  .creds-grid{grid-template-columns:1fr 1fr}
+  .style-section{grid-template-columns:1fr}
+  .style-left,.style-right{padding:56px 32px}
+  .pub-section{padding:72px 32px}
+  .pub-grid{grid-template-columns:1fr}
+  .cta-band{flex-direction:column;padding:56px 32px;gap:24px}
+  .cta-btns{flex-direction:column;width:100%}
+  .cta-btn{justify-content:center}
+  .footer-main{grid-template-columns:1fr 1fr;padding:48px 24px;gap:32px}
+  .footer-bottom{padding:20px 24px;flex-direction:column;gap:12px;text-align:center}
+  .fbrand{padding-right:0;grid-column:1/-1}
+}
+@media(max-width:600px){
+  .hero-name{font-size:40px}
+  .hero-photo-side{width:55%;opacity:0.25}
+  .hero-desc{display:none}
+  .bio-body{padding:40px 20px}
+  .timeline{grid-template-columns:80px 1fr}
+  .tl-year-val{font-size:22px}
+  .creds-grid{grid-template-columns:1fr}
+  .section-heading{font-size:36px}
+  .footer-main{grid-template-columns:1fr;padding:40px 20px}
+  .breadcrumb{padding:12px 20px}
+}
+</style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="mainNav">
   <a href="index.html" class="nav-logo">
     <img src="images/logo.png" alt="मेरे शब्द">
@@ -202,138 +245,273 @@ footer{background:var(--ink)}
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="about-hero">
-  <div class="about-hero-bg"></div>
-  <div class="about-hero-inner">
-    <div class="about-hero-tag">परिचय</div>
-    <h1 class="about-hero-name">गीतांजलि सक्सेना</h1>
-    <p class="about-hero-sub">कवयित्री · लेखिका · पत्रकार · संपादक</p>
+<!-- HERO — uses same .hero CSS as homepage -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-art-bg">ग</div>
+  <div class="hero-photo-side">
+    <img src="images/author.jpg" alt="गीतांजलि सक्सेना" class="hero-photo-img">
+    <div class="hero-photo-overlay"></div>
   </div>
-</section>
-
-<!-- INTRO GRID -->
-<section class="about-intro">
-  <div class="about-grid">
-    <div class="about-photo-col">
-      <img src="images/author.jpg" alt="गीतांजलि सक्सेना" class="about-photo">
-      <div class="about-creds">
-        <div class="cred-badge">PIB मान्यता प्राप्त</div>
-        <div class="cred-badge">नवभारत टाइम्स</div>
-        <div class="cred-badge">जयोति संपादक</div>
-      </div>
-    </div>
-    <div class="about-text-col">
-      <h2 class="about-headline">अबू धाबी से हिंदी की आवाज़</h2>
-      <p class="about-bio">गीतांजलि सक्सेना पिछले तीन दशकों से हिंदी साहित्य और पत्रकारिता के क्षेत्र में सक्रिय हैं। नवभारत टाइम्स में उनका लेखन पाठकों को एक अनूठा दृष्टिकोण देता है।</p>
-      <p class="about-bio">अबू धाबी में बसी इस हिंदी लेखिका की कलम कभी नहीं रुकती। भारतीय महिला संघ की जयोति पत्रिका की संपादक के रूप में वे हिंदी साहित्य की अलख जगाती हैं।</p>
-      <p class="about-bio">उनकी रचनाएं — चाहे वह कविता हो, लेख हो, या संस्मरण — एक विशेष प्रवासी अनुभव को व्यक्त करती हैं। परदेस में रहकर देस की खुशबू को शब्दों में पिरोना उनकी विशेषता है।</p>
+  <div class="hero-divider"></div>
+  <div class="hero-content">
+    <div class="hero-overline">परिचय</div>
+    <h1 class="hero-name">गीतांजलि<br>सक्सेना</h1>
+    <p class="hero-name-en">Gitanjali Saxena</p>
+    <p class="hero-desc">तीन दशकों से हिंदी साहित्य और पत्रकारिता की अनवरत यात्रा — अबू धाबी से।</p>
+    <div class="hero-badges">
+      <span class="badge">कवयित्री</span>
+      <span class="badge">लेखिका</span>
+      <span class="badge">पत्रकार</span>
+      <span class="badge">संपादक</span>
     </div>
   </div>
 </section>
 
-<!-- CAREER TIMELINE -->
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">होम</a>
+  <span class="sep">›</span>
+  <span class="current">परिचय</span>
+</div>
+
+<!-- BIO SECTION — .bio-section grid(140px 1fr) -->
+<section class="bio-section">
+  <div class="bio-side">
+    <div class="bio-side-label">परिचय</div>
+    <div class="bio-side-num">०१</div>
+  </div>
+  <div class="bio-body">
+    <div class="page-tag">लेखिका के बारे में</div>
+    <h2 class="bio-headline">अबू धाबी से<br>हिंदी की <em>आवाज़</em></h2>
+    <p class="bio-text">गीतांजलि सक्सेना पिछले तीन दशकों से हिंदी साहित्य और पत्रकारिता के क्षेत्र में सक्रिय हैं। <strong>नवभारत टाइम्स</strong> में उनका लेखन पाठकों को एक अनूठा और संवेदनशील दृष्टिकोण देता रहा है।</p>
+    <p class="bio-text">अबू धाबी में बसी इस हिंदी लेखिका की कलम कभी नहीं रुकती। <strong>भारतीय महिला संघ (ILA)</strong>, अबू धाबी की प्रतिष्ठित <strong>जयोति पत्रिका</strong> की संपादक के रूप में वे हिंदी साहित्य की अलख जगाती हैं। <strong>PIB-मान्यता प्राप्त</strong> पत्रकार के रूप में उनकी पहचान देश-विदेश में है।</p>
+    <p class="bio-text">उनकी रचनाएं — चाहे वह कविता हो, लेख हो, या संस्मरण — एक विशेष प्रवासी अनुभव को व्यक्त करती हैं। परदेस में रहकर देस की खुशबू को शब्दों में पिरोना उनकी विशेषता है। शब्दों का यह सफ़र जारी है… और जारी रहेगा।</p>
+    <div class="bio-divider"></div>
+    <div class="hero-badges" style="margin-top:0">
+      <span class="badge" style="background:rgba(155,14,14,0.08);border-color:rgba(155,14,14,0.2);color:var(--red)">नवभारत टाइम्स</span>
+      <span class="badge" style="background:rgba(155,14,14,0.08);border-color:rgba(155,14,14,0.2);color:var(--red)">PIB मान्यता</span>
+      <span class="badge" style="background:rgba(155,14,14,0.08);border-color:rgba(155,14,14,0.2);color:var(--red)">जयोति संपादक</span>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pull-quote">
+  <p class="pq-text">"सिर्फ शब्दों से खिलवाड़ ही नहीं,<br>माला में पिरोना भी है <span>फ़ितरत</span>,<br>कभी भी न थमने वाला लेखन<br>सिलसिला यूं ही जारी रहेगा हमेशा..."</p>
+  <div class="pq-attr">गीतांजलि सक्सेना</div>
+</section>
+
+<!-- TIMELINE -->
 <section class="timeline-section">
-  <div class="section-wrap">
-    <h2 class="section-title">साहित्यिक यात्रा</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-year">१९९०+</div>
-        <div class="tl-content">
-          <h3 class="tl-title">नवभारत टाइम्स</h3>
-          <p class="tl-desc">हिंदी की प्रतिष्ठित पत्रिका में पत्रकारिता का आगाज़। PIB से मान्यता प्राप्त।</p>
-        </div>
+  <div class="section-eyebrow">JOURNEY</div>
+  <h2 class="section-heading">साहित्यिक <em>यात्रा</em></h2>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-year">
+        <div class="tl-year-val">१९९०</div>
+        <div class="tl-year-label">दशक से</div>
       </div>
-      <div class="tl-item">
-        <div class="tl-year">२०००+</div>
-        <div class="tl-content">
-          <h3 class="tl-title">अबू धाबी</h3>
-          <p class="tl-desc">खाड़ी देश में हिंदी साहित्य की आवाज़ बनीं। प्रवासी भारतीयों के जीवन को शब्द दिए।</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">जयोति</div>
-        <div class="tl-content">
-          <h3 class="tl-title">जयोति पत्रिका</h3>
-          <p class="tl-desc">भारतीय महिला संघ (ILA), अबू धाबी की जयोति पत्रिका की संपादक।</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">आज</div>
-        <div class="tl-content">
-          <h3 class="tl-title">मेरे शब्द</h3>
-          <p class="tl-desc">डिजिटल माध्यम से हिंदी साहित्य का प्रसार। कविता, लेख, संस्मरण — सब एक जगह।</p>
-        </div>
+      <div class="tl-content">
+        <span class="tl-tag">पत्रकारिता</span>
+        <div class="tl-title">नवभारत टाइम्स</div>
+        <div class="tl-sub">हिंदी की प्रतिष्ठित पत्रिका में पत्रकारिता का आगाज़। भारत में पत्रकारिता का लम्बा और समृद्ध अनुभव।</div>
       </div>
     </div>
+
+    <div class="tl-item">
+      <div class="tl-year">
+        <div class="tl-year-val">PIB</div>
+        <div class="tl-year-label">मान्यता</div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag">सरकारी मान्यता</span>
+        <div class="tl-title">PIB-मान्यता प्राप्त पत्रकार</div>
+        <div class="tl-sub">प्रेस इन्फॉर्मेशन ब्यूरो (PIB) द्वारा मान्यता प्राप्त — पत्रकारिता में सर्वोच्च सरकारी प्रमाण।</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">
+        <div class="tl-year-val">२०००</div>
+        <div class="tl-year-label">के बाद</div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag">प्रवास</span>
+        <div class="tl-title">अबू धाबी — नई शुरुआत</div>
+        <div class="tl-sub">खाड़ी देश में हिंदी साहित्य की आवाज़ बनीं। प्रवासी भारतीयों के जीवन, संघर्ष और खुशियों को शब्द दिए।</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">
+        <div class="tl-year-val">ILA</div>
+        <div class="tl-year-label">जयोति</div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag">संपादन</span>
+        <div class="tl-title">जयोति पत्रिका — संपादक</div>
+        <div class="tl-sub">भारतीय महिला संघ (Indian Ladies Association), अबू धाबी की प्रतिष्ठित जयोति पत्रिका की संपादक।</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">
+        <div class="tl-year-val">आज</div>
+        <div class="tl-year-label">वर्तमान</div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag">डिजिटल</span>
+        <div class="tl-title">मेरे शब्द — डिजिटल संग्रह</div>
+        <div class="tl-sub">mereshabd.com के माध्यम से हिंदी साहित्य का डिजिटल प्रसार। कविता, लेख, संस्मरण — सब एक जगह। लेखन का सिलसिला जारी है।</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CREDENTIALS -->
+<!-- CREDENTIALS — dark section -->
 <section class="creds-section">
-  <div class="section-wrap">
-    <h2 class="section-title">उपलब्धियां</h2>
-    <div class="creds-grid">
-      <div class="cred-card">
-        <div class="cred-num">३०+</div>
-        <div class="cred-label">वर्षों का लेखन अनुभव</div>
-      </div>
-      <div class="cred-card">
-        <div class="cred-num">५०+</div>
-        <div class="cred-label">प्रकाशित रचनाएं</div>
-      </div>
-      <div class="cred-card">
-        <div class="cred-num">PIB</div>
-        <div class="cred-label">मान्यता प्राप्त पत्रकार</div>
-      </div>
-      <div class="cred-card">
-        <div class="cred-num">ILA</div>
-        <div class="cred-label">जयोति पत्रिका संपादक</div>
-      </div>
+  <div class="section-eyebrow">CREDENTIALS</div>
+  <h2 class="section-heading" style="margin-bottom:56px">उपलब्धियां एवं <em>पहचान</em></h2>
+  <div class="creds-grid">
+
+    <div class="cred-card">
+      <div class="cred-num">३०+</div>
+      <span class="cred-icon">✦</span>
+      <div class="cred-title">वर्षों का अनुभव</div>
+      <div class="cred-sub">तीन दशकों से हिंदी साहित्य और पत्रकारिता में निरंतर सक्रिय — एक लंबी और समृद्ध यात्रा।</div>
     </div>
+
+    <div class="cred-card">
+      <div class="cred-num">PIB</div>
+      <span class="cred-icon">📰</span>
+      <div class="cred-title">सरकारी मान्यता</div>
+      <div class="cred-sub">प्रेस इन्फॉर्मेशन ब्यूरो द्वारा मान्यता प्राप्त वरिष्ठ पत्रकार — पत्रकारिता में उच्चतम प्रमाण।</div>
+    </div>
+
+    <div class="cred-card">
+      <div class="cred-num">NBT</div>
+      <span class="cred-icon">📖</span>
+      <div class="cred-title">नवभारत टाइम्स</div>
+      <div class="cred-sub">भारत की सर्वाधिक पढ़ी जाने वाली हिंदी पत्रिका नवभारत टाइम्स में दीर्घकालिक सहयोग।</div>
+    </div>
+
+    <div class="cred-card">
+      <div class="cred-num">ILA</div>
+      <span class="cred-icon">✍️</span>
+      <div class="cred-title">जयोति — संपादक</div>
+      <div class="cred-sub">भारतीय महिला संघ (ILA), अबू धाबी की प्रतिष्ठित जयोति पत्रिका की संपादक।</div>
+    </div>
+
+    <div class="cred-card">
+      <div class="cred-num">५०+</div>
+      <span class="cred-icon">🖊️</span>
+      <div class="cred-title">प्रकाशित रचनाएं</div>
+      <div class="cred-sub">कविता, लेख, संस्मरण और विशेष लेखन — पचास से अधिक रचनाएं विभिन्न माध्यमों में प्रकाशित।</div>
+    </div>
+
+    <div class="cred-card">
+      <div class="cred-num">UAE</div>
+      <span class="cred-icon">🌍</span>
+      <div class="cred-title">अंतर्राष्ट्रीय उपस्थिति</div>
+      <div class="cred-sub">अबू धाबी से दुबई तक — UAE में हिंदी साहित्य के प्रचार-प्रसार में महत्वपूर्ण योगदान।</div>
+    </div>
+
   </div>
 </section>
 
-<!-- WRITING STYLE -->
+<!-- WRITING STYLE — split section -->
 <section class="style-section">
-  <div class="section-wrap">
-    <h2 class="section-title">लेखन-शैली</h2>
-    <div class="style-grid">
-      <div class="style-card">
-        <div class="style-icon">✦</div>
-        <h3 class="style-title">कविता</h3>
-        <p class="style-desc">भावनाओं की गहराई, शब्दों की सादगी। प्रेम, देश, प्रकृति और जीवन के रंग।</p>
-      </div>
-      <div class="style-card">
-        <div class="style-icon">✦</div>
-        <h3 class="style-title">संस्मरण</h3>
-        <p class="style-desc">स्मृतियों का खज़ाना। व्यक्तिगत अनुभवों की सच्ची और मार्मिक कहानियां।</p>
-      </div>
-      <div class="style-card">
-        <div class="style-icon">✦</div>
-        <h3 class="style-title">लेख</h3>
-        <p class="style-desc">समसामयिक विषयों पर विचारपूर्ण दृष्टिकोण। जीवन, स्वास्थ्य, समाज।</p>
-      </div>
-      <div class="style-card">
-        <div class="style-icon">✦</div>
-        <h3 class="style-title">प्रवासी मन</h3>
-        <p class="style-desc">परदेस में देस की खुशबू। एनआरआई जीवन का अनूठा दस्तावेज़।</p>
+  <div class="style-left">
+    <div class="section-eyebrow">WRITING</div>
+    <h2 class="section-heading">लेखन <em>शैली</em></h2>
+    <ul class="style-list">
+      <li>भावनाओं की गहराई और शब्दों की सादगी — यही है मेरी कविता की पहचान।</li>
+      <li>स्मृतियों का खज़ाना — व्यक्तिगत अनुभवों की सच्ची और मार्मिक कहानियां।</li>
+      <li>समसामयिक विषयों पर विचारपूर्ण दृष्टिकोण — जीवन, स्वास्थ्य, समाज।</li>
+      <li>परदेस में देस की खुशबू — एनआरआई जीवन का अनूठा और ज़िंदादिल दस्तावेज़।</li>
+    </ul>
+  </div>
+  <div class="style-right">
+    <div class="style-right-art">क</div>
+    <div class="verse-block">
+      <span class="verse-line vxl">शब्द ही</span>
+      <span class="verse-line vlg">मेरा संसार है,</span>
+      <span class="verse-gap"></span>
+      <span class="verse-line vxl">शब्द ही</span>
+      <span class="verse-line vlg">मेरी पहचान।</span>
+      <span class="verse-gap"></span>
+      <span class="verse-line vmd">कभी न थमने वाली कलम,</span>
+      <span class="verse-line vmd">यूं ही जारी रहे हमेशा...</span>
+      <div class="verse-attr">
+        <div class="va-line"></div>
+        <div class="va-text">— गीतांजलि सक्सेना</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="about-cta">
-  <h2 class="cta-title">रचनाएं पढ़ें</h2>
-  <p class="cta-sub">कविताएं, लेख, संस्मरण — सब एक जगह</p>
-  <a href="archive.html" class="cta-btn">सभी रचनाएं →</a>
+<!-- PUBLICATIONS -->
+<section class="pub-section">
+  <div class="section-eyebrow">PUBLICATIONS</div>
+  <h2 class="section-heading">प्रकाशन एवं <em>मंच</em></h2>
+  <div class="pub-grid">
+
+    <div class="pub-card">
+      <div class="pub-num">०१</div>
+      <div class="pub-info">
+        <div class="pub-title">नवभारत टाइम्स</div>
+        <div class="pub-sub">भारत की सर्वाधिक पढ़ी जाने वाली हिंदी समाचार पत्रिका में वरिष्ठ सहयोगी लेखक के रूप में दीर्घकालिक प्रकाशन।</div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-num">०२</div>
+      <div class="pub-info">
+        <div class="pub-title">जयोति पत्रिका (ILA)</div>
+        <div class="pub-sub">भारतीय महिला संघ, अबू धाबी की जयोति पत्रिका — संपादक के रूप में। UAE में हिंदी साहित्य का प्रमुख मंच।</div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-num">०३</div>
+      <div class="pub-info">
+        <div class="pub-title">दैनिक भास्कर</div>
+        <div class="pub-sub">भारत के अग्रणी हिंदी समाचार पत्र में लेखन — समसामयिक और साहित्यिक विषयों पर विचारपूर्ण लेख।</div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-num">०४</div>
+      <div class="pub-info">
+        <div class="pub-title">मेरे शब्द (mereshabd.com)</div>
+        <div class="pub-sub">अपना डिजिटल साहित्यिक संग्रह — कविता, लेख, संस्मरण, और विशेष रचनाएं। हिंदी साहित्य का डिजिटल घर।</div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-left">
+    <div class="cta-tag">EXPLORE</div>
+    <div class="cta-title">रचनाएं पढ़ें,<br>शब्दों से जुड़ें</div>
+  </div>
+  <div class="cta-btns">
+    <a href="archive.html" class="cta-btn cta-btn-primary">सभी रचनाएं →</a>
+    <a href="contact.html" class="cta-btn cta-btn-secondary">संपर्क करें</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="fbrand">
-      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द"></div>
       <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
       <div class="fblinks">
         <a href="about.html">परिचय</a>
@@ -348,6 +526,7 @@ footer{background:var(--ink)}
         <li><a href="archive.html?cat=lekh">लेख</a></li>
         <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
         <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+        <li><a href="archive.html?cat=vishesh">विशेष</a></li>
       </ul>
     </div>
     <div class="fcol">
@@ -368,13 +547,20 @@ footer{background:var(--ink)}
   </div>
   <div class="footer-sub-strip"></div>
   <div class="footer-bottom">
-    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
-    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+    <span class="fbcopy">© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks">
+      <a href="index.html">होम</a>
+      <a href="about.html">परिचय</a>
+      <a href="contact.html">संपर्क</a>
+    </div>
   </div>
 </footer>
+
 <script>
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
 </script>
 </body>
 </html>
