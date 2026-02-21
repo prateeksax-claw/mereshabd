@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>काव्य-धारा — मेरे शब्द | गीतांजलि सक्सेना</title>
-  <meta name="description" content="गीतांजलि सक्सेना की २३ कविताओं का संग्रह — शब्दों का प्रवाह, भावनाओं का उफान।">
+  <meta name="description" content="गीतांजलि सक्सेना की कविताओं का पूरा संग्रह — शब्दों का प्रवाह, भावनाओं का उफान।">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -279,8 +279,84 @@ footer{background:var(--ink)}
   .pnav-item{padding:20px}
 }
 </style>
+  
+<style>
+/* YEAR NAV TABS */
+.year-nav{background:var(--cream);border-bottom:2px solid rgba(0,0,0,0.07);position:sticky;top:88px;z-index:90}
+.year-nav-inner{padding:0 80px;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+.year-nav-inner::-webkit-scrollbar{display:none}
+.yn-tab{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dust);text-decoration:none;padding:16px 24px;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s;font-style:italic}
+.yn-tab:hover{color:var(--ink)}
+.yn-tab.active{color:var(--red);border-bottom-color:var(--red)}
+.yn-tab span{font-family:monospace;font-size:11px;color:var(--dust);margin-left:6px;font-style:normal}
+
+/* SECTION WRAPPER (replaces library-section) */
+.kavya-section{padding:72px 80px}
+.kavya-section+.kavya-section{padding-top:0}
+
+/* YEAR HEADING */
+.year-head{display:flex;align-items:baseline;gap:20px;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.year-head-num{font-family:'Cormorant Garamond',serif;font-size:100px;color:rgba(155,14,14,0.07);line-height:1;font-weight:700;user-select:none}
+.year-head-info{display:flex;flex-direction:column;gap:4px}
+.year-head-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase}
+.year-head-title{font-family:'Tiro Devanagari Hindi',serif;font-size:32px;color:var(--ink);font-weight:400}
+.year-head-count{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--dust);font-style:italic;margin-left:auto}
+
+/* COLLECTION CARD (for यादें group) */
+.collection-card{background:linear-gradient(155deg,#0D1530 0%,#1A2A4A 60%,#0A1020 100%);padding:36px 40px;cursor:pointer;transition:transform .2s;position:relative;overflow:hidden}
+.collection-card:hover{transform:translateY(-2px)}
+.collection-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 400px 300px at 80% 50%,rgba(184,135,58,.06) 0%,transparent 70%)}
+.cc-art{position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Tiro Devanagari Hindi',serif;font-size:180px;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none}
+.cc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(184,135,58,.15);border:1px solid rgba(184,135,58,.3);color:var(--gold-light);font-size:11px;padding:5px 14px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:16px}
+.cc-title{font-family:'Tiro Devanagari Hindi',serif;font-size:32px;color:white;font-weight:400;margin-bottom:8px}
+.cc-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:28px;font-weight:300}
+.cc-toggle{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold-light);font-style:italic;cursor:pointer;border:none;background:none;padding:0}
+.cc-toggle-arrow{font-size:18px;transition:transform .3s}
+.cc-toggle.open .cc-toggle-arrow{transform:rotate(180deg)}
+.cc-names{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08)}
+.cc-name{font-family:'Tiro Devanagari Hindi',serif;font-size:14px;color:rgba(255,255,255,0.45);padding:4px 12px;border:1px solid rgba(255,255,255,0.1)}
+
+/* COLLECTION EXPANDED GRID */
+.collection-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.collection-grid.open{max-height:300px}
+.cc-poem-card{background:rgba(255,255,255,0.04);padding:24px 20px;cursor:pointer;transition:background .2s;display:flex;flex-direction:column;gap:10px;border:none;text-align:left;width:100%}
+.cc-poem-card:hover{background:rgba(255,255,255,0.09)}
+.cc-poem-cat{font-family:monospace;font-size:10px;color:var(--gold);text-transform:uppercase}
+.cc-poem-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;color:white;font-weight:400;line-height:1.3;flex:1}
+.cc-poem-read{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.35);font-style:italic}
+
+/* FEATURED CARD FIXES */
+.featured-card{cursor:pointer;border:none;text-align:left;width:auto}
+.featured-card .featured-title{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:white;line-height:1.35;font-weight:400;flex:1;margin-bottom:24px}
+.featured-card .fc-read{display:inline-flex;align-items:center;gap:8px;color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic}
+
+/* POEM GRID CARD FIXES */
+.poem-card{cursor:pointer;border:none;text-align:left;width:100%}
+.poem-card .poem-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;color:var(--ink);line-height:1.4;font-weight:400;flex:1}
+
+@media(max-width:900px){
+  .year-nav-inner{padding:0 20px}
+  .kavya-section{padding:48px 24px}
+  .year-head-num{font-size:60px}
+  .collection-grid{grid-template-columns:repeat(2,1fr)!important}
+  .collection-grid.open{max-height:600px}
+  .featured-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:600px){
+  .featured-grid,.collection-grid{grid-template-columns:1fr!important}
+  .collection-grid.open{max-height:1200px}
+  .poem-grid{grid-template-columns:1fr!important}
+  .year-head-num{font-size:48px}
+  .cc-title{font-size:24px}
+}
+</style>
 </head>
 <body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
 <nav id="mainNav">
   <a href="../index.html" class="nav-logo">
     <img src="../images/logo.png" alt="मेरे शब्द">
@@ -294,156 +370,278 @@ footer{background:var(--ink)}
     <li><a href="../archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
   </ul>
 </nav>
-<section class="post-hero">
-  <div class="ph-bg"></div>
-  <div class="ph-texture"></div>
-  <div class="ph-img"></div>
-  <div class="ph-art">कव</div>
-  <div class="ph-content">
-    <span class="post-cat kavita" style="background:var(--gold)">कविता</span>
-    <h1 class="post-title">काव्य-धारा — संपूर्ण काव्य संग्रह</h1>
-    <div class="post-meta">
-      <div class="pm-author">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-art">कव</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-tag">कविता संग्रह</span>
+      <span class="hero-count">१५ कविताएं · ४ वर्षों का लेखन</span>
+    </div>
+    <h1 class="post-title">काव्य-धारा</h1>
+    <p class="hero-sub">संपूर्ण काव्य संग्रह — शब्दों का प्रवाह, भावनाओं का उफान</p>
+    <div class="hero-meta">
+      <div class="hm-author">
         <img src="../images/author.jpg" alt="गीतांजलि सक्सेना">
-        <span class="pm-author-name">गीतांजलि सक्सेना</span>
+        <span class="hm-author-name">गीतांजलि सक्सेना</span>
       </div>
-      <span class="pm-sep"></span>
-      <span class="pm-date">जुलाई २०२२</span>
+      <span class="hm-dot"></span>
+      <span class="hm-date">२०२२ — २०२५</span>
     </div>
   </div>
 </section>
+
+<!-- BREADCRUMB -->
 <div class="breadcrumb">
   <a href="../index.html">होम</a>
   <span class="sep">›</span>
   <a href="../archive.html">रचनाएं</a>
   <span class="sep">›</span>
-  <span class="current">काव्य-धारा</span>
+  <span class="cur">काव्य-धारा</span>
 </div>
 
-<div class="library-section">
-  <div class="section-wrap">
-    <h2 class="lib-year">२०२५ — नवीनतम कविताएं</h2>
-    <div class="featured-grid">
-      <a class="featured-card" href="../pdfs/World-of-Magic-Kavni-poem-2025-Website-.pdf" target="_blank" rel="noopener" style="background:#8B1A1A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">काव्य-जगत — World of Magic</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/Delivery-Man-2025-final.pdf" target="_blank" rel="noopener" style="background:#5c1010">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">डिलीवरी मैन (२०२५)</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/3.-ILA-poem-final-for-web-site.pdf" target="_blank" rel="noopener" style="background:#8B1A1A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">ILA कविता</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/4.-Lockdown-poem-final-for-web.pdf" target="_blank" rel="noopener" style="background:#5c1010">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">लॉकडाउन कविता</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/5.pati-dev-poem-for-web-Gitanjali.pdf" target="_blank" rel="noopener" style="background:#8B1A1A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">पति-देव</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-    </div>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">१५</div>
+    <div class="stat-label">कुल कविताएं</div>
   </div>
-  <div class="section-wrap">
-    <h2 class="lib-year">२०२३</h2>
-    <div class="featured-grid">
-      <a class="featured-card" href="../pdfs/????-???????-2023.pdf" target="_blank" rel="noopener" style="background:#6B4226">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">कविता २०२३</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-    </div>
+  <div class="stat-sep"></div>
+  <div class="stat-item">
+    <div class="stat-num">४</div>
+    <div class="stat-label">वर्षों का संग्रह</div>
   </div>
-  <div class="section-wrap">
-    <h2 class="lib-year">२०२२</h2>
-    <div class="featured-grid">
-      <a class="featured-card" href="../pdfs/poem-on-matti-2022-final-for-web.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">माटी</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/Upjinder-poem-for-web-final-1.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">उपजिंदर के नाम</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/?????-???????-2022.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">कविता २०२२</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/alpana_yadoan.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">अल्पना — यादें</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/arun_yadoan.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">अरुण — यादें</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/isha_yadoan.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">ईशा — यादें</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/maitri_yadoan.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">मैत्री — यादें</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-<a class="featured-card" href="../pdfs/rachit_yadoan.pdf" target="_blank" rel="noopener" style="background:#B8873A">
-      <div class="fc-inner">
-        <div class="fc-cat">कविता</div>
-        <h3 class="fc-title">रचित — यादें</h3>
-        <div class="fc-cta">पढ़ें →</div>
-      </div>
-    </a>
-    </div>
+  <div class="stat-sep"></div>
+  <div class="stat-item">
+    <div class="stat-num">५</div>
+    <div class="stat-label">यादों की कविताएं</div>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat-item">
+    <div class="stat-num">२०२५</div>
+    <div class="stat-label">नवीनतम कविता</div>
   </div>
 </div>
 
-<div class="post-nav-bar">
-  <a href="./naritva.html" class="pnav-item pnav-prev"><span class="pnav-dir">← पिछली</span><span class="pnav-title">नारीत्व</span></a>
-  <a href="./yadon-ke-pannon-se.html" class="pnav-item pnav-next"><span class="pnav-dir">अगली →</span><span class="pnav-title">यादों के पन्नों से</span></a>
+<!-- YEAR NAVIGATION TABS -->
+<nav class="year-nav" id="yearNav">
+  <div class="year-nav-inner">
+    <a href="#y2025" class="yn-tab active">२०२५ <span>(५)</span></a>
+    <a href="#y2023" class="yn-tab">२०२३ <span>(१)</span></a>
+    <a href="#y2022" class="yn-tab">२०२२ <span>(४)</span></a>
+    <a href="#yadeen" class="yn-tab">यादें <span>(५)</span></a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 2025 SECTION -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="kavya-section" id="y2025">
+  <div class="year-head">
+    <div class="year-head-num">२०२५</div>
+    <div class="year-head-info">
+      <div class="year-head-label">नवीनतम</div>
+      <div class="year-head-title">नवीनतम कविताएं</div>
+    </div>
+    <span class="year-head-count">५ कविताएं</span>
+  </div>
+
+  <div class="featured-grid">
+
+    <div class="featured-card" onclick="openPDF('काव्य-जगत — World of Magic', '../pdfs/World-of-Magic-Kavni-poem-2025-Website-.pdf')" style="background:#8B1A1A;border-top:2px solid var(--gold)">
+      <div class="fc-num">०१</div>
+      <div class="fc-cat">कविता</div>
+      <div class="featured-title">काव्य-जगत<br>World of Magic</div>
+      <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
+    </div>
+
+    <div class="featured-card" onclick="openPDF('डिलीवरी मैन (२०२५)', '../pdfs/Delivery-Man-2025-final.pdf')" style="background:#5C1010;border-top:2px solid #C94E6B">
+      <div class="fc-num">०२</div>
+      <div class="fc-cat">कविता</div>
+      <div class="featured-title">डिलीवरी मैन<br><span style="font-size:15px;opacity:0.6">(२०२५)</span></div>
+      <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
+    </div>
+
+    <div class="featured-card" onclick="openPDF('ILA कविता', '../pdfs/3.-ILA-poem-final-for-web-site.pdf')" style="background:#1A1A3D;border-top:2px solid #5A7ABF">
+      <div class="fc-num">०३</div>
+      <div class="fc-cat">कविता</div>
+      <div class="featured-title">ILA कविता</div>
+      <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
+    </div>
+
+    <div class="featured-card" onclick="openPDF('लॉकडाउन कविता', '../pdfs/4.-Lockdown-poem-final-for-web.pdf')" style="background:#0E1A0E;border-top:2px solid #4A9A6A">
+      <div class="fc-num">०४</div>
+      <div class="fc-cat">कविता</div>
+      <div class="featured-title">लॉकडाउन कविता</div>
+      <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
+    </div>
+
+    <div class="featured-card" onclick="openPDF('पति-देव', '../pdfs/5.pati-dev-poem-for-web-Gitanjali.pdf')" style="background:#2A1A0A;border-top:2px solid #E8733A">
+      <div class="fc-num">०५</div>
+      <div class="fc-cat">कविता</div>
+      <div class="featured-title">पति-देव</div>
+      <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 2023 SECTION -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="kavya-section" id="y2023">
+  <div class="year-head">
+    <div class="year-head-num">२०२३</div>
+    <div class="year-head-info">
+      <div class="year-head-label">वर्ष २०२३</div>
+      <div class="year-head-title">कविताएं</div>
+    </div>
+    <span class="year-head-count">१ कविता</span>
+  </div>
+
+  <div class="featured-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="featured-card" onclick="openPDF('कविता — २०२३', '../pdfs/????-???????-2023.pdf')" style="background:#2D1540;border-top:2px solid #9B6ABF">
+      <div class="fc-num">०१</div>
+      <div class="fc-cat">कविता</div>
+      <div class="featured-title">कविता — २०२३</div>
+      <div class="fc-read">पढ़ें <span class="fc-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 2022 SECTION -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="kavya-section" id="y2022">
+  <div class="year-head">
+    <div class="year-head-num">२०२२</div>
+    <div class="year-head-info">
+      <div class="year-head-label">वर्ष २०२२</div>
+      <div class="year-head-title">कविताएं</div>
+    </div>
+    <span class="year-head-count">४ कविताएं</span>
+  </div>
+
+  <div class="poem-grid">
+
+    <div class="poem-card" onclick="openPDF('माटी', '../pdfs/poem-on-matti-2022-final-for-web.pdf')" style="border-left-color:var(--gold)">
+      <div class="poem-cat">कविता · २०२२</div>
+      <div class="poem-title">माटी</div>
+      <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
+    </div>
+
+    <div class="poem-card" onclick="openPDF('उपजिंदर के नाम', '../pdfs/Upjinder-poem-for-web-final-1.pdf')" style="border-left-color:#9B3A5A">
+      <div class="poem-cat">कविता · २०२२</div>
+      <div class="poem-title">उपजिंदर के नाम</div>
+      <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
+    </div>
+
+    <div class="poem-card" onclick="openPDF('कविता — २०२२', '../pdfs/?????-???????-2022.pdf')" style="border-left-color:#3A6A9B">
+      <div class="poem-cat">कविता · २०२२</div>
+      <div class="poem-title">कविता — २०२२</div>
+      <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
+    </div>
+
+    <div class="poem-card" onclick="openPDF('गीतांजलि — २०२२', '../pdfs/7.??????-?????-2022-by-gitanjali-for-web.pdf')" style="border-left-color:var(--gold)">
+      <div class="poem-cat">कविता · २०२२</div>
+      <div class="poem-title">गीतांजलि — २०२२</div>
+      <div class="poem-read">पढ़ें <span class="poem-read-arrow">→</span></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- यादें COLLECTION (special expandable) -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="kavya-section" id="yadeen">
+  <div class="year-head">
+    <div class="year-head-num" style="color:rgba(90,122,191,0.1)">यादें</div>
+    <div class="year-head-info">
+      <div class="year-head-label">स्मृति-संग्रह</div>
+      <div class="year-head-title">यादें — प्रिय जनों को समर्पित</div>
+    </div>
+    <span class="year-head-count">५ कविताएं</span>
+  </div>
+
+  <!-- Collection card -->
+  <div class="collection-card" id="yadeenCard">
+    <div class="cc-art">या</div>
+    <div class="cc-badge">पाँच कविताएं · स्मृति-संग्रह</div>
+    <div class="cc-title">यादें — स्मृति-काव्य</div>
+    <div class="cc-desc">परिवार के प्रिय जनों की यादों में लिखी गई पाँच कविताएं — प्रेम, स्मृति और आत्मीयता का काव्य-चित्रण।</div>
+    <div class="cc-names">
+      <span class="cc-name">अल्पना</span>
+      <span class="cc-name">अरुण</span>
+      <span class="cc-name">ईशा</span>
+      <span class="cc-name">मैत्री</span>
+      <span class="cc-name">रचित</span>
+    </div>
+    <button class="cc-toggle" id="yadeenToggle" onclick="toggleYadeen()" style="margin-top:20px">
+      <span>सभी कविताएं देखें</span>
+      <span class="cc-toggle-arrow">↓</span>
+    </button>
+  </div>
+
+  <!-- Expanded sub-poems grid -->
+  <div class="collection-grid" id="yadeenGrid">
+    <button class="cc-poem-card" onclick="openPDF('अल्पना — यादें', '../pdfs/alpana_yadoan.pdf')">
+      <div class="cc-poem-cat">स्मृति-काव्य</div>
+      <div class="cc-poem-title">अल्पना — यादें</div>
+      <div class="cc-poem-read">पढ़ें →</div>
+    </button>
+    <button class="cc-poem-card" onclick="openPDF('अरुण — यादें', '../pdfs/arun_yadoan.pdf')">
+      <div class="cc-poem-cat">स्मृति-काव्य</div>
+      <div class="cc-poem-title">अरुण — यादें</div>
+      <div class="cc-poem-read">पढ़ें →</div>
+    </button>
+    <button class="cc-poem-card" onclick="openPDF('ईशा — यादें', '../pdfs/isha_yadoan.pdf')">
+      <div class="cc-poem-cat">स्मृति-काव्य</div>
+      <div class="cc-poem-title">ईशा — यादें</div>
+      <div class="cc-poem-read">पढ़ें →</div>
+    </button>
+    <button class="cc-poem-card" onclick="openPDF('मैत्री — यादें', '../pdfs/maitri_yadoan.pdf')">
+      <div class="cc-poem-cat">स्मृति-काव्य</div>
+      <div class="cc-poem-title">मैत्री — यादें</div>
+      <div class="cc-poem-read">पढ़ें →</div>
+    </button>
+    <button class="cc-poem-card" onclick="openPDF('रचित — यादें', '../pdfs/rachit_yadoan.pdf')">
+      <div class="cc-poem-cat">स्मृति-काव्य</div>
+      <div class="cc-poem-title">रचित — यादें</div>
+      <div class="cc-poem-read">पढ़ें →</div>
+    </button>
+  </div>
+</section>
+
+<!-- POST NAVIGATION -->
+<div class="post-nav" style="margin:0 80px">
+  <a href="./naritva.html" class="pnav-item pnav-prev" style="text-decoration:none">
+    <span class="pnav-dir">← पिछली</span>
+    <span class="pnav-cat">कविता</span>
+    <span class="pnav-title">नारीत्व</span>
+  </a>
+  <a href="./yadon-ke-pannon-se.html" class="pnav-item pnav-next" style="text-decoration:none">
+    <span class="pnav-dir">अगली →</span>
+    <span class="pnav-cat">विशेष</span>
+    <span class="pnav-title">यादों के पन्नों से</span>
+  </a>
 </div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="fbrand">
-      <div class="fbrand-logo"><img src="../images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-logo"><img src="../images/logo.png" alt="मेरे शब्द"></div>
       <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
     </div>
     <div class="fcol"><div class="fcol-label">रचनाएं</div><ul>
@@ -464,11 +662,105 @@ footer{background:var(--ink)}
   </div>
   <div class="footer-sub-strip"></div>
   <div class="footer-bottom">
-    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <span class="fbcopy">© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks">
+      <a href="../index.html">होम</a>
+      <a href="../about.html">परिचय</a>
+      <a href="../contact.html">संपर्क</a>
+    </div>
   </div>
 </footer>
+
+<!-- PDF MODAL (uses existing CSS from <style> block) -->
+<div class="pdf-modal-overlay" id="pdfOverlay">
+  <div class="pdf-modal-bar">
+    <div class="pdf-modal-title" id="pdfTitle"></div>
+    <div class="pdf-modal-actions">
+      <a class="pdf-modal-download" id="pdfDownload" href="#">⬇ डाउनलोड</a>
+      <button class="pdf-modal-close" onclick="closePDF()">✕</button>
+    </div>
+  </div>
+  <div class="pdf-modal-frame-wrap">
+    <div class="pdf-modal-loading" id="pdfLoading">
+      <div class="pdf-loading-spinner"></div>
+      <div class="pdf-loading-text">PDF लोड हो रहा है...</div>
+    </div>
+    <iframe class="pdf-modal-frame" id="pdfFrame" src="" onload="hidePdfLoading()"></iframe>
+  </div>
+</div>
+
 <script>
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+// ── NAV + PROGRESS ──────────────────────────────
+const nav = document.getElementById('mainNav');
+const pb = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  pb.style.width = (scrolled * 100) + '%';
+
+  // Year nav active state
+  const sections = ['y2025','y2023','y2022','yadeen'];
+  const tabs = document.querySelectorAll('.yn-tab');
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 140) current = id;
+  });
+  tabs.forEach(t => {
+    const href = t.getAttribute('href').substring(1);
+    t.classList.toggle('active', href === current);
+  });
+});
+
+// Smooth scroll for year nav
+document.querySelectorAll('.yn-tab').forEach(tab => {
+  tab.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(tab.getAttribute('href').substring(1));
+    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+// ── PDF MODAL ────────────────────────────────────
+function openPDF(title, url) {
+  document.getElementById('pdfTitle').textContent = title;
+  document.getElementById('pdfDownload').href = url;
+  document.getElementById('pdfDownload').download = title + '.pdf';
+  document.getElementById('pdfLoading').style.opacity = '1';
+  document.getElementById('pdfLoading').style.pointerEvents = 'all';
+  document.getElementById('pdfFrame').src = url;
+  document.getElementById('pdfOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePDF() {
+  document.getElementById('pdfOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { document.getElementById('pdfFrame').src = ''; }, 350);
+}
+
+function hidePdfLoading() {
+  const el = document.getElementById('pdfLoading');
+  el.style.opacity = '0';
+  el.style.pointerEvents = 'none';
+}
+
+// Close on overlay backdrop click
+document.getElementById('pdfOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closePDF();
+});
+
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePDF(); });
+
+// ── यादें COLLECTION TOGGLE ─────────────────────
+function toggleYadeen() {
+  const grid = document.getElementById('yadeenGrid');
+  const toggle = document.getElementById('yadeenToggle');
+  const isOpen = grid.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.querySelector('span:first-child').textContent = isOpen ? 'छुपाएं' : 'सभी कविताएं देखें';
+}
 </script>
-</body></html>
+</body>
+</html>
