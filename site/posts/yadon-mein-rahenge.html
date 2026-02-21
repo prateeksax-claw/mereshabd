@@ -134,6 +134,20 @@ nav.scrolled .nav-logo img{filter:none}
 .sidebar-section{margin-bottom:52px}
 .sidebar-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--gold);font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .sidebar-label::after{content:'';flex:1;height:1px;background:rgba(0,0,0,0.06)}
+/* SIDEBAR CARDS */
+.sidebar-card{margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.sidebar-card:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.sidebar-photo{width:100%;max-height:220px;object-fit:cover;object-position:top center;display:block;margin-bottom:16px;border-radius:4px;filter:sepia(8%)}
+.sidebar-author-name{font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:var(--ink);margin-bottom:6px;font-weight:400}
+.sidebar-author-bio{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:var(--dust);line-height:1.8;margin-bottom:14px;font-weight:300}
+.sidebar-link{display:inline-flex;align-items:center;gap:6px;font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--red);text-decoration:none;font-weight:500;padding-bottom:2px;border-bottom:1px solid rgba(155,14,14,0.2);transition:all 0.2s}
+.sidebar-link:hover{border-color:var(--red)}
+.rel-list{display:flex;flex-direction:column;gap:0}
+.rel-item{display:flex;flex-direction:column;gap:3px;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.05);text-decoration:none;transition:background 0.2s}
+.rel-item:last-child{border-bottom:none}
+.rel-item:hover .rel-title-text{color:var(--red)}
+.rel-cat{font-size:11px;color:var(--gold);font-family:monospace;text-transform:uppercase;font-weight:600}
+.rel-title-text,.rel-title{font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:var(--ink);line-height:1.4;transition:color 0.2s}
 
 /* Progress */
 .reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(to right,var(--red),var(--gold));z-index:200;transition:width 0.1s linear;width:0%}
@@ -317,20 +331,32 @@ footer{background:var(--ink)}
   </article>
 
   <!-- SIDEBAR -->
+  
   <aside class="post-sidebar">
+    <!-- Author card -->
     <div class="sidebar-card">
       <div class="sidebar-label">लेखिका</div>
       <img src="../images/author.jpg" alt="गीतांजलि सक्सेना" class="sidebar-photo">
-      <div class="author-name">गीतांजलि सक्सेना</div>
-      <div class="author-bio-text">कवयित्री · लेखिका · पत्रकार<br>अबू धाबी</div>
+      <div class="sidebar-author-name">गीतांजलि सक्सेना</div>
+      <div class="sidebar-author-bio">कवयित्री · लेखिका · पत्रकार<br>अबू धाबी, UAE</div>
       <a href="../about.html" class="sidebar-link">पूरा परिचय →</a>
     </div>
+    <!-- Related posts -->
     <div class="sidebar-card">
       <div class="sidebar-label">और रचनाएं</div>
       <div class="rel-list">
-        <a href="./guru-mahattva.html" class="rel-item"><span class="rel-cat">पिछली</span><span class="rel-title">शाश्वत... शिक्षकों को नमन</span></a>
-        <a href="./health-is-wealth.html" class="rel-item"><span class="rel-cat">अगली</span><span class="rel-title">Health is Wealth</span></a>
-        <a href="../archive.html" class="rel-item"><span class="rel-cat">सभी</span><span class="rel-title">सभी रचनाएं देखें →</span></a>
+        <a href="./guru-mahattva.html" class="rel-item">
+          <span class="rel-cat">पिछली</span>
+          <span class="rel-title-text">शाश्वत... शिक्षकों को नमन</span>
+        </a>
+        <a href="./health-is-wealth.html" class="rel-item">
+          <span class="rel-cat">अगली</span>
+          <span class="rel-title-text">Health is Wealth</span>
+        </a>
+        <a href="../archive.html" class="rel-item">
+          <span class="rel-cat">संग्रह</span>
+          <span class="rel-title-text">सभी रचनाएं →</span>
+        </a>
       </div>
     </div>
   </aside>
