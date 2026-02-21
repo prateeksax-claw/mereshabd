@@ -43,16 +43,15 @@ nav.scrolled .nav-logo img{filter:none}
 
 /* POST HERO */
 .post-hero{min-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
-.ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#2D0808 0%,#5C1010 30%,#8B1515 60%,#6B0A0A 100%)}
+.ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#082018 0%,#0F3828 50%,#062015 100%)}
 .ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 75% 40%,rgba(220,140,60,0.1) 0%,transparent 65%);pointer-events:none}
-.ph-img{position:absolute;inset:0;background-image:url('../images/post-bday.png');background-size:cover;background-position:center top;opacity:0.18;filter:sepia(30%)}
-.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:500px;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none;user-select:none}
+.ph-img{display:none}
+.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;user-select:none;z-index:1}
 .ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
-.post-cat::before{content:'?';font-size:10px;opacity:0.8}
+.post-cat::before{content:'·';font-size:14px;opacity:0.7}
 .post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:400;margin-bottom:20px}
-.post-subtitle{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:36px;letter-spacing:1px}
-.post-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.post-subtitle{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:36px;align-items:center;gap:24px;flex-wrap:wrap}
 .pm-author{display:flex;align-items:center;gap:12px}
 .pm-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:top;filter:sepia(10%);border:1px solid rgba(255,255,255,0.2)}
 .pm-author-name{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.75);font-weight:400}
