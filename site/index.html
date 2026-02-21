@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>मेरे शब्द — गीतांजलि सक्सेना</title>
+  <meta name="description" content="गीतांजलि सक्सेना की हिंदी कविताएं, लेख और रचनाएं। अबू धाबी से हिंदी साहित्य की आवाज़।">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F7F2EA;--warm-white:#FDFAF5;--ink:#1C1410;
+  --red:#9B0E0E;--red-deep:#6B0A0A;--gold:#B8873A;
+  --gold-light:#D4A852;--dust:#8A7968;--petal:#F2E8DE;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);color:var(--ink);overflow-x:hidden;letter-spacing:0}
+
+/* CRITICAL: Devanagari script must NEVER have letter-spacing - it breaks matra rendering */
+*[lang="hi"], .hero-name, .hero-desc, .hero-overline, .badge, .hero-cta,
+.marquee-item, .intro-tag, .intro-headline, .intro-text, .intro-read,
+.pline, .poem-title-sm, .qi-text, .ar-name, .ar-bio, .ar-eyebrow, .ar-cta,
+.aq-text, .mi-title, .mi-excerpt, .mi-cat, .mi-meta, .mag-title,
+.cred-title, .cred-sub, .fcol ul a, .fbrand-text, .fs-label, .fs-input,
+.nav-links a { letter-spacing: 0 !important; }
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+nav.scrolled .nav-links a{color:var(--ink)}
+nav.scrolled .nav-logo img{filter:none}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);text-decoration:none;font-weight:400;transition:color 0.2s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important}
+.nav-cta:hover{background:var(--red-deep)!important;color:white!important}
+
+/* HERO */
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#2D0808 0%,#5C1010 30%,#8B1515 60%,#6B0A0A 100%)}
+.hero-texture{position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 70% 35%,rgba(220,140,60,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-art-bg{position:absolute;top:-80px;right:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:550px;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none;user-select:none}
+.hero-photo-side{position:absolute;bottom:0;right:6%;width:44%;height:92%;z-index:2;display:flex;align-items:flex-end;justify-content:center}
+.hero-photo-img{width:80%;height:88%;object-fit:cover;object-position:top center;border-radius:180px 180px 0 0;filter:sepia(20%) contrast(1.05)}
+.hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(90,10,10,0.5) 100%);border-radius:180px 180px 0 0}
+.hero-divider{position:absolute;top:50%;left:60px;right:52%;height:1px;background:linear-gradient(to right,rgba(196,154,60,0.5),transparent);z-index:3}
+.hero-content{position:relative;z-index:4;padding:0 60px 80px;max-width:52%}
+.hero-overline{font-size:14px;color:var(--gold-light);font-weight:500;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero-overline::before{content:'';width:28px;height:1px;background:var(--gold-light)}
+.hero-name{font-family:'Tiro Devanagari Hindi',serif;font-size:92px;color:#fff;line-height:1;font-weight:400;margin-bottom:8px}
+.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.38);letter-spacing:6px;font-style:italic;margin-bottom:28px;font-weight:300}
+.hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;color:rgba(255,255,255,0.65);line-height:2;max-width:400px;margin-bottom:36px;font-weight:300}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px}
+.badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.72);font-size:13px;padding:7px 16px;font-family:'Noto Sans Devanagari',sans-serif;backdrop-filter:blur(4px)}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;color:white;text-decoration:none;font-size:17px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.35);transition:all 0.3s}
+.hero-cta:hover{border-color:var(--gold);color:var(--gold-light)}
+.scroll-hint{position:absolute;bottom:28px;right:56px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-line{width:1px;height:56px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:sa 2s ease-in-out infinite}
+@keyframes sa{0%,100%{opacity:0}50%{opacity:1}}
+.scroll-text{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.3);writing-mode:vertical-rl;font-family:monospace}
+
+/* MARQUEE */
+.marquee{background:var(--red);padding:14px 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;animation:mq 22s linear infinite}
+.marquee-item{font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:rgba(255,255,255,0.72);padding:0 36px;display:inline-flex;align-items:center;gap:36px}
+.marquee-item::after{content:'?';color:var(--gold-light);font-size:11px}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* EDITORIAL INTRO */
+.editorial-intro{display:grid;grid-template-columns:120px 1fr;min-height:55vh;background:var(--cream)}
+.intro-side{padding:80px 32px 80px 60px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(0,0,0,0.05)}
+.intro-label-v{writing-mode:vertical-rl;font-family:monospace;font-size:9px;letter-spacing:4px;color:var(--dust);text-transform:uppercase;margin-bottom:32px}
+.intro-num{font-family:'Cormorant Garamond',serif;font-size:72px;color:var(--red);line-height:1;font-weight:300;opacity:0.18}
+.intro-body{padding:80px 80px 80px 56px;display:flex;flex-direction:column;justify-content:center}
+.intro-tag{font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:22px;font-family:'Noto Sans Devanagari',sans-serif}
+.intro-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:50px;color:var(--ink);line-height:1.25;font-weight:400;margin-bottom:28px}
+.intro-headline em{font-style:italic;color:var(--red)}
+.intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:20px;line-height:2.1;color:var(--dust);max-width:540px;font-weight:300;margin-bottom:36px}
+.intro-read{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-size:16px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:4px;border-bottom:1px solid rgba(155,14,14,0.3);transition:all 0.2s;width:fit-content}
+
+/* POEM FULLBLEED */
+.poem-section{min-height:88vh;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 60px}
+.poem-bg{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 80% 50%,rgba(155,14,14,0.18) 0%,transparent 65%)}
+.poem-art{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.018);line-height:1;pointer-events:none}
+.poem-label{position:absolute;top:56px;left:60px;display:flex;align-items:center;gap:12px}
+.poem-label::before{content:'';width:18px;height:1px;background:var(--gold)}
+.poem-label span{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:500}
+.poem-wrap{position:relative;z-index:2;max-width:920px;width:100%}
+.poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);font-style:italic;margin-bottom:56px;opacity:0.85}
+.pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.9);line-height:1.7;display:block;cursor:default;transition:all 0.2s}
+.pline:hover{color:white}
+.pline.xl{font-size:58px}
+.pline.lg{font-size:42px;padding-left:60px;opacity:0.82}
+.pline.md{font-size:32px;padding-left:112px;opacity:0.72}
+.pline.sm{font-size:26px;padding-left:40px;opacity:0.62}
+.pgap{height:20px;display:block}
+.poem-attr{margin-top:60px;display:flex;align-items:center;gap:18px}
+.pattr-line{width:36px;height:1px;background:var(--gold);opacity:0.5}
+.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.4);font-weight:300}
+.pread{margin-left:auto;color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:3px;text-decoration:none;font-family:monospace;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
+.pread:hover{color:var(--gold);border-color:var(--gold)}
+
+/* MAGAZINE GRID */
+.mag-section{background:var(--warm-white);padding:96px 0 80px}
+.mag-head{padding:0 60px 56px;display:flex;align-items:baseline;gap:20px;border-bottom:1px solid rgba(0,0,0,0.05)}
+.mag-title{font-family:'Tiro Devanagari Hindi',serif;font-size:56px;color:var(--ink);font-weight:400;line-height:1}
+.mag-sub{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--dust);font-style:italic}
+.mag-all{margin-left:auto;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:var(--red);text-decoration:none;padding-bottom:3px;border-bottom:1px solid rgba(155,14,14,0.25)}
+.mag-grid{display:grid;grid-template-columns:repeat(12,1fr)}
+.mi{position:relative;overflow:hidden;cursor:pointer;min-height:320px}
+.mi-1{grid-column:1/8;grid-row:1/3;min-height:600px}
+.mi-2{grid-column:8/13;grid-row:1/2;min-height:300px}
+.mi-3{grid-column:8/10;grid-row:2/3;min-height:300px}
+.mi-4{grid-column:10/13;grid-row:2/3;min-height:300px}
+.mi-5{grid-column:1/5}
+.mi-6{grid-column:5/9}
+.mi-7{grid-column:9/13}
+.mi-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.5s}
+.mi:hover .mi-img{transform:scale(1.03)}
+.mi-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);transition:background 0.3s}
+.mi:hover .mi-overlay{background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.2) 55%,transparent 100%)}
+.mi-art{position:absolute;font-family:'Tiro Devanagari Hindi',serif;font-size:130px;opacity:0.05;color:white;top:8px;right:-8px;line-height:1;pointer-events:none}
+.mi-inner{position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
+.mi-cat{background:var(--gold);color:white;font-size:13px;padding:5px 13px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;width:fit-content;margin-bottom:12px}
+.mi-cat.lekh{background:#4A5568}
+.mi-cat.sansmaran{background:#6B4226}
+.mi-cat.pravasi{background:#2D6B8A}
+.mi-cat.vishesh{background:#6B5A1E}
+.mi-title{font-family:'Tiro Devanagari Hindi',serif;color:white;font-weight:400;line-height:1.25;margin-bottom:10px}
+.mi-xl .mi-title{font-size:38px}
+.mi-md .mi-title{font-size:24px}
+.mi-sm .mi-title{font-size:20px}
+.mi-excerpt{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.62);line-height:1.8;font-weight:300}
+.mi-sm .mi-excerpt{display:none}
+.mi-meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,0.35);font-family:'Noto Sans Devanagari',sans-serif;display:flex;align-items:center;gap:8px}
+.mi-meta::before{content:'';width:14px;height:1px;background:var(--gold);opacity:0.5}
+.bdr{border-right:1px solid rgba(255,255,255,0.04)}
+.bdb{border-bottom:1px solid rgba(255,255,255,0.04)}
+
+/* QUOTE INTERLUDE */
+.quote-interlude{padding:110px 60px;background:var(--petal);text-align:center;position:relative;overflow:hidden}
+.quote-interlude::before{content:'"';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:220px;color:var(--red);opacity:0.045;line-height:1;pointer-events:none}
+.qi-text{font-family:'Tiro Devanagari Hindi',serif;font-size:46px;color:var(--ink);line-height:1.6;max-width:880px;margin:0 auto 32px;position:relative;z-index:1}
+.qi-text span{color:var(--red);font-style:italic}
+.qi-attr{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);font-weight:300;position:relative;z-index:1}
+
+/* AUTHOR SPREAD */
+.author-spread{min-height:90vh;display:grid;grid-template-columns:1fr 1fr}
+.author-left{background:linear-gradient(155deg,#2d0808,#5c1010,#8B1A1A);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-start;padding:60px}
+.author-left-art{position:absolute;inset:0;background:radial-gradient(ellipse 350px 450px at 55% 40%,rgba(210,110,50,0.12) 0%,transparent 65%)}
+.author-portrait{position:absolute;top:0;left:0;right:0;bottom:100px;overflow:hidden}
+.author-portrait img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.55;filter:sepia(20%) contrast(1.1)}
+.author-portrait-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(60,8,8,0.95) 15%,rgba(60,8,8,0.3) 60%,transparent 100%)}
+.author-quote-block{position:relative;z-index:3}
+.aq-text{font-family:'Tiro Devanagari Hindi',serif;font-size:24px;color:rgba(255,255,255,0.85);line-height:1.9;margin-bottom:18px}
+.aq-dash{width:22px;height:1px;background:var(--gold-light);display:inline-block;margin-right:10px;vertical-align:middle}
+.aq-src{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.38);font-weight:300}
+.author-right{background:var(--cream);padding:80px;display:flex;flex-direction:column;justify-content:center}
+.ar-eyebrow{font-size:14px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:28px;font-family:'Noto Sans Devanagari',sans-serif;display:flex;align-items:center;gap:12px}
+.ar-eyebrow::before{content:'';width:22px;height:1px;background:var(--gold)}
+.ar-name{font-family:'Tiro Devanagari Hindi',serif;font-size:54px;color:var(--ink);line-height:1.05;margin-bottom:8px;font-weight:400}
+.ar-name-en{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dust);font-style:italic;margin-bottom:36px;letter-spacing:1px}
+.ar-bio{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px;color:var(--ink);line-height:2.1;margin-bottom:44px;font-weight:300;max-width:440px}
+.creds{display:flex;flex-direction:column;gap:16px;margin-bottom:44px}
+.cred{display:flex;align-items:flex-start;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.055)}
+.cred-n{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--red);font-weight:300;opacity:0.28;width:38px;flex-shrink:0;line-height:1}
+.cred-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--ink);font-weight:600}
+.cred-sub{font-size:14px;color:var(--dust);font-family:'Noto Sans Devanagari',sans-serif;margin-top:3px;font-weight:300}
+.ar-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:white;padding:16px 32px;text-decoration:none;font-size:15px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;width:fit-content;transition:background 0.2s}
+.ar-cta:hover{background:var(--red)}
+
+/* FOOTER */
+footer{background:var(--ink)}
+.footer-sub-strip{border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:28px 60px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.fs-label{font-size:16px;color:rgba(255,255,255,0.4);font-family:'Cormorant Garamond',serif;font-style:italic}
+.fs-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.18);color:white;padding:10px 0;font-size:16px;outline:none;width:280px;font-family:'Noto Sans Devanagari',sans-serif;transition:border-color 0.2s}
+.fs-input::placeholder{color:rgba(255,255,255,0.25);font-size:15px}
+.fs-input:focus{border-color:var(--gold)}
+.fs-btn{background:transparent;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);padding:10px 24px;font-size:14px;cursor:pointer;font-family:'Noto Sans Devanagari',sans-serif;transition:all 0.2s}
+.fs-btn:hover{background:var(--gold);border-color:var(--gold);color:white}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:72px 60px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.fbrand{padding-right:52px}
+.fbrand-logo img{height:56px;width:auto;filter:brightness(0) invert(1);opacity:0.85;margin-bottom:20px}
+.fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);line-height:2;margin-bottom:28px;font-weight:300}
+.fsocials{display:flex;gap:10px}
+.fsoc{width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.38);font-size:14px;text-decoration:none;transition:all 0.2s;font-style:normal}
+.fsoc:hover{border-color:var(--gold);color:var(--gold)}
+.fcol{border-left:1px solid rgba(255,255,255,0.04);padding:0 20px}
+.fcol-label{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:22px}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:12px}
+.fcol ul a{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+.fcol ul a:hover{color:white}
+.footer-bottom{padding:22px 60px;display:flex;align-items:center;justify-content:space-between}
+.fbcopy{font-size:10px;color:rgba(255,255,255,0.13);font-family:monospace;letter-spacing:1px}
+.fblinks{display:flex;gap:20px}
+.fblinks a{font-size:10px;color:rgba(255,255,255,0.13);text-decoration:none;letter-spacing:1.5px;font-family:monospace;transition:color 0.2s}
+.fblinks a:hover{color:rgba(255,255,255,0.45)}
+
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{gap:16px}
+  .nav-links .nav-cta{display:none}
+  .footer-main{grid-template-columns:1fr 1fr;padding:40px 24px;gap:32px}
+  .footer-sub-strip,.footer-bottom{padding:16px 24px}
+  .fbrand{grid-column:1/-1}
+  .hero-content,.hero-text{padding:0 24px 56px;max-width:100%}
+  .hero-name{font-size:52px!important}
+  .hero-tag,.hero-sub{font-size:14px}
+  .mag-head,.archive-head,.intro-block,.section-wrap{padding:40px 24px}
+  .mag-grid,.posts-grid,.featured-grid{grid-template-columns:1fr!important;padding:0 24px 48px}
+  .mi-1,.mi-2,.mi-3,.mi-4,.mi-5,.mi-6,.mi-7{grid-column:1/-1!important;grid-row:auto!important}
+  .mi-1{min-height:380px!important}
+  .mi-2,.mi-3,.mi-4,.mi-5,.mi-6,.mi-7{min-height:260px!important}
+  .mi-sm .mi-excerpt{display:block}
+  .intro-grid,.about-grid{grid-template-columns:1fr!important;padding:0 24px}
+  .xl{font-size:36px!important}.lg{font-size:26px!important}
+  .mag-title,.intro-headline{font-size:32px!important}
+  .ar-name{font-size:36px!important}
+  .qi-text{font-size:28px!important}
+  .post-card,.post-card.card-xl,.post-card.card-lg{min-height:260px!important;grid-column:1/-1!important}
+  .author-spread{grid-template-columns:1fr!important}
+  .author-right{display:none}
+  .author-left{min-height:60vh;padding:40px 24px}
+}
+@media(max-width:600px){
+  .hero-name{font-size:36px!important}
+  .mag-title{font-size:26px!important}
+  .xl{font-size:28px!important}
+  .qi-text{font-size:22px!important}
+  .mi-xl .mi-title{font-size:28px}
+  .mi-md .mi-title{font-size:20px}
+  .mag-head{flex-wrap:wrap;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="मेरे शब्द">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">होम</a></li>
+    <li><a href="about.html">परिचय</a></li>
+    <li><a href="archive.html">रचनाएं</a></li>
+    <li><a href="gallery.html">गैलरी</a></li>
+    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-art-bg">क</div>
+  <div class="hero-photo-side">
+    <img src="images/author.jpg" alt="गीतांजलि सक्सेना" class="hero-photo-img">
+    <div class="hero-photo-overlay"></div>
+  </div>
+  <div class="hero-divider"></div>
+  <div class="hero-content">
+    <div class="hero-overline">अबू धाबी से हिंदी की आवाज़</div>
+    <h1 class="hero-name">गीतांजलि<br>सक्सेना</h1>
+    <p class="hero-tag">कवयित्री · लेखिका · पत्रकार</p>
+    <p class="hero-sub">नवभारत टाइम्स की पत्रकार। PIB-मान्यता प्राप्त। जयोति पत्रिका की संपादक।</p>
+    <div class="hero-ctas">
+      <a href="archive.html" class="hero-cta">रचनाएं पढ़ें</a>
+      <a href="about.html" class="hero-cta hero-cta-ghost">परिचय</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">कविता</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">लेख</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">संस्मरण</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">प्रवासी मन</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">विशेष</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">कविता</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">लेख</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">संस्मरण</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">प्रवासी मन</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">विशेष</span>
+    <span class="marquee-sep">✦</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="editorial-intro">
+  <div class="intro-sidebar">
+    <div class="intro-tag">रचना-संसार</div>
+  </div>
+  <div class="intro-grid">
+    <div class="intro-block">
+      <h2 class="intro-headline">शब्द ही हैं<br>मेरी पहचान</h2>
+      <p class="intro-text">सिर्फ शब्दों से खिलवाड़ ही नहीं, माला में पिरोना भी है फ़ितरत। कभी भी न थमने वाला लेखन सिलसिला यूं ही जारी रहेगा हमेशा...</p>
+      <a href="about.html" class="intro-read">पूरा परिचय →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAGAZINE GRID -->
+<section class="mag-section">
+  <div class="mag-head">
+    <h2 class="mag-title">ताज़ी रचनाएं</h2>
+    <span class="mag-sub">नवीनतम लेखन</span>
+    <a href="archive.html" class="mag-all">सभी देखें →</a>
+  </div>
+  <div class="mag-grid">
+    <a href="posts/guru-mahattva.html" class="mi mi-xl mi-1" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-yaden.png');background-color:#1a0505"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">गु</div>
+      <div class="mi-inner">
+        <span class="mi-cat sansmaran">संस्मरण</span>
+        <h3 class="mi-title xl">शाश्वत...<br>शिक्षकों को नमन</h3>
+        <p class="mi-excerpt">"गुरु-गोविंद दोऊ खड़े, काके लागूं पांय" — कबीर के इस दोहे में गुरु की महिमा सर्वोपरि है। भारतीय गुरु-शिष्य परंपरा की अनूठी कहानी...</p>
+        <div class="mi-meta">सितम्बर २०२५</div>
+      </div>
+    </a>
+    <a href="posts/yadon-mein-rahenge.html" class="mi mi-md mi-2 bdb" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-yaden.png');background-color:#0a0a1a"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">या</div>
+      <div class="mi-inner">
+        <span class="mi-cat sansmaran">संस्मरण</span>
+        <h3 class="mi-title">यादों में रहेंगे...</h3>
+        <div class="mi-meta">जुलाई २०२५</div>
+      </div>
+    </a>
+    <a href="posts/mammi-amma-nani.html" class="mi mi-md mi-3 bdr" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-bday.png');background-color:#051205"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">मा</div>
+      <div class="mi-inner">
+        <span class="mi-cat">कविता</span>
+        <h3 class="mi-title">मम्मी, अम्मा, नानी... जीवन सफ़र</h3>
+        <div class="mi-meta">अक्टूबर २०२५</div>
+      </div>
+    </a>
+    <a href="posts/health-is-wealth.html" class="mi mi-sm mi-4" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-health.jpg');background-color:#1a1005"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">स्व</div>
+      <div class="mi-inner">
+        <span class="mi-cat lekh">लेख</span>
+        <h3 class="mi-title">Health is Wealth, So Invest Wisely</h3>
+        <div class="mi-meta">जुलाई २०२५</div>
+      </div>
+    </a>
+    <a href="posts/najrana-pardesh-se.html" class="mi mi-md mi-5 bdr" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-najrana.jpg');background-color:#150512"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">प्र</div>
+      <div class="mi-inner">
+        <span class="mi-cat pravasi">प्रवासी मन</span>
+        <h3 class="mi-title">नज़राना परदेश से</h3>
+        <p class="mi-excerpt">परदेस में बसी हर खुशी में छुपी है देस की खुशबू...</p>
+        <div class="mi-meta">जुलाई २०२२</div>
+      </div>
+    </a>
+    <a href="posts/naritva.html" class="mi mi-md mi-6 bdr" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-naritva.jpg');background-color:#0a0f12"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">ना</div>
+      <div class="mi-inner">
+        <span class="mi-cat">कविता</span>
+        <h3 class="mi-title">नारीत्व</h3>
+        <p class="mi-excerpt">स्त्री के संघर्ष और शक्ति का काव्य-चित्रण...</p>
+        <div class="mi-meta">जुलाई २०२२</div>
+      </div>
+    </a>
+    <a href="posts/kavya.html" class="mi mi-md mi-7" style="text-decoration:none">
+      <div class="mi-img" style="background-image:url('images/post-kavya.jpg');background-color:#1a1005"></div>
+      <div class="mi-overlay"></div>
+      <div class="mi-art">कव</div>
+      <div class="mi-inner">
+        <span class="mi-cat">कविता</span>
+        <h3 class="mi-title">काव्य-धारा</h3>
+        <p class="mi-excerpt">शब्दों का प्रवाह, भावनाओं का उफान...</p>
+        <div class="mi-meta">जुलाई २०२२</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-interlude">
+  <p class="qi-text">"सिर्फ शब्दों से खिलवाड़ ही नहीं,<br>माला में पिरोना भी है <span>फ़ितरत</span>,<br><br>कभी भी न थमने वाला लेखन<br>सिलसिला यूं ही जारी रहेगा हमेशा..."</p>
+  <div class="qi-attr">— गीतांजलि सक्सेना</div>
+</section>
+
+<!-- AUTHOR SPREAD -->
+<section class="author-spread">
+  <div class="author-left">
+    <div class="author-left-art"></div>
+    <div class="author-portrait">
+      <img src="images/author.jpg" alt="गीतांजलि सक्सेना">
+      <div class="author-portrait-overlay"></div>
+    </div>
+    <div class="author-quote-block">
+      <p class="aq-text">"शब्द ही मेरा संसार है,<br>शब्द ही मेरी पहचान।"</p>
+      <a href="about.html" class="ar-cta">पूरा परिचय पढ़ें →</a>
+    </div>
+  </div>
+  <div class="author-right">
+    <div class="author-right-inner">
+      <div class="ar-eyebrow">लेखिका के बारे में</div>
+      <h2 class="ar-name">गीतांजलि<br>सक्सेना</h2>
+      <p class="ar-bio">नवभारत टाइम्स की वरिष्ठ पत्रकार। PIB-मान्यता प्राप्त। अबू धाबी में भारतीय महिला संघ की जयोति पत्रिका की संपादक। तीन दशकों से हिंदी साहित्य और पत्रकारिता में सक्रिय।</p>
+      <div class="cred-grid">
+        <div class="cred-item"><div class="cred-title">३०+</div><div class="cred-sub">वर्षों का अनुभव</div></div>
+        <div class="cred-item"><div class="cred-title">५०+</div><div class="cred-sub">प्रकाशित रचनाएं</div></div>
+        <div class="cred-item"><div class="cred-title">अबू धाबी</div><div class="cred-sub">वर्तमान निवास</div></div>
+        <div class="cred-item"><div class="cred-title">PIB</div><div class="cred-sub">मान्यता प्राप्त</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="fbrand">
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="fblinks">
+        <a href="about.html">परिचय</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="archive.html">रचनाएं</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">रचनाएं</div>
+      <ul>
+        <li><a href="archive.html?cat=kavita">कविता</a></li>
+        <li><a href="archive.html?cat=lekh">लेख</a></li>
+        <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
+        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+        <li><a href="archive.html?cat=vishesh">विशेष</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">अन्वेषण</div>
+      <ul>
+        <li><a href="about.html">परिचय</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="contact.html">संपर्क</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">मेरे शब्द</div>
+      <ul>
+        <li><a href="index.html">होम</a></li>
+        <li><a href="archive.html">सभी रचनाएं</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-sub-strip"></div>
+  <div class="footer-bottom">
+    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+</body>
+</html>

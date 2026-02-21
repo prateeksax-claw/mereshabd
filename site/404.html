@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>४०४ — पृष्ठ नहीं मिला | मेरे शब्द</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F7F2EA;--warm-white:#FDFAF5;--ink:#1C1410;
+  --red:#9B0E0E;--gold:#B8873A;--gold-light:#D4A852;--dust:#8A7968;
+}
+html,body{height:100%}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--ink);color:white;overflow:hidden;display:flex;flex-direction:column}
+*[lang="hi"],.nav-links a,.label,.message,.link-title,.link-sub,.search-input,.cta-primary,.cta-secondary{letter-spacing:0 !important}
+
+/* NAV */
+nav{padding:20px 60px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;flex-shrink:0}
+.nav-logo img{height:48px;filter:brightness(0) invert(1);opacity:.6}
+.nav-logo{text-decoration:none}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:rgba(255,255,255,.85)}
+
+/* MAIN STAGE */
+.stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+
+/* Background: large poetic character */
+.bg-char{position:absolute;font-family:'Tiro Devanagari Hindi',serif;font-size:680px;color:rgba(255,255,255,.018);line-height:1;pointer-events:none;user-select:none;top:50%;left:50%;transform:translate(-50%,-52%)}
+/* Subtle radial glow */
+.bg-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(155,14,14,.06) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+/* Thin animated lines */
+.bg-lines{position:absolute;inset:0;pointer-events:none}
+.bg-lines::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(184,135,58,.15) 30%,rgba(184,135,58,.15) 70%,transparent 100%);top:38%}
+.bg-lines::after{content:'';position:absolute;bottom:38%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(184,135,58,.08) 40%,rgba(184,135,58,.08) 60%,transparent 100%)}
+
+/* CONTENT */
+.content{position:relative;z-index:5;display:flex;align-items:center;gap:80px;max-width:1000px;padding:0 60px}
+
+/* LEFT - the 404 number */
+.num-block{flex-shrink:0;text-align:center}
+.num-404{font-family:'Cormorant Garamond',serif;font-size:200px;font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(184,135,58,.3);position:relative;user-select:none}
+.num-404::after{content:'???';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:rgba(255,255,255,.06);-webkit-text-stroke:0;font-weight:400}
+.num-divider{width:1px;height:120px;background:linear-gradient(to bottom,transparent,rgba(184,135,58,.3),transparent);margin:0 auto;margin-top:-8px}
+
+/* RIGHT - message */
+.text-block{flex:1;max-width:440px}
+.label{font-family:monospace;font-size:10px;letter-spacing:3px;color:rgba(184,135,58,.6);text-transform:uppercase;margin-bottom:20px;display:block}
+.heading{font-family:'Tiro Devanagari Hindi',serif;font-size:44px;color:white;line-height:1.2;font-weight:400;margin-bottom:16px}
+.message{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,.45);line-height:2;font-weight:300;margin-bottom:36px}
+.message em{font-style:italic;color:rgba(184,135,58,.7)}
+
+/* VERSE - the literary touch */
+.verse{border-left:2px solid rgba(184,135,58,.25);padding:16px 20px;margin-bottom:36px;background:rgba(255,255,255,.02)}
+.verse-text{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;color:rgba(255,255,255,.55);line-height:1.8;font-style:italic;font-weight:400;letter-spacing:0}
+.verse-attr{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,.25);font-style:italic;margin-top:8px;display:block}
+
+/* ACTIONS */
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.cta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:white;padding:13px 28px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;font-weight:600;transition:background .2s}
+.cta-primary:hover{background:#7A0B0B}
+.cta-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);padding:13px 24px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;transition:all .2s}
+.cta-secondary:hover{background:rgba(255,255,255,.1);color:white}
+
+/* QUICK LINKS */
+.quick-links{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;gap:24px;flex-wrap:wrap}
+.link-item{text-decoration:none;display:flex;flex-direction:column;gap:2px;transition:opacity .2s}
+.link-item:hover{opacity:.75}
+.link-cat{font-family:monospace;font-size:9px;letter-spacing:2px;color:rgba(184,135,58,.5);text-transform:uppercase}
+.link-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:rgba(255,255,255,.55);font-weight:400}
+
+/* BOTTOM BAR */
+.bottom-bar{padding:16px 60px;border-top:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:10}
+.bb-copy{font-family:monospace;font-size:10px;color:rgba(255,255,255,.15);letter-spacing:1.5px}
+.bb-back{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s;letter-spacing:0}
+.bb-back:hover{color:rgba(255,255,255,.55)}
+
+/* Floating particles (pure CSS) */
+@keyframes float1{0%,100%{transform:translateY(0) translateX(0);opacity:.6}50%{transform:translateY(-20px) translateX(8px);opacity:.3}}
+@keyframes float2{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(15px) translateX(-5px);opacity:.15}}
+.particle{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(184,135,58,.4);pointer-events:none}
+.p1{top:25%;left:15%;animation:float1 6s ease-in-out infinite}
+.p2{top:60%;left:80%;animation:float2 8s ease-in-out infinite}
+.p3{top:40%;left:90%;animation:float1 7s ease-in-out infinite 1s}
+.p4{top:75%;left:20%;animation:float2 5s ease-in-out infinite .5s}
+.p5{top:15%;left:65%;animation:float1 9s ease-in-out infinite 2s;width:3px;height:3px}
+
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{gap:16px}
+  .content{flex-direction:column;gap:40px;padding:0 24px;align-items:flex-start}
+  .num-block{display:flex;align-items:center;gap:24px}
+  .num-404{font-size:120px}
+  .num-divider{width:40px;height:1px;margin:0}
+  .heading{font-size:32px}
+  .bottom-bar{padding:14px 24px}
+}
+@media(max-width:500px){
+  body{overflow:auto}
+  .stage{min-height:auto;padding:40px 0}
+  .num-404{font-size:80px}
+  .heading{font-size:28px}
+  .actions{flex-direction:column}
+  .cta-primary,.cta-secondary{width:100%;justify-content:center}
+}
+
+@media(max-width:600px){
+  .num-404{font-size:90px}
+  .heading{font-size:26px}
+  .actions{flex-direction:column}
+  .cta-primary,.cta-secondary{width:100%;justify-content:center}
+  .quick-links{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="मेरे शब्द">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">होम</a></li>
+    <li><a href="about.html">परिचय</a></li>
+    <li><a href="archive.html">रचनाएं</a></li>
+    <li><a href="gallery.html">गैलरी</a></li>
+    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
+  </ul>
+</nav>
+
+<section class="error-section">
+  <div class="error-num">४०४</div>
+  <div class="error-art">शब्द</div>
+  <h1 class="error-title">पृष्ठ नहीं मिला</h1>
+  <p class="error-verse">"खोज रहे हो जो पृष्ठ को,<br>वो यहाँ पर नहीं।<br>लेकिन शब्दों का संसार है,<br>होम पर ज़रूर।"</p>
+  <p class="error-attr">— गीतांजलि सक्सेना</p>
+  <div class="error-links">
+    <a href="index.html" class="error-btn">होम पर जाएं</a>
+    <a href="archive.html" class="error-btn error-btn-outline">रचनाएं देखें</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="fbrand">
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="fblinks">
+        <a href="about.html">परिचय</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="archive.html">रचनाएं</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">रचनाएं</div>
+      <ul>
+        <li><a href="archive.html?cat=kavita">कविता</a></li>
+        <li><a href="archive.html?cat=lekh">लेख</a></li>
+        <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
+        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">अन्वेषण</div>
+      <ul>
+        <li><a href="about.html">परिचय</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="contact.html">संपर्क</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">मेरे शब्द</div>
+      <ul>
+        <li><a href="index.html">होम</a></li>
+        <li><a href="archive.html">सभी रचनाएं</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-sub-strip"></div>
+  <div class="footer-bottom">
+    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+
+<script>
+const navEl=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+</body>
+</html>

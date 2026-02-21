@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>परिचय — गीतांजलि सक्सेना | मेरे शब्द</title>
+  <meta name="description" content="गीतांजलि सक्सेना का परिचय — कवयित्री, लेखिका, पत्रकार। नवभारत टाइम्स, PIB-मान्यता, अबू धाबी।">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F7F2EA;--warm-white:#FDFAF5;--ink:#1C1410;
+  --red:#9B0E0E;--red-deep:#6B0A0A;--gold:#B8873A;
+  --gold-light:#D4A852;--dust:#8A7968;--petal:#F2E8DE;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);color:var(--ink);overflow-x:hidden}
+
+/* NO letter-spacing on Devanagari - ever */
+*[lang="hi"],.hero-name,.hero-overline,.hero-desc,.badge,
+.section-tag,.section-title,.bio-text,.timeline-title,.timeline-sub,
+.timeline-year,.pub-title,.pub-sub,.cred-title,.cred-sub,
+.quote-text,.quote-attr,.gallery-cap,.nav-links a,
+.fcol ul a,.fbrand-text,.fs-label,.fs-input,
+.ar-name,.ar-bio,.page-tag { letter-spacing:0 !important; }
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+nav.scrolled .nav-links a{color:var(--ink)}
+nav.scrolled .nav-logo img{filter:none}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);text-decoration:none;font-weight:400;transition:color 0.2s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a.active{color:var(--gold-light);border-bottom:1px solid var(--gold-light)}
+.nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important}
+.nav-cta:hover{background:var(--red-deep)!important;color:white!important}
+
+/* HERO */
+.hero{height:78vh;min-height:560px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#2D0808 0%,#5C1010 30%,#8B1515 60%,#6B0A0A 100%)}
+.hero-texture{position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 68% 38%,rgba(220,140,60,0.1) 0%,transparent 65%);pointer-events:none}
+.hero-art-bg{position:absolute;top:-60px;right:-30px;font-family:'Tiro Devanagari Hindi',serif;font-size:500px;color:rgba(255,255,255,0.022);line-height:1;pointer-events:none;user-select:none}
+.hero-photo-side{position:absolute;bottom:0;right:7%;width:40%;height:94%;z-index:2;display:flex;align-items:flex-end;justify-content:center}
+.hero-photo-img{width:76%;height:88%;object-fit:cover;object-position:top center;border-radius:160px 160px 0 0;filter:sepia(15%) contrast(1.06)}
+.hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(80,8,8,0.5) 100%);border-radius:160px 160px 0 0}
+.hero-content{position:relative;z-index:4;padding:0 60px 72px;max-width:54%}
+.hero-overline{font-size:13px;color:var(--gold-light);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans Devanagari',sans-serif}
+.hero-overline::before{content:'';width:28px;height:1px;background:var(--gold-light)}
+.hero-name{font-family:'Tiro Devanagari Hindi',serif;font-size:80px;color:#fff;line-height:1.05;font-weight:400;margin-bottom:8px}
+.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(255,255,255,0.38);letter-spacing:5px;font-style:italic;margin-bottom:26px;font-weight:300}
+.hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:rgba(255,255,255,0.6);line-height:2;max-width:380px;font-weight:300;margin-bottom:32px}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.72);font-size:13px;padding:7px 16px;font-family:'Noto Sans Devanagari',sans-serif}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--cream);padding:16px 60px;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;gap:8px}
+.breadcrumb a,.breadcrumb span{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);text-decoration:none}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb .sep{color:var(--dust);opacity:0.4;font-size:11px}
+.breadcrumb .current{color:var(--ink);font-weight:500}
+
+/* BIO SECTION */
+.bio-section{display:grid;grid-template-columns:140px 1fr;background:var(--warm-white)}
+.bio-side{padding:80px 32px 80px 60px;border-right:1px solid rgba(0,0,0,0.05);display:flex;flex-direction:column;align-items:center;gap:28px}
+.bio-side-label{writing-mode:vertical-rl;font-family:monospace;font-size:9px;letter-spacing:4px;color:var(--dust);text-transform:uppercase}
+.bio-side-num{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--red);line-height:1;font-weight:300;opacity:0.16}
+.bio-body{padding:80px 80px 80px 60px}
+.page-tag{font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:18px;font-family:'Noto Sans Devanagari',sans-serif}
+.bio-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:46px;color:var(--ink);line-height:1.25;font-weight:400;margin-bottom:36px}
+.bio-headline em{font-style:italic;color:var(--red)}
+.bio-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px;line-height:2.15;color:var(--ink);font-weight:300;max-width:680px;margin-bottom:28px}
+.bio-text strong{font-weight:600;color:var(--ink)}
+.bio-divider{width:44px;height:2px;background:var(--gold);opacity:0.5;margin:36px 0}
+
+/* PULL QUOTE */
+.pull-quote{background:var(--petal);padding:72px 80px 72px 200px;position:relative;overflow:hidden}
+.pull-quote::before{content:'"';position:absolute;left:60px;top:-10px;font-family:'Cormorant Garamond',serif;font-size:200px;color:var(--red);opacity:0.08;line-height:1;pointer-events:none}
+.pq-text{font-family:'Tiro Devanagari Hindi',serif;font-size:36px;color:var(--ink);line-height:1.7;max-width:760px;position:relative;z-index:1;margin-bottom:24px}
+.pq-text span{color:var(--red);font-style:italic}
+.pq-attr{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--dust);font-style:italic;position:relative;z-index:1;display:flex;align-items:center;gap:12px}
+.pq-attr::before{content:'';width:22px;height:1px;background:var(--dust)}
+
+/* TIMELINE */
+.timeline-section{background:var(--cream);padding:100px 60px}
+.section-eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-family:monospace;text-transform:uppercase;margin-bottom:14px}
+.section-heading{font-family:'Tiro Devanagari Hindi',serif;font-size:48px;color:var(--ink);font-weight:400;line-height:1;margin-bottom:64px}
+.section-heading em{font-style:italic;color:var(--red)}
+.timeline{display:grid;grid-template-columns:180px 1fr;gap:0;max-width:900px}
+.tl-item{display:contents}
+.tl-year{padding:0 40px 52px 0;border-right:1px solid rgba(0,0,0,0.08);text-align:right}
+.tl-year-val{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--red);font-weight:300;opacity:0.55;line-height:1}
+.tl-year-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--dust);font-weight:400;margin-top:4px}
+.tl-content{padding:4px 0 52px 44px;position:relative}
+.tl-content::before{content:'';position:absolute;left:-5px;top:10px;width:9px;height:9px;border-radius:50%;background:var(--gold);opacity:0.7}
+.tl-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px;color:var(--ink);font-weight:600;margin-bottom:6px;line-height:1.4}
+.tl-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:var(--dust);line-height:1.8;font-weight:300}
+.tl-tag{display:inline-block;background:var(--red);color:white;font-size:11px;padding:3px 10px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;margin-bottom:8px}
+
+/* CREDENTIALS GRID */
+.creds-section{background:var(--ink);padding:100px 60px}
+.creds-section .section-eyebrow{color:var(--gold)}
+.creds-section .section-heading{color:white}
+.creds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.04)}
+.cred-card{background:var(--ink);padding:52px 44px;border:1px solid rgba(255,255,255,0.04);transition:background 0.3s}
+.cred-card:hover{background:rgba(155,14,14,0.12)}
+.cred-num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--red);font-weight:300;opacity:0.3;line-height:1;margin-bottom:24px}
+.cred-icon{font-size:26px;margin-bottom:18px;display:block}
+.cred-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px;color:white;font-weight:600;margin-bottom:10px;line-height:1.4}
+.cred-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.38);line-height:1.9;font-weight:300}
+
+/* WRITING STYLE */
+.style-section{display:grid;grid-template-columns:1fr 1fr;min-height:60vh}
+.style-left{background:var(--cream);padding:100px 70px 100px 60px;display:flex;flex-direction:column;justify-content:center}
+.style-right{background:linear-gradient(155deg,#2D0808,#5C1010,#8B1515);position:relative;overflow:hidden;padding:80px;display:flex;flex-direction:column;justify-content:center}
+.style-right-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:320px;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none}
+.style-list{list-style:none;display:flex;flex-direction:column;gap:20px;margin-top:36px}
+.style-list li{display:flex;align-items:flex-start;gap:16px;font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--ink);line-height:1.8;font-weight:300}
+.style-list li::before{content:'?';color:var(--gold);font-size:11px;margin-top:6px;flex-shrink:0}
+.verse-block{position:relative;z-index:2}
+.verse-line{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.88);line-height:1.8;display:block}
+.verse-line.vxl{font-size:34px}
+.verse-line.vlg{font-size:26px;padding-left:28px;opacity:0.75}
+.verse-line.vmd{font-size:20px;padding-left:52px;opacity:0.62}
+.verse-gap{height:16px;display:block}
+.verse-attr{margin-top:40px;display:flex;align-items:center;gap:14px}
+.va-line{width:24px;height:1px;background:var(--gold);opacity:0.5}
+.va-text{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.38);font-style:italic}
+
+/* PUBLICATIONS */
+.pub-section{background:var(--warm-white);padding:100px 60px}
+.pub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,0,0,0.04);margin-top:56px}
+.pub-card{background:var(--warm-white);padding:44px;border:1px solid rgba(0,0,0,0.04);display:flex;gap:24px;align-items:flex-start;transition:background 0.2s}
+.pub-card:hover{background:var(--cream)}
+.pub-num{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--red);font-weight:300;opacity:0.22;line-height:1;flex-shrink:0;width:44px;text-align:right}
+.pub-info .pub-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;color:var(--ink);font-weight:600;margin-bottom:6px;line-height:1.4}
+.pub-info .pub-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:var(--dust);line-height:1.9;font-weight:300}
+
+/* CTA BAND */
+.cta-band{background:var(--red);padding:72px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.cta-band-left .cta-tag{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.5);font-family:monospace;text-transform:uppercase;margin-bottom:12px}
+.cta-band-left .cta-title{font-family:'Tiro Devanagari Hindi',serif;font-size:40px;color:white;font-weight:400;line-height:1.2}
+.cta-btns{display:flex;gap:16px;flex-shrink:0}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-size:15px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;text-decoration:none;transition:all 0.2s;white-space:nowrap}
+.cta-btn-primary{background:white;color:var(--red)}
+.cta-btn-primary:hover{background:var(--cream)}
+.cta-btn-secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,0.35)}
+.cta-btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:white}
+
+/* FOOTER */
+footer{background:var(--ink)}
+.footer-sub-strip{border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:28px 60px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.fs-label{font-size:16px;color:rgba(255,255,255,0.4);font-family:'Cormorant Garamond',serif;font-style:italic}
+.fs-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.18);color:white;padding:10px 0;font-size:16px;outline:none;width:280px;font-family:'Noto Sans Devanagari',sans-serif;transition:border-color 0.2s}
+.fs-input::placeholder{color:rgba(255,255,255,0.25);font-size:15px}
+.fs-input:focus{border-color:var(--gold)}
+.fs-btn{background:transparent;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);padding:10px 24px;font-size:14px;cursor:pointer;font-family:'Noto Sans Devanagari',sans-serif;transition:all 0.2s}
+.fs-btn:hover{background:var(--gold);border-color:var(--gold);color:white}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:72px 60px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.fbrand{padding-right:52px}
+.fbrand-logo img{height:56px;width:auto;filter:brightness(0) invert(1);opacity:0.85;margin-bottom:20px}
+.fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);line-height:2;margin-bottom:28px;font-weight:300}
+.fsocials{display:flex;gap:10px}
+.fsoc{width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.38);font-size:14px;text-decoration:none;transition:all 0.2s;font-style:normal}
+.fsoc:hover{border-color:var(--gold);color:var(--gold)}
+.fcol{border-left:1px solid rgba(255,255,255,0.04);padding:0 20px}
+.fcol-label{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:22px}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:12px}
+.fcol ul a{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+.fcol ul a:hover{color:white}
+.footer-bottom{padding:22px 60px;display:flex;align-items:center;justify-content:space-between}
+.fbcopy{font-size:10px;color:rgba(255,255,255,0.13);font-family:monospace;letter-spacing:1px}
+.fblinks{display:flex;gap:20px}
+.fblinks a{font-size:10px;color:rgba(255,255,255,0.13);text-decoration:none;letter-spacing:1.5px;font-family:monospace;transition:color 0.2s}
+.fblinks a:hover{color:rgba(255,255,255,0.45)}
+
+@media(max-width:600px){
+  .about-hero h1,.about-title,.page-title{font-size:36px!important}
+  .bio-grid,.timeline-grid{grid-template-columns:1fr!important}
+  .about-inner{flex-direction:column!important}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="मेरे शब्द">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">होम</a></li>
+    <li><a href="about.html" class="active">परिचय</a></li>
+    <li><a href="archive.html">रचनाएं</a></li>
+    <li><a href="gallery.html">गैलरी</a></li>
+    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="about-hero-inner">
+    <div class="about-hero-tag">परिचय</div>
+    <h1 class="about-hero-name">गीतांजलि सक्सेना</h1>
+    <p class="about-hero-sub">कवयित्री · लेखिका · पत्रकार · संपादक</p>
+  </div>
+</section>
+
+<!-- INTRO GRID -->
+<section class="about-intro">
+  <div class="about-grid">
+    <div class="about-photo-col">
+      <img src="images/author.jpg" alt="गीतांजलि सक्सेना" class="about-photo">
+      <div class="about-creds">
+        <div class="cred-badge">PIB मान्यता प्राप्त</div>
+        <div class="cred-badge">नवभारत टाइम्स</div>
+        <div class="cred-badge">जयोति संपादक</div>
+      </div>
+    </div>
+    <div class="about-text-col">
+      <h2 class="about-headline">अबू धाबी से हिंदी की आवाज़</h2>
+      <p class="about-bio">गीतांजलि सक्सेना पिछले तीन दशकों से हिंदी साहित्य और पत्रकारिता के क्षेत्र में सक्रिय हैं। नवभारत टाइम्स में उनका लेखन पाठकों को एक अनूठा दृष्टिकोण देता है।</p>
+      <p class="about-bio">अबू धाबी में बसी इस हिंदी लेखिका की कलम कभी नहीं रुकती। भारतीय महिला संघ की जयोति पत्रिका की संपादक के रूप में वे हिंदी साहित्य की अलख जगाती हैं।</p>
+      <p class="about-bio">उनकी रचनाएं — चाहे वह कविता हो, लेख हो, या संस्मरण — एक विशेष प्रवासी अनुभव को व्यक्त करती हैं। परदेस में रहकर देस की खुशबू को शब्दों में पिरोना उनकी विशेषता है।</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section class="timeline-section">
+  <div class="section-wrap">
+    <h2 class="section-title">साहित्यिक यात्रा</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">१९९०+</div>
+        <div class="tl-content">
+          <h3 class="tl-title">नवभारत टाइम्स</h3>
+          <p class="tl-desc">हिंदी की प्रतिष्ठित पत्रिका में पत्रकारिता का आगाज़। PIB से मान्यता प्राप्त।</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">२०००+</div>
+        <div class="tl-content">
+          <h3 class="tl-title">अबू धाबी</h3>
+          <p class="tl-desc">खाड़ी देश में हिंदी साहित्य की आवाज़ बनीं। प्रवासी भारतीयों के जीवन को शब्द दिए।</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">जयोति</div>
+        <div class="tl-content">
+          <h3 class="tl-title">जयोति पत्रिका</h3>
+          <p class="tl-desc">भारतीय महिला संघ (ILA), अबू धाबी की जयोति पत्रिका की संपादक।</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">आज</div>
+        <div class="tl-content">
+          <h3 class="tl-title">मेरे शब्द</h3>
+          <p class="tl-desc">डिजिटल माध्यम से हिंदी साहित्य का प्रसार। कविता, लेख, संस्मरण — सब एक जगह।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds-section">
+  <div class="section-wrap">
+    <h2 class="section-title">उपलब्धियां</h2>
+    <div class="creds-grid">
+      <div class="cred-card">
+        <div class="cred-num">३०+</div>
+        <div class="cred-label">वर्षों का लेखन अनुभव</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">५०+</div>
+        <div class="cred-label">प्रकाशित रचनाएं</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">PIB</div>
+        <div class="cred-label">मान्यता प्राप्त पत्रकार</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">ILA</div>
+        <div class="cred-label">जयोति पत्रिका संपादक</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING STYLE -->
+<section class="style-section">
+  <div class="section-wrap">
+    <h2 class="section-title">लेखन-शैली</h2>
+    <div class="style-grid">
+      <div class="style-card">
+        <div class="style-icon">✦</div>
+        <h3 class="style-title">कविता</h3>
+        <p class="style-desc">भावनाओं की गहराई, शब्दों की सादगी। प्रेम, देश, प्रकृति और जीवन के रंग।</p>
+      </div>
+      <div class="style-card">
+        <div class="style-icon">✦</div>
+        <h3 class="style-title">संस्मरण</h3>
+        <p class="style-desc">स्मृतियों का खज़ाना। व्यक्तिगत अनुभवों की सच्ची और मार्मिक कहानियां।</p>
+      </div>
+      <div class="style-card">
+        <div class="style-icon">✦</div>
+        <h3 class="style-title">लेख</h3>
+        <p class="style-desc">समसामयिक विषयों पर विचारपूर्ण दृष्टिकोण। जीवन, स्वास्थ्य, समाज।</p>
+      </div>
+      <div class="style-card">
+        <div class="style-icon">✦</div>
+        <h3 class="style-title">प्रवासी मन</h3>
+        <p class="style-desc">परदेस में देस की खुशबू। एनआरआई जीवन का अनूठा दस्तावेज़।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <h2 class="cta-title">रचनाएं पढ़ें</h2>
+  <p class="cta-sub">कविताएं, लेख, संस्मरण — सब एक जगह</p>
+  <a href="archive.html" class="cta-btn">सभी रचनाएं →</a>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="fbrand">
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="fblinks">
+        <a href="about.html">परिचय</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="archive.html">रचनाएं</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">रचनाएं</div>
+      <ul>
+        <li><a href="archive.html?cat=kavita">कविता</a></li>
+        <li><a href="archive.html?cat=lekh">लेख</a></li>
+        <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
+        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">अन्वेषण</div>
+      <ul>
+        <li><a href="about.html">परिचय</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="contact.html">संपर्क</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">मेरे शब्द</div>
+      <ul>
+        <li><a href="index.html">होम</a></li>
+        <li><a href="archive.html">सभी रचनाएं</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-sub-strip"></div>
+  <div class="footer-bottom">
+    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+</body>
+</html>

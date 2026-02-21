@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>गैलरी — मेरे शब्द | गीतांजलि सक्सेना</title>
+  <meta name="description" content="गीतांजलि सक्सेना की तस्वीरें और वीडियो — यादें और पल।">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#F7F2EA;--warm-white:#FDFAF5;--ink:#1C1410;--red:#9B0E0E;--red-deep:#6B0A0A;--gold:#B8873A;--gold-light:#D4A852;--dust:#8A7968;--petal:#F2E8DE;}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);color:var(--ink);overflow-x:hidden}
+*[lang="hi"],.hero-name,.hero-overline,.hero-desc,.section-title,.section-tag,.tab-btn,.gallery-cap,.video-title,.video-sub,.nav-links a,.fcol ul a,.fbrand-text,.fs-label,.fs-input,.breadcrumb a,.breadcrumb span{letter-spacing:0 !important;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+nav.scrolled .nav-links a{color:var(--ink)}
+nav.scrolled .nav-logo img{filter:none}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);text-decoration:none;font-weight:400;transition:color 0.2s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a.active{color:var(--gold-light);border-bottom:1px solid var(--gold-light)}
+.nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important}
+/* HERO */
+.hero{height:62vh;min-height:420px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#2D0808 0%,#5C1010 30%,#8B1515 60%,#6B0A0A 100%)}
+.hero-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 72% 40%,rgba(220,140,60,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-art-bg{position:absolute;top:-40px;right:-20px;font-family:'Tiro Devanagari Hindi',serif;font-size:520px;color:rgba(255,255,255,0.02);line-height:1;pointer-events:none;user-select:none}
+.hero-content{position:relative;z-index:4;padding:0 60px 72px;max-width:58%}
+.hero-overline{font-size:13px;color:var(--gold-light);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans Devanagari',sans-serif}
+.hero-overline::before{content:'';width:28px;height:1px;background:var(--gold-light)}
+.hero-name{font-family:'Tiro Devanagari Hindi',serif;font-size:74px;color:#fff;line-height:1.05;font-weight:400;margin-bottom:8px}
+.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.35);letter-spacing:5px;font-style:italic;margin-bottom:20px;font-weight:300}
+.hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.55);line-height:2;font-weight:300}
+/* BREADCRUMB */
+.breadcrumb{background:var(--cream);padding:16px 60px;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;gap:8px}
+.breadcrumb a,.breadcrumb span{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);text-decoration:none}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb .sep{color:var(--dust);opacity:0.4;font-size:11px}
+.breadcrumb .current{color:var(--ink);font-weight:500}
+/* TABS */
+.gallery-tabs{background:var(--cream);border-bottom:1px solid rgba(0,0,0,0.07);padding:0 60px;display:flex;gap:0;position:sticky;top:88px;z-index:50}
+.tab-btn{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;font-weight:400;color:var(--dust);padding:20px 32px;border:none;background:transparent;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;display:flex;align-items:center;gap:10px}
+.tab-btn:hover{color:var(--ink)}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red);font-weight:600}
+.tab-count{background:var(--red);color:white;font-size:11px;padding:2px 8px;border-radius:10px;font-family:monospace}
+.tab-btn.active .tab-count{background:var(--ink)}
+/* SECTIONS */
+.gallery-section{padding:72px 60px;display:none}
+.gallery-section.active{display:block}
+.section-header{margin-bottom:52px}
+.section-tag{font-size:12px;color:var(--gold);font-weight:600;text-transform:uppercase;font-family:'Noto Sans Devanagari',sans-serif;margin-bottom:12px}
+.section-title{font-family:'Tiro Devanagari Hindi',serif;font-size:48px;color:var(--ink);font-weight:400;line-height:1.2}
+.section-title em{color:var(--red);font-style:italic}
+/* PHOTO GRID �?" masonry-style */
+.photo-group{margin-bottom:64px}
+.photo-group-label{font-family:monospace;font-size:10px;letter-spacing:3px;color:var(--dust);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.photo-group-label::after{content:'';flex:1;height:1px;background:rgba(0,0,0,0.07)}
+.photo-grid{display:grid;gap:12px}
+.photo-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.photo-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+.photo-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.photo-item{position:relative;overflow:hidden;cursor:pointer;background:var(--cream)}
+.photo-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.photo-item:hover img{transform:scale(1.04)}
+.photo-item.tall{grid-row:span 2}
+.photo-item.wide{grid-column:span 2}
+.photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,20,16,0.7) 0%,transparent 50%);opacity:0;transition:opacity 0.3s}
+.photo-item:hover .photo-overlay{opacity:1}
+.gallery-cap{position:absolute;bottom:12px;left:12px;right:12px;font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:white;font-weight:400;opacity:0;transition:opacity 0.3s}
+.photo-item:hover .gallery-cap{opacity:1}
+/* Fixed heights for grid rows */
+.photo-grid.cols-3 .photo-item{height:260px}
+.photo-grid.cols-3 .photo-item.tall{height:532px}
+.photo-grid.cols-4 .photo-item{height:200px}
+.photo-grid.cols-2 .photo-item{height:380px}
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:500;align-items:center;justify-content:center;padding:40px}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:90vw;max-height:85vh;object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:28px;background:none;border:none;color:white;font-size:28px;cursor:pointer;opacity:0.7;transition:opacity 0.2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:white;font-size:28px;padding:12px 20px;cursor:pointer;transition:background 0.2s}
+.lightbox-nav:hover{background:rgba(255,255,255,0.15)}
+.lightbox-prev{left:16px}
+.lightbox-next{right:16px}
+/* VIDEO GRID */
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-bottom:56px}
+.video-card{background:var(--cream);overflow:hidden}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.video-embed iframe,.video-embed video{position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:#000}
+.video-info{padding:20px 24px}
+.video-title{font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:var(--ink);font-weight:400;margin-bottom:6px}
+.video-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);font-weight:300;line-height:1.7}
+/* FOOTER */
+footer{background:var(--ink)}
+.footer-sub-strip{background:var(--red);padding:18px 60px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.fs-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);font-weight:400;white-space:nowrap}
+.fs-input{flex:1;min-width:200px;max-width:340px;padding:10px 16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;outline:none}
+.fs-input::placeholder{color:rgba(255,255,255,0.4)}
+.fs-btn{padding:10px 24px;background:white;color:var(--red);border:none;font-size:13px;font-weight:700;cursor:pointer;font-family:monospace;letter-spacing:1px}
+.footer-main{padding:60px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.fbrand-logo img{height:48px;width:auto;filter:brightness(0) invert(1);opacity:0.7;margin-bottom:20px;display:block}
+.fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.4);line-height:2;font-weight:300;margin-bottom:24px}
+.fsocials{display:flex;gap:12px}
+.fsoc{width:36px;height:36px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:14px;text-decoration:none;transition:background 0.2s,color 0.2s}
+.fsoc:hover{background:var(--red);color:white}
+.fcol-label{font-family:monospace;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.28);text-transform:uppercase;margin-bottom:18px}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:12px}
+.fcol ul a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;font-weight:300}
+.fcol ul a:hover{color:var(--gold-light)}
+.footer-bottom{padding:24px 60px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
+.fbcopy{font-family:monospace;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1.5px}
+.fblinks{display:flex;gap:24px}
+.fblinks a{font-family:monospace;font-size:10px;color:rgba(255,255,255,0.2);text-decoration:none;letter-spacing:1px}
+.fblinks a:hover{color:rgba(255,255,255,0.5)}
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{gap:16px}
+  .nav-links .nav-cta{display:none}
+  .hero-content{padding:0 24px 56px;max-width:100%}
+  .hero-name{font-size:52px}
+  .breadcrumb{padding:14px 24px}
+  .gallery-tabs{padding:0 16px;overflow-x:auto}
+  .tab-btn{padding:16px 20px;font-size:14px;white-space:nowrap}
+  .gallery-section{padding:48px 24px}
+  .photo-grid.cols-3,.photo-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+  .photo-grid.cols-2{grid-template-columns:1fr}
+  .photo-item.wide{grid-column:span 1}
+  .photo-item.tall{grid-row:span 1;height:220px !important}
+  .photo-grid.cols-3 .photo-item,.photo-grid.cols-4 .photo-item{height:180px}
+  .video-grid{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr 1fr;gap:32px;padding:40px 24px}
+  .footer-sub-strip,.footer-bottom{padding:16px 24px}
+  .fbrand{grid-column:1/-1}
+}
+
+@media(max-width:600px){
+  .photo-grid{grid-template-columns:1fr 1fr!important}
+  .video-grid{grid-template-columns:1fr!important}
+  .gallery-title,.page-title{font-size:36px!important}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="मेरे शब्द">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">होम</a></li>
+    <li><a href="about.html">परिचय</a></li>
+    <li><a href="archive.html">रचनाएं</a></li>
+    <li><a href="gallery.html" class="active">गैलरी</a></li>
+    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-content">
+    <div class="hero-overline">गैलरी — Gallery</div>
+    <h1 class="hero-name">तस्वीरें,<br>यादें</h1>
+    <p class="hero-name-en">Moments &amp; Memories</p>
+    <p class="hero-desc">तस्वीरों में कैद वो पल, जो दिल में रहेंगे हमेशा,<br>यादों की माला में पिरोए, अनमोल पल एक-एक।</p>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">होम</a>
+  <span class="sep">›</span>
+  <span class="current">गैलरी</span>
+</div>
+
+<!-- TABS -->
+<div class="gallery-tabs" id="galleryTabs">
+  <button class="tab-btn active" data-tab="photos">
+    📷 तस्वीरें — Photo Gallery <span class="tab-count">36</span>
+  </button>
+  <button class="tab-btn" data-tab="videos">
+    🎬 वीडियो — Videos <span class="tab-count">8</span>
+  </button>
+</div>
+
+<!-- PHOTO SECTION -->
+<section class="gallery-section active" id="tab-photos">
+  <div class="section-header">
+    <div class="section-tag">तस्वीरें — Photo Gallery</div>
+    <h2 class="section-title">यादगार<br><em>पल और तस्वीरें</em></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="openLightbox('images/gallery/alpana_yadoan.jpg','alpana yadoan')">
+      <img src="images/gallery/alpana_yadoan.jpg" alt="alpana yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">alpana yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Anoop_yadoan.jpg','Anoop yadoan')">
+      <img src="images/gallery/Anoop_yadoan.jpg" alt="Anoop yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Anoop yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/arun_yadoan.jpg','arun yadoan')">
+      <img src="images/gallery/arun_yadoan.jpg" alt="arun yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">arun yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Dr.-Anil-Poem.jpg','Dr. Anil Poem')">
+      <img src="images/gallery/Dr.-Anil-Poem.jpg" alt="Dr. Anil Poem" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Dr. Anil Poem</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-1.jpg','gallery 1')">
+      <img src="images/gallery/gallery-1.jpg" alt="gallery 1" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 1</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-2.jpg','gallery 2')">
+      <img src="images/gallery/gallery-2.jpg" alt="gallery 2" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 2</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-3.jpg','gallery 3')">
+      <img src="images/gallery/gallery-3.jpg" alt="gallery 3" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 3</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-5.jpg','gallery 5')">
+      <img src="images/gallery/gallery-5.jpg" alt="gallery 5" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 5</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-6.jpg','gallery 6')">
+      <img src="images/gallery/gallery-6.jpg" alt="gallery 6" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 6</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-7.jpg','gallery 7')">
+      <img src="images/gallery/gallery-7.jpg" alt="gallery 7" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 7</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-8.jpg','gallery 8')">
+      <img src="images/gallery/gallery-8.jpg" alt="gallery 8" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 8</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-9.jpg','gallery 9')">
+      <img src="images/gallery/gallery-9.jpg" alt="gallery 9" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 9</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/img-1.jpg','img 1')">
+      <img src="images/gallery/img-1.jpg" alt="img 1" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">img 1</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/isha_yadoan.jpg','isha yadoan')">
+      <img src="images/gallery/isha_yadoan.jpg" alt="isha yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">isha yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/ishita_yadoan.jpg','ishita yadoan')">
+      <img src="images/gallery/ishita_yadoan.jpg" alt="ishita yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">ishita yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Maitri_yadoan.jpg','Maitri yadoan')">
+      <img src="images/gallery/Maitri_yadoan.jpg" alt="Maitri yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Maitri yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Man-of-Style.jpg','Man of Style')">
+      <img src="images/gallery/Man-of-Style.jpg" alt="Man of Style" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Man of Style</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/me-mummy.jpg','me mummy')">
+      <img src="images/gallery/me-mummy.jpg" alt="me mummy" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">me mummy</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-bday-01.jpg','mummy bday 01')">
+      <img src="images/gallery/mummy-bday-01.jpg" alt="mummy bday 01" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">mummy bday 01</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-bday.jpg','mummy bday')">
+      <img src="images/gallery/mummy-bday.jpg" alt="mummy bday" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">mummy bday</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-with-isha.jpg','mummy with isha')">
+      <img src="images/gallery/mummy-with-isha.jpg" alt="mummy with isha" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">mummy with isha</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/pap-width-grandkid-1.jpg','pap width grandkid 1')">
+      <img src="images/gallery/pap-width-grandkid-1.jpg" alt="pap width grandkid 1" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">pap width grandkid 1</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-02.jpg','papa 02')">
+      <img src="images/gallery/papa-02.jpg" alt="papa 02" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa 02</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa-Barsi-1.jpg','Papa Barsi 1')">
+      <img src="images/gallery/Papa-Barsi-1.jpg" alt="Papa Barsi 1" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Papa Barsi 1</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-barsi-pic.jpg','papa barsi pic')">
+      <img src="images/gallery/papa-barsi-pic.jpg" alt="papa barsi pic" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa barsi pic</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa-Barsi2.jpg','Papa Barsi2')">
+      <img src="images/gallery/Papa-Barsi2.jpg" alt="Papa Barsi2" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Papa Barsi2</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-01-1.jpg','papa bday 01 1')">
+      <img src="images/gallery/papa-bday-01-1.jpg" alt="papa bday 01 1" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 01 1</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-01.jpg','papa bday 01')">
+      <img src="images/gallery/papa-bday-01.jpg" alt="papa bday 01" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 01</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-02.jpg','papa bday 02')">
+      <img src="images/gallery/papa-bday-02.jpg" alt="papa bday 02" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 02</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-03.jpg','papa bday 03')">
+      <img src="images/gallery/papa-bday-03.jpg" alt="papa bday 03" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 03</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-mummy.jpg','papa mummy')">
+      <img src="images/gallery/papa-mummy.jpg" alt="papa mummy" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa mummy</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-with-me.jpg','papa with me')">
+      <img src="images/gallery/papa-with-me.jpg" alt="papa with me" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">papa with me</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa_01.jpg','Papa 01')">
+      <img src="images/gallery/Papa_01.jpg" alt="Papa 01" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Papa 01</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/pic-with-grand-kid-2.jpg','pic with grand kid 2')">
+      <img src="images/gallery/pic-with-grand-kid-2.jpg" alt="pic with grand kid 2" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">pic with grand kid 2</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Rachit_yadoan.jpg','Rachit yadoan')">
+      <img src="images/gallery/Rachit_yadoan.jpg" alt="Rachit yadoan" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">Rachit yadoan</span></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/yadaen.jpg','yadaen')">
+      <img src="images/gallery/yadaen.jpg" alt="yadaen" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">yadaen</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="gallery-section" id="tab-videos">
+  <div class="section-header">
+    <div class="section-tag">वीडियो — Video Gallery</div>
+    <h2 class="section-title">वीडियो<br><em>यादों के पल</em></h2>
+  </div>
+  <div class="video-grid">
+    <div class="video-item">
+      <video controls preload="none" poster="" class="gallery-video">
+        <source src="images/gallery/WhatsApp-Video-2025-10-10-at-09.51.18.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-item">
+      <video controls preload="none" poster="" class="gallery-video">
+        <source src="images/gallery/WhatsApp-Video-2025-10-10-at-09.51.49.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-item">
+      <video controls preload="none" poster="" class="gallery-video">
+        <source src="images/gallery/WhatsApp-Video-2025-10-10-at-09.54.32.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-item">
+      <video controls preload="none" poster="" class="gallery-video">
+        <source src="images/gallery/WhatsApp-Video-2025-10-10-at-09.55.10.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div class="fbrand">
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="fblinks">
+        <a href="about.html">परिचय</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="archive.html">रचनाएं</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">रचनाएं</div>
+      <ul>
+        <li><a href="archive.html?cat=kavita">कविता</a></li>
+        <li><a href="archive.html?cat=lekh">लेख</a></li>
+        <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
+        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">अन्वेषण</div>
+      <ul>
+        <li><a href="about.html">परिचय</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="contact.html">संपर्क</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">मेरे शब्द</div>
+      <ul>
+        <li><a href="index.html">होम</a></li>
+        <li><a href="archive.html">सभी रचनाएं</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-sub-strip"></div>
+  <div class="footer-bottom">
+    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+
+<script>
+const navEl=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>60)});
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.gallery-section').forEach(s=>s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Lightbox
+function openLightbox(src,caption){
+  document.getElementById('lightboxImg').src=src;
+  document.getElementById('lightboxCaption').textContent=caption;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+</script>
+</body>
+</html>

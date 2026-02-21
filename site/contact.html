@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>संपर्क — मेरे शब्द | गीतांजलि सक्सेना</title>
+  <meta name="description" content="गीतांजलि सक्सेना से संपर्क करें।">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F7F2EA;--warm-white:#FDFAF5;--ink:#1C1410;
+  --red:#9B0E0E;--red-deep:#6B0A0A;--gold:#B8873A;
+  --gold-light:#D4A852;--dust:#8A7968;--petal:#F2E8DE;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);color:var(--ink);overflow-x:hidden}
+
+/* NO letter-spacing on Devanagari - ever */
+*[lang="hi"],.hero-name,.hero-overline,.hero-desc,.badge,
+.section-tag,.section-title,.breadcrumb a,.breadcrumb span,
+.contact-intro-text,.contact-item-label,.contact-item-val,
+.form-label,.form-input,.form-select,.form-textarea,.form-btn,
+.reason-title,.reason-sub,.aside-quote,.aside-attr,.aside-note,
+.nav-links a,.fcol ul a,.fbrand-text,.fs-label,.fs-input,
+.thanks-title,.thanks-sub { letter-spacing:0 !important; }
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+nav.scrolled .nav-links a{color:var(--ink)}
+nav.scrolled .nav-logo img{filter:none}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);text-decoration:none;font-weight:400;transition:color 0.2s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a.active{color:var(--gold-light);border-bottom:1px solid var(--gold-light)}
+.nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important}
+.nav-cta:hover{background:var(--red-deep)!important;color:white!important}
+
+/* HERO */
+.hero{height:62vh;min-height:420px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#2D0808 0%,#5C1010 30%,#8B1515 60%,#6B0A0A 100%)}
+.hero-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 72% 40%,rgba(220,140,60,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-art-bg{position:absolute;top:-40px;right:-20px;font-family:'Tiro Devanagari Hindi',serif;font-size:520px;color:rgba(255,255,255,0.02);line-height:1;pointer-events:none;user-select:none}
+/* Decorative ink brushstroke */
+.hero-brush{position:absolute;bottom:0;right:0;width:55%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(155,14,14,0.25) 100%);pointer-events:none}
+.hero-content{position:relative;z-index:4;padding:0 60px 72px;max-width:58%}
+.hero-overline{font-size:13px;color:var(--gold-light);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans Devanagari',sans-serif}
+.hero-overline::before{content:'';width:28px;height:1px;background:var(--gold-light)}
+.hero-name{font-family:'Tiro Devanagari Hindi',serif;font-size:74px;color:#fff;line-height:1.05;font-weight:400;margin-bottom:8px}
+.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.35);letter-spacing:5px;font-style:italic;margin-bottom:24px;font-weight:300}
+.hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.55);line-height:2;max-width:400px;font-weight:300}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--cream);padding:16px 60px;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;gap:8px}
+.breadcrumb a,.breadcrumb span{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);text-decoration:none}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb .sep{color:var(--dust);opacity:0.4;font-size:11px}
+.breadcrumb .current{color:var(--ink);font-weight:500}
+
+/* MAIN CONTACT LAYOUT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:auto;background:var(--warm-white)}
+
+/* LEFT SIDE */
+.contact-left{padding:80px 60px 80px 60px;border-right:1px solid rgba(0,0,0,0.06);background:var(--cream)}
+.section-tag{font-size:12px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:16px;font-family:'Noto Sans Devanagari',sans-serif}
+.contact-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:48px;color:var(--ink);line-height:1.2;font-weight:400;margin-bottom:12px}
+.contact-headline em{font-style:italic;color:var(--red)}
+.contact-subhead{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dust);font-style:italic;font-weight:300;margin-bottom:40px}
+.contact-intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;line-height:2.1;color:var(--ink);font-weight:300;margin-bottom:48px;opacity:0.85}
+
+/* CONTACT ITEMS */
+.contact-items{display:flex;flex-direction:column;gap:28px;margin-bottom:52px}
+.contact-item{display:flex;align-items:flex-start;gap:18px}
+.contact-item-icon{width:44px;height:44px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-item-body{flex:1}
+.contact-item-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--dust);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.contact-item-val{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:var(--ink);font-weight:400}
+.contact-item-val a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.15);transition:color 0.2s,border-color 0.2s}
+.contact-item-val a:hover{color:var(--red);border-color:var(--red)}
+
+/* REASONS */
+.reasons-label{font-size:12px;color:var(--dust);font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;font-family:monospace}
+.reasons{display:flex;flex-direction:column;gap:0}
+.reason{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.07)}
+.reason:first-child{border-top:1px solid rgba(0,0,0,0.07)}
+.reason-num{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--red);font-weight:300;opacity:0.4;line-height:1;flex-shrink:0;width:36px}
+.reason-body{flex:1}
+.reason-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.reason-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);line-height:1.8;font-weight:300}
+
+/* RIGHT SIDE - FORM */
+.contact-right{padding:80px 60px 80px 72px}
+.form-header{margin-bottom:40px}
+.form-section-tag{font-size:12px;color:var(--gold);font-weight:600;text-transform:uppercase;font-family:'Noto Sans Devanagari',sans-serif;margin-bottom:12px}
+.form-title{font-family:'Tiro Devanagari Hindi',serif;font-size:40px;color:var(--ink);font-weight:400;line-height:1.2;margin-bottom:10px}
+.form-title em{color:var(--red);font-style:italic}
+.form-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:var(--dust);font-weight:300;line-height:1.9}
+
+.contact-form{display:flex;flex-direction:column;gap:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--ink);font-weight:500;opacity:0.7}
+.form-input,.form-select,.form-textarea{
+  font-family:'Noto Sans Devanagari',sans-serif;
+  font-size:15px;
+  color:var(--ink);
+  background:var(--cream);
+  border:1.5px solid rgba(0,0,0,0.1);
+  padding:14px 18px;
+  outline:none;
+  transition:border-color 0.2s,background 0.2s;
+  border-radius:0;
+  -webkit-appearance:none;
+  appearance:none;
+  width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--red);
+  background:white;
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--dust);opacity:0.5;font-weight:300}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A7968' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;padding-right:44px;cursor:pointer}
+.form-textarea{resize:vertical;min-height:160px;line-height:1.9}
+
+/* Character counter */
+.form-footer-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.form-note{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--dust);font-weight:300;line-height:1.7;flex:1}
+
+.form-btn{
+  background:var(--red);
+  color:white;
+  border:none;
+  padding:18px 44px;
+  font-family:'Noto Sans Devanagari',sans-serif;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.2s,transform 0.1s;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border-radius:0;
+  white-space:nowrap;
+}
+.form-btn:hover{background:var(--red-deep);transform:translateY(-1px)}
+.form-btn:active{transform:translateY(0)}
+.form-btn-arrow{font-size:18px;transition:transform 0.2s}
+.form-btn:hover .form-btn-arrow{transform:translateX(4px)}
+
+/* ASIDE QUOTE */
+.contact-aside{background:linear-gradient(155deg,#2D0808 0%,#6B0A0A 100%);padding:60px;margin-top:0;position:relative;overflow:hidden}
+.aside-art{position:absolute;top:-20px;right:-10px;font-family:'Tiro Devanagari Hindi',serif;font-size:320px;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none;user-select:none}
+.aside-quote{font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:rgba(255,255,255,0.88);line-height:1.7;font-weight:400;font-style:italic;position:relative;z-index:1;max-width:520px;margin:0 auto;text-align:center}
+.aside-attr{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--gold-light);font-weight:500;text-align:center;margin-top:24px;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:12px}
+.aside-attr::before,.aside-attr::after{content:'';width:32px;height:1px;background:var(--gold-light);opacity:0.5}
+.aside-note{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.38);text-align:center;margin-top:12px;position:relative;z-index:1;font-style:italic;font-weight:300}
+
+/* SUCCESS STATE */
+.form-success{display:none;padding:48px 40px;background:var(--cream);border:1.5px solid rgba(155,14,14,0.15);text-align:center}
+.form-success.visible{display:block}
+.thanks-icon{font-size:40px;margin-bottom:20px}
+.thanks-title{font-family:'Tiro Devanagari Hindi',serif;font-size:36px;color:var(--ink);font-weight:400;margin-bottom:12px}
+.thanks-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:var(--dust);line-height:2;font-weight:300}
+
+/* FOOTER */
+footer{background:var(--ink)}
+.footer-sub-strip{background:var(--red);padding:18px 60px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.fs-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);font-weight:400;white-space:nowrap}
+.fs-input{flex:1;min-width:200px;max-width:340px;padding:10px 16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;outline:none}
+.fs-input::placeholder{color:rgba(255,255,255,0.4)}
+.fs-btn{padding:10px 24px;background:white;color:var(--red);border:none;font-size:13px;font-weight:700;cursor:pointer;font-family:monospace;letter-spacing:1px;white-space:nowrap}
+.footer-main{padding:60px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.fbrand-logo{margin-bottom:20px}
+.fbrand-logo img{height:48px;width:auto;filter:brightness(0) invert(1);opacity:0.7}
+.fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.4);line-height:2;font-weight:300;margin-bottom:24px}
+.fsocials{display:flex;gap:12px}
+.fsoc{width:36px;height:36px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:14px;text-decoration:none;transition:background 0.2s,color 0.2s}
+.fsoc:hover{background:var(--red);color:white}
+.fcol-label{font-family:monospace;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.28);text-transform:uppercase;margin-bottom:18px}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:12px}
+.fcol ul a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;font-weight:300}
+.fcol ul a:hover{color:var(--gold-light)}
+.footer-bottom{padding:24px 60px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
+.fbcopy{font-family:monospace;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1.5px}
+.fblinks{display:flex;gap:24px}
+.fblinks a{font-family:monospace;font-size:10px;color:rgba(255,255,255,0.2);text-decoration:none;letter-spacing:1px}
+.fblinks a:hover{color:rgba(255,255,255,0.5)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{gap:16px}
+  .nav-links .nav-cta{display:none}
+  .hero-content{padding:0 24px 56px;max-width:100%}
+  .hero-name{font-size:52px}
+  .breadcrumb{padding:14px 24px}
+  .contact-wrap{grid-template-columns:1fr}
+  .contact-left{padding:52px 24px;border-right:none;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .contact-right{padding:52px 24px}
+  .form-row{grid-template-columns:1fr}
+  .contact-aside{padding:40px 24px}
+  .aside-quote{font-size:22px}
+  .footer-main{grid-template-columns:1fr 1fr;gap:32px;padding:40px 24px}
+  .footer-sub-strip{padding:16px 24px}
+  .footer-bottom{padding:20px 24px;flex-direction:column;gap:12px;text-align:center}
+  .fbrand{grid-column:1/-1}
+}
+
+@media(max-width:600px){
+  .contact-grid,.contact-inner{grid-template-columns:1fr!important}
+  .contact-title,.page-title{font-size:36px!important}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="मेरे शब्द">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">होम</a></li>
+    <li><a href="about.html">परिचय</a></li>
+    <li><a href="archive.html">रचनाएं</a></li>
+    <li><a href="gallery.html">गैलरी</a></li>
+    <li><a href="contact.html" class="active">संपर्क</a></li>
+    <li><a href="archive.html" class="nav-cta">नई कविता पढ़ें</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-hero-bg"></div>
+  <div class="contact-hero-inner">
+    <div class="contact-hero-tag">संपर्क</div>
+    <h1 class="contact-hero-title">मिलिए, बात करें</h1>
+    <p class="contact-hero-sub">आपके विचार, सुझाव और प्रतिक्रिया का स्वागत है।</p>
+  </div>
+</section>
+
+<!-- CONTACT CONTENT -->
+<section class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2 class="contact-info-title">संपर्क करें</h2>
+      <p class="contact-info-sub">रचनाओं पर विचार साझा करें, सहयोग के लिए लिखें, या बस नमस्ते कहें।</p>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text">
+          <strong>स्थान</strong><br>अबू धाबी, संयुक्त अरब अमीरात
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">✍️</div>
+        <div class="contact-item-text">
+          <strong>प्रकाशन</strong><br>नवभारत टाइम्स · जयोति पत्रिका
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">🌐</div>
+        <div class="contact-item-text">
+          <strong>वेबसाइट</strong><br>mereshabd.com
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-col">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label class="fs-label" for="name">आपका नाम</label>
+          <input class="fs-input" type="text" id="name" name="name" placeholder="नाम लिखें" required>
+        </div>
+        <div class="form-group">
+          <label class="fs-label" for="email">ईमेल पता</label>
+          <input class="fs-input" type="email" id="email" name="email" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="fs-label" for="message">संदेश</label>
+          <textarea class="fs-input" id="message" name="message" rows="5" placeholder="अपनी बात लिखें..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">संदेश भेजें →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="fbrand">
+      <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द" style="height:44px;filter:brightness(0) invert(0.7)"></div>
+      <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="fblinks">
+        <a href="about.html">परिचय</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="archive.html">रचनाएं</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">रचनाएं</div>
+      <ul>
+        <li><a href="archive.html?cat=kavita">कविता</a></li>
+        <li><a href="archive.html?cat=lekh">लेख</a></li>
+        <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
+        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">अन्वेषण</div>
+      <ul>
+        <li><a href="about.html">परिचय</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="contact.html">संपर्क</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <div class="fcol-label">मेरे शब्द</div>
+      <ul>
+        <li><a href="index.html">होम</a></li>
+        <li><a href="archive.html">सभी रचनाएं</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-sub-strip"></div>
+  <div class="footer-bottom">
+    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+</script>
+
+<script>
+const navEl=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>60)});
+function handleSubmit(e){e.preventDefault();alert('धन्यवाद! आपका संदेश मिल गया।');}
+</script>
+</body>
+</html>
