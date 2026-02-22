@@ -365,6 +365,33 @@ footer{background:var(--ink)}
 @media(max-width:600px){
   .health-grid{grid-template-columns:1fr}
 }
+
+/* READ MORE SECTION */
+.rm-section{padding:64px 80px 48px;background:var(--cream);border-top:1px solid rgba(0,0,0,0.05)}
+.rm-header{display:flex;align-items:center;gap:20px;margin-bottom:40px}
+.rm-line{flex:1;height:1px;background:rgba(0,0,0,0.08)}
+.rm-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;text-transform:uppercase}
+.rm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px}
+.rm-card{position:relative;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:transform 0.25s}
+.rm-card:hover{transform:translateY(-4px)}
+.rm-card-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.rm-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.2) 60%,transparent 100%)}
+.rm-card-art{position:absolute;right:-8px;top:-8px;font-family:'Tiro Devanagari Hindi',serif;font-size:100px;color:rgba(255,255,255,0.07);line-height:1;pointer-events:none}
+.rm-card-inner{position:relative;z-index:2;padding:20px 22px}
+.rm-card-cat{display:inline-block;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;font-weight:600;color:var(--gold-light);margin-bottom:8px;text-transform:uppercase}
+.rm-card-title{font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:white;line-height:1.3;font-weight:400;margin-bottom:8px}
+.rm-card-excerpt{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rm-footer{text-align:center}
+.rm-all-link{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;transition:opacity 0.2s}
+.rm-all-link:hover{opacity:0.7}
+@media(max-width:900px){
+  .rm-section{padding:48px 24px 36px}
+  .rm-grid{grid-template-columns:1fr 1fr;gap:14px}
+}
+@media(max-width:600px){
+  .rm-grid{grid-template-columns:1fr}
+  .rm-card{min-height:160px}
+}
 </style>
 </head>
 <body>
@@ -447,6 +474,50 @@ footer{background:var(--ink)}
   </div>
 </div>
 
+
+<!-- AND MORE SECTION -->
+<div class="rm-section">
+  <div class="rm-header">
+    <div class="rm-line"></div>
+    <div class="rm-label">और पढ़ें</div>
+    <div class="rm-line"></div>
+  </div>
+  <div class="rm-grid">
+      <a href="health-is-wealth.html" class="rm-card">
+        <div class="rm-card-bg" style="background:linear-gradient(155deg,#0A2010 0%,#143020 50%,#071508 100%)"></div>
+        <div class="rm-card-overlay"></div>
+        <div class="rm-card-art">स्व</div>
+        <div class="rm-card-inner">
+          <span class="rm-card-cat">लेख</span>
+          <div class="rm-card-title">Health is Wealth, So Invest Wisely</div>
+          <div class="rm-card-excerpt">स्वास्थ्य ही असली दौलत है — समझदारी से निवेश करें अपने जीवन में।</div>
+        </div>
+      </a>
+      <a href="jivan-darshan.html" class="rm-card">
+        <div class="rm-card-bg" style="background:linear-gradient(155deg,#1A0A30 0%,#2D1550 50%,#150A25 100%)"></div>
+        <div class="rm-card-overlay"></div>
+        <div class="rm-card-art">जी</div>
+        <div class="rm-card-inner">
+          <span class="rm-card-cat">लेख</span>
+          <div class="rm-card-title">जीवन दर्शन — इंद्रधनुषी रंग</div>
+          <div class="rm-card-excerpt">जीवन के विविध रंगों को शब्दों में पिरोया है — प्रेम, रिश्ते, त्योहार।</div>
+        </div>
+      </a>
+      <a href="kalam-se-utare.html" class="rm-card">
+        <div class="rm-card-bg" style="background:linear-gradient(155deg,#1A0820 0%,#2A1235 50%,#120615 100%)"></div>
+        <div class="rm-card-overlay"></div>
+        <div class="rm-card-art">क</div>
+        <div class="rm-card-inner">
+          <span class="rm-card-cat">लेख</span>
+          <div class="rm-card-title">क़लम से उतरे...</div>
+          <div class="rm-card-excerpt">कलम की स्याही से उतरे विचार — समाज, संस्कृति और जीवन पर।</div>
+        </div>
+      </a>
+  </div>
+  <div class="rm-footer">
+    <a href="../archive.html?cat=lekh" class="rm-all-link">सभी लेख देखें →</a>
+  </div>
+</div>
 <div class="post-nav-bar">
   <a href="./jivan-darshan.html" class="pnav-item pnav-prev"><span class="pnav-dir">← पिछली</span><span class="pnav-title">जीवन दर्शन</span></a>
   <a href="./kalam-se-utare.html" class="pnav-item pnav-next"><span class="pnav-dir">अगली →</span><span class="pnav-title">क़लम से उतरे</span></a>
