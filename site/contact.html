@@ -216,6 +216,35 @@ footer{background:var(--ink)}
   .contact-grid,.contact-inner{grid-template-columns:1fr!important}
   .contact-title,.page-title{font-size:36px!important}
 }
+
+/* CONTACT HERO — actual HTML class names */
+.contact-hero{height:52vh;min-height:360px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.contact-hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#2D0808 0%,#5C1010 40%,#8B1515 70%,#6B0A0A 100%)}
+.contact-hero-inner{position:relative;z-index:4;padding:0 40px}
+.contact-hero-tag{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--gold-light);font-weight:600;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px}
+.contact-hero-tag::before,.contact-hero-tag::after{content:'';width:28px;height:1px;background:var(--gold-light)}
+.contact-hero-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:#fff;font-weight:400;line-height:1.1;margin-bottom:16px}
+.contact-hero-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.6);font-weight:300;line-height:2}
+/* CONTACT SECTION LAYOUT */
+.contact-section{padding:80px 60px;background:var(--warm-white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;max-width:1100px;margin:0 auto}
+.contact-info{}
+.contact-info-title{font-family:'Tiro Devanagari Hindi',serif;font-size:40px;color:var(--ink);font-weight:400;line-height:1.2;margin-bottom:10px}
+.contact-info-sub{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:40px}
+.contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
+.contact-item-icon{width:44px;height:44px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-item-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:var(--ink);line-height:2;font-weight:300}
+.contact-item-text strong{font-weight:600;color:var(--ink);display:block;margin-bottom:2px}
+.contact-form-col{}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.form-submit{background:var(--red);color:white;border:none;padding:16px 40px;font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:background 0.2s;display:inline-block}
+.form-submit:hover{background:var(--red-deep)}
+@media(max-width:900px){
+  .contact-section{padding:52px 24px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .contact-hero-title{font-size:48px}
+}
+
 </style>
 </head>
 <body>
@@ -335,11 +364,6 @@ footer{background:var(--ink)}
     <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
   </div>
 </footer>
-<script>
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
-</script>
-
 <script>
 const navEl=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>60)});

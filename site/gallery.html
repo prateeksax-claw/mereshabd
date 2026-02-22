@@ -146,6 +146,30 @@ footer{background:var(--ink)}
   .video-grid{grid-template-columns:1fr!important}
   .gallery-title,.page-title{font-size:36px!important}
 }
+
+/* GALLERY GRID — actual HTML class names */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0}
+.gallery-item{position:relative;overflow:hidden;cursor:pointer;background:var(--cream);height:220px}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;display:block}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,20,16,0.75) 0%,transparent 55%);opacity:0;transition:opacity 0.3s}
+.gallery-item:hover .gallery-item-overlay{opacity:1}
+.gallery-item-label{position:absolute;bottom:10px;left:12px;right:12px;font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:white;font-weight:400;opacity:0;transition:opacity 0.3s;line-height:1.4}
+.gallery-item:hover .gallery-item-label{opacity:1}
+/* VIDEO items */
+.video-item{background:var(--cream);overflow:hidden}
+.gallery-video{width:100%;display:block;max-height:300px;background:#000}
+/* Lightbox caption */
+.lightbox-caption{position:absolute;bottom:20px;left:0;right:0;text-align:center;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);font-weight:300}
+@media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .gallery-item{height:180px}
+}
+@media(max-width:600px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item{height:140px}
+}
+
 </style>
 </head>
 <body>
@@ -189,7 +213,7 @@ footer{background:var(--ink)}
     📷 तस्वीरें — Photo Gallery <span class="tab-count">36</span>
   </button>
   <button class="tab-btn" data-tab="videos">
-    🎬 वीडियो — Videos <span class="tab-count">8</span>
+    🎬 वीडियो — Videos <span class="tab-count">4</span>
   </button>
 </div>
 
@@ -200,149 +224,149 @@ footer{background:var(--ink)}
     <h2 class="section-title">यादगार<br><em>पल और तस्वीरें</em></h2>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item" onclick="openLightbox('images/gallery/alpana_yadoan.jpg','alpana yadoan')">
-      <img src="images/gallery/alpana_yadoan.jpg" alt="alpana yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">alpana yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/alpana_yadoan.jpg','यादें — अल्पना')">
+      <img src="images/gallery/alpana_yadoan.jpg" alt="यादें — अल्पना" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — अल्पना</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Anoop_yadoan.jpg','Anoop yadoan')">
-      <img src="images/gallery/Anoop_yadoan.jpg" alt="Anoop yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Anoop yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Anoop_yadoan.jpg','यादें — अनूप')">
+      <img src="images/gallery/Anoop_yadoan.jpg" alt="यादें — अनूप" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — अनूप</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/arun_yadoan.jpg','arun yadoan')">
-      <img src="images/gallery/arun_yadoan.jpg" alt="arun yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">arun yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/arun_yadoan.jpg','यादें — अरुण')">
+      <img src="images/gallery/arun_yadoan.jpg" alt="यादें — अरुण" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — अरुण</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Dr.-Anil-Poem.jpg','Dr. Anil Poem')">
-      <img src="images/gallery/Dr.-Anil-Poem.jpg" alt="Dr. Anil Poem" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Dr. Anil Poem</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Dr.-Anil-Poem.jpg','कविता की याद')">
+      <img src="images/gallery/Dr.-Anil-Poem.jpg" alt="कविता की याद" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">कविता की याद</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-1.jpg','gallery 1')">
-      <img src="images/gallery/gallery-1.jpg" alt="gallery 1" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 1</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-1.jpg','खूबसूरत पल')">
+      <img src="images/gallery/gallery-1.jpg" alt="खूबसूरत पल" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">खूबसूरत पल</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-2.jpg','gallery 2')">
-      <img src="images/gallery/gallery-2.jpg" alt="gallery 2" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 2</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-2.jpg','यादगार तस्वीर')">
+      <img src="images/gallery/gallery-2.jpg" alt="यादगार तस्वीर" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादगार तस्वीर</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-3.jpg','gallery 3')">
-      <img src="images/gallery/gallery-3.jpg" alt="gallery 3" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 3</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-3.jpg','अनमोल लम्हे')">
+      <img src="images/gallery/gallery-3.jpg" alt="अनमोल लम्हे" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">अनमोल लम्हे</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-5.jpg','gallery 5')">
-      <img src="images/gallery/gallery-5.jpg" alt="gallery 5" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 5</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-5.jpg','स्मृति चित्र')">
+      <img src="images/gallery/gallery-5.jpg" alt="स्मृति चित्र" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">स्मृति चित्र</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-6.jpg','gallery 6')">
-      <img src="images/gallery/gallery-6.jpg" alt="gallery 6" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 6</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-6.jpg','खास पल')">
+      <img src="images/gallery/gallery-6.jpg" alt="खास पल" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">खास पल</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-7.jpg','gallery 7')">
-      <img src="images/gallery/gallery-7.jpg" alt="gallery 7" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 7</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-7.jpg','तस्वीरों में')">
+      <img src="images/gallery/gallery-7.jpg" alt="तस्वीरों में" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">तस्वीरों में</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-8.jpg','gallery 8')">
-      <img src="images/gallery/gallery-8.jpg" alt="gallery 8" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 8</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-8.jpg','हसीन यादें')">
+      <img src="images/gallery/gallery-8.jpg" alt="हसीन यादें" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">हसीन यादें</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-9.jpg','gallery 9')">
-      <img src="images/gallery/gallery-9.jpg" alt="gallery 9" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">gallery 9</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-9.jpg','प्यारी यादें')">
+      <img src="images/gallery/gallery-9.jpg" alt="प्यारी यादें" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">प्यारी यादें</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/img-1.jpg','img 1')">
-      <img src="images/gallery/img-1.jpg" alt="img 1" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">img 1</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/img-1.jpg','अनमोल पल')">
+      <img src="images/gallery/img-1.jpg" alt="अनमोल पल" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">अनमोल पल</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/isha_yadoan.jpg','isha yadoan')">
-      <img src="images/gallery/isha_yadoan.jpg" alt="isha yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">isha yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/isha_yadoan.jpg','यादें — ईशा')">
+      <img src="images/gallery/isha_yadoan.jpg" alt="यादें — ईशा" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — ईशा</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/ishita_yadoan.jpg','ishita yadoan')">
-      <img src="images/gallery/ishita_yadoan.jpg" alt="ishita yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">ishita yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/ishita_yadoan.jpg','यादें — ईशिता')">
+      <img src="images/gallery/ishita_yadoan.jpg" alt="यादें — ईशिता" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — ईशिता</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Maitri_yadoan.jpg','Maitri yadoan')">
-      <img src="images/gallery/Maitri_yadoan.jpg" alt="Maitri yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Maitri yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Maitri_yadoan.jpg','यादें — मैत्री')">
+      <img src="images/gallery/Maitri_yadoan.jpg" alt="यादें — मैत्री" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — मैत्री</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Man-of-Style.jpg','Man of Style')">
-      <img src="images/gallery/Man-of-Style.jpg" alt="Man of Style" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Man of Style</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Man-of-Style.jpg','स्टाइलिश पल')">
+      <img src="images/gallery/Man-of-Style.jpg" alt="स्टाइलिश पल" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">स्टाइलिश पल</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/me-mummy.jpg','me mummy')">
-      <img src="images/gallery/me-mummy.jpg" alt="me mummy" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">me mummy</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/me-mummy.jpg','मैं और मम्मी')">
+      <img src="images/gallery/me-mummy.jpg" alt="मैं और मम्मी" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">मैं और मम्मी</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-bday-01.jpg','mummy bday 01')">
-      <img src="images/gallery/mummy-bday-01.jpg" alt="mummy bday 01" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">mummy bday 01</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-bday-01.jpg','मम्मी का जन्मदिन')">
+      <img src="images/gallery/mummy-bday-01.jpg" alt="मम्मी का जन्मदिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">मम्मी का जन्मदिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-bday.jpg','mummy bday')">
-      <img src="images/gallery/mummy-bday.jpg" alt="mummy bday" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">mummy bday</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-bday.jpg','मम्मी का जन्मदिन')">
+      <img src="images/gallery/mummy-bday.jpg" alt="मम्मी का जन्मदिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">मम्मी का जन्मदिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-with-isha.jpg','mummy with isha')">
-      <img src="images/gallery/mummy-with-isha.jpg" alt="mummy with isha" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">mummy with isha</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/mummy-with-isha.jpg','मम्मी और ईशा')">
+      <img src="images/gallery/mummy-with-isha.jpg" alt="मम्मी और ईशा" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">मम्मी और ईशा</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/pap-width-grandkid-1.jpg','pap width grandkid 1')">
-      <img src="images/gallery/pap-width-grandkid-1.jpg" alt="pap width grandkid 1" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">pap width grandkid 1</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/pap-width-grandkid-1.jpg','पापा और नाती-नातिन')">
+      <img src="images/gallery/pap-width-grandkid-1.jpg" alt="पापा और नाती-नातिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा और नाती-नातिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-02.jpg','papa 02')">
-      <img src="images/gallery/papa-02.jpg" alt="papa 02" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa 02</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-02.jpg','पापा')">
+      <img src="images/gallery/papa-02.jpg" alt="पापा" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa-Barsi-1.jpg','Papa Barsi 1')">
-      <img src="images/gallery/Papa-Barsi-1.jpg" alt="Papa Barsi 1" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Papa Barsi 1</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa-Barsi-1.jpg','पापा की बरसी')">
+      <img src="images/gallery/Papa-Barsi-1.jpg" alt="पापा की बरसी" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा की बरसी</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-barsi-pic.jpg','papa barsi pic')">
-      <img src="images/gallery/papa-barsi-pic.jpg" alt="papa barsi pic" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa barsi pic</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-barsi-pic.jpg','पापा की बरसी')">
+      <img src="images/gallery/papa-barsi-pic.jpg" alt="पापा की बरसी" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा की बरसी</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa-Barsi2.jpg','Papa Barsi2')">
-      <img src="images/gallery/Papa-Barsi2.jpg" alt="Papa Barsi2" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Papa Barsi2</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa-Barsi2.jpg','पापा की बरसी')">
+      <img src="images/gallery/Papa-Barsi2.jpg" alt="पापा की बरसी" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा की बरसी</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-01-1.jpg','papa bday 01 1')">
-      <img src="images/gallery/papa-bday-01-1.jpg" alt="papa bday 01 1" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 01 1</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-01-1.jpg','पापा का जन्मदिन')">
+      <img src="images/gallery/papa-bday-01-1.jpg" alt="पापा का जन्मदिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा का जन्मदिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-01.jpg','papa bday 01')">
-      <img src="images/gallery/papa-bday-01.jpg" alt="papa bday 01" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 01</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-01.jpg','पापा का जन्मदिन')">
+      <img src="images/gallery/papa-bday-01.jpg" alt="पापा का जन्मदिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा का जन्मदिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-02.jpg','papa bday 02')">
-      <img src="images/gallery/papa-bday-02.jpg" alt="papa bday 02" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 02</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-02.jpg','पापा का जन्मदिन')">
+      <img src="images/gallery/papa-bday-02.jpg" alt="पापा का जन्मदिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा का जन्मदिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-03.jpg','papa bday 03')">
-      <img src="images/gallery/papa-bday-03.jpg" alt="papa bday 03" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa bday 03</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-bday-03.jpg','पापा का जन्मदिन')">
+      <img src="images/gallery/papa-bday-03.jpg" alt="पापा का जन्मदिन" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा का जन्मदिन</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-mummy.jpg','papa mummy')">
-      <img src="images/gallery/papa-mummy.jpg" alt="papa mummy" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa mummy</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-mummy.jpg','पापा और मम्मी')">
+      <img src="images/gallery/papa-mummy.jpg" alt="पापा और मम्मी" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा और मम्मी</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-with-me.jpg','papa with me')">
-      <img src="images/gallery/papa-with-me.jpg" alt="papa with me" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">papa with me</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/papa-with-me.jpg','पापा और मैं')">
+      <img src="images/gallery/papa-with-me.jpg" alt="पापा और मैं" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा और मैं</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa_01.jpg','Papa 01')">
-      <img src="images/gallery/Papa_01.jpg" alt="Papa 01" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Papa 01</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Papa_01.jpg','पापा')">
+      <img src="images/gallery/Papa_01.jpg" alt="पापा" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पापा</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/pic-with-grand-kid-2.jpg','pic with grand kid 2')">
-      <img src="images/gallery/pic-with-grand-kid-2.jpg" alt="pic with grand kid 2" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">pic with grand kid 2</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/pic-with-grand-kid-2.jpg','पोते-पोती के साथ')">
+      <img src="images/gallery/pic-with-grand-kid-2.jpg" alt="पोते-पोती के साथ" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">पोते-पोती के साथ</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/Rachit_yadoan.jpg','Rachit yadoan')">
-      <img src="images/gallery/Rachit_yadoan.jpg" alt="Rachit yadoan" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">Rachit yadoan</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/Rachit_yadoan.jpg','यादें — रचित')">
+      <img src="images/gallery/Rachit_yadoan.jpg" alt="यादें — रचित" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">यादें — रचित</span></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox('images/gallery/yadaen.jpg','yadaen')">
-      <img src="images/gallery/yadaen.jpg" alt="yadaen" loading="lazy">
-      <div class="gallery-item-overlay"><span class="gallery-item-label">yadaen</span></div>
+    <div class="gallery-item" onclick="openLightbox('images/gallery/yadaen.jpg','स्मृतियां')">
+      <img src="images/gallery/yadaen.jpg" alt="स्मृतियां" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-item-label">स्मृतियां</span></div>
     </div>
   </div>
 </section>
@@ -426,11 +450,6 @@ footer{background:var(--ink)}
     <div class="fblinks"><a href="index.html">होम</a><a href="about.html">परिचय</a><a href="contact.html">संपर्क</a></div>
   </div>
 </footer>
-<script>
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
-</script>
-
 <script>
 const navEl=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>60)});
