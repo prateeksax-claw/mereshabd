@@ -29,10 +29,10 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .author-bio-text,.author-name { letter-spacing:0 !important; }
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
-nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
-nav.scrolled .nav-links a{color:var(--ink)}
-nav.scrolled .nav-logo img{filter:none}
+#mainNav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+#mainNav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+#mainNav.scrolled .nav-links a{color:var(--ink)}
+#mainNav.scrolled .nav-logo img{filter:none}
 .nav-logo{text-decoration:none;display:flex;align-items:center}
 .nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
@@ -201,7 +201,7 @@ footer{background:var(--ink)}
 .fblinks a:hover{color:rgba(255,255,255,0.45)}
 
 @media(max-width:900px){
-  nav{padding:16px 24px}
+  #mainNav{padding:16px 24px}
   .nav-links{gap:16px}
   .nav-links .nav-cta{display:none}
   .footer-main{grid-template-columns:1fr 1fr;padding:40px 24px;gap:32px}
@@ -296,7 +296,7 @@ footer{background:var(--ink)}
   .post-title{font-size:40px!important}
   .ph-content{padding:0 28px!important}
   .breadcrumb{padding:12px 24px}
-  nav{padding:14px 24px}
+  #mainNav{padding:14px 24px}
 }
 @media(max-width:600px){
   .post-content{padding:28px 20px!important}
@@ -326,6 +326,30 @@ footer{background:var(--ink)}
 .pdf-loading-spinner{width:40px;height:40px;border:2px solid rgba(255,255,255,.1);border-top-color:rgba(184,135,58,.7);border-radius:50%;animation:pdfspin .8s linear infinite}
 @keyframes pdfspin{to{transform:rotate(360deg)}}
 .pdf-loading-text{font-family:monospace;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px}
+
+/* ESSAYS SECTION — jivan-darshan */
+.essays-section{padding:60px 80px 80px;max-width:1200px;margin:0 auto}
+.section-intro{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:48px;max-width:700px}
+.essays-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.essay-card{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:white;border:1px solid rgba(0,0,0,0.07);text-decoration:none;transition:all 0.25s;gap:16px}
+.essay-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.08);background:var(--petal)}
+.essay-card:hover .essay-cta{opacity:1;color:var(--red)}
+.essay-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;font-weight:400;line-height:1.4;flex:1}
+.essay-cta{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dust);opacity:0.5;white-space:nowrap;transition:all 0.2s;font-style:italic}
+@media(max-width:900px){
+  .essays-section{padding:40px 24px 60px}
+  .essays-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .essays-grid{grid-template-columns:1fr}
+  .essay-card{padding:16px 18px}
+}
+
+/* POST NAV BAR */
+.post-nav-bar{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(0,0,0,0.06)}
+.post-nav-bar .pnav-item{padding:32px 48px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:background 0.2s;background:var(--warm-white)}
+.post-nav-bar .pnav-item:hover{background:var(--cream)}
+.post-nav-bar .pnav-next{border-left:1px solid rgba(0,0,0,0.06);text-align:right;align-items:flex-end}
 </style>
 </head>
 <body>
@@ -416,11 +440,11 @@ footer{background:var(--ink)}
         <h3 class="essay-title" style="color:#4A5568">The Delivery Man (English)</h3>
         <div class="essay-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/??????-???-????-??-???-???-?????-.pdf" onclick="openPDF('?????? ??? ???? ?? ??? ??? ????? ', '../pdfs/??????-???-????-??-???-???-?????-.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #6B4226">
+<a href="../pdfs/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf" onclick="openPDF('जीवन दर्शन लेख', '../pdfs/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf'); return false;" class="essay-card" rel="noopener" style="border-left:4px solid #6B4226">
         <h3 class="essay-title" style="color:#6B4226">जीवन दर्शन लेख</h3>
         <div class="essay-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/??????????-??-?????-??-????-??????-?????-.pdf" onclick="openPDF('?????????? ?? ????? ?? ???? ?????? ????? ', '../pdfs/??????????-??-?????-??-????-??????-?????-.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #6B4226">
+<a href="../pdfs/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%86%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%80-%E0%A4%95%E0%A4%BE-%E0%A4%AC%E0%A4%A6%E0%A4%B2%E0%A4%BE-%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%82%E0%A4%AA-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf" onclick="openPDF('अभिव्यक्ति की आजादी', '../pdfs/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%86%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%80-%E0%A4%95%E0%A4%BE-%E0%A4%AC%E0%A4%A6%E0%A4%B2%E0%A4%BE-%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%82%E0%A4%AA-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf'); return false;" class="essay-card" rel="noopener" style="border-left:4px solid #6B4226">
         <h3 class="essay-title" style="color:#6B4226">जीवन और अनुभव</h3>
         <div class="essay-cta">पढ़ें →</div>
       </a>

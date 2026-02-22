@@ -29,10 +29,10 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .author-bio-text,.author-name { letter-spacing:0 !important; }
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
-nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
-nav.scrolled .nav-links a{color:var(--ink)}
-nav.scrolled .nav-logo img{filter:none}
+#mainNav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+#mainNav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+#mainNav.scrolled .nav-links a{color:var(--ink)}
+#mainNav.scrolled .nav-logo img{filter:none}
 .nav-logo{text-decoration:none;display:flex;align-items:center}
 .nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
@@ -201,7 +201,7 @@ footer{background:var(--ink)}
 .fblinks a:hover{color:rgba(255,255,255,0.45)}
 
 @media(max-width:900px){
-  nav{padding:16px 24px}
+  #mainNav{padding:16px 24px}
   .nav-links{gap:16px}
   .nav-links .nav-cta{display:none}
   .footer-main{grid-template-columns:1fr 1fr;padding:40px 24px;gap:32px}
@@ -296,7 +296,7 @@ footer{background:var(--ink)}
   .post-title{font-size:40px!important}
   .ph-content{padding:0 28px!important}
   .breadcrumb{padding:12px 24px}
-  nav{padding:14px 24px}
+  #mainNav{padding:14px 24px}
 }
 @media(max-width:600px){
   .post-content{padding:28px 20px!important}
@@ -326,6 +326,45 @@ footer{background:var(--ink)}
 .pdf-loading-spinner{width:40px;height:40px;border:2px solid rgba(255,255,255,.1);border-top-color:rgba(184,135,58,.7);border-radius:50%;animation:pdfspin .8s linear infinite}
 @keyframes pdfspin{to{transform:rotate(360deg)}}
 .pdf-loading-text{font-family:monospace;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px}
+
+/* HEALTH SECTION — jane-doctor-jubani */
+.health-section{padding:60px 80px 80px;max-width:1200px;margin:0 auto}
+.section-wrap{max-width:1100px}
+.section-intro{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:40px;max-width:700px}
+
+/* Featured card */
+.health-featured{display:block;padding:40px 48px;background:linear-gradient(135deg,#082018 0%,#0A3020 100%);color:white;text-decoration:none;margin-bottom:28px;transition:all 0.25s;border-left:4px solid var(--gold)}
+.health-featured:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.hf-badge{display:inline-block;background:var(--gold);color:white;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;font-weight:600;padding:4px 14px;margin-bottom:16px;text-transform:uppercase}
+.hf-title{font-family:'Tiro Devanagari Hindi',serif;font-size:36px;color:white;font-weight:400;margin-bottom:12px;line-height:1.2}
+.hf-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:20px;line-height:1.8}
+.hf-cta{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-light);font-style:italic}
+
+/* Health cards grid */
+.health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.health-card{display:block;padding:24px 28px;background:white;border:1px solid rgba(0,0,0,0.07);border-left:4px solid #2D7D5A;text-decoration:none;transition:all 0.25s}
+.health-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.08);background:var(--petal)}
+.health-card:hover .hc-cta{color:var(--red);opacity:1}
+.hc-title{font-family:'Tiro Devanagari Hindi',serif;font-size:19px;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.4}
+.hc-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);margin-bottom:16px}
+.hc-cta{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--dust);opacity:0.6;font-style:italic;transition:all 0.2s}
+
+/* post-nav-bar */
+.post-nav-bar{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06)}
+.post-nav-bar .pnav-item{padding:32px 48px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:background 0.2s;background:var(--warm-white)}
+.post-nav-bar .pnav-item:hover{background:var(--cream)}
+.post-nav-bar .pnav-next{border-left:1px solid rgba(0,0,0,0.06);text-align:right;align-items:flex-end}
+
+@media(max-width:900px){
+  .health-section{padding:40px 24px 60px}
+  .health-grid{grid-template-columns:1fr 1fr}
+  .health-featured{padding:28px 24px}
+  .hf-title{font-size:26px}
+  .post-nav-bar .pnav-item{padding:24px}
+}
+@media(max-width:600px){
+  .health-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -399,7 +438,7 @@ footer{background:var(--ink)}
         <p class="hc-desc">पानी से उपचार</p>
         <div class="hc-cta">पढ़ें →</div>
       </a>
-<a href="../pdfs/?????????????-???-????-?????-.pdf" onclick="openPDF('????????????? ??? ???? ????? ', '../pdfs/?????????????-???-????-?????-.pdf'); return false;"  class="health-card"  rel="noopener">
+<a href="../pdfs/%E0%A4%85%E0%A4%82%E0%A4%A4%E0%A4%B0%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF-%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf" onclick="openPDF('अंतरराष्ट्रीय योग दिवस', '../pdfs/%E0%A4%85%E0%A4%82%E0%A4%A4%E0%A4%B0%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF-%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf'); return false;" class="health-card"  rel="noopener">
         <h3 class="hc-title">स्वास्थ्य लेख</h3>
         <p class="hc-desc">डॉक्टरों की सलाह</p>
         <div class="hc-cta">पढ़ें →</div>
