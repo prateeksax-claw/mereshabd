@@ -174,6 +174,16 @@ footer{background:var(--ink)}
   .archive-hero h1,.hero-title{font-size:32px!important}
   .filter-btn{font-size:11px;padding:7px 12px}
 }
+
+/* Vishesh inline poem grid */
+.vs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 32px}
+.vs-btn{background:white;border:1px solid rgba(0,0,0,0.08);padding:16px 20px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;transition:all 0.2s;width:100%}
+.vs-btn:hover{border-color:rgba(155,14,14,0.3);background:#FDF8F4;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.vs-num{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(0,0,0,0.15);font-style:italic;min-width:28px}
+.vs-label{font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:#1C1410;flex:1}
+.vs-icon{font-size:14px;opacity:0.5}
+@media(max-width:900px){.vs-grid{grid-template-columns:1fr 1fr;padding:0 16px}}
+@media(max-width:600px){.vs-grid{grid-template-columns:1fr;padding:0 12px}}
 </style>
   
 <style>
@@ -387,14 +397,14 @@ footer{background:var(--ink)}
     </a>
 
     <a href="posts/kshanikayen-anil-saxena.html" class="post-card card-md" data-cat="vishesh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#1A1005 0%,#302010 50%,#150D05 100%)"></div>
+      <div class="card-img" style="background:linear-gradient(135deg,#0D0D1A 0%,#1A0A2E 50%,#2D0A0A 100%)"></div>
       <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">क्ष</div>
+      <div class="card-art" style="opacity:0.18;font-size:100px;color:white">काव्य</div>
       <div class="card-inner">
         <span class="card-cat vishesh">विशेष</span>
-        <h3 class="card-title">क्षणिकायें — डॉ. अनिल सक्सेना</h3>
-        <p class="card-excerpt">डॉ. अनिल सक्सेना द्वारा लिखी गई क्षणिकाओं का संग्रह — परिवार द्वारा संकलित एक विशेष श्रद्धांजलि।</p>
-        <div class="card-date">जुलाई २०२४</div>
+        <h3 class="card-title">सुर-ताल जुगलबंदी...काव्य</h3>
+        <p class="card-excerpt">गीतांजलि सक्सेना का संपूर्ण काव्य-संग्रह — क्षणिकाएं, गीत, कविताएं और जीवन-दर्शन। २३ रचनाएं।</p>
+        <div class="card-date">२०२२–२०२५</div>
       </div>
     </a>
 
@@ -407,6 +417,148 @@ footer{background:var(--ink)}
 
 </div>
 
+
+<!-- VISHESH INLINE SECTION — shown when vishesh tab active -->
+<div id="vishesh-inline" style="display:none;padding:32px 0 48px">
+  <div style="text-align:center;margin-bottom:28px">
+    <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:#1C1410;margin-bottom:8px">सुर-ताल जुगलबंदी...काव्य</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#8A7968;font-style:italic">गीतांजलि सक्सेना का संपूर्ण काव्य-संग्रह — ২৩ रचनाएं</div>
+  </div>
+  <div class="vs-grid">
+        <button class="vs-btn" onclick="openVisheshPDF('posts/4.-Lockdown-poem-final-for-web.pdf','लॉकडाउन...')">
+          <span class="vs-num">01</span>
+          <span class="vs-label">लॉकडाउन...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/5.pati-dev-poem-for-web-Gitanjali.pdf','पति देव...')">
+          <span class="vs-num">02</span>
+          <span class="vs-label">पति देव...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%85%E0%A4%A8%E0%A4%AE%E0%A5%8B%E0%A4%B2-%E0%A4%B9%E0%A5%88.pdf','अनमोल है...')">
+          <span class="vs-num">03</span>
+          <span class="vs-label">अनमोल है...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/Holi-Hai-new.pdf','होली आई रे...')">
+          <span class="vs-num">04</span>
+          <span class="vs-label">होली आई रे...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/poem-on-matti-2022-final-for-web.pdf','सौगंध...')">
+          <span class="vs-num">05</span>
+          <span class="vs-label">सौगंध...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%95%E0%A5%83%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%B5%E0%A4%BF%E0%A4%9A%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%B0-%E0%A4%B2%E0%A5%80%E0%A4%B2%E0%A4%BE-for-website-final.pdf','विचित्र लीला...')">
+          <span class="vs-num">06</span>
+          <span class="vs-label">विचित्र लीला...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/Upjinder-poem-for-web-final-1.pdf','कदर-ए-कीमत...')">
+          <span class="vs-num">07</span>
+          <span class="vs-label">कदर-ए-कीमत...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%AE%E0%A5%8C%E0%A4%95%E0%A4%BE-%E0%A4%8F-%E0%A4%A6%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%82%E0%A4%B0-1-3.pdf','मौका-ए-दस्तूर...')">
+          <span class="vs-num">08</span>
+          <span class="vs-label">मौका-ए-दस्तूर...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%95%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A4%BE-%E0%A4%B8%E0%A4%BE%E0%A4%B2%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A4%B9-2022.pdf','ख्वाहिशें-ए-जिंदगी...')">
+          <span class="vs-num">09</span>
+          <span class="vs-label">ख्वाहिशें-ए-जिंदगी...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%B8%E0%A4%BE%E0%A4%B0.pdf','जीवन सार...')">
+          <span class="vs-num">10</span>
+          <span class="vs-label">जीवन सार...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/7.%E0%A4%95%E0%A5%8B%E0%A4%B5%E0%A4%BF%E0%A4%A1%E0%A4%BC-%E0%A4%95%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A4%BE-2022-by-gitanjali-for-web.pdf','कोविड क्लब...')">
+          <span class="vs-num">11</span>
+          <span class="vs-label">कोविड क्लब...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%B8%E0%A4%BE%E0%A4%B2%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A4%B9.pdf','शुभकामनाएँ...')">
+          <span class="vs-num">12</span>
+          <span class="vs-label">शुभकामनाएँ...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%95%E0%A4%B5%E0%A4%A8%E0%A5%80-%E0%A4%9C%E0%A4%A8%E0%A5%8D%E0%A4%AE%E0%A4%A6%E0%A4%BF%E0%A4%A8-2023.pdf','लाड़ली...')">
+          <span class="vs-num">13</span>
+          <span class="vs-label">लाड़ली...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/3.-ILA-poem-final-for-web-site.pdf','ज्योति...')">
+          <span class="vs-num">14</span>
+          <span class="vs-label">ज्योति...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A5%80-final.pdf','महारानी एक दिन की')">
+          <span class="vs-num">15</span>
+          <span class="vs-label">महारानी एक दिन की</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/World-of-Magic-Kavni-poem-2025-Website-.pdf','World of Magic')">
+          <span class="vs-num">16</span>
+          <span class="vs-label">World of Magic</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%B6%E0%A4%AC%E0%A5%8D%E0%A4%A6%E0%A5%8B%E0%A4%82-%E0%A4%95%E0%A4%BE-%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%82-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-for-website.pdf','शब्दों की शक्ति परीक्षा')">
+          <span class="vs-num">17</span>
+          <span class="vs-label">शब्दों की शक्ति परीक्षा</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%86%E0%A4%AC%E0%A4%B0%E0%A4%BE-%E0%A4%95%E0%A4%BE-%E0%A4%A1%E0%A4%BE%E0%A4%AC%E0%A4%B0%E0%A4%BE-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-.pdf','आबरा का डाबरा')">
+          <span class="vs-num">18</span>
+          <span class="vs-label">आबरा का डाबरा</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf','हर दिन नया सवेरा')">
+          <span class="vs-num">19</span>
+          <span class="vs-label">हर दिन नया सवेरा</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%A3%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%8F%E0%A4%82-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf','क्षणिकाएं')">
+          <span class="vs-num">20</span>
+          <span class="vs-label">क्षणिकाएं</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%B0%E0%A4%B9%E0%A4%B8%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%AF%E0%A5%80-%E0%A4%A6%E0%A5%81%E0%A4%A8%E0%A4%BF%E0%A4%AF%E0%A4%BE-.pdf','रहस्यमय दुनिया')">
+          <span class="vs-num">21</span>
+          <span class="vs-label">रहस्यमय दुनिया</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%AE%E0%A4%BF%E0%A4%9F%E0%A5%8D%E0%A4%9F%E0%A5%80-%E0%A4%95%E0%A5%87-%E0%A4%B0%E0%A4%82%E0%A4%97-%E0%A4%95%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A4%BE-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2.pdf','मिट्टी के रंग...')">
+          <span class="vs-num">22</span>
+          <span class="vs-label">मिट्टी के रंग...</span>
+          <span class="vs-icon">📖</span>
+        </button>
+        <button class="vs-btn" onclick="openVisheshPDF('posts/%E0%A4%95%E0%A4%B9%E0%A4%BE%E0%A4%82-%E0%A4%97%E0%A5%81%E0%A4%AE-%E0%A4%B9%E0%A5%8B-%E0%A4%97%E0%A4%88-%E0%A4%89%E0%A4%AE%E0%A4%82%E0%A4%97-%E0%A4%AD%E0%A4%B0%E0%A5%80-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2.pdf','बदले-बदले है हजूर')">
+          <span class="vs-num">23</span>
+          <span class="vs-label">बदले-बदले है हजूर</span>
+          <span class="vs-icon">📖</span>
+        </button>
+  </div>
+  <div style="text-align:center;margin-top:24px">
+    <a href="posts/kshanikayen-anil-saxena.html" style="font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:#9B0E0E;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px">सभी कविताएं विस्तार से देखें →</a>
+  </div>
+</div>
+
+<!-- PDF modal for vishesh inline -->
+<div id="vishesh-pdf-modal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.9);flex-direction:column">
+  <div style="background:#1C1410;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.1)">
+    <div id="vishesh-pdf-title" style="font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:white"></div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="#" id="vishesh-pdf-dl" style="font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:#B8873A;text-decoration:none;padding:8px 16px;border:1px solid #B8873A" download>डाउनलोड</a>
+      <button onclick="closeVisheshPDF()" style="background:none;border:none;color:rgba(255,255,255,0.6);font-size:24px;cursor:pointer;padding:4px 8px">✕</button>
+    </div>
+  </div>
+  <div style="flex:1;overflow:hidden">
+    <iframe id="vishesh-pdf-iframe" src="" style="width:100%;height:100%;border:none"></iframe>
+  </div>
+</div>
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -469,7 +621,21 @@ const cards = document.querySelectorAll('.post-card');
 const countEl = document.getElementById('visibleCount');
 const emptyState = document.getElementById('emptyState');
 
+const visheshInline = document.getElementById('vishesh-inline');
+
 function updateGrid(selectedCat) {
+  // Toggle vishesh inline section
+  if (selectedCat === 'vishesh') {
+    visheshInline.style.display = 'block';
+    document.querySelector('.archive-grid').style.display = 'none';
+    countEl.textContent = '23';
+    emptyState.classList.remove('visible');
+    return;
+  } else {
+    visheshInline.style.display = 'none';
+    document.querySelector('.archive-grid').style.display = 'grid';
+  }
+
   let visible = 0;
   cards.forEach(card => {
     const matches = selectedCat === 'all' || card.dataset.cat === selectedCat;
@@ -500,6 +666,24 @@ if (urlCat) {
   const targetBtn = document.querySelector('[data-cat="' + urlCat + '"]');
   if (targetBtn) targetBtn.click();
 }
+
+function openVisheshPDF(url, title) {
+  document.getElementById('vishesh-pdf-title').textContent = title;
+  document.getElementById('vishesh-pdf-iframe').src = url;
+  document.getElementById('vishesh-pdf-dl').href = url;
+  const modal = document.getElementById('vishesh-pdf-modal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeVisheshPDF() {
+  document.getElementById('vishesh-pdf-modal').style.display = 'none';
+  document.getElementById('vishesh-pdf-iframe').src = '';
+  document.body.style.overflow = '';
+}
+document.getElementById('vishesh-pdf-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeVisheshPDF();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVisheshPDF(); });
 </script>
 </body>
 </html>
