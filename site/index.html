@@ -236,6 +236,29 @@ footer{background:var(--ink)}
   .mi-md .mi-title{font-size:20px}
   .mag-head{flex-wrap:wrap;gap:10px}
 }
+
+/* RACHNAON KA SANSAR SECTION */
+.rachnaon-ka-sansar{padding:80px 60px;background:var(--cream);border-top:1px solid rgba(0,0,0,0.05)}
+.rs-header{text-align:center;margin-bottom:52px}
+.rs-eyebrow{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.rs-title{font-family:'Tiro Devanagari Hindi',serif;font-size:44px;color:var(--ink);font-weight:400;margin-bottom:12px;line-height:1.2}
+.rs-sub{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dust);font-style:italic}
+.rs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.rs-card{padding:28px 24px;text-decoration:none;transition:all 0.25s;display:flex;flex-direction:column;gap:10px}
+.rs-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.rs-icon{font-size:28px;line-height:1}
+.rs-name{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;font-weight:400;line-height:1.2}
+.rs-count{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--dust);font-weight:400}
+.rs-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);line-height:1.8;flex:1;font-weight:300}
+.rs-cta{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;font-weight:600;margin-top:4px}
+@media(max-width:900px){
+  .rachnaon-ka-sansar{padding:60px 24px}
+  .rs-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .rs-title{font-size:32px}
+}
+@media(max-width:600px){
+  .rs-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -435,6 +458,53 @@ footer{background:var(--ink)}
       </div>
     </a>
 
+  </div>
+</section>
+
+
+<!-- RACHNAON KA SANSAR -->
+<section class="rachnaon-ka-sansar" id="rachnaon-ka-sansar">
+  <div class="rs-header">
+    <div class="rs-eyebrow">रचनाओं का संसार</div>
+    <div class="rs-title">किस विधा में खोजना चाहते हैं?</div>
+    <div class="rs-sub">Browse by category — pick what calls you</div>
+  </div>
+  <div class="rs-grid">
+    <a href="archive.html?cat=kavita" class="rs-card" style="background:rgba(155,14,14,0.06);border:1px solid rgba(155,14,14,0.2);border-top:3px solid #9B0E0E">
+      <div class="rs-icon" style="color:#9B0E0E">♥</div>
+      <div class="rs-name" style="color:#9B0E0E">कविता</div>
+      <div class="rs-count">3 रचनाएं</div>
+      <div class="rs-desc">मन की गहराइयों से निकले शब्द — माँ, नारीत्व, प्रकृति और जीवन की लय।</div>
+      <div class="rs-cta" style="color:#9B0E0E">देखें →</div>
+    </a>
+    <a href="archive.html?cat=lekh" class="rs-card" style="background:rgba(184,135,58,0.06);border:1px solid rgba(184,135,58,0.2);border-top:3px solid #B8873A">
+      <div class="rs-icon" style="color:#B8873A">✍</div>
+      <div class="rs-name" style="color:#B8873A">लेख</div>
+      <div class="rs-count">5 रचनाएं</div>
+      <div class="rs-desc">समाज, स्वास्थ्य, जीवन-दर्शन और संस्कृति पर विचारपूर्ण लेखन।</div>
+      <div class="rs-cta" style="color:#B8873A">देखें →</div>
+    </a>
+    <a href="archive.html?cat=sansmaran" class="rs-card" style="background:rgba(45,106,79,0.06);border:1px solid rgba(45,106,79,0.2);border-top:3px solid #2D6A4F">
+      <div class="rs-icon" style="color:#2D6A4F">❁</div>
+      <div class="rs-name" style="color:#2D6A4F">संस्मरण</div>
+      <div class="rs-count">2 रचनाएं</div>
+      <div class="rs-desc">यादों की दुनिया — गुरु और परिवार को समर्पित भावपूर्ण संस्मरण।</div>
+      <div class="rs-cta" style="color:#2D6A4F">देखें →</div>
+    </a>
+    <a href="archive.html?cat=pravasi" class="rs-card" style="background:rgba(26,58,107,0.06);border:1px solid rgba(26,58,107,0.2);border-top:3px solid #1A3A6B">
+      <div class="rs-icon" style="color:#1A3A6B">✈</div>
+      <div class="rs-name" style="color:#1A3A6B">प्रवासी मन</div>
+      <div class="rs-count">1 रचनाएं</div>
+      <div class="rs-desc">परदेश से मातृभूमि की याद — अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="rs-cta" style="color:#1A3A6B">देखें →</div>
+    </a>
+    <a href="archive.html?cat=vishesh" class="rs-card" style="background:rgba(107,47,160,0.06);border:1px solid rgba(107,47,160,0.2);border-top:3px solid #6B2FA0">
+      <div class="rs-icon" style="color:#6B2FA0">♫</div>
+      <div class="rs-name" style="color:#6B2FA0">विशेष</div>
+      <div class="rs-count">1 रचनाएं</div>
+      <div class="rs-desc">सुर-ताल जुगलबंदी — ২৩ कविताओं का संपूर्ण संग्रह एक साथ।</div>
+      <div class="rs-cta" style="color:#6B2FA0">देखें →</div>
+    </a>
   </div>
 </section>
 
