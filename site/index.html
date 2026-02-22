@@ -65,9 +65,9 @@ nav.scrolled .nav-logo img{filter:none}
 
 /* MARQUEE */
 .marquee{background:var(--red);padding:14px 0;overflow:hidden;white-space:nowrap}
-.marquee-inner{display:inline-flex;animation:mq 22s linear infinite}
+.marquee-inner{display:inline-flex;animation:mq 28s linear infinite;will-change:transform}
 .marquee-item{font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:rgba(255,255,255,0.72);padding:0 36px;display:inline-flex;align-items:center;gap:36px}
-.marquee-item::after{content:'?';color:var(--gold-light);font-size:11px}
+.marquee-item::after{content:'\00B7';color:var(--gold-light);font-size:18px;font-weight:400;line-height:1}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* EDITORIAL INTRO */
@@ -331,11 +331,6 @@ footer{background:var(--ink)}
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-inner">
-    <span class="marquee-item">कविता</span>
-    <span class="marquee-item">लेख</span>
-    <span class="marquee-item">संस्मरण</span>
-    <span class="marquee-item">प्रवासी मन</span>
-    <span class="marquee-item">विशेष</span>
     <span class="marquee-item">कविता</span>
     <span class="marquee-item">लेख</span>
     <span class="marquee-item">संस्मरण</span>
