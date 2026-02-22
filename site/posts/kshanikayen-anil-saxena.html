@@ -21,10 +21,10 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 *{letter-spacing:0!important}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
-nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
-nav.scrolled .nav-links a{color:var(--ink)}
-nav.scrolled .nav-logo img{filter:none}
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:transparent}
+#main-nav.scrolled{background:rgba(253,250,245,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+#main-nav.scrolled .nav-links a{color:var(--ink)}
+#main-nav.scrolled .nav-logo img{filter:none}
 .nav-logo{text-decoration:none;display:flex;align-items:center}
 .nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
@@ -124,7 +124,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:60px 80px 40px}
 
 /* MOBILE */
 @media(max-width:900px){
-  nav{padding:14px 24px}
+  #main-nav{padding:14px 24px}
   .nav-links{gap:16px}
   .nav-links a{font-size:12px}
   .nav-cta{padding:8px 14px}
@@ -347,7 +347,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:60px 80px 40px}
 </section>
 
 <!-- PREV/NEXT -->
-<nav class="pnav">
+<div class="pnav">
   <a class="pnav-item prev" href="kavya.html">
     <span class="pnav-dir">← पिछली रचना</span>
     <span class="pnav-cat">कविता</span>
@@ -358,7 +358,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:60px 80px 40px}
     <span class="pnav-cat">कविता</span>
     <span class="pnav-title">दुनिया तुमसे...नारीत्व</span>
   </a>
-</nav>
+</div>
 
 <!-- FOOTER -->
 <footer>
