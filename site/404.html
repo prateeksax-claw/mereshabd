@@ -114,6 +114,9 @@ nav{padding:20px 60px;display:flex;align-items:center;justify-content:space-betw
   .cta-primary,.cta-secondary{width:100%;justify-content:center}
   .quick-links{gap:16px}
 }
+
+.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+.nav-links a:hover .nav-en{color:var(--red)}
 </style>
 
   <meta name="description" content="यह पृष्ठ नहीं मिला — मेरे शब्द | गीतांजलि सक्सेना की हिंदी कविताएं, लेख और संस्मरण।">
@@ -134,11 +137,11 @@ nav{padding:20px 60px;display:flex;align-items:center;justify-content:space-betw
     <img src="images/logo.png" alt="मेरे शब्द">
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">होम</a></li>
-    <li><a href="about.html">परिचय</a></li>
-    <li><a href="archive.html">रचनाएं</a></li>
-    <li><a href="gallery.html">गैलरी</a></li>
-    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="index.html">होम <span class="nav-en">Home</span></a></li>
+    <li><a href="about.html" class="hide-sm">परिचय <span class="nav-en">About</span></a></li>
+    <li><a href="archive.html">रचनाएं <span class="nav-en">Works</span></a></li>
+    <li><a href="gallery.html" class="hide-sm">गैलरी <span class="nav-en">Gallery</span></a></li>
+    <li><a href="contact.html" class="hide-sm">संपर्क <span class="nav-en">Connect</span></a></li>
     <li><a href="archive.html" class="nav-cta">रचनाएं देखें</a></li>
   </ul>
 </nav>

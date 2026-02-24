@@ -186,6 +186,9 @@ footer{background:var(--ink)}
   .bio-grid,.timeline-grid{grid-template-columns:1fr!important}
   .about-inner{flex-direction:column!important}
 }
+
+.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+.nav-links a:hover .nav-en{color:var(--red)}
 </style>
   
 <style>
@@ -257,11 +260,11 @@ footer{background:var(--ink)}
     <img src="images/logo.png" alt="मेरे शब्द">
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">होम</a></li>
-    <li><a href="about.html" class="active">परिचय</a></li>
-    <li><a href="archive.html">रचनाएं</a></li>
-    <li><a href="gallery.html">गैलरी</a></li>
-    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="index.html">होम <span class="nav-en">Home</span></a></li>
+    <li><a href="about.html" class="hide-sm active">परिचय <span class="nav-en">About</span></a></li>
+    <li><a href="archive.html">रचनाएं <span class="nav-en">Works</span></a></li>
+    <li><a href="gallery.html" class="hide-sm">गैलरी <span class="nav-en">Gallery</span></a></li>
+    <li><a href="contact.html" class="hide-sm">संपर्क <span class="nav-en">Connect</span></a></li>
     <li><a href="archive.html" class="nav-cta">रचनाएं देखें</a></li>
   </ul>
 </nav>
@@ -309,6 +312,10 @@ footer{background:var(--ink)}
     <p class="bio-text">गीतांजलि सक्सेना पिछले तीन दशकों से हिंदी साहित्य और पत्रकारिता के क्षेत्र में सक्रिय हैं। <strong>नवभारत टाइम्स</strong> में उनका लेखन पाठकों को एक अनूठा और संवेदनशील दृष्टिकोण देता रहा है।</p>
     <p class="bio-text">अबू धाबी में बसी इस हिंदी लेखिका की कलम कभी नहीं रुकती। <strong>भारतीय महिला संघ (ILA)</strong>, अबू धाबी की प्रतिष्ठित <strong>जयोति पत्रिका</strong> की संपादक के रूप में वे हिंदी साहित्य की अलख जगाती हैं। <strong>PIB-मान्यता प्राप्त</strong> पत्रकार के रूप में उनकी पहचान देश-विदेश में है।</p>
     <p class="bio-text">उनकी रचनाएं — चाहे वह कविता हो, लेख हो, या संस्मरण — एक विशेष प्रवासी अनुभव को व्यक्त करती हैं। परदेस में रहकर देस की खुशबू को शब्दों में पिरोना उनकी विशेषता है। शब्दों का यह सफ़र जारी है… और जारी रहेगा।</p>
+
+<div class="about-en-bio" style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.07)">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(26,16,8,0.6);line-height:1.8;font-style:italic;max-width:560px">For three decades, Gitanjali Saxena has woven words into the fabric of Hindi literature from Abu Dhabi. A PIB-accredited journalist, editor of the prestigious <em>Jyoti</em> magazine, and a poet whose verses carry the fragrance of India across the desert — her writing is a bridge between two worlds.</p>
+</div>
     <div class="bio-divider"></div>
     <div class="hero-badges" style="margin-top:0">
       <span class="badge" style="background:rgba(155,14,14,0.08);border-color:rgba(155,14,14,0.2);color:var(--red)">नवभारत टाइम्स</span>

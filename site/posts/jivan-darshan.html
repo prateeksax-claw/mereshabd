@@ -377,6 +377,13 @@ footer{background:var(--ink)}
   .rm-grid{grid-template-columns:1fr}
   .rm-card{min-height:160px}
 }
+
+.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+.nav-links a:hover .nav-en{color:var(--red)}
+
+.en-essence{border-left:2px solid var(--gold);padding:16px 20px;margin-bottom:36px;background:rgba(201,168,76,0.05)}
+.en-essence-label{font-family:monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+.en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(26,16,8,0.6);line-height:1.7;font-style:italic;margin:0;letter-spacing:0}
 </style>
 
   <!-- SEO: Canonical -->
@@ -404,11 +411,11 @@ footer{background:var(--ink)}
     <img src="../images/logo.png" alt="मेरे शब्द">
   </a>
   <ul class="nav-links">
-    <li><a href="../index.html">होम</a></li>
-    <li><a href="../about.html">परिचय</a></li>
-    <li><a href="../archive.html">रचनाएं</a></li>
-    <li><a href="../gallery.html">गैलरी</a></li>
-    <li><a href="../contact.html">संपर्क</a></li>
+    <li><a href="../index.html">होम <span class="nav-en">Home</span></a></li>
+    <li><a href="../about.html" class="hide-sm">परिचय <span class="nav-en">About</span></a></li>
+    <li><a href="../archive.html">रचनाएं <span class="nav-en">Works</span></a></li>
+    <li><a href="../gallery.html" class="hide-sm">गैलरी <span class="nav-en">Gallery</span></a></li>
+    <li><a href="../contact.html" class="hide-sm">संपर्क <span class="nav-en">Connect</span></a></li>
     <li><a href="../archive.html" class="nav-cta">रचनाएं देखें</a></li>
   </ul>
 </nav>

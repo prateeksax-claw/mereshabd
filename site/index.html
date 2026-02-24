@@ -84,7 +84,7 @@ nav.scrolled .nav-logo img{filter:none}
 
 /* POEM FULLBLEED */
 .poem-section{min-height:88vh;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 60px}
-.poem-bg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.52),rgba(61,8,8,0.52)),url('images/mandir-nritya.jpg') center 25%/cover no-repeat}
+.poem-bg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.50),rgba(61,8,8,0.48)),url('images/mandir-golden.jpg') center 40%/cover no-repeat}
 .poem-art{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.018);line-height:1;pointer-events:none}
 .poem-label{position:absolute;top:56px;left:60px;display:flex;align-items:center;gap:12px}
 .poem-label::before{content:'';width:18px;height:1px;background:var(--gold)}
@@ -270,6 +270,13 @@ footer{background:var(--ink)}
 .quote-interlude .qi-text span{color:var(--gold)!important}
 .quote-interlude .qi-attr{color:rgba(255,255,255,0.55)!important}
 .quote-interlude::before{color:rgba(255,255,255,0.06)!important;opacity:1}
+
+.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+.nav-links a:hover .nav-en{color:var(--red)}
+
+.rs-en-label{display:block;font-family:monospace;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+
+.mi-en-excerpt{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.38);font-style:italic;margin:6px 0 0;line-height:1.4}
 </style>
 
   <!-- SEO: Canonical -->
@@ -300,11 +307,11 @@ footer{background:var(--ink)}
     <img src="images/logo.png" alt="मेरे शब्द">
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">होम</a></li>
-    <li><a href="about.html">परिचय</a></li>
-    <li><a href="archive.html">रचनाएं</a></li>
-    <li><a href="gallery.html">गैलरी</a></li>
-    <li><a href="contact.html">संपर्क</a></li>
+    <li><a href="index.html">होम <span class="nav-en">Home</span></a></li>
+    <li><a href="about.html" class="hide-sm">परिचय <span class="nav-en">About</span></a></li>
+    <li><a href="archive.html">रचनाएं <span class="nav-en">Works</span></a></li>
+    <li><a href="gallery.html" class="hide-sm">गैलरी <span class="nav-en">Gallery</span></a></li>
+    <li><a href="contact.html" class="hide-sm">संपर्क <span class="nav-en">Connect</span></a></li>
     <li><a href="archive.html" class="nav-cta">रचनाएं देखें</a></li>
   </ul>
 </nav>
@@ -417,6 +424,7 @@ footer{background:var(--ink)}
         <span class="mi-cat sansmaran">संस्मरण</span>
         <h3 class="mi-title xl">शाश्वत...<br>शिक्षकों को नमन</h3>
         <p class="mi-excerpt">"गुरु-गोविंद दोऊ खड़े, काके लागूं पांय" — भारतीय गुरु-शिष्य परंपरा की अनूठी कहानी...</p>
+        <p class="mi-en-excerpt">A tribute to teachers who light the way</p>
         <div class="mi-meta">सितम्बर २०२५</div>
       </div>
     </a>
@@ -428,6 +436,7 @@ footer{background:var(--ink)}
       <div class="mi-inner">
         <span class="mi-cat sansmaran">संस्मरण</span>
         <h3 class="mi-title">यादों में रहेंगे...</h3>
+        <p class="mi-en-excerpt">Those we love never truly leave us</p>
         <div class="mi-meta">जुलाई २०२५</div>
       </div>
     </a>
@@ -439,6 +448,7 @@ footer{background:var(--ink)}
       <div class="mi-inner">
         <span class="mi-cat">कविता</span>
         <h3 class="mi-title">मम्मी, अम्मा, नानी... जीवन सफ़र</h3>
+        <p class="mi-en-excerpt">A poem for every mother who shaped us</p>
         <div class="mi-meta">अक्टूबर २०२५</div>
       </div>
     </a>
@@ -450,6 +460,7 @@ footer{background:var(--ink)}
       <div class="mi-inner">
         <span class="mi-cat lekh">लेख</span>
         <h3 class="mi-title">Health is Wealth</h3>
+        <p class="mi-en-excerpt">On the wisdom of living well</p>
         <div class="mi-meta">जुलाई २०२५</div>
       </div>
     </a>
@@ -462,6 +473,7 @@ footer{background:var(--ink)}
         <span class="mi-cat pravasi">प्रवासी मन</span>
         <h3 class="mi-title">नज़राना परदेश से</h3>
         <p class="mi-excerpt">परदेस में बसी हर खुशी में छुपी है देस की खुशबू...</p>
+        <p class="mi-en-excerpt">A gift of longing from a distant land</p>
         <div class="mi-meta">जुलाई २०२२</div>
       </div>
     </a>
@@ -474,6 +486,7 @@ footer{background:var(--ink)}
         <span class="mi-cat">कविता</span>
         <h3 class="mi-title">दुनिया तुमसे... नारीत्व</h3>
         <p class="mi-excerpt">स्त्री के संघर्ष और शक्ति का काव्य-चित्रण...</p>
+        <p class="mi-en-excerpt">Celebrating the grace and strength of womanhood</p>
         <div class="mi-meta">जुलाई २०२२</div>
       </div>
     </a>
@@ -486,6 +499,7 @@ footer{background:var(--ink)}
         <span class="mi-cat">कविता</span>
         <h3 class="mi-title">काव्य-धारा</h3>
         <p class="mi-excerpt">शब्दों का प्रवाह, भावनाओं का उफान...</p>
+        <p class="mi-en-excerpt">Years of poetry, gathered in one place</p>
         <div class="mi-meta">जुलाई २०२२</div>
       </div>
     </a>
@@ -505,6 +519,7 @@ footer{background:var(--ink)}
     <a href="archive.html?cat=kavita" class="rs-card" style="background:rgba(155,14,14,0.06);border:1px solid rgba(155,14,14,0.2);border-top:3px solid #9B0E0E">
       <div class="rs-icon" style="color:#9B0E0E">♥</div>
       <div class="rs-name" style="color:#9B0E0E">कविता</div>
+      <span class="rs-en-label">Poetry</span>
       <div class="rs-count">3 रचनाएं</div>
       <div class="rs-desc">मन की गहराइयों से निकले शब्द — माँ, नारीत्व, प्रकृति और जीवन की लय।</div>
       <div class="rs-cta" style="color:#9B0E0E">देखें →</div>
@@ -512,6 +527,7 @@ footer{background:var(--ink)}
     <a href="archive.html?cat=lekh" class="rs-card" style="background:rgba(184,135,58,0.06);border:1px solid rgba(184,135,58,0.2);border-top:3px solid #B8873A">
       <div class="rs-icon" style="color:#B8873A">✍</div>
       <div class="rs-name" style="color:#B8873A">लेख</div>
+      <span class="rs-en-label">Essays</span>
       <div class="rs-count">5 रचनाएं</div>
       <div class="rs-desc">समाज, स्वास्थ्य, जीवन-दर्शन और संस्कृति पर विचारपूर्ण लेखन।</div>
       <div class="rs-cta" style="color:#B8873A">देखें →</div>
@@ -519,6 +535,7 @@ footer{background:var(--ink)}
     <a href="archive.html?cat=sansmaran" class="rs-card" style="background:rgba(45,106,79,0.06);border:1px solid rgba(45,106,79,0.2);border-top:3px solid #2D6A4F">
       <div class="rs-icon" style="color:#2D6A4F">❁</div>
       <div class="rs-name" style="color:#2D6A4F">संस्मरण</div>
+      <span class="rs-en-label">Memoirs</span>
       <div class="rs-count">2 रचनाएं</div>
       <div class="rs-desc">यादों की दुनिया — गुरु और परिवार को समर्पित भावपूर्ण संस्मरण।</div>
       <div class="rs-cta" style="color:#2D6A4F">देखें →</div>
@@ -526,6 +543,7 @@ footer{background:var(--ink)}
     <a href="archive.html?cat=pravasi" class="rs-card" style="background:rgba(26,58,107,0.06);border:1px solid rgba(26,58,107,0.2);border-top:3px solid #1A3A6B">
       <div class="rs-icon" style="color:#1A3A6B">✈</div>
       <div class="rs-name" style="color:#1A3A6B">प्रवासी मन</div>
+      <span class="rs-en-label">Diaspora Heart</span>
       <div class="rs-count">1 रचनाएं</div>
       <div class="rs-desc">परदेश से मातृभूमि की याद — अबू धाबी से हिंदी साहित्य की आवाज़।</div>
       <div class="rs-cta" style="color:#1A3A6B">देखें →</div>
@@ -533,6 +551,7 @@ footer{background:var(--ink)}
     <a href="archive.html?cat=vishesh" class="rs-card" style="background:rgba(107,47,160,0.06);border:1px solid rgba(107,47,160,0.2);border-top:3px solid #6B2FA0">
       <div class="rs-icon" style="color:#6B2FA0">♫</div>
       <div class="rs-name" style="color:#6B2FA0">विशेष</div>
+      <span class="rs-en-label">Special</span>
       <div class="rs-count">1 रचनाएं</div>
       <div class="rs-desc">सुर-ताल जुगलबंदी — ২৩ कविताओं का संपूर्ण संग्रह एक साथ।</div>
       <div class="rs-cta" style="color:#6B2FA0">देखें →</div>
