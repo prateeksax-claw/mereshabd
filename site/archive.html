@@ -216,6 +216,9 @@ footer{background:var(--ink)}
   .filter-bar{top:72px}
   .footer-main{grid-template-columns:1fr;padding:36px 20px}
 }
+
+.filter-en{font-family:monospace;font-size:8px;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;display:block;line-height:1;margin-top:2px}
+.filter-btn:hover .filter-en,.filter-btn.active .filter-en{color:rgba(255,255,255,0.6)}
 </style>
 
   <!-- SEO: Canonical -->
@@ -269,11 +272,11 @@ footer{background:var(--ink)}
 <div class="filter-bar" id="filterBar">
   <div class="filter-inner">
     <button class="filter-btn active" data-cat="all">सभी <span class="filter-count">12</span></button>
-    <button class="filter-btn" data-cat="kavita">कविता <span class="filter-count">3</span></button>
-    <button class="filter-btn" data-cat="lekh">लेख <span class="filter-count">5</span></button>
-    <button class="filter-btn" data-cat="sansmaran">संस्मरण <span class="filter-count">2</span></button>
-    <button class="filter-btn" data-cat="pravasi">प्रवासी मन <span class="filter-count">1</span></button>
-    <button class="filter-btn" data-cat="vishesh">विशेष <span class="filter-count">1</span></button>
+    <button class="filter-btn" data-cat="kavita">कविता <span class="filter-count">3</span><span class="filter-en">Poetry</span></button>
+    <button class="filter-btn" data-cat="lekh">लेख <span class="filter-count">5</span><span class="filter-en">Essays</span></button>
+    <button class="filter-btn" data-cat="sansmaran">संस्मरण <span class="filter-count">2</span><span class="filter-en">Memoirs</span></button>
+    <button class="filter-btn" data-cat="pravasi">प्रवासी मन <span class="filter-count">1</span><span class="filter-en">Diaspora Heart</span></button>
+    <button class="filter-btn" data-cat="vishesh">विशेष <span class="filter-count">1</span><span class="filter-en">Special</span></button>
   </div>
 </div>
 
