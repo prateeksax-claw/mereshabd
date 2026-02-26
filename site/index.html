@@ -16,7 +16,7 @@
   --gold-light:#D4A852;--dust:#8A7968;--petal:#F2E8DE;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);color:var(--ink);overflow-x:hidden;letter-spacing:0}
+body{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;background:var(--warm-white);color:var(--ink);overflow-x:hidden;letter-spacing:0}
 
 /* CRITICAL: Devanagari script must NEVER have letter-spacing - it breaks matra rendering */
 *[lang="hi"], .hero-name, .hero-desc, .hero-overline, .badge, .hero-cta,
@@ -34,7 +34,7 @@ nav.scrolled .nav-logo img{filter:none}
 .nav-logo{text-decoration:none;display:flex;align-items:center}
 .nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));transition:filter 0.3s}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
-.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);text-decoration:none;font-weight:400;transition:color 0.2s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
+.nav-links a{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.88);text-decoration:none;font-weight:400;transition:color 0.2s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
 .nav-links a:hover{color:var(--gold-light)}
 .nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important}
 .nav-cta:hover{background:var(--red-deep)!important;color:white!important}
@@ -56,6 +56,7 @@ nav.scrolled .nav-logo img{filter:none}
 .hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;color:rgba(255,255,255,0.65);line-height:2;max-width:400px;margin-bottom:36px;font-weight:300}
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px}
 .badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.72);font-size:13px;padding:7px 16px;font-family:'Noto Sans Devanagari',sans-serif;backdrop-filter:blur(4px)}
+.hero-en-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.42);font-style:italic;margin-bottom:28px;margin-top:-20px}
 .hero-cta{display:inline-flex;align-items:center;gap:12px;color:white;text-decoration:none;font-size:17px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.35);transition:all 0.3s}
 .hero-cta:hover{border-color:var(--gold);color:var(--gold-light)}
 .scroll-hint{position:absolute;bottom:28px;right:56px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -77,18 +78,15 @@ nav.scrolled .nav-logo img{filter:none}
 .intro-num{font-family:'Cormorant Garamond',serif;font-size:72px;color:var(--red);line-height:1;font-weight:300;opacity:0.18}
 .intro-body{padding:80px 80px 80px 56px;display:flex;flex-direction:column;justify-content:center}
 .intro-tag{font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:22px;font-family:'Noto Sans Devanagari',sans-serif}
-.intro-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:50px;color:var(--ink);line-height:1.25;font-weight:400;margin-bottom:28px}
+.intro-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:56px;color:var(--ink);line-height:1.25;font-weight:400;margin-bottom:28px}
 .intro-headline em{font-style:italic;color:var(--red)}
-.intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:20px;line-height:2.1;color:var(--dust);max-width:540px;font-weight:300;margin-bottom:36px}
+.intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:22px;line-height:2.1;color:var(--dust);max-width:540px;font-weight:300;margin-bottom:36px}
 .intro-read{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-size:16px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:4px;border-bottom:1px solid rgba(155,14,14,0.3);transition:all 0.2s;width:fit-content}
 
 /* POEM FULLBLEED */
-/* POEM SECTION — split: text left, temple right */
-.poem-section{background:var(--ink);display:grid;grid-template-columns:1fr 420px;min-height:520px;overflow:hidden;position:relative}
-.poem-text-col{padding:72px 64px 72px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.poem-temple-col{position:relative;overflow:hidden}
-.poem-temple-col img{width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:0.88;display:block}
-.poem-temple-col::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,8,8,0.7) 0%,rgba(26,8,8,0.15) 60%,transparent 100%);z-index:1}
+/* POEM SECTION — full-width dark gradient, no photo */
+.poem-section{background:linear-gradient(135deg,#1A0808 0%,#2D0808 50%,#1A1008 100%);display:block;min-height:520px;overflow:hidden;position:relative}
+.poem-text-col{padding:72px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;max-width:900px;margin:0 auto}
 .poem-bg{display:none}
 .poem-art{display:none}
 .poem-label{display:flex;align-items:center;gap:12px;margin-bottom:28px}
@@ -98,10 +96,10 @@ nav.scrolled .nav-logo img{filter:none}
 .poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);font-style:italic;margin-bottom:40px;opacity:0.85}
 .pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.9);line-height:1.65;display:block;cursor:default;transition:all 0.2s}
 .pline:hover{color:white}
-.pline.xl{font-size:48px}
-.pline.lg{font-size:34px;padding-left:40px;opacity:0.82}
-.pline.md{font-size:26px;padding-left:80px;opacity:0.72}
-.pline.sm{font-size:20px;padding-left:28px;opacity:0.62}
+.pline.xl{font-size:54px}
+.pline.lg{font-size:40px;padding-left:40px;opacity:0.82}
+.pline.md{font-size:30px;padding-left:80px;opacity:0.72}
+.pline.sm{font-size:23px;padding-left:28px;opacity:0.62}
 .pgap{height:16px;display:block}
 .poem-attr{margin-top:44px;display:flex;align-items:center;gap:18px}
 .pattr-line{width:36px;height:1px;background:var(--gold);opacity:0.5}
@@ -136,10 +134,10 @@ nav.scrolled .nav-logo img{filter:none}
 .mi-cat.pravasi{background:#2D6B8A}
 .mi-cat.vishesh{background:#6B5A1E}
 .mi-title{font-family:'Tiro Devanagari Hindi',serif;color:white;font-weight:400;line-height:1.25;margin-bottom:10px}
-.mi-xl .mi-title{font-size:38px}
-.mi-md .mi-title{font-size:24px}
-.mi-sm .mi-title{font-size:20px}
-.mi-excerpt{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.62);line-height:1.8;font-weight:300}
+.mi-xl .mi-title{font-size:42px}
+.mi-md .mi-title{font-size:26px}
+.mi-sm .mi-title{font-size:22px}
+.mi-excerpt{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:rgba(255,255,255,0.62);line-height:1.8;font-weight:300}
 .mi-sm .mi-excerpt{display:none}
 .mi-meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,0.35);font-family:'Noto Sans Devanagari',sans-serif;display:flex;align-items:center;gap:8px}
 .mi-meta::before{content:'';width:14px;height:1px;background:var(--gold);opacity:0.5}
@@ -149,7 +147,7 @@ nav.scrolled .nav-logo img{filter:none}
 /* QUOTE INTERLUDE */
 .quote-interlude{padding:110px 60px;background:var(--petal);text-align:center;position:relative;overflow:hidden}
 .quote-interlude::before{content:'"';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:220px;color:var(--red);opacity:0.045;line-height:1;pointer-events:none}
-.qi-text{font-family:'Tiro Devanagari Hindi',serif;font-size:46px;color:var(--ink);line-height:1.6;max-width:880px;margin:0 auto 32px;position:relative;z-index:1}
+.qi-text{font-family:'Tiro Devanagari Hindi',serif;font-size:50px;color:var(--ink);line-height:1.6;max-width:880px;margin:0 auto 32px;position:relative;z-index:1}
 .qi-text span{color:var(--red);font-style:italic}
 .qi-attr{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);font-weight:300;position:relative;z-index:1}
 
@@ -169,7 +167,7 @@ nav.scrolled .nav-logo img{filter:none}
 .ar-eyebrow::before{content:'';width:22px;height:1px;background:var(--gold)}
 .ar-name{font-family:'Tiro Devanagari Hindi',serif;font-size:54px;color:var(--ink);line-height:1.05;margin-bottom:8px;font-weight:400}
 .ar-name-en{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dust);font-style:italic;margin-bottom:36px;letter-spacing:1px}
-.ar-bio{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px;color:var(--ink);line-height:2.1;margin-bottom:44px;font-weight:300;max-width:440px}
+.ar-bio{font-family:'Noto Sans Devanagari',sans-serif;font-size:21px;color:var(--ink);line-height:2.1;margin-bottom:44px;font-weight:300;max-width:440px}
 .creds{display:flex;flex-direction:column;gap:16px;margin-bottom:44px}
 .cred{display:flex;align-items:flex-start;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.055)}
 .cred-n{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--red);font-weight:300;opacity:0.28;width:38px;flex-shrink:0;line-height:1}
@@ -190,7 +188,7 @@ footer{background:var(--ink)}
 .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:72px 60px;border-bottom:1px solid rgba(255,255,255,0.04)}
 .fbrand{padding-right:52px}
 .fbrand-logo img{height:56px;width:auto;filter:brightness(0) invert(1);opacity:0.85;margin-bottom:20px}
-.fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);line-height:2;margin-bottom:28px;font-weight:300}
+.fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.35);line-height:2;margin-bottom:28px;font-weight:300}
 .fsocials{display:flex;gap:10px}
 .fsoc{width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.38);font-size:14px;text-decoration:none;transition:all 0.2s;font-style:normal}
 .fsoc:hover{border-color:var(--gold);color:var(--gold)}
@@ -198,7 +196,7 @@ footer{background:var(--ink)}
 .fcol-label{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:22px}
 .fcol ul{list-style:none}
 .fcol ul li{margin-bottom:12px}
-.fcol ul a{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+.fcol ul a{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
 .fcol ul a:hover{color:white}
 .footer-bottom{padding:22px 60px;display:flex;align-items:center;justify-content:space-between}
 .fbcopy{font-size:10px;color:rgba(255,255,255,0.13);font-family:monospace;letter-spacing:1px}
@@ -286,7 +284,6 @@ footer{background:var(--ink)}
 @media(max-width:960px){
   .poem-section{grid-template-columns:1fr;min-height:auto}
   .poem-text-col{padding:56px 32px}
-  .poem-temple-col{height:280px}
   .pline.xl{font-size:36px}
   .pline.lg{font-size:27px;padding-left:24px}
   .pline.md{font-size:21px;padding-left:48px}
@@ -294,11 +291,16 @@ footer{background:var(--ink)}
 }
 @media(max-width:600px){
   .poem-text-col{padding:40px 20px}
-  .poem-temple-col{height:220px}
   .pline.xl{font-size:28px}
   .pline.lg{font-size:22px;padding-left:16px}
   .pline.md{font-size:18px;padding-left:32px}
 }
+
+/* English subtitle/translation styles */
+.poem-en-label{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.42);font-style:italic;margin-bottom:20px;margin-top:-20px}
+.poem-en-title{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.38);font-style:italic;margin-top:-32px;margin-bottom:36px}
+.section-en-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(26,16,8,0.42);font-style:italic;margin-top:-16px;margin-bottom:20px}
+.mag-en-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(26,16,8,0.42);font-style:italic;margin-top:4px}
 </style>
 
   <!-- SEO: Canonical -->
@@ -353,6 +355,7 @@ footer{background:var(--ink)}
     <h1 class="hero-name">गीतांजलि<br>सक्सेना</h1>
     <p class="hero-name-en">Gitanjali Saxena</p>
     <p class="hero-desc">नवभारत टाइम्स की पत्रकार · PIB-मान्यता प्राप्त · जयोति संपादक</p>
+    <p class="hero-en-sub">Words from the heart — Hindi poetry &amp; literature from Abu Dhabi</p>
     <div class="hero-badges">
       <span class="badge">कवयित्री</span>
       <span class="badge">लेखिका</span>
@@ -384,18 +387,15 @@ footer{background:var(--ink)}
   </div>
 </div>
 
-<!-- EDITORIAL INTRO -->
-<section class="editorial-intro">
-  <div class="intro-side">
-    <div class="intro-label-v">रचना संसार</div>
-    <div class="intro-num">०१</div>
-  </div>
-  <div class="intro-body">
-    <div class="poem-section">
+
+<!-- POEM SECTION -->
+<section class="poem-section">
   <div class="poem-text-col">
     <div class="poem-label"><span>नूतन वर्ष · जनवरी २०२६</span></div>
+    <p class="poem-en-label">New Year · January 2026</p>
     <div class="poem-wrap">
       <div class="poem-title-sm">— नववर्ष पर शब्दों की भेंट</div>
+      <p class="poem-en-title">A gift of words for the New Year</p>
       <span class="pline xl">नववर्ष भरा रहे</span>
       <span class="pline lg">अच्छे स्वास्थ्य से,</span>
       <span class="pgap"></span>
@@ -413,42 +413,20 @@ footer{background:var(--ink)}
       </div>
     </div>
   </div>
-  <div class="poem-temple-col">
-    <img src="images/mandir-golden.jpg" alt="BAPS Hindu Mandir Abu Dhabi — एक कमल मरुस्थल में">
+</section>
+<!-- EDITORIAL INTRO -->
+<section class="editorial-intro">
+  <div class="intro-side">
+    <div class="intro-label-v">रचना संसार</div>
+    <div class="intro-num">०१</div>
   </div>
-</div>
+  <div class="intro-body">
     <h2 class="intro-headline">शब्द ही हैं<br>मेरी <em>पहचान</em></h2>
+    <p class="section-en-sub">Words are my identity — my gift to the world</p>
     <p class="intro-text">सिर्फ शब्दों से खिलवाड़ ही नहीं, माला में पिरोना भी है फ़ितरत। कभी भी न थमने वाला लेखन सिलसिला यूं ही जारी रहेगा हमेशा...</p>
     <a href="about.html" class="intro-read">पूरा परिचय पढ़ें →</a>
   </div>
 </section>
-
-<!-- POEM FULLBLEED -->
-<section class="poem-section">
-  <div class="poem-bg"></div>
-  <div class="poem-art">न</div>
-  <div class="poem-label"><span>नूतन वर्ष · जनवरी २०२५</span></div>
-  <div class="poem-wrap">
-    <div class="poem-title-sm">— नववर्ष पर शब्दों की भेंट</div>
-    <span class="pline xl">नववर्ष भरा रहे</span>
-    <span class="pline lg">अच्छे स्वास्थ्य से,</span>
-    <span class="pgap"></span>
-    <span class="pline md">सुख-समृद्धि दे दस्तक जीवन में,</span>
-    <span class="pline md">जीवन ही तो है उत्सव, है अनमोल,</span>
-    <span class="pgap"></span>
-    <span class="pline lg">शब्द पिरोकर कुछ</span>
-    <span class="pline xl">कहने-सुनने का…</span>
-    <span class="pgap"></span>
-    <span class="pline sm">शब्दों का मोल जीवन में जानें…</span>
-    <div class="poem-attr">
-      <div class="pattr-line"></div>
-      <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२५</div>
-      <a href="posts/navvarsh-2025.html" class="pread">पूरी कविता →</a>
-    </div>
-  </div>
-</section>
-
-
 <!-- LOTUS IN DESERT BANNER -->
 <a href="posts/navvarsh-2025.html" class="lotus-strip" title="BAPS Hindu Mandir, Abu Dhabi — रेगिस्तान में कमल">
   <img src="images/lotus-desert.jpg" alt="BAPS Hindu Mandir Abu Dhabi — a Lotus in the Desert" loading="lazy">
@@ -458,6 +436,7 @@ footer{background:var(--ink)}
 <section class="mag-section">
   <div class="mag-head">
     <h2 class="mag-title">ताज़ी रचनाएं</h2>
+    <p class="mag-en-sub">Latest Works</p>
     <span class="mag-sub">नवीनतम लेखन</span>
     <a href="archive.html" class="mag-all">सभी देखें →</a>
   </div>
