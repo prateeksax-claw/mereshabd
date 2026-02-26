@@ -83,24 +83,29 @@ nav.scrolled .nav-logo img{filter:none}
 .intro-read{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-size:16px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:4px;border-bottom:1px solid rgba(155,14,14,0.3);transition:all 0.2s;width:fit-content}
 
 /* POEM FULLBLEED */
-.poem-section{min-height:88vh;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 60px}
-.poem-bg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.50),rgba(61,8,8,0.48)),url('images/mandir-golden.jpg') center 40%/cover no-repeat}
-.poem-art{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.018);line-height:1;pointer-events:none}
-.poem-label{position:absolute;top:56px;left:60px;display:flex;align-items:center;gap:12px}
+/* POEM SECTION — split: text left, temple right */
+.poem-section{background:var(--ink);display:grid;grid-template-columns:1fr 420px;min-height:520px;overflow:hidden;position:relative}
+.poem-text-col{padding:72px 64px 72px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.poem-temple-col{position:relative;overflow:hidden}
+.poem-temple-col img{width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:0.88;display:block}
+.poem-temple-col::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,8,8,0.7) 0%,rgba(26,8,8,0.15) 60%,transparent 100%);z-index:1}
+.poem-bg{display:none}
+.poem-art{display:none}
+.poem-label{display:flex;align-items:center;gap:12px;margin-bottom:28px}
 .poem-label::before{content:'';width:18px;height:1px;background:var(--gold)}
 .poem-label span{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:500}
-.poem-wrap{position:relative;z-index:2;max-width:920px;width:100%}
-.poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);font-style:italic;margin-bottom:56px;opacity:0.85}
-.pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.9);line-height:1.7;display:block;cursor:default;transition:all 0.2s}
+.poem-wrap{position:relative;z-index:2;width:100%}
+.poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);font-style:italic;margin-bottom:40px;opacity:0.85}
+.pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.9);line-height:1.65;display:block;cursor:default;transition:all 0.2s}
 .pline:hover{color:white}
-.pline.xl{font-size:58px}
-.pline.lg{font-size:42px;padding-left:60px;opacity:0.82}
-.pline.md{font-size:32px;padding-left:112px;opacity:0.72}
-.pline.sm{font-size:26px;padding-left:40px;opacity:0.62}
-.pgap{height:20px;display:block}
-.poem-attr{margin-top:60px;display:flex;align-items:center;gap:18px}
+.pline.xl{font-size:48px}
+.pline.lg{font-size:34px;padding-left:40px;opacity:0.82}
+.pline.md{font-size:26px;padding-left:80px;opacity:0.72}
+.pline.sm{font-size:20px;padding-left:28px;opacity:0.62}
+.pgap{height:16px;display:block}
+.poem-attr{margin-top:44px;display:flex;align-items:center;gap:18px}
 .pattr-line{width:36px;height:1px;background:var(--gold);opacity:0.5}
-.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:rgba(255,255,255,0.4);font-weight:300}
+.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.4);font-weight:300}
 .pread{margin-left:auto;color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:3px;text-decoration:none;font-family:monospace;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
 .pread:hover{color:var(--gold);border-color:var(--gold)}
 
@@ -277,6 +282,23 @@ footer{background:var(--ink)}
 .rs-en-label{display:block;font-family:monospace;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
 
 .mi-en-excerpt{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.38);font-style:italic;margin:6px 0 0;line-height:1.4}
+
+@media(max-width:960px){
+  .poem-section{grid-template-columns:1fr;min-height:auto}
+  .poem-text-col{padding:56px 32px}
+  .poem-temple-col{height:280px}
+  .pline.xl{font-size:36px}
+  .pline.lg{font-size:27px;padding-left:24px}
+  .pline.md{font-size:21px;padding-left:48px}
+  .pline.sm{font-size:17px;padding-left:16px}
+}
+@media(max-width:600px){
+  .poem-text-col{padding:40px 20px}
+  .poem-temple-col{height:220px}
+  .pline.xl{font-size:28px}
+  .pline.lg{font-size:22px;padding-left:16px}
+  .pline.md{font-size:18px;padding-left:32px}
+}
 </style>
 
   <!-- SEO: Canonical -->
@@ -369,7 +391,32 @@ footer{background:var(--ink)}
     <div class="intro-num">०१</div>
   </div>
   <div class="intro-body">
-    <div class="intro-tag">परिचय</div>
+    <div class="poem-section">
+  <div class="poem-text-col">
+    <div class="poem-label"><span>नूतन वर्ष · जनवरी २०२६</span></div>
+    <div class="poem-wrap">
+      <div class="poem-title-sm">— नववर्ष पर शब्दों की भेंट</div>
+      <span class="pline xl">नववर्ष भरा रहे</span>
+      <span class="pline lg">अच्छे स्वास्थ्य से,</span>
+      <span class="pgap"></span>
+      <span class="pline md">सुख-समृद्धि दे दस्तक जीवन में,</span>
+      <span class="pline md">जीवन ही तो है उत्सव, है अनमोल,</span>
+      <span class="pgap"></span>
+      <span class="pline lg">शब्द पिरोकर कुछ</span>
+      <span class="pline xl">कहने-सुनने का…</span>
+      <span class="pgap"></span>
+      <span class="pline sm">शब्दों का मोल जीवन में जानें…</span>
+      <div class="poem-attr">
+        <div class="pattr-line"></div>
+        <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२६</div>
+        <a href="posts/navvarsh-2025.html" class="pread">पूरी कविता →</a>
+      </div>
+    </div>
+  </div>
+  <div class="poem-temple-col">
+    <img src="images/mandir-golden.jpg" alt="BAPS Hindu Mandir Abu Dhabi — एक कमल मरुस्थल में">
+  </div>
+</div>
     <h2 class="intro-headline">शब्द ही हैं<br>मेरी <em>पहचान</em></h2>
     <p class="intro-text">सिर्फ शब्दों से खिलवाड़ ही नहीं, माला में पिरोना भी है फ़ितरत। कभी भी न थमने वाला लेखन सिलसिला यूं ही जारी रहेगा हमेशा...</p>
     <a href="about.html" class="intro-read">पूरा परिचय पढ़ें →</a>
