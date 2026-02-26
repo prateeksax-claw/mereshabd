@@ -52,11 +52,11 @@ nav.scrolled .nav-logo img{filter:none}
 .hero-overline{font-size:14px;color:var(--gold-light);font-weight:500;margin-bottom:22px;display:flex;align-items:center;gap:12px}
 .hero-overline::before{content:'';width:28px;height:1px;background:var(--gold-light)}
 .hero-name{font-family:'Tiro Devanagari Hindi',serif;font-size:92px;color:#fff;line-height:1;font-weight:400;margin-bottom:8px}
-.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.38);letter-spacing:6px;font-style:italic;margin-bottom:28px;font-weight:300}
+.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.65);letter-spacing:6px;font-style:italic;margin-bottom:28px;font-weight:500}
 .hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;color:rgba(255,255,255,0.65);line-height:2;max-width:400px;margin-bottom:36px;font-weight:300}
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px}
 .badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.72);font-size:13px;padding:7px 16px;font-family:'Noto Sans Devanagari',sans-serif;backdrop-filter:blur(4px)}
-.hero-en-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.42);font-style:italic;margin-bottom:28px;margin-top:-20px}
+.hero-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.72);font-style:italic;font-weight:500;margin-bottom:28px;margin-top:-20px;line-height:1.6}
 .hero-cta{display:inline-flex;align-items:center;gap:12px;color:white;text-decoration:none;font-size:17px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.35);transition:all 0.3s}
 .hero-cta:hover{border-color:var(--gold);color:var(--gold-light)}
 .scroll-hint{position:absolute;bottom:28px;right:56px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -84,8 +84,8 @@ nav.scrolled .nav-logo img{filter:none}
 .intro-read{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-size:16px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:4px;border-bottom:1px solid rgba(155,14,14,0.3);transition:all 0.2s;width:fit-content}
 
 /* POEM FULLBLEED */
-/* POEM SECTION — full-width dark gradient, no photo */
-.poem-section{background:linear-gradient(135deg,#1A0808 0%,#2D0808 50%,#1A1008 100%);display:block;min-height:520px;overflow:hidden;position:relative}
+/* POEM SECTION — full-width with navvarsh background image */
+.poem-section{background:linear-gradient(rgba(0,0,0,0.55), rgba(20,8,4,0.62)), url('images/navvarsh-bg.jpg') center 40%/cover no-repeat;display:block;min-height:520px;overflow:hidden;position:relative}
 .poem-text-col{padding:72px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;max-width:900px;margin:0 auto}
 .poem-bg{display:none}
 .poem-art{display:none}
@@ -103,7 +103,7 @@ nav.scrolled .nav-logo img{filter:none}
 .pgap{height:16px;display:block}
 .poem-attr{margin-top:44px;display:flex;align-items:center;gap:18px}
 .pattr-line{width:36px;height:1px;background:var(--gold);opacity:0.5}
-.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.4);font-weight:300}
+.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.65);font-weight:400}
 .pread{margin-left:auto;color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:3px;text-decoration:none;font-family:monospace;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
 .pread:hover{color:var(--gold);border-color:var(--gold)}
 
@@ -274,12 +274,12 @@ footer{background:var(--ink)}
 .quote-interlude .qi-attr{color:rgba(255,255,255,0.55)!important}
 .quote-interlude::before{color:rgba(255,255,255,0.06)!important;opacity:1}
 
-.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
-.nav-links a:hover .nav-en{color:var(--red)}
+.nav-en{font-size:10px;display:block;color:rgba(26,16,8,0.5);font-family:monospace;font-weight:500;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+.nav-links a:hover .nav-en{color:var(--red)} nav.scrolled .nav-en{color:rgba(26,16,8,0.45)}
 
-.rs-en-label{display:block;font-family:monospace;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.rs-en-label{display:block;font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(26,16,8,0.55);font-weight:500;font-style:italic;letter-spacing:0;text-transform:none;margin-top:4px}
 
-.mi-en-excerpt{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.38);font-style:italic;margin:6px 0 0;line-height:1.4}
+.mi-en-excerpt{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:500;margin:6px 0 0;line-height:1.6}
 
 @media(max-width:960px){
   .poem-section{grid-template-columns:1fr;min-height:auto}
@@ -297,10 +297,47 @@ footer{background:var(--ink)}
 }
 
 /* English subtitle/translation styles */
-.poem-en-label{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.42);font-style:italic;margin-bottom:20px;margin-top:-20px}
-.poem-en-title{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.38);font-style:italic;margin-top:-32px;margin-bottom:36px}
-.section-en-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(26,16,8,0.42);font-style:italic;margin-top:-16px;margin-bottom:20px}
-.mag-en-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(26,16,8,0.42);font-style:italic;margin-top:4px}
+.poem-en-label{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.72);font-style:italic;font-weight:500;margin-bottom:20px;margin-top:-20px;line-height:1.6}
+.poem-en-title{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:500;margin-top:-32px;margin-bottom:36px;line-height:1.6}
+.section-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.62);font-style:italic;font-weight:500;margin-top:-16px;margin-bottom:20px;line-height:1.6}
+.mag-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.62);font-style:italic;font-weight:500;margin-top:4px;line-height:1.6}
+
+/* GLOBAL English translation elements — bolder and more visible */
+[class*="-en"], [class*="en-"] { font-size: 14px; font-weight: 500; opacity: 0.72; }
+
+/* Poem stanza English translations */
+.poem-stanza-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:500;display:block;margin-top:8px;margin-bottom:20px;padding-left:4px;line-height:1.7;opacity:1}
+
+/* Author section English */
+.aq-en{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.65);font-style:italic;font-weight:500;display:block;margin-top:8px;line-height:1.6;margin-bottom:16px}
+.ar-eyebrow-en{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(26,16,8,0.6);font-style:italic;font-weight:500;display:block;margin-top:-20px;margin-bottom:20px;line-height:1.6}
+.ar-bio-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.6);font-style:italic;font-weight:500;margin-bottom:28px;margin-top:-32px;line-height:1.7}
+.cred-sub-en{font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(26,16,8,0.5);font-style:italic;font-weight:500;margin-top:2px;display:block}
+
+/* Footer English */
+.fcol-label-en{font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(255,255,255,0.45);font-style:italic;font-weight:500;display:block;margin-top:-16px;margin-bottom:14px;line-height:1.5}
+.fbrand-en{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;font-weight:500;margin-bottom:20px;margin-top:-16px;line-height:1.6}
+.footer-copy-en{font-size:10px;color:rgba(255,255,255,0.25);font-family:monospace;font-weight:500;letter-spacing:0.5px}
+
+/* rs-card English desc */
+.rs-en-desc{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(26,16,8,0.55);font-style:italic;font-weight:500;margin-top:-4px;line-height:1.6}
+
+/* Quote interlude English */
+.qi-en{font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:500;display:block;margin-top:16px;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
+
+/* Marquee English */
+.marquee-en{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.55);font-style:italic;font-weight:500;margin-left:4px}
+
+/* Intro section English */
+.intro-tag-en{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(26,16,8,0.55);font-style:italic;font-weight:500;display:block;margin-top:-14px;margin-bottom:18px}
+.intro-text-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.6);font-style:italic;font-weight:500;margin-bottom:24px;margin-top:-24px;max-width:540px;line-height:1.8}
+
+/* Hero badges English */
+.badge-en{font-family:'Cormorant Garamond',serif;font-size:11px;color:rgba(255,255,255,0.55);font-style:italic;font-weight:500;margin-left:4px}
+
+/* Nav CTA English */
+.nav-cta-en{font-size:10px;display:block;color:rgba(255,255,255,0.65);font-family:monospace;font-weight:500;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+
 </style>
 
   <!-- SEO: Canonical -->
@@ -336,7 +373,7 @@ footer{background:var(--ink)}
     <li><a href="archive.html">रचनाएं <span class="nav-en">Works</span></a></li>
     <li><a href="gallery.html" class="hide-sm">गैलरी <span class="nav-en">Gallery</span></a></li>
     <li><a href="contact.html" class="hide-sm">संपर्क <span class="nav-en">Connect</span></a></li>
-    <li><a href="archive.html" class="nav-cta">रचनाएं देखें</a></li>
+    <li><a href="archive.html" class="nav-cta">रचनाएं देखें<span class="nav-cta-en">Read Works</span></a></li>
   </ul>
 </nav>
 
@@ -351,18 +388,19 @@ footer{background:var(--ink)}
   </div>
   <div class="hero-divider"></div>
   <div class="hero-content">
-    <div class="hero-overline">अबू धाबी से हिंदी की आवाज़</div>
+    <div class="hero-overline">अबू धाबी से हिंदी की आवाज़ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.55);font-weight:500;margin-left:6px">Hindi voice from Abu Dhabi</span></div>
     <h1 class="hero-name">गीतांजलि<br>सक्सेना</h1>
     <p class="hero-name-en">Gitanjali Saxena</p>
     <p class="hero-desc">नवभारत टाइम्स की पत्रकार · PIB-मान्यता प्राप्त · जयोति संपादक</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.62);font-style:italic;font-weight:500;margin-top:-10px;margin-bottom:20px;line-height:1.6">Journalist · PIB Accredited · Jyoti Magazine Editor</p>
     <p class="hero-en-sub">Words from the heart — Hindi poetry &amp; literature from Abu Dhabi</p>
     <div class="hero-badges">
-      <span class="badge">कवयित्री</span>
-      <span class="badge">लेखिका</span>
-      <span class="badge">पत्रकार</span>
+      <span class="badge">कवयित्री <span class="badge-en">Poet</span></span>
+      <span class="badge">लेखिका <span class="badge-en">Author</span></span>
+      <span class="badge">पत्रकार <span class="badge-en">Journalist</span></span>
     </div>
     <div class="hero-ctas">
-      <a href="archive.html" class="hero-cta">रचनाएं पढ़ें</a>
+      <a href="archive.html" class="hero-cta">रचनाएं पढ़ें <span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.6);font-weight:500;margin-left:4px">Read My Works →</span></a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -374,16 +412,16 @@ footer{background:var(--ink)}
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-inner">
-    <span class="marquee-item">कविता</span>
-    <span class="marquee-item">लेख</span>
-    <span class="marquee-item">संस्मरण</span>
-    <span class="marquee-item">प्रवासी मन</span>
-    <span class="marquee-item">विशेष</span>
-    <span class="marquee-item">कविता</span>
-    <span class="marquee-item">लेख</span>
-    <span class="marquee-item">संस्मरण</span>
-    <span class="marquee-item">प्रवासी मन</span>
-    <span class="marquee-item">विशेष</span>
+    <span class="marquee-item">कविता <span class="marquee-en">Poetry</span></span>
+    <span class="marquee-item">लेख <span class="marquee-en">Essays</span></span>
+    <span class="marquee-item">संस्मरण <span class="marquee-en">Memoirs</span></span>
+    <span class="marquee-item">प्रवासी मन <span class="marquee-en">Diaspora</span></span>
+    <span class="marquee-item">विशेष <span class="marquee-en">Special</span></span>
+    <span class="marquee-item">कविता <span class="marquee-en">Poetry</span></span>
+    <span class="marquee-item">लेख <span class="marquee-en">Essays</span></span>
+    <span class="marquee-item">संस्मरण <span class="marquee-en">Memoirs</span></span>
+    <span class="marquee-item">प्रवासी मन <span class="marquee-en">Diaspora</span></span>
+    <span class="marquee-item">विशेष <span class="marquee-en">Special</span></span>
   </div>
 </div>
 
@@ -398,18 +436,22 @@ footer{background:var(--ink)}
       <p class="poem-en-title">A gift of words for the New Year</p>
       <span class="pline xl">नववर्ष भरा रहे</span>
       <span class="pline lg">अच्छे स्वास्थ्य से,</span>
+      <span class="poem-stanza-en">"May the New Year be filled with good health…"</span>
       <span class="pgap"></span>
       <span class="pline md">सुख-समृद्धि दे दस्तक जीवन में,</span>
       <span class="pline md">जीवन ही तो है उत्सव, है अनमोल,</span>
+      <span class="poem-stanza-en">"May prosperity knock on your door, for life itself is a celebration…"</span>
       <span class="pgap"></span>
       <span class="pline lg">शब्द पिरोकर कुछ</span>
       <span class="pline xl">कहने-सुनने का…</span>
+      <span class="poem-stanza-en">"Stringing words together, to speak and to listen…"</span>
       <span class="pgap"></span>
       <span class="pline sm">शब्दों का मोल जीवन में जानें…</span>
+      <span class="poem-stanza-en">"Know the value of words in your life…"</span>
       <div class="poem-attr">
         <div class="pattr-line"></div>
-        <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२६</div>
-        <a href="posts/navvarsh-2025.html" class="pread">पूरी कविता →</a>
+        <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२६<br><span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.55);font-weight:500">Gitanjali Saxena, January 2026</span></div>
+        <a href="posts/navvarsh-2025.html" class="pread" title="Read full poem">पूरी कविता → <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;font-weight:500">Full poem</span></a>
       </div>
     </div>
   </div>
@@ -418,13 +460,15 @@ footer{background:var(--ink)}
 <section class="editorial-intro">
   <div class="intro-side">
     <div class="intro-label-v">रचना संसार</div>
+    <div style="writing-mode:vertical-rl;font-family:'Cormorant Garamond',serif;font-size:9px;color:rgba(26,16,8,0.45);font-style:italic;font-weight:500;letter-spacing:0;margin-bottom:16px">Creative World</div>
     <div class="intro-num">०१</div>
   </div>
   <div class="intro-body">
     <h2 class="intro-headline">शब्द ही हैं<br>मेरी <em>पहचान</em></h2>
     <p class="section-en-sub">Words are my identity — my gift to the world</p>
     <p class="intro-text">सिर्फ शब्दों से खिलवाड़ ही नहीं, माला में पिरोना भी है फ़ितरत। कभी भी न थमने वाला लेखन सिलसिला यूं ही जारी रहेगा हमेशा...</p>
-    <a href="about.html" class="intro-read">पूरा परिचय पढ़ें →</a>
+    <p class="intro-text-en">Not just playing with words, but stringing them into a garland — a writing journey that will never stop, always continuing…</p>
+    <a href="about.html" class="intro-read">पूरा परिचय पढ़ें → <span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;font-weight:500;color:rgba(155,14,14,0.65)">Read Full Profile</span></a>
   </div>
 </section>
 <!-- LOTUS IN DESERT BANNER -->
@@ -438,7 +482,7 @@ footer{background:var(--ink)}
     <h2 class="mag-title">ताज़ी रचनाएं</h2>
     <p class="mag-en-sub">Latest Works</p>
     <span class="mag-sub">नवीनतम लेखन</span>
-    <a href="archive.html" class="mag-all">सभी देखें →</a>
+    <a href="archive.html" class="mag-all">सभी देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500">View All</span></a>
   </div>
   <div class="mag-grid">
 
@@ -447,11 +491,11 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">गु</div>
       <div class="mi-inner">
-        <span class="mi-cat sansmaran">संस्मरण</span>
+        <span class="mi-cat sansmaran">संस्मरण <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Memoir</span></span>
         <h3 class="mi-title xl">शाश्वत...<br>शिक्षकों को नमन</h3>
         <p class="mi-excerpt">"गुरु-गोविंद दोऊ खड़े, काके लागूं पांय" — भारतीय गुरु-शिष्य परंपरा की अनूठी कहानी...</p>
         <p class="mi-en-excerpt">A tribute to teachers who light the way</p>
-        <div class="mi-meta">सितम्बर २०२५</div>
+        <div class="mi-meta">सितम्बर २०२५ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.5)">Sep 2025</span></div>
       </div>
     </a>
 
@@ -460,10 +504,10 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">या</div>
       <div class="mi-inner">
-        <span class="mi-cat sansmaran">संस्मरण</span>
+        <span class="mi-cat sansmaran">संस्मरण <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Memoir</span></span>
         <h3 class="mi-title">यादों में रहेंगे...</h3>
         <p class="mi-en-excerpt">Those we love never truly leave us</p>
-        <div class="mi-meta">जुलाई २०२५</div>
+        <div class="mi-meta">जुलाई २०२५ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.5)">Jul 2025</span></div>
       </div>
     </a>
 
@@ -472,10 +516,10 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">मा</div>
       <div class="mi-inner">
-        <span class="mi-cat">कविता</span>
+        <span class="mi-cat">कविता <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Poetry</span></span>
         <h3 class="mi-title">मम्मी, अम्मा, नानी... जीवन सफ़र</h3>
         <p class="mi-en-excerpt">A poem for every mother who shaped us</p>
-        <div class="mi-meta">अक्टूबर २०२५</div>
+        <div class="mi-meta">अक्टूबर २०२५ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.5)">Oct 2025</span></div>
       </div>
     </a>
 
@@ -484,7 +528,7 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">स्व</div>
       <div class="mi-inner">
-        <span class="mi-cat lekh">लेख</span>
+        <span class="mi-cat lekh">लेख <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Essay</span></span>
         <h3 class="mi-title">Health is Wealth</h3>
         <p class="mi-en-excerpt">On the wisdom of living well</p>
         <div class="mi-meta">जुलाई २०२५</div>
@@ -496,11 +540,11 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">प्र</div>
       <div class="mi-inner">
-        <span class="mi-cat pravasi">प्रवासी मन</span>
+        <span class="mi-cat pravasi">प्रवासी मन <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Diaspora</span></span>
         <h3 class="mi-title">नज़राना परदेश से</h3>
         <p class="mi-excerpt">परदेस में बसी हर खुशी में छुपी है देस की खुशबू...</p>
         <p class="mi-en-excerpt">A gift of longing from a distant land</p>
-        <div class="mi-meta">जुलाई २०२२</div>
+        <div class="mi-meta">जुलाई २०२२ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.5)">Jul 2022</span></div>
       </div>
     </a>
 
@@ -509,11 +553,11 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">ना</div>
       <div class="mi-inner">
-        <span class="mi-cat">कविता</span>
+        <span class="mi-cat">कविता <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Poetry</span></span>
         <h3 class="mi-title">दुनिया तुमसे... नारीत्व</h3>
         <p class="mi-excerpt">स्त्री के संघर्ष और शक्ति का काव्य-चित्रण...</p>
         <p class="mi-en-excerpt">Celebrating the grace and strength of womanhood</p>
-        <div class="mi-meta">जुलाई २०२२</div>
+        <div class="mi-meta">जुलाई २०२२ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.5)">Jul 2022</span></div>
       </div>
     </a>
 
@@ -522,11 +566,11 @@ footer{background:var(--ink)}
       <div class="mi-overlay"></div>
       <div class="mi-art">कव</div>
       <div class="mi-inner">
-        <span class="mi-cat">कविता</span>
+        <span class="mi-cat">कविता <span style="font-size:10px;font-style:italic;font-weight:500;opacity:0.8">Poetry</span></span>
         <h3 class="mi-title">काव्य-धारा</h3>
         <p class="mi-excerpt">शब्दों का प्रवाह, भावनाओं का उफान...</p>
         <p class="mi-en-excerpt">Years of poetry, gathered in one place</p>
-        <div class="mi-meta">जुलाई २०२२</div>
+        <div class="mi-meta">जुलाई २०२२ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.5)">Jul 2022</span></div>
       </div>
     </a>
 
@@ -538,7 +582,9 @@ footer{background:var(--ink)}
 <section class="rachnaon-ka-sansar" id="rachnaon-ka-sansar">
   <div class="rs-header">
     <div class="rs-eyebrow">रचनाओं का संसार</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(26,16,8,0.55);font-style:italic;font-weight:500;margin-bottom:10px">Universe of Creations</div>
     <div class="rs-title">किस विधा में खोजना चाहते हैं?</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.6);font-style:italic;font-weight:500;margin-bottom:10px">Which form calls to you?</div>
     <div class="rs-sub">Browse by category — pick what calls you</div>
   </div>
   <div class="rs-grid">
@@ -548,7 +594,7 @@ footer{background:var(--ink)}
       <span class="rs-en-label">Poetry</span>
       <div class="rs-count">3 रचनाएं</div>
       <div class="rs-desc">मन की गहराइयों से निकले शब्द — माँ, नारीत्व, प्रकृति और जीवन की लय।</div>
-      <div class="rs-cta" style="color:#9B0E0E">देखें →</div>
+      <div class="rs-cta" style="color:#9B0E0E">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(155,14,14,0.7)">Browse</span></div>
     </a>
     <a href="archive.html?cat=lekh" class="rs-card" style="background:rgba(184,135,58,0.06);border:1px solid rgba(184,135,58,0.2);border-top:3px solid #B8873A">
       <div class="rs-icon" style="color:#B8873A">✍</div>
@@ -556,7 +602,7 @@ footer{background:var(--ink)}
       <span class="rs-en-label">Essays</span>
       <div class="rs-count">5 रचनाएं</div>
       <div class="rs-desc">समाज, स्वास्थ्य, जीवन-दर्शन और संस्कृति पर विचारपूर्ण लेखन।</div>
-      <div class="rs-cta" style="color:#B8873A">देखें →</div>
+      <div class="rs-cta" style="color:#B8873A">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(184,135,58,0.8)">Browse</span></div>
     </a>
     <a href="archive.html?cat=sansmaran" class="rs-card" style="background:rgba(45,106,79,0.06);border:1px solid rgba(45,106,79,0.2);border-top:3px solid #2D6A4F">
       <div class="rs-icon" style="color:#2D6A4F">❁</div>
@@ -564,7 +610,7 @@ footer{background:var(--ink)}
       <span class="rs-en-label">Memoirs</span>
       <div class="rs-count">2 रचनाएं</div>
       <div class="rs-desc">यादों की दुनिया — गुरु और परिवार को समर्पित भावपूर्ण संस्मरण।</div>
-      <div class="rs-cta" style="color:#2D6A4F">देखें →</div>
+      <div class="rs-cta" style="color:#2D6A4F">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(45,106,79,0.8)">Browse</span></div>
     </a>
     <a href="archive.html?cat=pravasi" class="rs-card" style="background:rgba(26,58,107,0.06);border:1px solid rgba(26,58,107,0.2);border-top:3px solid #1A3A6B">
       <div class="rs-icon" style="color:#1A3A6B">✈</div>
@@ -572,7 +618,7 @@ footer{background:var(--ink)}
       <span class="rs-en-label">Diaspora Heart</span>
       <div class="rs-count">1 रचनाएं</div>
       <div class="rs-desc">परदेश से मातृभूमि की याद — अबू धाबी से हिंदी साहित्य की आवाज़।</div>
-      <div class="rs-cta" style="color:#1A3A6B">देखें →</div>
+      <div class="rs-cta" style="color:#1A3A6B">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(26,58,107,0.8)">Browse</span></div>
     </a>
     <a href="archive.html?cat=vishesh" class="rs-card" style="background:rgba(107,47,160,0.06);border:1px solid rgba(107,47,160,0.2);border-top:3px solid #6B2FA0">
       <div class="rs-icon" style="color:#6B2FA0">♫</div>
@@ -580,7 +626,7 @@ footer{background:var(--ink)}
       <span class="rs-en-label">Special</span>
       <div class="rs-count">1 रचनाएं</div>
       <div class="rs-desc">सुर-ताल जुगलबंदी — ২৩ कविताओं का संपूर्ण संग्रह एक साथ।</div>
-      <div class="rs-cta" style="color:#6B2FA0">देखें →</div>
+      <div class="rs-cta" style="color:#6B2FA0">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(107,47,160,0.8)">Browse</span></div>
     </a>
   </div>
 </section>
@@ -589,6 +635,7 @@ footer{background:var(--ink)}
 <section class="quote-interlude">
   <p class="qi-text">"सिर्फ शब्दों से खिलवाड़ ही नहीं,<br>माला में पिरोना भी है <span>फ़ितरत</span>,<br><br>कभी भी न थमने वाला लेखन<br>सिलसिला यूं ही जारी रहेगा हमेशा..."</p>
   <div class="qi-attr">— गीतांजलि सक्सेना</div>
+  <span class="qi-en">"Not just playing with words, but stringing them into a garland — a writing journey that will never cease, ever…"</span>
 </section>
 
 <!-- AUTHOR SPREAD -->
@@ -601,21 +648,24 @@ footer{background:var(--ink)}
     </div>
     <div class="author-quote-block">
       <p class="aq-text">"शब्द ही मेरा संसार है,<br>शब्द ही मेरी पहचान।"</p>
-      <a href="about.html" class="ar-cta">पूरा परिचय पढ़ें →</a>
+      <span class="aq-en">"Words are my world, words are my identity."</span>
+      <a href="about.html" class="ar-cta">पूरा परिचय पढ़ें → <span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;font-weight:500;opacity:0.75;margin-left:4px">Read My Story</span></a>
     </div>
   </div>
   <div class="author-right">
     <div class="author-right-inner">
       <div class="ar-eyebrow">लेखिका के बारे में</div>
+      <p class="ar-eyebrow-en">About the Author</p>
       <h2 class="ar-name">गीतांजलि<br>सक्सेना</h2>
       <p class="ar-bio">नवभारत टाइम्स की वरिष्ठ पत्रकार। PIB-मान्यता प्राप्त। अबू धाबी में भारतीय महिला संघ की जयोति पत्रिका की संपादक। तीन दशकों से हिंदी साहित्य और पत्रकारिता में सक्रिय।</p>
+      <p class="ar-bio-en">Senior journalist at Navbharat Times. PIB accredited. Editor of Jyoti magazine, Indian Women's Association, Abu Dhabi. Three decades in Hindi literature and journalism.</p>
       <div class="cred-grid">
-        <div class="cred-item"><div class="cred-title">३०+</div><div class="cred-sub">वर्षों का अनुभव</div></div>
-        <div class="cred-item"><div class="cred-title">५०+</div><div class="cred-sub">प्रकाशित रचनाएं</div></div>
-        <div class="cred-item"><div class="cred-title">अबू धाबी</div><div class="cred-sub">वर्तमान निवास</div></div>
-        <div class="cred-item"><div class="cred-title">PIB</div><div class="cred-sub">मान्यता प्राप्त</div></div>
+        <div class="cred-item"><div class="cred-title">३०+</div><div class="cred-sub">वर्षों का अनुभव</div><span class="cred-sub-en">Years of experience</span></div>
+        <div class="cred-item"><div class="cred-title">५०+</div><div class="cred-sub">प्रकाशित रचनाएं</div><span class="cred-sub-en">Published works</span></div>
+        <div class="cred-item"><div class="cred-title">अबू धाबी</div><div class="cred-sub">वर्तमान निवास</div><span class="cred-sub-en">Current home · Abu Dhabi</span></div>
+        <div class="cred-item"><div class="cred-title">PIB</div><div class="cred-sub">मान्यता प्राप्त</div><span class="cred-sub-en">Press accredited</span></div>
       </div>
-      <a href="about.html" class="ar-cta">पूरा परिचय →</a>
+      <a href="about.html" class="ar-cta">पूरा परिचय → <span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;font-weight:500;opacity:0.75;margin-left:4px">Full Profile</span></a>
     </div>
   </div>
 </section>
@@ -626,45 +676,49 @@ footer{background:var(--ink)}
     <div class="fbrand">
       <div class="fbrand-logo"><img src="images/logo.png" alt="मेरे शब्द"></div>
       <div class="fbrand-text">गीतांजलि सक्सेना की रचनाओं का संग्रह।<br>अबू धाबी से हिंदी साहित्य की आवाज़।</div>
+      <div class="fbrand-en">A collection of Gitanjali Saxena's writings — the voice of Hindi literature from Abu Dhabi.</div>
       <div class="fblinks">
-        <a href="about.html">परिचय</a>
-        <a href="contact.html">संपर्क</a>
-        <a href="archive.html">रचनाएं</a>
+        <a href="about.html">परिचय <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.4)">About</span></a>
+        <a href="contact.html">संपर्क <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.4)">Contact</span></a>
+        <a href="archive.html">रचनाएं <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.4)">Works</span></a>
       </div>
     </div>
     <div class="fcol">
       <div class="fcol-label">रचनाएं</div>
+      <span class="fcol-label-en">Writings</span>
       <ul>
-        <li><a href="archive.html?cat=kavita">कविता</a></li>
-        <li><a href="archive.html?cat=lekh">लेख</a></li>
-        <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
-        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
-        <li><a href="archive.html?cat=vishesh">विशेष</a></li>
+        <li><a href="archive.html?cat=kavita">कविता <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Poetry</span></a></li>
+        <li><a href="archive.html?cat=lekh">लेख <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Essays</span></a></li>
+        <li><a href="archive.html?cat=sansmaran">संस्मरण <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Memoirs</span></a></li>
+        <li><a href="archive.html?cat=pravasi">प्रवासी मन <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Diaspora</span></a></li>
+        <li><a href="archive.html?cat=vishesh">विशेष <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Special</span></a></li>
       </ul>
     </div>
     <div class="fcol">
       <div class="fcol-label">अन्वेषण</div>
+      <span class="fcol-label-en">Explore</span>
       <ul>
-        <li><a href="about.html">परिचय</a></li>
-        <li><a href="gallery.html">गैलरी</a></li>
-        <li><a href="contact.html">संपर्क</a></li>
+        <li><a href="about.html">परिचय <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">About</span></a></li>
+        <li><a href="gallery.html">गैलरी <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Gallery</span></a></li>
+        <li><a href="contact.html">संपर्क <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Contact</span></a></li>
       </ul>
     </div>
     <div class="fcol">
       <div class="fcol-label">मेरे शब्द</div>
+      <span class="fcol-label-en">Mere Shabd</span>
       <ul>
-        <li><a href="index.html">होम</a></li>
-        <li><a href="archive.html">सभी रचनाएं</a></li>
+        <li><a href="index.html">होम <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Home</span></a></li>
+        <li><a href="archive.html">सभी रचनाएं <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">All Works</span></a></li>
       </ul>
     </div>
   </div>
   <div class="footer-sub-strip"></div>
   <div class="footer-bottom">
-    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
+    <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित। <span class="footer-copy-en">All rights reserved.</span></span>
     <div class="fblinks">
-      <a href="index.html">होम</a>
-      <a href="about.html">परिचय</a>
-      <a href="contact.html">संपर्क</a>
+      <a href="index.html">होम <span style="font-family:'Cormorant Garamond',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.28)">Home</span></a>
+      <a href="about.html">परिचय <span style="font-family:'Cormorant Garamond',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.28)">About</span></a>
+      <a href="contact.html">संपर्क <span style="font-family:'Cormorant Garamond',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.28)">Contact</span></a>
     </div>
   </div>
 </footer>
