@@ -65,7 +65,7 @@ nav.scrolled .nav-logo img{filter:none}
 .breadcrumb .current{color:var(--ink);font-weight:500}
 
 /* BIO SECTION */
-.bio-section{display:grid;grid-template-columns:140px 1fr;background:var(--warm-white)}
+.bio-section{display:grid;grid-template-columns:140px 1fr 380px;background:var(--warm-white);align-items:start}
 .bio-side{padding:80px 32px 80px 60px;border-right:1px solid rgba(0,0,0,0.05);display:flex;flex-direction:column;align-items:center;gap:28px}
 .bio-side-label{writing-mode:vertical-rl;font-family:monospace;font-size:9px;letter-spacing:4px;color:var(--dust);text-transform:uppercase}
 .bio-side-num{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--red);line-height:1;font-weight:300;opacity:0.16}
@@ -189,6 +189,18 @@ footer{background:var(--ink)}
 
 .nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
 .nav-links a:hover .nav-en{color:var(--red)}
+
+/* MANDIR CARD — right of bio section */
+.bio-mandir-col{padding:48px 48px 48px 0;display:flex;flex-direction:column;align-items:stretch}
+.mandir-card{background:var(--ink);overflow:hidden;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,0.18);width:100%}
+.mandir-card-img{width:100%;height:320px;object-fit:cover;object-position:center 25%;display:block}
+.mandir-card-poem{padding:28px 32px 32px;background:linear-gradient(160deg,#1A0808 0%,#2D1008 100%)}
+.mandir-card-title{font-family:monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.85;margin-bottom:18px;display:block}
+.mandir-card-verse{font-family:'Tiro Devanagari Hindi',serif;font-size:13.5px;line-height:2;color:rgba(255,255,255,0.88);letter-spacing:0;margin-bottom:0}
+.mandir-card-verse p{margin-bottom:0.5em}
+.mandir-card-attr{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.4);font-style:italic}
+@media(max-width:1100px){.bio-section{grid-template-columns:140px 1fr 320px}}
+@media(max-width:900px){.bio-section{grid-template-columns:1fr}.bio-side{display:none}.bio-mandir-col{padding:0 32px 56px}}
 </style>
   
 <style>
@@ -324,6 +336,28 @@ footer{background:var(--ink)}
     </div>
   </div>
 
+
+
+  <div class="bio-mandir-col">
+    <div class="mandir-card">
+      <img src="images/gitanjali-baps-mandir.jpg"
+           alt="गीतांजलि सक्सेना — BAPS Hindu Mandir Abu Dhabi"
+           class="mandir-card-img">
+      <div class="mandir-card-poem">
+        <span class="mandir-card-title">आस्था · Faith · BAPS Hindu Mandir, Abu Dhabi</span>
+        <div class="mandir-card-verse">
+          <p>आस्था पटल खिले फूल, विघ्न हरे, यही शक्ति पीठ,</p>
+          <p>आशावादी भाव, दिलों में आस्था, सिर्फ दीप ही जलाए,</p>
+          <p>आस्था जुड़ी यात्रा रहें लदी, अनेक ईश्वरीय वरदानों से,</p>
+          <p>जीवन समर्पण, विश्वास डोर में, पिरोए सिद्धांत इसके,</p>
+          <p>है एक अनुभूति, डूब जाने में ही, सच्चा आत्मिक सुख,</p>
+          <p>दिलों को जोड़े, संस्कृतियों को सजाए, है प्रकृति इसकी,</p>
+          <p>केंद्र ही नहीं, सौहार्द व सामंजस्य का 'अभूतपूर्व प्रतीक'</p>
+        </div>
+        <div class="mandir-card-attr">— गीतांजलि सक्सेना</div>
+      </div>
+    </div>
+  </div>
 
 </section>
 
