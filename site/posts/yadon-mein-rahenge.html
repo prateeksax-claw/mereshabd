@@ -498,6 +498,32 @@ footer{background:var(--ink)}
         </a>
       </div>
     </div>
+    <!-- यादें — परिवार की श्रद्धांजलियाँ -->
+    <div class="sidebar-card">
+      <div class="sidebar-label">यादें — परिवार की श्रद्धांजलियाँ</div>
+      <div class="rel-list" style="gap:0">
+        <a href="javascript:void(0)" class="rel-item" onclick="openPDF('अल्पना — यादें','../pdfs/alpana_yadoan.pdf')">
+          <span class="rel-cat">स्मृति-काव्य · English</span>
+          <span class="rel-title-text">अल्पना — यादें</span>
+        </a>
+        <a href="javascript:void(0)" class="rel-item" onclick="openPDF('अरुण — यादें','../pdfs/arun_yadoan.pdf')">
+          <span class="rel-cat">स्मृति-काव्य · English</span>
+          <span class="rel-title-text">अरुण — यादें</span>
+        </a>
+        <a href="javascript:void(0)" class="rel-item" onclick="openPDF('ईशा — यादें','../pdfs/isha_yadoan.pdf')">
+          <span class="rel-cat">स्मृति-काव्य · English</span>
+          <span class="rel-title-text">ईशा — यादें</span>
+        </a>
+        <a href="javascript:void(0)" class="rel-item" onclick="openPDF('मैत्री — यादें','../pdfs/maitri_yadoan.pdf')">
+          <span class="rel-cat">स्मृति-काव्य · English</span>
+          <span class="rel-title-text">मैत्री — यादें</span>
+        </a>
+        <a href="javascript:void(0)" class="rel-item" onclick="openPDF('रचित — यादें','../pdfs/rachit_yadoan.pdf')">
+          <span class="rel-cat">स्मृति-काव्य · English</span>
+          <span class="rel-title-text">रचित — यादें</span>
+        </a>
+      </div>
+    </div>
   </aside>
 </div>
 
@@ -578,6 +604,45 @@ footer{background:var(--ink)}
     <span>© २०२५ गीतांजलि सक्सेना। सर्वाधिकार सुरक्षित।</span>
   </div>
 </footer>
+<!-- PDF MODAL -->
+<div class="pdf-modal-overlay" id="pdfOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0);z-index:9999;display:flex;flex-direction:column;pointer-events:none;transition:background .3s">
+  <div style="background:#1C1410;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;transform:translateY(-100%);transition:transform .35s;border-bottom:1px solid rgba(255,255,255,.08)" class="pdf-bar">
+    <div id="pdfTitle" style="font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:white;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:20px"></div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <a id="pdfDownload" href="#" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-family:monospace;font-size:11px;text-decoration:none;border:1px solid rgba(255,255,255,.12);transition:background .2s">⬇ डाउनलोड</a>
+      <button onclick="closePDF()" style="width:40px;height:40px;background:rgba(255,255,255,.06);border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer">✕</button>
+    </div>
+  </div>
+  <div style="flex:1;position:relative;transform:translateY(20px);opacity:0;transition:all .35s .1s" class="pdf-frame-wrap">
+    <iframe id="pdfFrame" src="" style="width:100%;height:100%;border:none;display:block;background:#F7F2EA"></iframe>
+  </div>
+</div>
+
+<script>
+function openPDF(title,url){
+  var parts=url.split('/'),fn=parts[parts.length-1];
+  if(!fn.includes('%')){parts[parts.length-1]=encodeURIComponent(fn);url=parts.join('/');}
+  document.getElementById('pdfTitle').textContent=title;
+  document.getElementById('pdfDownload').href=url;
+  document.getElementById('pdfFrame').src=url;
+  var o=document.getElementById('pdfOverlay');
+  o.style.background='rgba(0,0,0,.9)';o.style.pointerEvents='all';
+  o.querySelector('.pdf-bar').style.transform='translateY(0)';
+  var fw=o.querySelector('.pdf-frame-wrap');fw.style.transform='translateY(0)';fw.style.opacity='1';
+  document.body.style.overflow='hidden';
+}
+function closePDF(){
+  var o=document.getElementById('pdfOverlay');
+  o.style.background='rgba(0,0,0,0)';o.style.pointerEvents='none';
+  o.querySelector('.pdf-bar').style.transform='translateY(-100%)';
+  var fw=o.querySelector('.pdf-frame-wrap');fw.style.transform='translateY(20px)';fw.style.opacity='0';
+  document.body.style.overflow='';
+  setTimeout(function(){document.getElementById('pdfFrame').src='';},350);
+}
+document.getElementById('pdfOverlay').addEventListener('click',function(e){if(e.target===this)closePDF();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePDF();});
+</script>
+
 <script>
 const nav=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
