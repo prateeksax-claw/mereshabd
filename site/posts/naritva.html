@@ -355,6 +355,58 @@ footer{background:var(--ink)}
 .en-essence{border-left:2px solid var(--gold);padding:16px 20px;margin-bottom:36px;background:rgba(201,168,76,0.05)}
 .en-essence-label{font-family:monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(26,16,8,0.6);line-height:1.7;font-style:italic;margin:0;letter-spacing:0}
+
+/* ── NARITVA ARTICLE CARDS ────────────────────────────────── */
+.naritva-articles{padding:56px 80px 48px;background:var(--warm-white);border-top:2px solid rgba(155,14,14,0.08)}
+.na-header{display:flex;align-items:center;gap:20px;margin-bottom:44px}
+.na-line{flex:1;height:1px;background:linear-gradient(to right,rgba(155,14,14,0.25),transparent)}
+.na-line.right{background:linear-gradient(to left,rgba(155,14,14,0.25),transparent)}
+.na-label{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:var(--ink);white-space:nowrap;font-weight:400}
+.na-sub{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--dust);font-style:italic;text-align:center;margin-top:-28px;margin-bottom:36px}
+
+/* ARTICLE GRID */
+.na-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+
+/* ARTICLE CARD */
+.na-card{position:relative;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;box-shadow:0 4px 20px rgba(0,0,0,0.12);transition:transform 0.25s,box-shadow 0.25s}
+.na-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+.na-card-bg{position:absolute;inset:0;border-radius:6px}
+.na-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.38) 50%,rgba(0,0,0,0.08) 100%);border-radius:6px}
+.na-card-art{position:absolute;right:-4px;top:-8px;font-family:'Tiro Devanagari Hindi',serif;font-size:120px;color:rgba(255,255,255,0.09);line-height:1;pointer-events:none;user-select:none}
+.na-card-body{position:relative;z-index:2;padding:20px 20px 18px;margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.na-card-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;color:white;line-height:1.35;font-weight:400}
+.na-card-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.28);color:white;font-size:13px;padding:8px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;cursor:pointer;transition:all 0.2s;align-self:flex-start;border-radius:3px;backdrop-filter:blur(4px)}
+.na-card-btn:hover{background:var(--red);border-color:var(--red)}
+.na-card-new{position:absolute;top:12px;left:12px;z-index:3;background:var(--red);color:white;font-family:monospace;font-size:10px;font-weight:700;padding:3px 8px;letter-spacing:1px;text-transform:uppercase;border-radius:2px}
+
+/* PDF MODAL */
+.pdf-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);z-index:9999;display:flex;flex-direction:column;pointer-events:none;transition:background .3s}
+.pdf-modal-overlay.open{background:rgba(0,0,0,.9);pointer-events:all}
+.pdf-modal-bar{background:#1C1410;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;transform:translateY(-100%);transition:transform .35s;border-bottom:1px solid rgba(255,255,255,.08)}
+.pdf-modal-overlay.open .pdf-modal-bar{transform:translateY(0)}
+.pdf-modal-title{font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:white;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:20px}
+.pdf-modal-actions{display:flex;align-items:center;gap:8px}
+.pdf-modal-download{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-family:monospace;font-size:11px;text-decoration:none;border:1px solid rgba(255,255,255,.12);transition:background .2s}
+.pdf-modal-download:hover{background:rgba(255,255,255,.15);color:white}
+.pdf-modal-close{width:40px;height:40px;background:rgba(255,255,255,.06);border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;transition:all .2s}
+.pdf-modal-close:hover{background:#9B0E0E;color:white}
+.pdf-modal-frame-wrap{flex:1;position:relative;transform:translateY(20px);opacity:0;transition:all .35s .1s}
+.pdf-modal-overlay.open .pdf-modal-frame-wrap{transform:translateY(0);opacity:1}
+.pdf-modal-frame{width:100%;height:100%;border:none;display:block;background:#F7F2EA}
+.pdf-modal-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1C1410;gap:16px;transition:opacity .3s}
+.pdf-loading-spinner{width:40px;height:40px;border:2px solid rgba(255,255,255,.1);border-top-color:rgba(184,135,58,.7);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pdf-loading-text{font-family:monospace;font-size:11px;color:rgba(255,255,255,.3)}
+
+@media(max-width:900px){
+  .naritva-articles{padding:40px 24px 36px}
+  .na-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+@media(max-width:600px){
+  .na-grid{grid-template-columns:1fr}
+  .na-card{min-height:180px}
+  .na-label{font-size:18px}
+}
 </style>
 
   <!-- SEO: Canonical -->
@@ -456,6 +508,157 @@ footer{background:var(--ink)}
     <div class="poem-attr"><div class="pattr-line"></div><div class="pattr-text">— गीतांजलि सक्सेना, जुलाई २०२२</div></div>
   </div>
 
+  </article>
+</div>
+
+<!-- NARITVA SUB-ARTICLES SECTION -->
+<div class="naritva-articles">
+  <div class="na-header">
+    <div class="na-line"></div>
+    <div class="na-label">और रचनाएं — नारीत्व</div>
+    <div class="na-line right"></div>
+  </div>
+  <p class="na-sub">नारी शक्ति, स्वास्थ्य, समानता और सपनों पर विशेष लेख</p>
+
+  <div class="na-grid">
+
+    <!-- 1. खुद पर निवेश करें -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#6B0048 0%,#A0005A 50%,#450030 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">खु</div>
+      <div class="na-card-body">
+        <div class="na-card-title">खुद पर निवेश करें</div>
+        <button class="na-card-btn" onclick="openPDF('खुद पर निवेश करें','../pdfs/Khud-par-Nivesh-Karen.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 2. नारी शक्ति -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#7A0050 0%,#C2006A 50%,#560038 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">ना</div>
+      <div class="na-card-body">
+        <div class="na-card-title">नारी शक्ति</div>
+        <button class="na-card-btn" onclick="openPDF('नारी शक्ति','../pdfs/Nari-Shakti.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 3. स्वस्थ और सुरक्षित महिलाएं -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#8B1A4A 0%,#C42870 50%,#5C0E30 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">स्व</div>
+      <div class="na-card-body">
+        <div class="na-card-title">स्वस्थ और सुरक्षित महिलाएं</div>
+        <button class="na-card-btn" onclick="openPDF('स्वस्थ और सुरक्षित महिलाएं','../pdfs/Healthy-and-secure-women.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 4. लैंगिक समानता -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#5A0070 0%,#8A00A8 50%,#3A0050 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">लै</div>
+      <div class="na-card-body">
+        <div class="na-card-title">लैंगिक समानता</div>
+        <button class="na-card-btn" onclick="openPDF('लैंगिक समानता','../pdfs/Gender-Equality.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 5. मेरी दुनिया माँ -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#8B0A2A 0%,#C41840 50%,#5C0018 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">मा</div>
+      <div class="na-card-body">
+        <div class="na-card-title">मेरी दुनिया माँ</div>
+        <button class="na-card-btn" onclick="openPDF('मेरी दुनिया माँ','../pdfs/Meri-Dunia-Maa.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 6. बिटिया दीजो -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#9B3500 0%,#D45A10 50%,#6B2200 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">बि</div>
+      <div class="na-card-body">
+        <div class="na-card-title">बिटिया दीजो</div>
+        <button class="na-card-btn" onclick="openPDF('बिटिया दीजो','../pdfs/Betiya-Dino.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 7. सपनों की उड़ान -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#480070 0%,#7A00B8 50%,#2E0048 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-art">स</div>
+      <div class="na-card-body">
+        <div class="na-card-title">सपनों की उड़ान</div>
+        <button class="na-card-btn" onclick="openPDF('सपनों की उड़ान','../pdfs/Sapno-ki-Udaan.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 8. चूज़ टू चैलेंज (NEW) -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#7A0055 0%,#B8007A 50%,#520038 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-new">NEW</div>
+      <div class="na-card-art">चू</div>
+      <div class="na-card-body">
+        <div class="na-card-title">चूज़ टू चैलेंज — अंतरराष्ट्रीय महिला दिवस</div>
+        <button class="na-card-btn" onclick="openPDF('चूज़ टू चैलेंज — अंतरराष्ट्रीय महिला दिवस','../pdfs/Antararashtriya-Mahila-Divas.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 9. हुनरमंद महिलाएँ (NEW) -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#6B0060 0%,#9E0090 50%,#480040 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-new">NEW</div>
+      <div class="na-card-art">हु</div>
+      <div class="na-card-body">
+        <div class="na-card-title">हुनरमंद महिलाएँ — खुद पर भरोसा ही सबसे बड़ा हुनर</div>
+        <button class="na-card-btn" onclick="openPDF('हुनरमंद महिलाएँ — खुद पर भरोसा ही सबसे बड़ा हुनर','../pdfs/Khud-par-Bharosa-Hunarmand.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+    <!-- 10. Festival of Harmony (NEW) -->
+    <div class="na-card">
+      <div class="na-card-bg" style="background:linear-gradient(145deg,#8B1060 0%,#C41E88 50%,#5C0840 100%)"></div>
+      <div class="na-card-overlay"></div>
+      <div class="na-card-new">NEW</div>
+      <div class="na-card-art">फे</div>
+      <div class="na-card-body">
+        <div class="na-card-title">Festival of Harmony — Ladies Day Out</div>
+        <button class="na-card-btn" onclick="openPDF('Festival of Harmony — Ladies Day Out','../pdfs/Festival-of-Harmony-final-2024.pdf')">📄 PDF खोलें</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PDF MODAL -->
+<div class="pdf-modal-overlay" id="pdfOverlay">
+  <div class="pdf-modal-bar">
+    <div class="pdf-modal-title" id="pdfTitle"></div>
+    <div class="pdf-modal-actions">
+      <a class="pdf-modal-download" id="pdfDownload" href="#">⬇ डाउनलोड</a>
+      <button class="pdf-modal-close" onclick="closePDF()">✕</button>
+    </div>
+  </div>
+  <div class="pdf-modal-frame-wrap">
+    <div class="pdf-modal-loading" id="pdfLoading">
+      <div class="pdf-loading-spinner"></div>
+      <div class="pdf-loading-text">PDF लोड हो रही है...</div>
+    </div>
+    <iframe class="pdf-modal-frame" id="pdfFrame" src="" onload="hidePdfLoading()"></iframe>
+  </div>
+</div>
+
+<!-- TAGS / SHARE + SIDEBAR -->
+<div class="post-layout">
+  <article class="post-article">
     <div class="tags-wrap">
       <span class="tags-label">विषय:</span>
       <span class="tag-item">कविता</span>
@@ -587,6 +790,32 @@ window.addEventListener('scroll',()=>{
   const el=document.getElementById('progressBar');
   if(el){const p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;el.style.width=Math.min(p,100)+'%';}
 });
+</script>
+
+<script>
+// PDF Modal
+function openPDF(title,url){
+  const parts=url.split('/'),fn=parts[parts.length-1];
+  if(!fn.includes('%')){parts[parts.length-1]=encodeURIComponent(fn);url=parts.join('/');}
+  document.getElementById('pdfTitle').textContent=title;
+  document.getElementById('pdfDownload').href=url;
+  document.getElementById('pdfLoading').style.opacity='1';
+  document.getElementById('pdfLoading').style.pointerEvents='all';
+  document.getElementById('pdfFrame').src=url;
+  document.getElementById('pdfOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePDF(){
+  document.getElementById('pdfOverlay').classList.remove('open');
+  document.body.style.overflow='';
+  setTimeout(()=>{document.getElementById('pdfFrame').src='';},350);
+}
+function hidePdfLoading(){
+  const el=document.getElementById('pdfLoading');
+  if(el){el.style.opacity='0';el.style.pointerEvents='none';}
+}
+document.getElementById('pdfOverlay').addEventListener('click',function(e){if(e.target===this)closePDF();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePDF();});
 </script>
 </body>
 </html>
