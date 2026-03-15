@@ -42,11 +42,24 @@ nav.scrolled .nav-logo img{filter:none}
 .nav-cta:hover{background:var(--red-deep)!important;color:white!important}
 
 /* POST HERO */
-.post-hero{min-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
+.post-hero{min-height:80vh;position:relative;overflow:hidden;display:flex;align-items:stretch;padding:0}
 .ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#0A1F0F 0%,#153320 50%,#081508 100%)}
 .ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 75% 40%,rgba(60,180,100,0.1) 0%,transparent 65%);pointer-events:none}
-.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;user-select:none;z-index:1}
-.ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
+.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;user-select:none;z-index:1}
+.ph-inner{position:relative;z-index:3;display:flex;align-items:center;width:100%;max-width:1400px;margin:0 auto;padding:120px 60px 80px}
+.ph-content{flex:0 0 50%;max-width:50%;padding-right:48px}
+
+/* HERO MOSAIC */
+.ph-mosaic{flex:0 0 50%;max-width:50%;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px 0}
+.hm-card{position:relative;border-radius:6px;overflow:hidden;min-height:160px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 4px 20px rgba(0,0,0,0.2);transition:transform 0.3s,box-shadow 0.3s;cursor:default}
+.hm-card:hover{transform:scale(1.04);box-shadow:0 10px 36px rgba(0,0,0,0.3)}
+.hm-card-bg{position:absolute;inset:0}
+.hm-card-shimmer{position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.08) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 3s ease-in-out infinite}
+.hm-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.15) 50%,transparent 100%)}
+.hm-card-icon{position:absolute;top:10px;right:12px;font-size:24px;opacity:0.4;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));z-index:2}
+.hm-card-body{position:relative;z-index:2;padding:14px 14px 12px}
+.hm-card-title{font-family:'Tiro Devanagari Hindi',serif;font-size:14px;color:white;line-height:1.3;font-weight:400;text-shadow:0 1px 6px rgba(0,0,0,0.5)}
+.hm-card-label{display:inline-block;background:var(--red);color:white;font-family:'Noto Sans Devanagari',sans-serif;font-size:10px;font-weight:600;padding:2px 8px;border-radius:2px;margin-top:6px}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:#2D6B8A;color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
 .post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:400;margin-bottom:20px}
@@ -228,7 +241,11 @@ footer{background:var(--ink)}
   .footer-main{grid-template-columns:1fr 1fr;padding:40px 24px;gap:32px}
   .footer-sub-strip,.footer-bottom{padding:16px 24px}
   .fbrand{grid-column:1/-1}
-  .ph-content{padding:0 24px 56px!important;max-width:100%}
+  .ph-inner{flex-direction:column;padding:110px 24px 40px!important;align-items:flex-start}
+  .ph-content{flex:none;max-width:100%;padding-right:0!important;margin-bottom:32px}
+  .ph-mosaic{flex:none;max-width:100%;grid-template-columns:repeat(3,1fr);gap:10px}
+  .hm-card{min-height:120px}
+  .hm-card-title{font-size:12px}
   .post-title{font-size:40px!important}
   .breadcrumb{padding:12px 24px}
   .post-layout{grid-template-columns:1fr!important}
@@ -242,6 +259,8 @@ footer{background:var(--ink)}
 }
 @media(max-width:600px){
   .post-title{font-size:30px!important}
+  .ph-mosaic{grid-template-columns:repeat(2,1fr)}
+  .hm-card{min-height:100px}
   .articles-grid{grid-template-columns:1fr!important}
   .rm-grid{grid-template-columns:1fr}
   .rm-card{min-height:160px}
@@ -285,15 +304,84 @@ footer{background:var(--ink)}
   <div class="ph-bg"></div>
   <div class="ph-texture"></div>
   <div class="ph-art">न</div>
-  <div class="ph-content">
-    <span class="post-cat">प्रवासी मन</span>
-    <h1 class="post-title">नज़राना परदेश से</h1>
-    <p class="post-subtitle">UAE और विदेश से — १५ यात्रा-वृत्तांत</p>
-    <div class="pm-author">
-      <img src="../images/author.jpg" alt="गीतांजलि सक्सेना">
-      <span class="pm-author-name">गीतांजलि सक्सेना</span>
-      <span class="pm-sep"></span>
-      <span class="pm-date">जुलाई २०२२</span>
+  <div class="ph-inner">
+    <div class="ph-content">
+      <span class="post-cat">प्रवासी मन</span>
+      <h1 class="post-title">नज़राना परदेश से</h1>
+      <p class="post-subtitle">UAE और विदेश से — १५ यात्रा-वृत्तांत</p>
+      <div class="pm-author">
+        <img src="../images/author.jpg" alt="गीतांजलि सक्सेना">
+        <span class="pm-author-name">गीतांजलि सक्सेना</span>
+        <span class="pm-sep"></span>
+        <span class="pm-date">जुलाई २०२२</span>
+      </div>
+    </div>
+
+    <!-- HERO MOSAIC -->
+    <div class="ph-mosaic">
+      <!-- 1. Louvre Abu Dhabi -->
+      <div class="hm-card">
+        <div class="hm-card-bg" style="background:linear-gradient(155deg,#C4A265 0%,#E8D5A8 30%,#A08040 60%,#8B6914 100%)"></div>
+        <div class="hm-card-shimmer"></div>
+        <div class="hm-card-overlay"></div>
+        <span class="hm-card-icon">🏛️</span>
+        <div class="hm-card-body">
+          <div class="hm-card-title">लूव्र अबू धाबी</div>
+        </div>
+      </div>
+      <!-- 2. Masdar City / Expo -->
+      <div class="hm-card">
+        <div class="hm-card-bg" style="background:linear-gradient(155deg,#1A3A5A 0%,#4A7A9A 30%,#2A5A7A 60%,#0E2A40 100%)"></div>
+        <div class="hm-card-shimmer"></div>
+        <div class="hm-card-overlay"></div>
+        <span class="hm-card-icon">🔷</span>
+        <div class="hm-card-body">
+          <div class="hm-card-title">मैसदर सिटी / एक्सपो</div>
+        </div>
+      </div>
+      <!-- 3. International Flags -->
+      <div class="hm-card">
+        <div class="hm-card-bg" style="background:linear-gradient(155deg,#E84040 0%,#E8A030 25%,#40A840 50%,#3060D0 75%,#8030A0 100%)"></div>
+        <div class="hm-card-shimmer"></div>
+        <div class="hm-card-overlay"></div>
+        <span class="hm-card-icon">🏳️</span>
+        <div class="hm-card-body">
+          <div class="hm-card-title">अंतर्राष्ट्रीय ध्वज</div>
+        </div>
+      </div>
+      <!-- 4. BAPS Hindu Temple -->
+      <div class="hm-card">
+        <div class="hm-card-bg" style="background:linear-gradient(155deg,#B8873A 0%,#D4A852 30%,#9A6A20 60%,#6B4A10 100%)"></div>
+        <div class="hm-card-shimmer"></div>
+        <div class="hm-card-overlay"></div>
+        <span class="hm-card-icon">🛕</span>
+        <div class="hm-card-body">
+          <div class="hm-card-title">अबू धाबी हिंदू मंदिर</div>
+          <span class="hm-card-label">BAPS Mandir</span>
+        </div>
+      </div>
+      <!-- 5. White Hindu Temple -->
+      <div class="hm-card">
+        <div class="hm-card-bg" style="background:linear-gradient(155deg,#F5F0E5 0%,#E8DFD0 30%,#D4C9B8 60%,#C0B09A 100%)"></div>
+        <div class="hm-card-shimmer"></div>
+        <div class="hm-card-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.1) 50%,transparent 100%)"></div>
+        <span class="hm-card-icon">🕌</span>
+        <div class="hm-card-body">
+          <div class="hm-card-title">मिट्टी समेटे इतिहास</div>
+          <span class="hm-card-label">Mitti Samete Itihas</span>
+        </div>
+      </div>
+      <!-- 6. Sheikh Zayed Mosque -->
+      <div class="hm-card">
+        <div class="hm-card-bg" style="background:linear-gradient(155deg,#E8F0F8 0%,#B0C8E0 30%,#6A9ABE 60%,#3A6A8E 100%)"></div>
+        <div class="hm-card-shimmer"></div>
+        <div class="hm-card-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.1) 50%,transparent 100%)"></div>
+        <span class="hm-card-icon">🕌</span>
+        <div class="hm-card-body">
+          <div class="hm-card-title">शेख़ ज़ायद मस्जिद</div>
+          <span class="hm-card-label">Sheikh Zayed Mosque</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -316,90 +404,6 @@ footer{background:var(--ink)}
     </div>
 
     <p class="collection-intro">परदेस में रहते हुए जो देखा, जो महसूस किया, जो सोचा — उसे शब्दों में पिरोने का यह प्रयास है। UAE की धरती पर बसे इन अद्भुत स्थलों की यात्राएं, और उनसे मिले अनुभव — यही है <strong>नज़राना परदेश से</strong>।</p>
-
-    <!-- PHOTO GALLERY -->
-    <div class="gallery-section">
-      <div class="gallery-header">
-        <span class="gallery-header-icon">📸</span>
-        <h2 class="gallery-header-title">यात्रा-चित्र</h2>
-      </div>
-      <p class="gallery-subtitle">परदेश की यात्राओं से कुछ झलकियाँ — चित्र जल्द आ रहे हैं</p>
-
-      <div class="gallery-grid">
-        <!-- 1. Louvre Abu Dhabi -->
-        <div class="gallery-card">
-          <div class="gallery-card-bg" style="background:linear-gradient(155deg,#C4A265 0%,#E8D5A8 30%,#A08040 60%,#8B6914 100%)"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🏛️</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">लूव्र अबू धाबी</div>
-          </div>
-        </div>
-
-        <!-- 2. Masdar City / Expo -->
-        <div class="gallery-card">
-          <div class="gallery-card-bg" style="background:linear-gradient(155deg,#1A3A5A 0%,#4A7A9A 30%,#2A5A7A 60%,#0E2A40 100%)"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🔷</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">मैसदर सिटी / एक्सपो</div>
-          </div>
-        </div>
-
-        <!-- 3. International Flags -->
-        <div class="gallery-card">
-          <div class="gallery-card-bg" style="background:linear-gradient(155deg,#E84040 0%,#E8A030 25%,#40A840 50%,#3060D0 75%,#8030A0 100%)"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🏳️</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">अंतर्राष्ट्रीय ध्वज</div>
-          </div>
-        </div>
-
-        <!-- 4. BAPS Hindu Temple -->
-        <div class="gallery-card">
-          <div class="gallery-card-bg" style="background:linear-gradient(155deg,#B8873A 0%,#D4A852 30%,#9A6A20 60%,#6B4A10 100%)"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🛕</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">अबू धाबी हिंदू मंदिर</div>
-            <span class="gallery-card-label">Abu Dhabi Hindu Temple</span>
-          </div>
-        </div>
-
-        <!-- 5. White Hindu Temple -->
-        <div class="gallery-card">
-          <div class="gallery-card-bg" style="background:linear-gradient(155deg,#F5F0E5 0%,#E8DFD0 30%,#D4C9B8 60%,#C0B09A 100%)"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.1) 50%,transparent 100%)"></div>
-          <span class="gallery-card-icon">🕌</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">मिट्टी समेटे इतिहास</div>
-            <span class="gallery-card-label">Mitti Samete Itihas</span>
-          </div>
-        </div>
-
-        <!-- 6. Sheikh Zayed Mosque -->
-        <div class="gallery-card">
-          <div class="gallery-card-bg" style="background:linear-gradient(155deg,#E8F0F8 0%,#B0C8E0 30%,#6A9ABE 60%,#3A6A8E 100%)"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.1) 50%,transparent 100%)"></div>
-          <span class="gallery-card-icon">🕌</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">शेख़ ज़ायद मस्जिद</div>
-            <span class="gallery-card-label">Sheikh Zayed Mosque</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="gallery-note">📷 वास्तविक चित्र जल्द ही जोड़े जाएंगे</p>
-    </div>
-
-    <div class="gallery-divider"></div>
 
     <!-- ARTICLE CARDS GRID -->
     <div class="articles-grid">
