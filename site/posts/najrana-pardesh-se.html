@@ -41,12 +41,21 @@ nav.scrolled .nav-logo img{filter:none}
 .nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important;display:inline-flex;flex-direction:column;align-items:center;white-space:nowrap;line-height:1.2;min-width:0}
 .nav-cta:hover{background:var(--red-deep)!important;color:white!important}
 
-/* POST HERO */
-.post-hero{min-height:80vh;position:relative;overflow:hidden;display:flex;align-items:stretch;padding:0}
-.ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#0A1F0F 0%,#153320 50%,#081508 100%)}
-.ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 75% 40%,rgba(60,180,100,0.1) 0%,transparent 65%);pointer-events:none}
-.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;user-select:none;z-index:1}
-.ph-content{position:relative;z-index:3;width:100%;max-width:1400px;margin:0 auto;padding:120px 60px 80px}
+/* POST HERO — PHOTO MOSAIC */
+.post-hero{min-height:90vh;position:relative;overflow:hidden;display:flex;align-items:stretch;padding:0}
+.ph-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+.ph-mosaic-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.55) saturate(1.1);transition:filter 0.6s}
+.ph-mosaic-img:nth-child(1){object-position:center 30%}
+.ph-mosaic-img:nth-child(2){object-position:center 40%}
+.ph-mosaic-img:nth-child(3){object-position:center 50%}
+.ph-mosaic-img:nth-child(4){object-position:center 40%}
+.ph-mosaic-img:nth-child(5){object-position:center 60%}
+.ph-mosaic-img:nth-child(6){object-position:center 50%}
+.ph-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,10,0.5) 0%,rgba(10,20,10,0.3) 40%,rgba(10,20,10,0.7) 100%);z-index:1;pointer-events:none}
+.ph-vignette{position:absolute;inset:0;box-shadow:inset 0 0 180px 60px rgba(0,0,0,0.5);z-index:1;pointer-events:none}
+.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;user-select:none;z-index:2}
+.ph-content{position:relative;z-index:3;width:100%;max-width:1400px;margin:0 auto;padding:120px 60px 80px;display:flex;flex-direction:column;justify-content:flex-end}
+@media(max-width:900px){.ph-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr}}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:#2D6B8A;color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
 .post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:400;margin-bottom:20px}
@@ -280,10 +289,18 @@ footer{background:var(--ink)}
   </ul>
 </nav>
 
-<!-- POST HERO -->
+<!-- POST HERO — PHOTO MOSAIC -->
 <section class="post-hero">
-  <div class="ph-bg"></div>
-  <div class="ph-texture"></div>
+  <div class="ph-mosaic">
+    <img class="ph-mosaic-img" src="../images/najrana-flags.jpg" alt="International flags">
+    <img class="ph-mosaic-img" src="../images/najrana-expo.jpg" alt="Dubai Expo canopy">
+    <img class="ph-mosaic-img" src="../images/najrana-india-pavilion.jpg" alt="India Pavilion, Global Village">
+    <img class="ph-mosaic-img" src="../images/najrana-seychelles.jpg" alt="Seychelles aerial view">
+    <img class="ph-mosaic-img" src="../images/najrana-louvre.jpg" alt="Louvre Abu Dhabi">
+    <img class="ph-mosaic-img" src="../images/najrana-mangroves.jpg" alt="Mangroves">
+  </div>
+  <div class="ph-overlay"></div>
+  <div class="ph-vignette"></div>
   <div class="ph-art">न</div>
   <div class="ph-content">
     <span class="post-cat">प्रवासी मन</span>
@@ -316,6 +333,79 @@ footer{background:var(--ink)}
     </div>
 
     <p class="collection-intro">परदेस में रहते हुए जो देखा, जो महसूस किया, जो सोचा — उसे शब्दों में पिरोने का यह प्रयास है। UAE की धरती पर बसे इन अद्भुत स्थलों की यात्राएं, और उनसे मिले अनुभव — यही है <strong>नज़राना परदेश से</strong>।</p>
+
+    <!-- PHOTO GALLERY -->
+    <div class="gallery-section">
+      <div class="gallery-header">
+        <span class="gallery-header-icon">📸</span>
+        <span class="gallery-header-title">यात्रा की झलकियाँ</span>
+      </div>
+      <p class="gallery-subtitle">परदेश की सुंदर यादें — कैमरे में क़ैद पल</p>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-flags.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏳️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">विश्व के झंडे — एकता का संदेश</div>
+            <span class="gallery-card-label">UAE</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-expo.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">✨</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">दुबई एक्सपो — भविष्य की झलक</div>
+            <span class="gallery-card-label">दुबई</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-india-pavilion.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🇮🇳</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">इंडिया पैवेलियन — देश की पहचान</div>
+            <span class="gallery-card-label">ग्लोबल विलेज</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-seychelles.jpg') center 30%/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏝️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">सेशेल्स — प्रकृति का स्वर्ग</div>
+            <span class="gallery-card-label">सेशेल्स</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-louvre.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏛️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">लूव्र अबू धाबी — कला का मंदिर</div>
+            <span class="gallery-card-label">अबू धाबी</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-mangroves.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🌿</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">मैंग्रोव वन — हरियाली की गोद</div>
+            <span class="gallery-card-label">UAE</span>
+          </div>
+        </div>
+      </div>
+      <p class="gallery-note">सभी चित्र © गीतांजलि सक्सेना</p>
+      <div class="gallery-divider"></div>
+    </div>
 
     <!-- ARTICLE CARDS GRID -->
     <div class="articles-grid">
