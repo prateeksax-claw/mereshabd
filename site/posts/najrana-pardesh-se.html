@@ -43,7 +43,7 @@ nav.scrolled .nav-logo img{filter:none}
 
 /* POST HERO — PHOTO MOSAIC */
 .post-hero{min-height:90vh;position:relative;overflow:hidden;display:flex;align-items:stretch;padding:0}
-.ph-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+.ph-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:3px}
 .ph-mosaic-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.85) saturate(1.15);transition:filter 0.6s}
 .ph-mosaic-img:nth-child(1){object-position:center 30%}
 .ph-mosaic-img:nth-child(2){object-position:center 40%}
@@ -51,11 +51,17 @@ nav.scrolled .nav-logo img{filter:none}
 .ph-mosaic-img:nth-child(4){object-position:center 40%}
 .ph-mosaic-img:nth-child(5){object-position:center 60%}
 .ph-mosaic-img:nth-child(6){object-position:center 50%}
+.ph-mosaic-img:nth-child(7){object-position:center 35%}
+.ph-mosaic-img:nth-child(8){object-position:center 50%}
+.ph-mosaic-img:nth-child(9){object-position:center 40%}
+.ph-mosaic-img:nth-child(10){object-position:center 45%}
+.ph-mosaic-img:nth-child(11){object-position:center 40%}
+.ph-mosaic-img:nth-child(12){object-position:center 55%}
 .ph-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,10,0.25) 0%,rgba(10,20,10,0.1) 40%,rgba(10,20,10,0.55) 100%);z-index:1;pointer-events:none}
 .ph-vignette{position:absolute;inset:0;box-shadow:inset 0 0 120px 30px rgba(0,0,0,0.3);z-index:1;pointer-events:none}
 .ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;user-select:none;z-index:2}
 .ph-content{position:relative;z-index:3;width:100%;max-width:1400px;margin:0 auto;padding:120px 60px 80px;display:flex;flex-direction:column;justify-content:flex-end}
-@media(max-width:900px){.ph-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr}}
+@media(max-width:900px){.ph-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:repeat(6,1fr)}}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#F0D060;font-size:15px;padding:0;font-family:'Noto Sans Devanagari',sans-serif;font-weight:700;margin-bottom:24px;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
 .post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:700;margin-bottom:20px;text-shadow:0 2px 16px rgba(0,0,0,0.6)}
 .post-subtitle{font-family:'Noto Sans Devanagari',sans-serif;font-size:20px;color:#5BA8D6;font-style:normal;font-weight:700;margin-bottom:36px;text-shadow:0 1px 8px rgba(0,0,0,0.4)}
@@ -294,9 +300,15 @@ footer{background:var(--ink)}
     <img class="ph-mosaic-img" src="../images/najrana-flags.jpg" alt="International flags">
     <img class="ph-mosaic-img" src="../images/najrana-expo.jpg" alt="Dubai Expo canopy">
     <img class="ph-mosaic-img" src="../images/najrana-india-pavilion.jpg" alt="India Pavilion, Global Village">
+    <img class="ph-mosaic-img" src="../images/najrana-great-wall.jpg" alt="Great Wall of China">
     <img class="ph-mosaic-img" src="../images/najrana-seychelles.jpg" alt="Seychelles aerial view">
     <img class="ph-mosaic-img" src="../images/najrana-louvre.jpg" alt="Louvre Abu Dhabi">
     <img class="ph-mosaic-img" src="../images/najrana-mangroves.jpg" alt="Mangroves">
+    <img class="ph-mosaic-img" src="../images/najrana-miracle-garden.jpg" alt="Miracle Garden">
+    <img class="ph-mosaic-img" src="../images/najrana-mandir-golden.jpg" alt="Abu Dhabi Hindu Mandir">
+    <img class="ph-mosaic-img" src="../images/najrana-mandir-mural.jpg" alt="Hindu Mandir mural">
+    <img class="ph-mosaic-img" src="../images/najrana-mauritius.jpg" alt="Mauritius beach">
+    <img class="ph-mosaic-img" src="../images/najrana-mandir-lotus.jpg" alt="Mandir Lotus in the Desert">
   </div>
   <div class="ph-overlay"></div>
   <div class="ph-vignette"></div>
