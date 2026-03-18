@@ -334,147 +334,182 @@ footer{background:var(--ink)}
 
     <p class="collection-intro">परदेस में रहते हुए जो देखा, जो महसूस किया, जो सोचा — उसे शब्दों में पिरोने का यह प्रयास है। UAE की धरती पर बसे इन अद्भुत स्थलों की यात्राएं, और उनसे मिले अनुभव — यही है <strong>नज़राना परदेश से</strong>।</p>
 
-    <!-- PHOTO GALLERY -->
+    <!-- ARTICLE GALLERY — each thumbnail opens its PDF -->
     <div class="gallery-section">
       <div class="gallery-header">
         <span class="gallery-header-icon">📸</span>
-        <span class="gallery-header-title">यात्रा की झलकियाँ</span>
+        <span class="gallery-header-title">यात्रा की झलकियाँ — लेख पढ़ें</span>
       </div>
-      <p class="gallery-subtitle">परदेश की सुंदर यादें — कैमरे में क़ैद पल</p>
+      <p class="gallery-subtitle">तस्वीर पर क्लिक करें — लेख PDF में खुलेगा</p>
       <div class="gallery-grid">
-        <div class="gallery-card" onclick="openPDF('शेख़ ज़ायद मस्जिद','../pdfs/Sheikh-Zayed-Mosque.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-flags.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🏳️</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">विश्व के झंडे — एकता का संदेश</div>
-            <span class="gallery-card-label">UAE</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('दुबई एक्सपो सिटी','../pdfs/Dubai-Expo-City.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-expo.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">✨</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">दुबई एक्सपो — भविष्य की झलक</div>
-            <span class="gallery-card-label">दुबई</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('Global Village','../pdfs/Global-Village.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-india-pavilion.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🇮🇳</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">इंडिया पैवेलियन — देश की पहचान</div>
-            <span class="gallery-card-label">ग्लोबल विलेज</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('सर्वगुण सम्पन्न देश — चीन','../pdfs/Sarv-Gun-Sampann-Desh-China.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-great-wall.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🏯</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">चीन की महान दीवार</div>
-            <span class="gallery-card-label">चीन</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('प्रकृति की धरोहर — सेशेल्स','../pdfs/Nature-Blessed-Island-Seychelles-final.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-seychelles.jpg') center 30%/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🏝️</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">सेशेल्स — प्रकृति का स्वर्ग</div>
-            <span class="gallery-card-label">सेशेल्स</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('Louvre Museum','../pdfs/Louvre-Museum.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-louvre.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🏛️</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">लूव्र अबू धाबी — कला का मंदिर</div>
-            <span class="gallery-card-label">अबू धाबी</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('Mangroves','../pdfs/Mangroves.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-mangroves.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🌿</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">मैंग्रोव वन — हरियाली की गोद</div>
-            <span class="gallery-card-label">UAE</span>
-          </div>
-        </div>
-        <div class="gallery-card" onclick="openPDF('Miracle Garden','../pdfs/Miracle-Garden.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-miracle-garden.jpg') center/cover no-repeat"></div>
-          <div class="gallery-card-shimmer"></div>
-          <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🌺</span>
-          <div class="gallery-card-body">
-            <div class="gallery-card-title">Miracle Garden — फूलों का संसार</div>
-            <span class="gallery-card-label">दुबई</span>
-          </div>
-        </div>
+
         <div class="gallery-card" onclick="openPDF('अबू धाबी हिंदू मंदिर','../pdfs/Abudhabi-Hindu-Temple-.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mandir-golden.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
           <span class="gallery-card-icon">🛕</span>
           <div class="gallery-card-body">
-            <div class="gallery-card-title">अबू धाबी हिंदू मंदिर — स्वर्णिम शिखर</div>
-            <span class="gallery-card-label">अबू धाबी</span>
+            <div class="gallery-card-title">अबू धाबी हिंदू मंदिर</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
           </div>
         </div>
+
+        <div class="gallery-card" onclick="openPDF('शेख़ ज़ायद मस्जिद','../pdfs/Sheikh-Zayed-Mosque.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-sheikh-zayed-mosque.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🕌</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">शेख़ ज़ायद मस्जिद</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
         <div class="gallery-card" onclick="openPDF('मिट्टी समेटे इतिहास','../pdfs/Mitti-samet.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mandir-mural.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
           <span class="gallery-card-icon">🎨</span>
           <div class="gallery-card-body">
-            <div class="gallery-card-title">मंदिर की दीवारें — कला का संगम</div>
-            <span class="gallery-card-label">अबू धाबी</span>
+            <div class="gallery-card-title">मिट्टी समेटे इतिहास</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
           </div>
         </div>
-        <div class="gallery-card" onclick="openPDF('Plantation','../pdfs/Plantation.pdf')">
-          <div class="gallery-card-bg" style="background:url('../images/najrana-mauritius.jpg') center/cover no-repeat"></div>
+
+        <div class="gallery-card" onclick="openPDF('Miracle Garden','../pdfs/Miracle-Garden.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-miracle-garden.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🌊</span>
+          <span class="gallery-card-icon">🌺</span>
           <div class="gallery-card-body">
-            <div class="gallery-card-title">मॉरीशस — समुद्र की गोद</div>
-            <span class="gallery-card-label">मॉरीशस</span>
+            <div class="gallery-card-title">Miracle Garden</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
           </div>
         </div>
+
+        <div class="gallery-card" onclick="openPDF('Louvre Museum','../pdfs/Louvre-Museum.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-louvre.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏛️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Louvre Museum</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('प्रकृति की धरोहर — सेशेल्स','../pdfs/Nature-Blessed-Island-Seychelles-final.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-seychelles.jpg') center 30%/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏝️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">प्रकृति की धरोहर — सेशेल्स</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('Global Village','../pdfs/Global-Village.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-india-pavilion.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🌍</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Global Village</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('Mangroves','../pdfs/Mangroves.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-mangroves.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🌿</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Mangroves</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('सर्वगुण सम्पन्न देश — चीन','../pdfs/Sarv-Gun-Sampann-Desh-China.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-great-wall.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏯</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">सर्वगुण सम्पन्न देश — चीन</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('दुबई एक्सपो सिटी','../pdfs/Dubai-Expo-City.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-expo.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">✨</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">दुबई एक्सपो सिटी</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('Masdar City','../pdfs/Masdar-City.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-masdar-city.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏙️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Masdar City</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('Plantation','../pdfs/Plantation.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-plantation.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🌴</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Plantation</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
         <div class="gallery-card" onclick="openPDF('Organic Farming','../pdfs/Organic-Farming.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mandir-lotus.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
-          <span class="gallery-card-icon">🪷</span>
+          <span class="gallery-card-icon">🌱</span>
           <div class="gallery-card-body">
-            <div class="gallery-card-title">Lotus in the Desert — मंदिर का कमल</div>
-            <span class="gallery-card-label">अबू धाबी</span>
+            <div class="gallery-card-title">Organic Farming</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
           </div>
         </div>
+
+        <div class="gallery-card" onclick="openPDF('Bollywood Park','../pdfs/Bollywood-Park.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-bollywood-park.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🎬</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Bollywood Park</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPDF('The Unspoken Journey','../pdfs/delivery-Man-english-version-.pdf')">
+          <div class="gallery-card-bg" style="background:url('../images/najrana-unspoken-journey.jpg') center/cover no-repeat"></div>
+          <div class="gallery-card-shimmer"></div>
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-icon">🏍️</span>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">The Unspoken Journey</div>
+            <span class="gallery-card-label">📄 PDF पढ़ें</span>
+          </div>
+        </div>
+
       </div>
       <p class="gallery-note">सभी चित्र © गीतांजलि सक्सेना</p>
-      <div class="gallery-divider"></div>
-    </div>
-
-    <!-- और भी लेख — PDFs without gallery images -->
-    <div style="margin-top:32px;padding:24px;background:rgba(26,90,138,0.04);border-radius:8px">
-      <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:#1A5A8A;margin-bottom:16px">और भी लेख</div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px">
-        <button class="card-btn" onclick="openPDF('Masdar City','../pdfs/Masdar-City.pdf')" style="background:rgba(26,90,138,0.1);color:#1A5A8A;border:1px solid rgba(26,90,138,0.2)">📄 Masdar City</button>
-        <button class="card-btn" onclick="openPDF('Bollywood Park','../pdfs/Bollywood-Park.pdf')" style="background:rgba(26,90,138,0.1);color:#1A5A8A;border:1px solid rgba(26,90,138,0.2)">📄 Bollywood Park</button>
-        <button class="card-btn" onclick="openPDF('The Unspoken Journey','../pdfs/delivery-Man-english-version-.pdf')" style="background:rgba(26,90,138,0.1);color:#1A5A8A;border:1px solid rgba(26,90,138,0.2)">📄 The Unspoken Journey</button>
-      </div>
     </div>
 
     <!-- TAGS -->
