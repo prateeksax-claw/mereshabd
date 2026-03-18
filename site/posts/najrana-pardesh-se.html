@@ -90,7 +90,7 @@ nav.scrolled .nav-logo img{filter:none}
 .gallery-header-title{font-family:'Tiro Devanagari Hindi',serif;font-size:30px;color:#1A5A8A;font-weight:700}
 .gallery-subtitle{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:#2D7AB5;margin-bottom:24px;font-weight:600}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
-.gallery-card{position:relative;border-radius:10px;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 4px 24px rgba(0,0,0,0.10);transition:transform 0.3s,box-shadow 0.3s;cursor:default}
+.gallery-card{position:relative;border-radius:10px;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 4px 24px rgba(0,0,0,0.10);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer}
 .gallery-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 12px 40px rgba(0,0,0,0.18)}
 .gallery-card-bg{position:absolute;inset:0;border-radius:10px}
 .gallery-card-shimmer{position:absolute;inset:0;border-radius:10px;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.08) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 3s ease-in-out infinite}
@@ -342,7 +342,7 @@ footer{background:var(--ink)}
       </div>
       <p class="gallery-subtitle">परदेश की सुंदर यादें — कैमरे में क़ैद पल</p>
       <div class="gallery-grid">
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('शेख़ ज़ायद मस्जिद','../pdfs/Sheikh-Zayed-Mosque.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-flags.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -352,7 +352,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">UAE</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('दुबई एक्सपो सिटी','../pdfs/Dubai-Expo-City.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-expo.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -362,7 +362,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">दुबई</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('Global Village','../pdfs/Global-Village.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-india-pavilion.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -372,7 +372,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">ग्लोबल विलेज</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('सर्वगुण सम्पन्न देश — चीन','../pdfs/Sarv-Gun-Sampann-Desh-China.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-great-wall.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -382,7 +382,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">चीन</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('प्रकृति की धरोहर — सेशेल्स','../pdfs/Nature-Blessed-Island-Seychelles-final.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-seychelles.jpg') center 30%/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -392,7 +392,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">सेशेल्स</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('Louvre Museum','../pdfs/Louvre-Museum.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-louvre.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -402,7 +402,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">अबू धाबी</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('Mangroves','../pdfs/Mangroves.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mangroves.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -412,7 +412,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">UAE</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('Miracle Garden','../pdfs/Miracle-Garden.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-miracle-garden.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -422,7 +422,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">दुबई</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('अबू धाबी हिंदू मंदिर','../pdfs/Abudhabi-Hindu-Temple-.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mandir-golden.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -432,7 +432,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">अबू धाबी</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('मिट्टी समेटे इतिहास','../pdfs/Mitti-samet.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mandir-mural.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -442,7 +442,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">अबू धाबी</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('Plantation','../pdfs/Plantation.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mauritius.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -452,7 +452,7 @@ footer{background:var(--ink)}
             <span class="gallery-card-label">मॉरीशस</span>
           </div>
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card" onclick="openPDF('Organic Farming','../pdfs/Organic-Farming.pdf')">
           <div class="gallery-card-bg" style="background:url('../images/najrana-mandir-lotus.jpg') center/cover no-repeat"></div>
           <div class="gallery-card-shimmer"></div>
           <div class="gallery-card-overlay"></div>
@@ -467,179 +467,15 @@ footer{background:var(--ink)}
       <div class="gallery-divider"></div>
     </div>
 
-    <!-- ARTICLE CARDS GRID -->
-    <div class="articles-grid">
-
-      <!-- 1. Abu Dhabi Hindu Temple -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#7A4A00 0%,#B8873A 50%,#5A3200 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">अ</div>
-        <div class="card-body">
-          <div class="card-title">अबू धाबी हिंदू मंदिर</div>
-          <button class="card-btn" onclick="openPDF('अबू धाबी हिंदू मंदिर','../pdfs/Abudhabi-Hindu-Temple-.pdf')">📄 PDF खोलें</button>
-        </div>
+    <!-- और भी लेख — PDFs without gallery images -->
+    <div style="margin-top:32px;padding:24px;background:rgba(26,90,138,0.04);border-radius:8px">
+      <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:#1A5A8A;margin-bottom:16px">और भी लेख</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <button class="card-btn" onclick="openPDF('Masdar City','../pdfs/Masdar-City.pdf')" style="background:rgba(26,90,138,0.1);color:#1A5A8A;border:1px solid rgba(26,90,138,0.2)">📄 Masdar City</button>
+        <button class="card-btn" onclick="openPDF('Bollywood Park','../pdfs/Bollywood-Park.pdf')" style="background:rgba(26,90,138,0.1);color:#1A5A8A;border:1px solid rgba(26,90,138,0.2)">📄 Bollywood Park</button>
+        <button class="card-btn" onclick="openPDF('The Unspoken Journey','../pdfs/delivery-Man-english-version-.pdf')" style="background:rgba(26,90,138,0.1);color:#1A5A8A;border:1px solid rgba(26,90,138,0.2)">📄 The Unspoken Journey</button>
       </div>
-
-      <!-- 2. Mitti Samete Itihas -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#3D2800 0%,#6B4A10 50%,#2A1A00 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">म</div>
-        <div class="card-body">
-          <div class="card-title">मिट्टी समेटे इतिहास</div>
-          <button class="card-btn" onclick="openPDF('मिट्टी समेटे इतिहास','../pdfs/Mitti-samet.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 3. Sheikh Zayed Mosque -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#0A2A4A 0%,#1A4A7A 50%,#061A2E 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">श</div>
-        <div class="card-body">
-          <div class="card-title">शेख़ ज़ायद मस्जिद</div>
-          <button class="card-btn" onclick="openPDF('शेख़ ज़ायद मस्जिद','../pdfs/Sheikh-Zayed-Mosque.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 4. Plantation -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#0A2E12 0%,#1A5A28 50%,#061C0A 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">प</div>
-        <div class="card-body">
-          <div class="card-title">Plantation</div>
-          <button class="card-btn" onclick="openPDF('Plantation','../pdfs/Plantation.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 5. Organic Farming -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#1A3A0A 0%,#3A6A18 50%,#102408 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">ऑ</div>
-        <div class="card-body">
-          <div class="card-title">Organic Farming</div>
-          <button class="card-btn" onclick="openPDF('Organic Farming','../pdfs/Organic-Farming.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 6. Miracle Garden -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#3A0A2A 0%,#7A1A5A 50%,#220618 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">म</div>
-        <div class="card-body">
-          <div class="card-title">Miracle Garden</div>
-          <button class="card-btn" onclick="openPDF('Miracle Garden','../pdfs/Miracle-Garden.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 7. Masdar City -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#0A1E3A 0%,#1A3A6A 50%,#060E22 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">म</div>
-        <div class="card-body">
-          <div class="card-title">Masdar City</div>
-          <button class="card-btn" onclick="openPDF('Masdar City','../pdfs/Masdar-City.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 8. Paradise Island / Seychelles — NEW -->
-      <div class="article-card">
-        <div class="card-new">NEW</div>
-        <div class="card-bg" style="background:linear-gradient(145deg,#003A4A 0%,#006A7A 50%,#00222E 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">स</div>
-        <div class="card-body">
-          <div class="card-title">प्रकृति की धरोहर — सेशेल्स</div>
-          <button class="card-btn" onclick="openPDF('प्रकृति की धरोहर — सेशेल्स','../pdfs/Nature-Blessed-Island-Seychelles-final.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 9. Global Village -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#2A0A3A 0%,#5A1A7A 50%,#180622 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">ग</div>
-        <div class="card-body">
-          <div class="card-title">Global Village</div>
-          <button class="card-btn" onclick="openPDF('Global Village','../pdfs/Global-Village.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 10. Mangroves -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#062A10 0%,#104A20 50%,#031808 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">म</div>
-        <div class="card-body">
-          <div class="card-title">Mangroves</div>
-          <button class="card-btn" onclick="openPDF('Mangroves','../pdfs/Mangroves.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 11. China -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#3A0808 0%,#6A1010 50%,#220505 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">च</div>
-        <div class="card-body">
-          <div class="card-title">सर्वगुण सम्पन्न देश..चीन</div>
-          <button class="card-btn" onclick="openPDF('सर्वगुण सम्पन्न देश — चीन','../pdfs/Sarv-Gun-Sampann-Desh-China.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 12. Bollywood Park -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#3A1A00 0%,#7A3A08 50%,#221000 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">ब</div>
-        <div class="card-body">
-          <div class="card-title">Bollywood Park</div>
-          <button class="card-btn" onclick="openPDF('Bollywood Park','../pdfs/Bollywood-Park.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 13. Louvre Museum -->
-      <div class="article-card">
-        <div class="card-bg" style="background:linear-gradient(145deg,#1A1A0A 0%,#3A3A18 50%,#0E0E06 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">ल</div>
-        <div class="card-body">
-          <div class="card-title">Louvre Museum</div>
-          <button class="card-btn" onclick="openPDF('Louvre Museum','../pdfs/Louvre-Museum.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 14. Dubai Expo City — NEW -->
-      <div class="article-card">
-        <div class="card-new">NEW</div>
-        <div class="card-bg" style="background:linear-gradient(145deg,#0A0A3A 0%,#1A1A6A 50%,#060622 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">द</div>
-        <div class="card-body">
-          <div class="card-title">दुबई एक्सपो सिटी</div>
-          <button class="card-btn" onclick="openPDF('दुबई एक्सपो सिटी','../pdfs/Dubai-Expo-City.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
-      <!-- 15. The Unspoken Journey / Delivery Man — NEW -->
-      <div class="article-card">
-        <div class="card-new">NEW</div>
-        <div class="card-bg" style="background:linear-gradient(145deg,#1A1A1A 0%,#3A3A3A 50%,#0A0A0A 100%)"></div>
-        <div class="card-overlay"></div>
-        <div class="card-art">अ</div>
-        <div class="card-body">
-          <div class="card-title">The Unspoken Journey</div>
-          <button class="card-btn" onclick="openPDF('The Unspoken Journey','../pdfs/delivery-Man-english-version-.pdf')">📄 PDF खोलें</button>
-        </div>
-      </div>
-
     </div>
-    <!-- END ARTICLE GRID -->
 
     <!-- TAGS -->
     <div class="tags-wrap">
