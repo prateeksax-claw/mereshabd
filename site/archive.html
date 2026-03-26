@@ -20,7 +20,7 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 
 /* NO letter-spacing on Devanagari - ever */
 *[lang="hi"],.nav-links a,.hero-title,.hero-desc,.hero-overline,
-.filter-btn,.card-title,.card-excerpt,.card-cat,.card-date,
+.filter-btn,.card-title,.card-cat,.card-date,
 .arch-count,.arch-count-num,.empty-text,.empty-title,
 .fcol ul a,.fbrand-text,.fs-label,.fs-input,
 .breadcrumb a,.breadcrumb span { letter-spacing:0 !important; }
@@ -38,6 +38,8 @@ nav.scrolled .nav-logo img{filter:none}
 .nav-links a.active{color:var(--gold-light)}
 .nav-cta{background:var(--red)!important;color:white!important;padding:10px 22px;text-shadow:none!important;display:inline-flex;flex-direction:column;align-items:center;white-space:nowrap;line-height:1.2;min-width:0}
 .nav-cta:hover{background:var(--red-deep)!important;color:white!important}
+.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
+.nav-links a:hover .nav-en{color:var(--red)}
 
 /* HERO */
 .arch-hero{height:52vh;min-height:380px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
@@ -59,85 +61,64 @@ nav.scrolled .nav-logo img{filter:none}
 .filter-btn.active{color:var(--red);font-weight:600;border-bottom-color:var(--red)}
 .filter-count{font-size:11px;background:var(--red);color:white;border-radius:20px;padding:1px 7px;margin-left:6px;font-family:monospace;vertical-align:middle;display:inline-block}
 .filter-btn:not(.active) .filter-count{background:rgba(0,0,0,0.1);color:var(--dust)}
+.filter-en{font-family:monospace;font-size:8px;color:rgba(0,0,0,0.3);letter-spacing:1px;text-transform:uppercase;display:block;line-height:1;margin-top:2px}
+.filter-btn:hover .filter-en,.filter-btn.active .filter-en{color:var(--red)}
 
 /* RESULTS BAR */
 .results-bar{padding:28px 80px 0;display:flex;align-items:center;justify-content:space-between}
 .arch-count{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:var(--dust);font-weight:300}
 .arch-count-num{color:var(--red);font-weight:600}
-.sort-select{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:var(--dust);background:transparent;border:1px solid rgba(0,0,0,0.1);padding:8px 14px;cursor:pointer;outline:none}
-.sort-select:focus{border-color:var(--gold)}
 
-/* ARCHIVE GRID */
-.archive-grid{padding:32px 80px 80px;display:grid;grid-template-columns:repeat(12,1fr);gap:2px}
+/* ========== THUMBNAIL GRID ========== */
+.archive-grid{padding:32px 80px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 
-/* CARD BASE */
-.post-card{position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block;background:#1a0505}
+.post-card{position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block;border-radius:10px;aspect-ratio:4/3;background:#1a0505}
 .post-card.hidden{display:none}
-.post-card .card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.5s ease}
-.post-card:hover .card-img{transform:scale(1.04)}
-.post-card .card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.80) 0%,rgba(0,0,0,0.15) 55%,transparent 100%);transition:background 0.3s}
-.post-card:hover .card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.90) 0%,rgba(0,0,0,0.3) 55%,transparent 100%)}
-.card-art{position:absolute;font-family:'Tiro Devanagari Hindi',serif;font-size:110px;opacity:0.05;color:white;top:6px;right:-6px;line-height:1;pointer-events:none;z-index:1}
+.post-card .card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.5s ease;border-radius:10px}
+.post-card:hover .card-img{transform:scale(1.06)}
+.post-card .card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.18) 50%,transparent 100%);transition:background 0.3s;border-radius:10px}
+.post-card:hover .card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.3) 50%,transparent 100%)}
 .card-inner{position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
-.card-cat{font-size:12px;padding:4px 12px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;width:fit-content;margin-bottom:10px;color:white}
-.card-cat.kavita{background:var(--gold)}
+.card-cat{font-size:11px;padding:4px 12px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;width:fit-content;margin-bottom:10px;color:white;border-radius:4px}
+.card-cat.kavita{background:var(--red)}
 .card-cat.lekh{background:#4A5568}
 .card-cat.sansmaran{background:#6B4226}
 .card-cat.pravasi{background:#2D6B8A}
 .card-cat.vishesh{background:#6B5A1E}
-.card-title{font-family:'Tiro Devanagari Hindi',serif;color:white;font-weight:400;line-height:1.25;margin-bottom:8px}
-.card-excerpt{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;font-weight:300}
-.card-date{margin-top:10px;font-size:12px;color:rgba(255,255,255,0.3);font-family:'Noto Sans Devanagari',sans-serif;display:flex;align-items:center;gap:6px}
+.card-cat.yatra{background:#2D6B8A}
+.card-title{font-family:'Tiro Devanagari Hindi',serif;color:white;font-weight:400;line-height:1.3;font-size:22px}
+.card-date{margin-top:8px;font-size:12px;color:rgba(255,255,255,0.4);font-family:'Noto Sans Devanagari',sans-serif;display:flex;align-items:center;gap:6px}
 .card-date::before{content:'';width:12px;height:1px;background:var(--gold);opacity:0.5}
 
-/* CARD SIZES */
-.card-xl{grid-column:span 5;min-height:520px}
-.card-xl .card-title{font-size:34px}
-.card-xl .card-inner{padding:36px}
-
-.card-lg{grid-column:span 4;min-height:340px}
-.card-lg .card-title{font-size:24px}
-
-.card-md{grid-column:span 3;min-height:340px}
-.card-md .card-title{font-size:20px}
-.card-md .card-excerpt{display:none}
-
-.card-sm{grid-column:span 3;min-height:260px}
-.card-sm .card-title{font-size:18px}
-.card-sm .card-excerpt{display:none}
-
-.card-wide{grid-column:span 7;min-height:280px}
-.card-wide .card-title{font-size:26px}
-.card-wide .card-inner{flex-direction:row;align-items:flex-end;gap:28px}
-.card-wide .card-text-block{flex:1}
-
-.card-sq{grid-column:span 4;min-height:280px}
-.card-sq .card-title{font-size:22px}
-.card-sq .card-excerpt{display:none}
-
 /* EMPTY STATE */
-.empty-state{grid-column:span 12;padding:100px 0;text-align:center;display:none}
+.empty-state{grid-column:span 3;padding:100px 0;text-align:center;display:none}
 .empty-state.visible{display:block}
 .empty-icon{font-size:56px;margin-bottom:24px;opacity:0.4}
 .empty-title{font-family:'Tiro Devanagari Hindi',serif;font-size:32px;color:var(--ink);margin-bottom:12px}
 .empty-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:var(--dust);font-weight:300}
 
+/* Animate in */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.post-card.animate{animation:fadeUp 0.35s ease forwards}
+
+/* Vishesh inline poem grid */
+.vs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 32px}
+.vs-btn{background:white;border:1px solid rgba(0,0,0,0.08);padding:16px 20px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;transition:all 0.2s;width:100%;border-radius:8px}
+.vs-btn:hover{border-color:rgba(155,14,14,0.3);background:#FDF8F4;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.vs-num{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(0,0,0,0.15);font-style:italic;min-width:28px}
+.vs-label{font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:#1C1410;flex:1}
+.vs-icon{font-size:14px;opacity:0.5}
+
 /* FOOTER */
 footer{background:var(--ink)}
 .footer-sub-strip{border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:28px 60px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-.fs-label{font-size:16px;color:rgba(255,255,255,0.4);font-family:'Cormorant Garamond',serif;font-style:italic}
-.fs-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.18);color:white;padding:10px 0;font-size:16px;outline:none;width:280px;font-family:'Noto Sans Devanagari',sans-serif;transition:border-color 0.2s}
-.fs-input::placeholder{color:rgba(255,255,255,0.25);font-size:15px}
-.fs-input:focus{border-color:var(--gold)}
-.fs-btn{background:transparent;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);padding:10px 24px;font-size:14px;cursor:pointer;font-family:'Noto Sans Devanagari',sans-serif;transition:all 0.2s}
-.fs-btn:hover{background:var(--gold);border-color:var(--gold);color:white}
 .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:72px 60px;border-bottom:1px solid rgba(255,255,255,0.04)}
 .fbrand{padding-right:52px}
 .fbrand-logo img{height:56px;width:auto;filter:brightness(0) invert(1);opacity:0.85;margin-bottom:20px}
 .fbrand-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:rgba(255,255,255,0.35);line-height:2;margin-bottom:28px;font-weight:300}
-.fsocials{display:flex;gap:10px}
-.fsoc{width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.38);font-size:14px;text-decoration:none;transition:all 0.2s;font-style:normal}
-.fsoc:hover{border-color:var(--gold);color:var(--gold)}
+.fblinks{display:flex;gap:20px}
+.fblinks a{font-size:14px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;font-family:'Noto Sans Devanagari',sans-serif}
+.fblinks a:hover{color:white}
 .fcol{border-left:1px solid rgba(255,255,255,0.04);padding:0 20px}
 .fcol-label{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:22px}
 .fcol ul{list-style:none}
@@ -146,98 +127,45 @@ footer{background:var(--ink)}
 .fcol ul a:hover{color:white}
 .footer-bottom{padding:22px 60px;display:flex;align-items:center;justify-content:space-between}
 .fbcopy{font-size:10px;color:rgba(255,255,255,0.13);font-family:monospace;letter-spacing:1px}
-.fblinks{display:flex;gap:20px}
-.fblinks a{font-size:10px;color:rgba(255,255,255,0.13);text-decoration:none;letter-spacing:1.5px;font-family:monospace;transition:color 0.2s}
-.fblinks a:hover{color:rgba(255,255,255,0.45)}
 
-/* Animate in */
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.post-card.animate{animation:fadeUp 0.35s ease forwards}
-
-@media(max-width:900px){
-  nav{padding:16px 24px}
-  .nav-links{gap:16px}
-  .nav-links .nav-cta{display:none}
-  .footer-main{grid-template-columns:1fr 1fr;padding:40px 24px;gap:32px}
-  .footer-sub-strip,.footer-bottom{padding:16px 24px}
-  .fbrand{grid-column:1/-1}  .archive-hero,.hero-wrap{padding:0 24px 56px}
-  .archive-hero h1,.hero-title{font-size:44px!important}
-  .filter-wrap,.filter-tabs{padding:16px 24px;flex-wrap:wrap;gap:8px}
-  .filter-btn{font-size:12px;padding:8px 14px}
-  .posts-grid{padding:24px 24px 56px;grid-template-columns:repeat(2,1fr)!important}
-  .post-card.card-xl{grid-column:1/-1}
-  .post-card.card-wide{grid-column:1/-1;grid-row:auto}
-  .breadcrumb{padding:12px 24px}
-}
-@media(max-width:600px){
-  .posts-grid{grid-template-columns:1fr!important}
-  .archive-hero h1,.hero-title{font-size:32px!important}
-  .filter-btn{font-size:11px;padding:7px 12px}
-}
-
-/* Vishesh inline poem grid */
-.vs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 32px}
-.vs-btn{background:white;border:1px solid rgba(0,0,0,0.08);padding:16px 20px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;transition:all 0.2s;width:100%}
-.vs-btn:hover{border-color:rgba(155,14,14,0.3);background:#FDF8F4;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
-.vs-num{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(0,0,0,0.15);font-style:italic;min-width:28px}
-.vs-label{font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:#1C1410;flex:1}
-.vs-icon{font-size:14px;opacity:0.5}
-@media(max-width:900px){.vs-grid{grid-template-columns:1fr 1fr;padding:0 16px}}
-@media(max-width:600px){.vs-grid{grid-template-columns:1fr;padding:0 12px}}
-
-.nav-en{font-size:9px;display:block;color:rgba(26,16,8,0.3);font-family:monospace;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:1px}
-.nav-links a:hover .nav-en{color:var(--red)}
-</style>
-  
-<style>
+/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:14px 24px}
+  .nav-links{gap:16px}
+  .nav-links .nav-cta{display:none}
   .arch-hero{min-height:300px;height:44vh}
   .ah-content{padding:0 28px 48px}
   .hero-title{font-size:48px}
   .filter-inner{padding:0 20px}
   .results-bar{padding:20px 20px 0}
-  .archive-grid{padding:20px 20px 60px;gap:1px}
-  .card-xl{grid-column:1/-1;min-height:380px}
-  .card-lg{grid-column:span 6;min-height:300px}
-  .card-md{grid-column:span 6;min-height:280px}
-  .card-sm{grid-column:span 6;min-height:240px}
-  .card-wide{grid-column:1/-1}
+  .archive-grid{padding:20px 20px 60px;grid-template-columns:repeat(2,1fr);gap:16px}
+  .empty-state{grid-column:span 2}
   .footer-main{grid-template-columns:1fr 1fr;padding:40px 20px;gap:28px}
   .fbrand{grid-column:1/-1}
   .footer-bottom,.footer-sub-strip{padding:16px 20px}
+  .vs-grid{grid-template-columns:1fr 1fr;padding:0 16px}
 }
 @media(max-width:600px){
   .hero-title{font-size:36px}
   .ah-content{padding:0 20px 36px}
-  .card-xl,.card-lg,.card-md,.card-sm,.card-wide,.card-sq{grid-column:1/-1}
-  .card-xl{min-height:320px}
-  .card-lg,.card-md{min-height:260px}
+  .archive-grid{grid-template-columns:1fr;gap:14px}
+  .empty-state{grid-column:span 1}
   .filter-bar{top:72px}
   .footer-main{grid-template-columns:1fr;padding:36px 20px}
+  .vs-grid{grid-template-columns:1fr;padding:0 12px}
+  .card-title{font-size:20px}
 }
-
-.filter-en{font-family:monospace;font-size:8px;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;display:block;line-height:1;margin-top:2px}
-.filter-btn:hover .filter-en,.filter-btn.active .filter-en{color:rgba(255,255,255,0.6)}
 </style>
 
-  <!-- SEO: Canonical -->
   <link rel="canonical" href="https://mereshabd.com/archive">
-  <!-- SEO: Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="सभी रचनाएं — गीतांजलि सक्सेना | हिंदी कविता, लेख, संस्मरण">
-  <meta property="og:description" content="गीतांजलि सक्सेना की संपूर्ण रचनाएं — हिंदी कविता, लेख, संस्मरण और प्रवासी साहित्य। अबू धाबी से हिंदी साहित्य की आवाज़। Browse all Hindi poems, essays and memoirs.">
+  <meta property="og:description" content="गीतांजलि सक्सेना की संपूर्ण रचनाएं — हिंदी कविता, लेख, संस्मरण और प्रवासी साहित्य।">
   <meta property="og:url" content="https://mereshabd.com/archive">
   <meta property="og:image" content="https://mereshabd.com/images/author.jpg">
-  <meta property="og:image:width" content="800">
-  <meta property="og:image:height" content="600">
   <meta property="og:site_name" content="मेरे शब्द | Gitanjali Saxena">
   <meta property="og:locale" content="hi_IN">
-  <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="सभी रचनाएं — गीतांजलि सक्सेना | हिंदी कविता, लेख, संस्मरण">
-  <meta name="twitter:description" content="गीतांजलि सक्सेना की संपूर्ण रचनाएं — हिंदी कविता, लेख, संस्मरण और प्रवासी साहित्य। अबू धाबी से हिंदी साहित्य की आवाज़। Browse all Hindi poems, essays and memoirs.">
-  <meta name="twitter:image" content="https://mereshabd.com/images/author.jpg">
 </head>
 <body>
 
@@ -256,7 +184,7 @@ footer{background:var(--ink)}
   </ul>
 </nav>
 
-<!-- HERO — uses .arch-hero CSS -->
+<!-- HERO -->
 <section class="arch-hero">
   <div class="ah-bg"></div>
   <div class="ah-texture"></div>
@@ -264,173 +192,172 @@ footer{background:var(--ink)}
   <div class="ah-content">
     <div class="hero-overline">संग्रह</div>
     <h1 class="hero-title">सभी रचनाएं</h1>
-    <p class="hero-desc">कविता · लेख · संस्मरण · प्रवासी मन · विशेष — गीतांजलि सक्सेना का संपूर्ण लेखन संग्रह</p>
+    <p class="hero-desc">कविता · लेख · संस्मरण · यात्रा · विशेष — गीतांजलि सक्सेना का संपूर्ण लेखन संग्रह</p>
   </div>
 </section>
 
-<!-- FILTER BAR — uses .filter-bar > .filter-inner > .filter-btn CSS -->
+<!-- FILTER BAR -->
 <div class="filter-bar" id="filterBar">
   <div class="filter-inner">
-    <button class="filter-btn active" data-cat="all">सभी <span class="filter-count">12</span></button>
-    <button class="filter-btn" data-cat="kavita">कविता <span class="filter-count">3</span><span class="filter-en">Poetry</span></button>
-    <button class="filter-btn" data-cat="lekh">लेख <span class="filter-count">5</span><span class="filter-en">Essays</span></button>
-    <button class="filter-btn" data-cat="sansmaran">संस्मरण <span class="filter-count">2</span><span class="filter-en">Memoirs</span></button>
-    <button class="filter-btn" data-cat="pravasi">प्रवासी मन <span class="filter-count">1</span><span class="filter-en">Diaspora Heart</span></button>
+    <button class="filter-btn active" data-cat="all">सभी <span class="filter-count">13</span></button>
+    <button class="filter-btn" data-cat="kavita">कविता <span class="filter-count">4</span><span class="filter-en">Poetry</span></button>
+    <button class="filter-btn" data-cat="lekh">लेख <span class="filter-count">4</span><span class="filter-en">Essays</span></button>
+    <button class="filter-btn" data-cat="sansmaran">संस्मरण <span class="filter-count">3</span><span class="filter-en">Memoirs</span></button>
+    <button class="filter-btn" data-cat="yatra">यात्रा <span class="filter-count">1</span><span class="filter-en">Travel</span></button>
     <button class="filter-btn" data-cat="vishesh">विशेष <span class="filter-count">1</span><span class="filter-en">Special</span></button>
   </div>
 </div>
 
 <!-- RESULTS BAR -->
 <div class="results-bar">
-  <span class="arch-count">दिखाई जा रही हैं <span class="arch-count-num" id="visibleCount">12</span> रचनाएं</span>
+  <span class="arch-count">दिखाई जा रही हैं <span class="arch-count-num" id="visibleCount">13</span> रचनाएं</span>
 </div>
 
-<!-- ARCHIVE GRID — uses .archive-grid CSS -->
+<!-- ARCHIVE GRID — 3-column thumbnail cards -->
 <div class="archive-grid" id="archiveGrid">
 
-    <a href="posts/guru-mahattva.html" class="post-card card-xl" data-cat="sansmaran" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#3D0808 0%,#7A1010 50%,#5C0A0A 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">गु</div>
-      <div class="card-inner">
-        <span class="card-cat sansmaran">संस्मरण</span>
-        <h3 class="card-title">शाश्वत... शिक्षकों को नमन</h3>
-        <p class="card-excerpt">"गुरु-गोविंद दोऊ खड़े, काके लागूं पांय" — भारतीय गुरु-शिष्य परंपरा की अनूठी महिमा और डिजिटल युग में गुरु की प्रासंगिकता।</p>
-        <div class="card-date">सितम्बर २०२५</div>
-      </div>
-    </a>
+  <!-- 1. नववर्ष कविता -->
+  <a href="posts/navvarsh-2025.html" class="post-card" data-cat="kavita" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-navvarsh.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat kavita">कविता</span>
+      <h3 class="card-title">नववर्ष कविता २०२६</h3>
+      <div class="card-date">जनवरी २०२६</div>
+    </div>
+  </a>
 
-    <a href="posts/mammi-amma-nani.html" class="post-card card-lg" data-cat="kavita" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#2D1808 0%,#6B3A1A 50%,#3D2010 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">मा</div>
-      <div class="card-inner">
-        <span class="card-cat kavita">कविता</span>
-        <h3 class="card-title">मम्मी, अम्मा, नानी... जीवन सफ़र</h3>
-        <p class="card-excerpt">उतार-चढ़ाव भरी हिचकोले खाती नौका, हिम्मत विश्वास पतवार ने किनारे दिखाए — माँ को जन्मदिन पर समर्पित।</p>
-        <div class="card-date">अक्टूबर २०२५</div>
-      </div>
-    </a>
+  <!-- 2. शाश्वत... शिक्षकों को नमन -->
+  <a href="posts/guru-mahattva.html" class="post-card" data-cat="sansmaran" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-guru-mahattva.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat sansmaran">संस्मरण</span>
+      <h3 class="card-title">शाश्वत... शिक्षकों को नमन</h3>
+      <div class="card-date">सितम्बर २०२५</div>
+    </div>
+  </a>
 
-    <a href="posts/yadon-mein-rahenge.html" class="post-card card-md" data-cat="sansmaran" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#0D1530 0%,#1A2A4A 50%,#0A1020 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">या</div>
-      <div class="card-inner">
-        <span class="card-cat sansmaran">संस्मरण</span>
-        <h3 class="card-title">यादों में रहेंगे बसे...</h3>
-        <p class="card-excerpt">कॉफी मॉर्निंग्स, पापा की जीवनशैली और एक शख़्सियत की अनूठी विरासत — ९७वें जन्मदिन पर श्रद्धांजलि।</p>
-        <div class="card-date">जुलाई २०२५</div>
-      </div>
-    </a>
+  <!-- 3. मम्मी, अम्मा, नानी -->
+  <a href="posts/mammi-amma-nani.html" class="post-card" data-cat="kavita" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-mammi.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat kavita">कविता</span>
+      <h3 class="card-title">मम्मी, अम्मा, नानी... जीवन सफ़र</h3>
+      <div class="card-date">अक्टूबर २०२५</div>
+    </div>
+  </a>
 
-    <a href="posts/health-is-wealth.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#0A2010 0%,#1A4020 50%,#0D2815 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">स्व</div>
-      <div class="card-inner">
-        <span class="card-cat lekh">लेख</span>
-        <h3 class="card-title">Health is Wealth, So Invest Wisely</h3>
-        <p class="card-excerpt">स्वास्थ्य ही सच्ची दौलत है — नेक तंदुरुस्ती लाख नियामत। जानें कैसे करें अपने स्वास्थ्य में सबसे स्मार्ट निवेश।</p>
-        <div class="card-date">जुलाई २०२५</div>
-      </div>
-    </a>
+  <!-- 4. यादों में रहेंगे बसे -->
+  <a href="posts/yadon-mein-rahenge.html" class="post-card" data-cat="sansmaran" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-yaden.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat sansmaran">संस्मरण</span>
+      <h3 class="card-title">यादों में रहेंगे बसे...</h3>
+      <div class="card-date">जुलाई २०२५</div>
+    </div>
+  </a>
 
-    <a href="posts/jivan-darshan.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#1A0A30 0%,#2D1550 50%,#150A25 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">जी</div>
-      <div class="card-inner">
-        <span class="card-cat lekh">लेख</span>
-        <h3 class="card-title">जीवन दर्शन — इंद्रधनुषी रंग</h3>
-        <p class="card-excerpt">जीवन के १४ दार्शनिक निबंध — अनुभव, प्रेम, संबंध और आत्म-खोज के रंगीन पहलू।</p>
-        <div class="card-date">जुलाई २०२५</div>
-      </div>
-    </a>
+  <!-- 5. Health is Wealth -->
+  <a href="posts/health-is-wealth.html" class="post-card" data-cat="lekh" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-health.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat lekh">लेख</span>
+      <h3 class="card-title">Health is Wealth, So Invest Wisely</h3>
+      <div class="card-date">जुलाई २०२५</div>
+    </div>
+  </a>
 
-    <a href="posts/jane-doctor-jubani.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#082018 0%,#0F3828 50%,#062015 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">डॉ</div>
-      <div class="card-inner">
-        <span class="card-cat lekh">लेख</span>
-        <h3 class="card-title">जानें डॉक्टर ज़ुबानी</h3>
-        <p class="card-excerpt">विशेषज्ञ डॉक्टरों की ज़ुबानी स्वास्थ्य की महत्वपूर्ण जानकारियां — ६ स्वास्थ्य लेखों का संग्रह।</p>
-        <div class="card-date">जुलाई २०२५</div>
-      </div>
-    </a>
+  <!-- 6. जीवन दर्शन -->
+  <a href="posts/jivan-darshan.html" class="post-card" data-cat="lekh" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-jivan-darshan.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat lekh">लेख</span>
+      <h3 class="card-title">जीवन दर्शन — इंद्रधनुषी रंग</h3>
+      <div class="card-date">जुलाई २०२५</div>
+    </div>
+  </a>
 
-    <a href="posts/kalam-se-utare.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#1A0820 0%,#2D1040 50%,#150818 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">क</div>
-      <div class="card-inner">
-        <span class="card-cat lekh">लेख</span>
-        <h3 class="card-title">क़लम से उतरे</h3>
-        <p class="card-excerpt">शब्दों के बिछाए चक्रव्यूह में घुसने का दुस्साहस सिर्फ कलम ही तो कर सकती है — लेखों का संग्रह।</p>
-        <div class="card-date">जून २०२४</div>
-      </div>
-    </a>
+  <!-- 7. जानें डॉक्टर ज़ुबानी -->
+  <a href="posts/jane-doctor-jubani.html" class="post-card" data-cat="lekh" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-jane-doctor-jubani.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat lekh">लेख</span>
+      <h3 class="card-title">जानें डॉक्टर ज़ुबानी</h3>
+      <div class="card-date">जुलाई २०२५</div>
+    </div>
+  </a>
 
-    <a href="posts/najrana-pardesh-se.html" class="post-card card-md" data-cat="pravasi" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#0A0F30 0%,#152050 50%,#080D25 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">न</div>
-      <div class="card-inner">
-        <span class="card-cat pravasi">प्रवासी मन</span>
-        <h3 class="card-title">नज़राना परदेश से</h3>
-        <p class="card-excerpt">परदेस में बसी हर खुशी में छुपी है देस की खुशबू — प्रवासी जीवन की अनकही कहानियां।</p>
-        <div class="card-date">जुलाई २०२२</div>
-      </div>
-    </a>
+  <!-- 8. क़लम से उतरे -->
+  <a href="posts/kalam-se-utare.html" class="post-card" data-cat="lekh" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-kalam-se-utare.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat lekh">लेख</span>
+      <h3 class="card-title">क़लम से उतरे</h3>
+      <div class="card-date">जून २०२४</div>
+    </div>
+  </a>
 
-    <a href="posts/kavya.html" class="post-card card-lg" data-cat="kavita" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#3D0505 0%,#5C0808 50%,#2D0505 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">कव</div>
-      <div class="card-inner">
-        <span class="card-cat kavita">कविता</span>
-        <h3 class="card-title">काव्य-धारा — संपूर्ण काव्य संग्रह</h3>
-        <p class="card-excerpt">२०२२ से २०२५ की काव्य-यात्रा — World of Magic, ILA, Upjinder सहित कविताएं वर्षवार, पाठ और PDF दोनों रूपों में।</p>
-        <div class="card-date">जुलाई २०२२</div>
-      </div>
-    </a>
+  <!-- 9. नज़राना परदेश से -->
+  <a href="posts/najrana-pardesh-se.html" class="post-card" data-cat="yatra" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-najrana.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat yatra">यात्रा</span>
+      <h3 class="card-title">नज़राना परदेश से</h3>
+      <div class="card-date">जुलाई २०२२</div>
+    </div>
+  </a>
 
-    <a href="posts/naritva.html" class="post-card card-md" data-cat="kavita" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#2A0818 0%,#4A1030 50%,#200810 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">ना</div>
-      <div class="card-inner">
-        <span class="card-cat kavita">कविता</span>
-        <h3 class="card-title">दुनिया तुमसे... नारीत्व</h3>
-        <p class="card-excerpt">"तू ही तो शक्ति, है ईश्वरीय वरदान!" — स्त्री के संघर्ष, साहस और शक्ति का काव्य-चित्रण।</p>
-        <div class="card-date">जुलाई २०२२</div>
-      </div>
-    </a>
+  <!-- 10. नारीत्व -->
+  <a href="posts/naritva.html" class="post-card" data-cat="kavita" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-naritva.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat kavita">कविता</span>
+      <h3 class="card-title">दुनिया तुमसे... नारीत्व</h3>
+      <div class="card-date">जुलाई २०२२</div>
+    </div>
+  </a>
 
-    <a href="posts/yadon-ke-pannon-se.html" class="post-card card-md" data-cat="lekh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(155deg,#0F1520 0%,#1A2535 50%,#0A1018 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:140px;color:white">पन</div>
-      <div class="card-inner">
-        <span class="card-cat lekh">लेख</span>
-        <h3 class="card-title">यादों के पन्नों से</h3>
-        <p class="card-excerpt">पिताजी की अनमोल विरासत — परिवार के हर सदस्य की यादें, श्रद्धांजलि और उन पलों की गूंज जो कभी नहीं भूलते।</p>
-        <div class="card-date">जुलाई २०२४</div>
-      </div>
-    </a>
+  <!-- 11. काव्य-धारा -->
+  <a href="posts/kavya.html" class="post-card" data-cat="kavita" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-kavya.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat kavita">कविता</span>
+      <h3 class="card-title">काव्य-धारा — संपूर्ण काव्य संग्रह</h3>
+      <div class="card-date">जुलाई २०२२</div>
+    </div>
+  </a>
 
-    <a href="posts/kshanikayen-anil-saxena.html" class="post-card card-md" data-cat="vishesh" style="text-decoration:none">
-      <div class="card-img" style="background:linear-gradient(135deg,#0D0D1A 0%,#1A0A2E 50%,#2D0A0A 100%)"></div>
-      <div class="card-overlay"></div>
-      <div class="card-art" style="opacity:0.18;font-size:100px;color:white">काव्य</div>
-      <div class="card-inner">
-        <span class="card-cat vishesh">विशेष</span>
-        <h3 class="card-title">सुर-ताल जुगलबंदी...काव्य</h3>
-        <p class="card-excerpt">गीतांजलि सक्सेना का संपूर्ण काव्य-संग्रह — क्षणिकाएं, गीत, कविताएं और जीवन-दर्शन। २३ रचनाएं।</p>
-        <div class="card-date">२०२२–२०२५</div>
-      </div>
-    </a>
+  <!-- 12. यादों के पन्नों से -->
+  <a href="posts/yadon-ke-pannon-se.html" class="post-card" data-cat="sansmaran" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-yadon-ke-pannon-se.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat sansmaran">संस्मरण</span>
+      <h3 class="card-title">यादों के पन्नों से</h3>
+      <div class="card-date">जुलाई २०२४</div>
+    </div>
+  </a>
+
+  <!-- 13. सुर-ताल जुगलबंदी...काव्य -->
+  <a href="posts/kshanikayen-anil-saxena.html" class="post-card" data-cat="vishesh" style="text-decoration:none">
+    <div class="card-img" style="background-image:url('images/post-kshanikayen.jpg')"></div>
+    <div class="card-overlay"></div>
+    <div class="card-inner">
+      <span class="card-cat vishesh">विशेष</span>
+      <h3 class="card-title">सुर-ताल जुगलबंदी...काव्य</h3>
+      <div class="card-date">२०२२–२०२५</div>
+    </div>
+  </a>
 
   <!-- EMPTY STATE -->
   <div class="empty-state" id="emptyState">
@@ -441,12 +368,11 @@ footer{background:var(--ink)}
 
 </div>
 
-
 <!-- VISHESH INLINE SECTION — shown when vishesh tab active -->
 <div id="vishesh-inline" style="display:none;padding:32px 0 48px">
   <div style="text-align:center;margin-bottom:28px">
     <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:#1C1410;margin-bottom:8px">सुर-ताल जुगलबंदी...काव्य</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#8A7968;font-style:italic">गीतांजलि सक्सेना का संपूर्ण काव्य-संग्रह — ২৩ रचनाएं</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#8A7968;font-style:italic">गीतांजलि सक्सेना का संपूर्ण काव्य-संग्रह — २३ रचनाएं</div>
   </div>
   <div class="vs-grid">
         <button class="vs-btn" onclick="openVisheshPDF('posts/4.-Lockdown-poem-final-for-web.pdf','लॉकडाउन...')">
@@ -583,6 +509,7 @@ footer{background:var(--ink)}
     <iframe id="vishesh-pdf-iframe" src="" style="width:100%;height:100%;border:none"></iframe>
   </div>
 </div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -601,7 +528,7 @@ footer{background:var(--ink)}
         <li><a href="archive.html?cat=kavita">कविता</a></li>
         <li><a href="archive.html?cat=lekh">लेख</a></li>
         <li><a href="archive.html?cat=sansmaran">संस्मरण</a></li>
-        <li><a href="archive.html?cat=pravasi">प्रवासी मन</a></li>
+        <li><a href="archive.html?cat=yatra">यात्रा</a></li>
         <li><a href="archive.html?cat=vishesh">विशेष</a></li>
       </ul>
     </div>
@@ -633,7 +560,7 @@ footer{background:var(--ink)}
 </footer>
 
 <script>
-// Nav scroll effect — starts scrolled (cream bg on this page)
+// Nav scroll effect
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 30);
@@ -644,7 +571,6 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('.post-card');
 const countEl = document.getElementById('visibleCount');
 const emptyState = document.getElementById('emptyState');
-
 const visheshInline = document.getElementById('vishesh-inline');
 
 function updateGrid(selectedCat) {
@@ -652,12 +578,12 @@ function updateGrid(selectedCat) {
   if (selectedCat === 'vishesh') {
     visheshInline.style.display = 'block';
     document.querySelector('.archive-grid').style.display = 'none';
-    countEl.textContent = '23';
-    emptyState.classList.remove('visible');
+    document.querySelector('.results-bar').style.display = 'none';
     return;
   } else {
     visheshInline.style.display = 'none';
     document.querySelector('.archive-grid').style.display = 'grid';
+    document.querySelector('.results-bar').style.display = 'flex';
   }
 
   let visible = 0;
@@ -691,6 +617,7 @@ if (urlCat) {
   if (targetBtn) targetBtn.click();
 }
 
+// Vishesh PDF modal
 function openVisheshPDF(url, title) {
   document.getElementById('vishesh-pdf-title').textContent = title;
   document.getElementById('vishesh-pdf-iframe').src = url;
