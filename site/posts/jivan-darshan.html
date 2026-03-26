@@ -330,19 +330,23 @@ footer{background:var(--ink)}
 /* ESSAYS SECTION — jivan-darshan */
 .essays-section{padding:60px 80px 80px;max-width:1200px;margin:0 auto}
 .section-intro{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:48px;max-width:700px}
-.essays-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.essay-card{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:white;border:1px solid rgba(0,0,0,0.07);text-decoration:none;transition:all 0.25s;gap:16px}
-.essay-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.08);background:var(--petal)}
-.essay-card:hover .essay-cta{opacity:1;color:var(--red)}
-.essay-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;font-weight:400;line-height:1.4;flex:1}
-.essay-cta{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dust);opacity:0.5;white-space:nowrap;transition:all 0.2s;font-style:italic}
+.essays-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.essay-card{position:relative;overflow:hidden;border-radius:10px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:all 0.35s;cursor:pointer;border:none;padding:0;background:#111}
+.essay-card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.5s cubic-bezier(.25,.46,.45,.94);z-index:1}
+.essay-card:hover .essay-card-img{transform:scale(1.08)}
+.essay-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.08) 100%);z-index:2;transition:background 0.3s}
+.essay-card:hover .essay-card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.18) 50%,rgba(0,0,0,0.05) 100%)}
+.essay-card-inner{position:relative;z-index:3;padding:18px 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.essay-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;font-weight:400;line-height:1.4;color:white!important;flex:1;text-shadow:0 1px 6px rgba(0,0,0,0.5)}
+.essay-cta{font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;font-weight:600;color:white;background:var(--red);padding:5px 12px;border-radius:4px;white-space:nowrap;transition:all 0.2s;flex-shrink:0;font-style:normal}
+.essay-card:hover .essay-cta{background:var(--red-deep)}
 @media(max-width:900px){
   .essays-section{padding:40px 24px 60px}
   .essays-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
   .essays-grid{grid-template-columns:1fr}
-  .essay-card{padding:16px 18px}
+  .essay-card{min-height:180px}
 }
 
 /* POST NAV BAR */
@@ -455,61 +459,117 @@ footer{background:var(--ink)}
   <div class="section-wrap">
     <p class="section-intro">जीवन के विविध रंगों को शब्दों में पिरोया है। प्रेम, रिश्ते, त्योहार, और आत्म-खोज — सब कुछ इन निबंधों में समाया है।</p>
     <div class="essays-grid">
-      <a href="../pdfs/Rainbow-Colors.pdf" onclick="openPDF('Rainbow Colors', '../pdfs/Rainbow-Colors.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #E53E3E">
-        <h3 class="essay-title" style="color:#E53E3E">इंद्रधनुषी रंग</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Rainbow-Colors.pdf" onclick="openPDF('Rainbow Colors', '../pdfs/Rainbow-Colors.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-rainbow.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">इंद्रधनुषी रंग</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Negative-and-Positive.pdf" onclick="openPDF('Negative and Positive', '../pdfs/Negative-and-Positive.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #DD6B20">
-        <h3 class="essay-title" style="color:#DD6B20">नकारात्मक और सकारात्मक</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Negative-and-Positive.pdf" onclick="openPDF('Negative and Positive', '../pdfs/Negative-and-Positive.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-positive.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">नकारात्मक और सकारात्मक</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Rakshabandan.pdf" onclick="openPDF('Rakshabandan', '../pdfs/Rakshabandan.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #D69E2E">
-        <h3 class="essay-title" style="color:#D69E2E">रक्षाबंधन</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Rakshabandan.pdf" onclick="openPDF('Rakshabandan', '../pdfs/Rakshabandan.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-rakhi.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">रक्षाबंधन</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Valentines-Day.pdf" onclick="openPDF('Valentines Day', '../pdfs/Valentines-Day.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #E53E3E">
-        <h3 class="essay-title" style="color:#E53E3E">वेलेंटाइन डे</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Valentines-Day.pdf" onclick="openPDF('Valentines Day', '../pdfs/Valentines-Day.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-valentine.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">वेलेंटाइन डे</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Janamshtmi.pdf" onclick="openPDF('Janamshtmi', '../pdfs/Janamshtmi.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #6B46C1">
-        <h3 class="essay-title" style="color:#6B46C1">जन्माष्टमी</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Janamshtmi.pdf" onclick="openPDF('Janamshtmi', '../pdfs/Janamshtmi.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-janmashtami.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">जन्माष्टमी</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Holi-Hai-new.pdf" onclick="openPDF('Holi Hai new', '../pdfs/Holi-Hai-new.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #E53E3E">
-        <h3 class="essay-title" style="color:#E53E3E">होली है!</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Holi-Hai-new.pdf" onclick="openPDF('Holi Hai new', '../pdfs/Holi-Hai-new.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-holi.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">होली है!</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Independence-Day.pdf" onclick="openPDF('Independence Day', '../pdfs/Independence-Day.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #38A169">
-        <h3 class="essay-title" style="color:#38A169">स्वतंत्रता दिवस</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Independence-Day.pdf" onclick="openPDF('Independence Day', '../pdfs/Independence-Day.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-independence.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">स्वतंत्रता दिवस</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/numerology.pdf" onclick="openPDF('numerology', '../pdfs/numerology.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #2B6CB0">
-        <h3 class="essay-title" style="color:#2B6CB0">अंकशास्त्र</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/numerology.pdf" onclick="openPDF('numerology', '../pdfs/numerology.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-numerology.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">अंकशास्त्र</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/W-7-Rishton-mein-insaniyat.pdf" onclick="openPDF('W 7 Rishton mein insaniyat', '../pdfs/W-7-Rishton-mein-insaniyat.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #B7791F">
-        <h3 class="essay-title" style="color:#B7791F">रिश्तों में इंसानियत</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/W-7-Rishton-mein-insaniyat.pdf" onclick="openPDF('W 7 Rishton mein insaniyat', '../pdfs/W-7-Rishton-mein-insaniyat.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-rishte.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">रिश्तों में इंसानियत</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Digital-Platform-.pdf" onclick="openPDF('Digital Platform ', '../pdfs/Digital-Platform-.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #2B6CB0">
-        <h3 class="essay-title" style="color:#2B6CB0">डिजिटल प्लेटफॉर्म</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Digital-Platform-.pdf" onclick="openPDF('Digital Platform ', '../pdfs/Digital-Platform-.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-digital.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">डिजिटल प्लेटफॉर्म</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/delivery-Man-english-version-.pdf" onclick="openPDF('delivery Man english version ', '../pdfs/delivery-Man-english-version-.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #4A5568">
-        <h3 class="essay-title" style="color:#4A5568">The Delivery Man (English)</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/delivery-Man-english-version-.pdf" onclick="openPDF('delivery Man english version ', '../pdfs/delivery-Man-english-version-.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-delivery.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">The Delivery Man (English)</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf" onclick="openPDF('जीवन दर्शन लेख', '../pdfs/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf'); return false;" class="essay-card" rel="noopener" style="border-left:4px solid #6B4226">
-        <h3 class="essay-title" style="color:#6B4226">जीवन दर्शन लेख</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf" onclick="openPDF('जीवन दर्शन लेख', '../pdfs/%E0%A4%86%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%82%E0%A4%A5%E0%A4%A8-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8-%E0%A4%97%E0%A4%B9%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%AF%E0%A5%8B%E0%A4%82-%E0%A4%B8%E0%A5%87-%E0%A4%A8%E0%A4%BF%E0%A4%95%E0%A4%B2%E0%A4%BE-%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4-.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-philosophy.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">जीवन दर्शन लेख</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%86%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%80-%E0%A4%95%E0%A4%BE-%E0%A4%AC%E0%A4%A6%E0%A4%B2%E0%A4%BE-%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%82%E0%A4%AA-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf" onclick="openPDF('अभिव्यक्ति की आजादी', '../pdfs/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%86%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%80-%E0%A4%95%E0%A4%BE-%E0%A4%AC%E0%A4%A6%E0%A4%B2%E0%A4%BE-%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%82%E0%A4%AA-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf'); return false;" class="essay-card" rel="noopener" style="border-left:4px solid #6B4226">
-        <h3 class="essay-title" style="color:#6B4226">जीवन और अनुभव</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%86%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%80-%E0%A4%95%E0%A4%BE-%E0%A4%AC%E0%A4%A6%E0%A4%B2%E0%A4%BE-%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%82%E0%A4%AA-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf" onclick="openPDF('अभिव्यक्ति की आजादी', '../pdfs/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A5%80-%E0%A4%86%E0%A4%9C%E0%A4%BE%E0%A4%A6%E0%A5%80-%E0%A4%95%E0%A4%BE-%E0%A4%AC%E0%A4%A6%E0%A4%B2%E0%A4%BE-%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%82%E0%A4%AA-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-experience.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">जीवन और अनुभव</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
-<a href="../pdfs/Delivery-Man-2025-final.pdf" onclick="openPDF('Delivery Man 2025 final', '../pdfs/Delivery-Man-2025-final.pdf'); return false;"  class="essay-card"  rel="noopener" style="border-left:4px solid #4A5568">
-        <h3 class="essay-title" style="color:#4A5568">डिलीवरी मैन (२०२५)</h3>
-        <div class="essay-cta">पढ़ें →</div>
+      <a href="../pdfs/Delivery-Man-2025-final.pdf" onclick="openPDF('Delivery Man 2025 final', '../pdfs/Delivery-Man-2025-final.pdf'); return false;" class="essay-card" rel="noopener">
+        <div class="essay-card-img" style="background-image:url('../images/jd-delivery2.jpg')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">डिलीवरी मैन (२०२५)</h3>
+          <span class="essay-cta">PDF पढ़ें</span>
+        </div>
       </a>
     </div>
   </div>
@@ -525,9 +585,8 @@ footer{background:var(--ink)}
   </div>
   <div class="rm-grid">
       <a href="health-is-wealth.html" class="rm-card">
-        <div class="rm-card-bg" style="background:linear-gradient(155deg,#0A2010 0%,#143020 50%,#071508 100%)"></div>
+        <div class="rm-card-bg" style="background-image:url('../images/post-health.jpg')"></div>
         <div class="rm-card-overlay"></div>
-        <div class="rm-card-art">स्व</div>
         <div class="rm-card-inner">
           <span class="rm-card-cat">लेख</span>
           <div class="rm-card-title">Health is Wealth, So Invest Wisely</div>
@@ -535,9 +594,8 @@ footer{background:var(--ink)}
         </div>
       </a>
       <a href="jane-doctor-jubani.html" class="rm-card">
-        <div class="rm-card-bg" style="background:linear-gradient(155deg,#082018 0%,#103028 50%,#051510 100%)"></div>
+        <div class="rm-card-bg" style="background-image:url('../images/post-jane-doctor-jubani.jpg')"></div>
         <div class="rm-card-overlay"></div>
-        <div class="rm-card-art">डॉ</div>
         <div class="rm-card-inner">
           <span class="rm-card-cat">लेख</span>
           <div class="rm-card-title">जानें डॉक्टर ज़ुबानी</div>
@@ -545,9 +603,8 @@ footer{background:var(--ink)}
         </div>
       </a>
       <a href="kalam-se-utare.html" class="rm-card">
-        <div class="rm-card-bg" style="background:linear-gradient(155deg,#1A0820 0%,#2A1235 50%,#120615 100%)"></div>
+        <div class="rm-card-bg" style="background-image:url('../images/post-kalam-se-utare.jpg')"></div>
         <div class="rm-card-overlay"></div>
-        <div class="rm-card-art">क</div>
         <div class="rm-card-inner">
           <span class="rm-card-cat">लेख</span>
           <div class="rm-card-title">क़लम से उतरे...</div>
