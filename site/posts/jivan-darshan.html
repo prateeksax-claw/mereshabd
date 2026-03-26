@@ -47,7 +47,11 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 75% 40%,rgba(220,140,60,0.1) 0%,transparent 65%);pointer-events:none}
 .ph-img{display:none}
 .ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;user-select:none;z-index:1}
-.ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
+.ph-content{position:relative;z-index:3;max-width:55%;padding:0 80px}
+
+/* HERO RIGHT IMAGE FRAME */
+.ph-frame{position:absolute;right:5%;bottom:0;top:0;width:38%;z-index:3;display:flex;align-items:center;justify-content:center;padding:60px 40px}
+.ph-frame-img{width:100%;max-width:420px;max-height:80vh;object-fit:contain;border-radius:12px;border:4px solid rgba(255,255,255,0.15);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 80px rgba(139,21,21,0.15);filter:brightness(1.05) saturate(1.1)}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
 .post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:400;margin-bottom:20px}
@@ -294,7 +298,8 @@ footer{background:var(--ink)}
   .post-content{padding:40px 24px!important;border-right:none!important}
   .post-sidebar{padding:32px 24px!important;position:static!important;max-height:none!important;border-left:none!important;border-top:1px solid rgba(0,0,0,0.07)}
   .post-title{font-size:40px!important}
-  .ph-content{padding:0 28px!important}
+  .ph-content{padding:0 28px!important;max-width:100%!important}
+  .ph-frame{display:none!important}
   .breadcrumb{padding:12px 24px}
   #mainNav{padding:14px 24px}
 }
@@ -428,6 +433,9 @@ footer{background:var(--ink)}
   <div class="ph-texture"></div>
   <div class="ph-img"></div>
   <div class="ph-art">जी</div>
+  <div class="ph-frame">
+    <img src="../images/jd-hero-rainbow.jpg" alt="जीवन दर्शन — इंद्रधनुषी रंग" class="ph-frame-img">
+  </div>
   <div class="ph-content">
     <span class="post-cat lekh" style="background:#4A5568">लेख</span>
     <h1 class="post-title">जीवन दर्शन — इंद्रधनुषी रंग</h1>
