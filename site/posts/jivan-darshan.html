@@ -42,16 +42,16 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .nav-cta:hover{background:var(--red-deep)!important;color:white!important}
 
 /* POST HERO */
-.post-hero{min-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
-.ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#1A0A30 0%,#2D1550 50%,#150A25 100%)}
-.ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 75% 40%,rgba(220,140,60,0.1) 0%,transparent 65%);pointer-events:none}
+.post-hero{min-height:92vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
+.ph-bg{position:absolute;inset:0;background:url('../images/jd-hero-colorful.jpg') center center/cover no-repeat}
+.ph-texture{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.55) 100%);pointer-events:none}
 .ph-img{display:none}
 .ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;user-select:none;z-index:1}
-.ph-content{position:relative;z-index:3;max-width:55%;padding:0 80px}
+.ph-content{position:relative;z-index:3;max-width:75%;padding:0 80px}
 
 /* HERO RIGHT IMAGE FRAME */
-.ph-frame{position:absolute;right:5%;bottom:0;top:0;width:38%;z-index:3;display:flex;align-items:center;justify-content:center;padding:60px 40px}
-.ph-frame-img{width:100%;max-width:420px;max-height:80vh;object-fit:contain;border-radius:12px;border:4px solid rgba(255,255,255,0.15);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 80px rgba(139,21,21,0.15);filter:brightness(1.05) saturate(1.1)}
+.ph-frame{display:none}
+.ph-frame-img{display:none}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
 .post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:400;margin-bottom:20px}
