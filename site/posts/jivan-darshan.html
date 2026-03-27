@@ -335,8 +335,8 @@ footer{background:var(--ink)}
 /* ESSAYS SECTION — jivan-darshan */
 .essays-section{padding:60px 80px 80px;max-width:1200px;margin:0 auto}
 .section-intro{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:48px;max-width:700px}
-.essays-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.essay-card{position:relative;overflow:hidden;border-radius:12px;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:all 0.35s;cursor:pointer;border:none;padding:0;background:#111}
+.essays-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.essay-card{position:relative;overflow:hidden;border-radius:10px;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:all 0.35s;cursor:pointer;border:none;padding:0;background:#111}
 .essay-card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.5s cubic-bezier(.25,.46,.45,.94);z-index:1}
 .essay-card:hover .essay-card-img{transform:scale(1.08)}
 .essay-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.08) 100%);z-index:2;transition:background 0.3s}
@@ -351,7 +351,7 @@ footer{background:var(--ink)}
 }
 @media(max-width:600px){
   .essays-grid{grid-template-columns:1fr}
-  .essay-card{min-height:240px}
+  .essay-card{min-height:160px}
 }
 
 /* POST NAV BAR */
