@@ -225,6 +225,20 @@ footer{background:var(--ink);color:white}
 .en-essence{border-left:2px solid var(--gold);padding:16px 20px;margin-bottom:36px;background:rgba(201,168,76,0.05)}
 .en-essence-label{font-family:monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(26,16,8,0.6);line-height:1.7;font-style:italic;margin:0;letter-spacing:0}
+
+/* ESSAYS / GALLERY GRID */
+.essays-section{padding:48px 80px 60px;max-width:1200px;margin:0 auto}
+.section-intro{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:32px;max-width:700px}
+.essays-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.essay-card{position:relative;overflow:hidden;border-radius:12px;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:all 0.35s;cursor:pointer;border:none;padding:0;background:#111}
+.essay-card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.5s cubic-bezier(.25,.46,.45,.94);z-index:1}
+.essay-card:hover .essay-card-img{transform:scale(1.08)}
+.essay-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.08) 100%);z-index:2}
+.essay-card-inner{position:relative;z-index:3;padding:18px 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.essay-title{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;font-weight:400;line-height:1.4;color:white!important;flex:1;text-shadow:0 1px 6px rgba(0,0,0,0.5)}
+.essay-cta{font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;font-weight:600;color:white;background:#9B0E0E;padding:5px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+@media(max-width:900px){.essays-section{padding:40px 24px 60px}.essays-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.essays-grid{grid-template-columns:1fr}.essay-card{min-height:240px}}
 </style>
 
   <!-- SEO: Canonical -->
@@ -302,6 +316,95 @@ footer{background:var(--ink);color:white}
   <div class="stat-item"><div class="stat-num">३</div><div class="stat-label">वर्ष</div></div>
   <div class="stat-sep"></div>
   <div class="stat-item"><div class="stat-num">२०२५</div><div class="stat-label">नवीनतम</div></div>
+</div>
+
+<!-- KAVYA GALLERY GRID -->
+<div class="essays-section">
+  <div class="section-wrap">
+    <p class="section-intro" style="font-family:'Noto Sans Devanagari',sans-serif;color:#1565C0;font-weight:700;font-size:19px;margin-bottom:16px;">कविताओं का सचित्र संग्रह — हर रचना एक भाव, हर शब्द एक संसार</p>
+    <div class="essays-grid">
+      <a href="#y2025" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-vasant-ritu.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">वसंत-ऋतु</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2025" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-makar-sankranti.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">मकर संक्रांति</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2025" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-ila-devgan.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">ILA देवगन</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2022" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-dhartidhur-mahan.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">धरतीधर महान</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2022" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-maa-beta.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">माँ-बेटा</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2025" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-prem-aradhana.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">प्रेम - आराधना</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2023" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-bachpan-ke-din.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">बचपन के दिन</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2022" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-raat.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">रात</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2025" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-ishwar-mahan.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">ईश्वर महान</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+      <a href="#y2022" class="essay-card">
+        <div class="essay-card-img" style="background-image:url('../images/kavya-sansaar-sagar.png')"></div>
+        <div class="essay-card-overlay"></div>
+        <div class="essay-card-inner">
+          <h3 class="essay-title">संसार सागर</h3>
+          <span class="essay-cta">पढ़ें</span>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <nav class="year-nav" id="yearNav">
