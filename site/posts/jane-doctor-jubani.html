@@ -333,7 +333,9 @@ footer{background:var(--ink)}
 .section-intro{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--dust);line-height:2;font-weight:300;margin-bottom:40px;max-width:700px}
 
 /* Featured card */
-.health-featured{display:block;padding:40px 48px;background:linear-gradient(135deg,#082018 0%,#0A3020 100%);color:white;text-decoration:none;margin-bottom:28px;transition:all 0.25s;border-left:4px solid var(--gold)}
+.health-featured{display:flex;align-items:center;gap:32px;padding:40px 48px;background:linear-gradient(135deg,#082018 0%,#0A3020 100%);color:white;text-decoration:none;margin-bottom:28px;transition:all 0.25s;border-left:4px solid var(--gold)}
+.hf-content{flex:1}
+.hf-thumb{width:120px;height:120px;border-radius:10px;object-fit:cover;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.12)}
 .health-featured:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
 .hf-badge{display:inline-block;background:var(--gold);color:white;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;font-weight:600;padding:4px 14px;margin-bottom:16px;text-transform:uppercase}
 .hf-title{font-family:'Tiro Devanagari Hindi',serif;font-size:36px;color:white;font-weight:400;margin-bottom:12px;line-height:1.2}
@@ -342,7 +344,9 @@ footer{background:var(--ink)}
 
 /* Health cards grid */
 .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.health-card{display:block;padding:24px 28px;background:white;border:1px solid rgba(0,0,0,0.07);border-left:4px solid #2D7D5A;text-decoration:none;transition:all 0.25s}
+.health-card{display:flex;align-items:center;gap:16px;padding:20px 24px;background:white;border:1px solid rgba(0,0,0,0.07);border-left:4px solid #2D7D5A;text-decoration:none;transition:all 0.25s}
+.hc-thumb{width:68px;height:68px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid rgba(0,0,0,0.06)}
+.hc-text{flex:1;min-width:0}
 .health-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.08);background:var(--petal)}
 .health-card:hover .hc-cta{color:var(--red);opacity:1}
 .hc-title{font-family:'Tiro Devanagari Hindi',serif;font-size:19px;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.4}
@@ -358,12 +362,14 @@ footer{background:var(--ink)}
 @media(max-width:900px){
   .health-section{padding:40px 24px 60px}
   .health-grid{grid-template-columns:1fr 1fr}
-  .health-featured{padding:28px 24px}
+  .health-featured{padding:28px 24px;flex-direction:column;gap:20px}
+  .hf-thumb{width:100px;height:100px;align-self:center}
   .hf-title{font-size:26px}
   .post-nav-bar .pnav-item{padding:24px}
 }
 @media(max-width:600px){
   .health-grid{grid-template-columns:1fr}
+  .hc-thumb{width:56px;height:56px}
 }
 
 /* READ MORE SECTION */
@@ -471,36 +477,54 @@ footer{background:var(--ink)}
     <p class="section-intro">स्वास्थ्य ही जीवन है। इन लेखों में डॉक्टरों और विशेषज्ञों की राय, आयुर्वेद का ज्ञान, और कोरोना काल की कहानियां।</p>
     <!-- FEATURED -->
     <a href="../pdfs/Corona-Sangram.pdf" onclick="openPDF('Corona Sangram', '../pdfs/Corona-Sangram.pdf'); return false;"  class="health-featured"  rel="noopener">
-      <div class="hf-badge">विशेष लेख</div>
-      <h2 class="hf-title">कोरोना संग्राम</h2>
-      <p class="hf-desc">महामारी से लड़ाई — अनुभव, सबक और उम्मीद की कहानी</p>
-      <div class="hf-cta">पढ़ें →</div>
+      <div class="hf-content">
+        <div class="hf-badge">विशेष लेख</div>
+        <h2 class="hf-title">कोरोना संग्राम</h2>
+        <p class="hf-desc">महामारी से लड़ाई — अनुभव, सबक और उम्मीद की कहानी</p>
+        <div class="hf-cta">पढ़ें →</div>
+      </div>
+      <img src="../images/thumb-corona-sangram.jpg" alt="कोरोना संग्राम" class="hf-thumb" loading="lazy">
     </a>
     <div class="health-grid">
       <a href="../pdfs/Alternative-Medicine.pdf" onclick="openPDF('Alternative Medicine', '../pdfs/Alternative-Medicine.pdf'); return false;"  class="health-card"  rel="noopener">
-        <h3 class="hc-title">वैकल्पिक चिकित्सा</h3>
-        <p class="hc-desc">प्राकृतिक उपचार</p>
-        <div class="hc-cta">पढ़ें →</div>
+        <img src="../images/thumb-vaikalpik-chikitsa.jpg" alt="वैकल्पिक चिकित्सा" class="hc-thumb" loading="lazy">
+        <div class="hc-text">
+          <h3 class="hc-title">वैकल्पिक चिकित्सा</h3>
+          <p class="hc-desc">प्राकृतिक उपचार</p>
+          <div class="hc-cta">पढ़ें →</div>
+        </div>
       </a>
 <a href="../pdfs/Ayurveda.pdf" onclick="openPDF('Ayurveda', '../pdfs/Ayurveda.pdf'); return false;"  class="health-card"  rel="noopener">
-        <h3 class="hc-title">आयुर्वेद</h3>
-        <p class="hc-desc">प्राचीन भारतीय चिकित्सा</p>
-        <div class="hc-cta">पढ़ें →</div>
+        <img src="../images/thumb-ayurveda.jpg" alt="आयुर्वेद" class="hc-thumb" loading="lazy">
+        <div class="hc-text">
+          <h3 class="hc-title">आयुर्वेद</h3>
+          <p class="hc-desc">प्राचीन भारतीय चिकित्सा</p>
+          <div class="hc-cta">पढ़ें →</div>
+        </div>
       </a>
 <a href="../pdfs/Ayurveda-part2.pdf" onclick="openPDF('Ayurveda part2', '../pdfs/Ayurveda-part2.pdf'); return false;"  class="health-card"  rel="noopener">
-        <h3 class="hc-title">आयुर्वेद — भाग २</h3>
-        <p class="hc-desc">आयुर्वेद की गहराई</p>
-        <div class="hc-cta">पढ़ें →</div>
+        <img src="../images/thumb-ayurveda-part2.jpg" alt="आयुर्वेद — भाग २" class="hc-thumb" loading="lazy">
+        <div class="hc-text">
+          <h3 class="hc-title">आयुर्वेद — भाग २</h3>
+          <p class="hc-desc">आयुर्वेद की गहराई</p>
+          <div class="hc-cta">पढ़ें →</div>
+        </div>
       </a>
 <a href="../pdfs/Water-Therapy.pdf" onclick="openPDF('Water Therapy', '../pdfs/Water-Therapy.pdf'); return false;"  class="health-card"  rel="noopener">
-        <h3 class="hc-title">जल चिकित्सा</h3>
-        <p class="hc-desc">पानी से उपचार</p>
-        <div class="hc-cta">पढ़ें →</div>
+        <img src="../images/thumb-jal-chikitsa.jpg" alt="जल चिकित्सा" class="hc-thumb" loading="lazy">
+        <div class="hc-text">
+          <h3 class="hc-title">जल चिकित्सा</h3>
+          <p class="hc-desc">पानी से उपचार</p>
+          <div class="hc-cta">पढ़ें →</div>
+        </div>
       </a>
 <a href="../pdfs/%E0%A4%85%E0%A4%82%E0%A4%A4%E0%A4%B0%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF-%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf" onclick="openPDF('अंतरराष्ट्रीय योग दिवस', '../pdfs/%E0%A4%85%E0%A4%82%E0%A4%A4%E0%A4%B0%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF-%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8-%E0%A4%AB%E0%A4%BE%E0%A4%87%E0%A4%A8%E0%A4%B2-.pdf'); return false;" class="health-card"  rel="noopener">
-        <h3 class="hc-title">स्वास्थ्य लेख</h3>
-        <p class="hc-desc">डॉक्टरों की सलाह</p>
-        <div class="hc-cta">पढ़ें →</div>
+        <img src="../images/thumb-swasthya-lekh.jpg" alt="स्वास्थ्य लेख" class="hc-thumb" loading="lazy">
+        <div class="hc-text">
+          <h3 class="hc-title">स्वास्थ्य लेख</h3>
+          <p class="hc-desc">डॉक्टरों की सलाह</p>
+          <div class="hc-cta">पढ़ें →</div>
+        </div>
       </a>
     </div>
   </div>
