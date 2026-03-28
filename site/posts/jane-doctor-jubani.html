@@ -43,10 +43,10 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 
 /* POST HERO */
 .post-hero{min-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
-.ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#082018 0%,#0F3828 50%,#062015 100%)}
-.ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 75% 40%,rgba(220,140,60,0.1) 0%,transparent 65%);pointer-events:none}
+.ph-bg{position:absolute;inset:0;background-image:url('../images/jane-doctor-hero.jpg');background-size:cover;background-position:center}
+.ph-texture{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,32,24,0.85) 0%,rgba(8,32,24,0.6) 50%,rgba(8,32,24,0.3) 100%)}
 .ph-img{display:none}
-.ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;user-select:none;z-index:1}
+.ph-art{display:none}
 .ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
@@ -405,6 +405,33 @@ footer{background:var(--ink)}
 .en-essence{border-left:2px solid var(--gold);padding:16px 20px;margin-bottom:36px;background:rgba(201,168,76,0.05)}
 .en-essence-label{font-family:monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(26,16,8,0.6);line-height:1.7;font-style:italic;margin:0;letter-spacing:0}
+
+/* HEALTH QUOTE */
+.health-quote{text-align:center;padding:40px 80px 12px;max-width:900px;margin:0 auto}
+.health-quote p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);line-height:1.7;font-style:italic;margin-bottom:12px}
+.hq-tagline{display:inline-block;font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--gold);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+@media(max-width:900px){
+  .health-quote{padding:32px 24px 8px}
+  .health-quote p{font-size:18px}
+}
+
+/* HEALTH PHOTO GALLERY */
+.health-gallery{padding:0 80px;max-width:1200px;margin:0 auto 8px}
+.hg-strip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--gold) transparent;padding:8px 0}
+.hg-strip::-webkit-scrollbar{height:4px}
+.hg-strip::-webkit-scrollbar-track{background:transparent}
+.hg-strip::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+.hg-img{height:140px;width:auto;min-width:120px;object-fit:cover;border-radius:10px;flex-shrink:0;transition:transform 0.3s,box-shadow 0.3s;border:2px solid rgba(0,0,0,0.06)}
+.hg-img:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+@media(max-width:900px){
+  .health-gallery{padding:0 24px;margin-bottom:4px}
+  .hg-strip{gap:8px}
+  .hg-img{height:110px;min-width:100px}
+}
+@media(max-width:600px){
+  .hg-strip{display:grid;grid-template-columns:1fr 1fr;gap:8px;overflow-x:visible}
+  .hg-img{height:120px;width:100%;min-width:0}
+}
 </style>
 
   <!-- SEO: Canonical -->
@@ -471,6 +498,21 @@ footer{background:var(--ink)}
   <p class="en-essence-text">Health wisdom from a poet's perspective. This piece brings together insight on wellness, modern medicine and the ancient Indian understanding of balance between body, mind and soul.</p>
 </div>
 
+<div class="health-quote">
+  <p>"Healthy lifestyle not only changes your body — it changes your mind, your attitude and your mood."</p>
+  <span class="hq-tagline">Towards a Healthier Tomorrow… Let's Navigate Inside</span>
+</div>
+
+<div class="health-gallery">
+  <div class="hg-strip">
+    <img src="../images/health-heart-tulips.jpg" alt="स्वास्थ्य" class="hg-img" loading="lazy">
+    <img src="../images/health-colorful-fruits.jpg" alt="रंगबिरंगा आहार" class="hg-img" loading="lazy">
+    <img src="../images/health-stethoscope-book.jpg" alt="डॉक्टर की सलाह" class="hg-img" loading="lazy">
+    <img src="../images/health-unity-hands.jpg" alt="स्वस्थ समाज" class="hg-img" loading="lazy">
+    <img src="../images/health-yoga-day-illustration.jpg" alt="योग दिवस" class="hg-img" loading="lazy">
+    <img src="../images/health-bokeh-bg.jpg" alt="स्वास्थ्य" class="hg-img" loading="lazy">
+  </div>
+</div>
 
 <div class="health-section">
   <div class="section-wrap">
