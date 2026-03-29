@@ -243,7 +243,21 @@ footer{background:var(--ink)}
 
 /* ── POEM DISPLAY ─────────────────────────────────────────── */
 .poem-display{padding-bottom:48px;position:relative;z-index:1}
-.poem-display::before{content:'';position:absolute;inset:0;background:url('../images/naritva-poem-bg.png') center/cover no-repeat;opacity:0.35;z-index:-1;border-radius:8px;pointer-events:none}
+
+/* POEM WITH ART LAYOUT */
+.poem-art-section{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;padding:48px 56px;background:linear-gradient(135deg,#FDF6EE 0%,#F7EDDF 50%,#F2E5D3 100%);border:1px solid rgba(184,135,58,0.15);border-radius:8px;position:relative;overflow:hidden;margin-bottom:40px}
+.poem-art-section::before{content:'';position:absolute;inset:0;background:url('../images/naritva-poem-bg.png') center/cover no-repeat;opacity:0.15;pointer-events:none}
+.poem-art-section::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold),var(--red))}
+.poem-art-img-wrap{position:relative;z-index:1}
+.poem-art-img{width:100%;border-radius:6px;box-shadow:0 8px 32px rgba(0,0,0,0.15),0 2px 8px rgba(155,14,14,0.1);display:block}
+.poem-art-caption{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--dust);font-style:italic;text-align:center;margin-top:12px;opacity:0.7}
+.poem-text-area{position:relative;z-index:1}
+@media(max-width:900px){
+  .poem-art-section{grid-template-columns:1fr!important;padding:28px 20px!important;gap:28px!important}
+  .poem-art-img-wrap{order:0}
+  .poem-text-area{order:1}
+  .poem-art-img{max-height:400px;object-fit:cover;object-position:top}
+}
 .poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--dust);font-style:italic;margin-bottom:28px;display:block}
 
 /* Override prose-text when used on poem lines — remove the 32px gap */
@@ -484,30 +498,38 @@ footer{background:var(--ink)}
   <span class="en-essence-label">In essence</span>
   <p class="en-essence-text">A celebration of womanhood in all its grace and strength. This poem honours the feminine spirit — nurturing yet fierce, gentle yet unbreakable — in the language closest to the heart.</p>
 </div>
-<div class="poem-display">
-    <div class="poem-title-sm">कविता — जुलाई २०२२</div>
-    <div class="prose-text pline xl">दुनिया तुमसे… नारीत्व</div>
-    <div class="pgap"></div>
-    <div class="prose-text pline">यह कैसे–कहूं, कि क्यों? ऐसी हलचल है मची तन मन में?</div>
-    <div class="prose-text pline">सुन सको…तो बूझो समझो, अन्तर्मन की उस आवाज़ को,</div>
-    <div class="prose-text pline">हल पल, याद है दिलाती, क्यों तू दूसरों में ही रही बहती,</div>
-    <div class="prose-text pline indent">बस अब नहीं…, उलझना इस दुनियादारी के जंजाल में,</div>
-    <div class="prose-text pline indent">जब जागो तब सवेरा, अभी बहुत कुछ है करना बाकी,</div>
-    <div class="prose-text pline indent">बस अब खुद को… आज़मा कर, अपने हित में भी है लड़ना।</div>
-    <div class="pgap"></div>
-    <div class="prose-text pline">कुछ नया करने में संकोच कैसा? पीछे मुड़ कर नहीं है देखना,</div>
-    <div class="prose-text pline indent">छोड़ आस, उम्मीद का दामन, निकल इस आज़माइश के कटघरे से,</div>
-    <div class="prose-text pline indent">कुछ भी तो है नहीं असम्भव, न भूल तुझमें ही हैं वो सब गुण,</div>
-    <div class="prose-text pline indent">कर अपने हौसले बुलंद, हर जंग है लड़नी, ….करनी है जीत हासिल,</div>
-    <div class="prose-text pline indent">हार तो कभी होती नहीं, वह भी छोड़ जाती है एक… 'सीख' अलग सी।</div>
-    <div class="pgap"></div>
-    <div class="prose-text pline indent">अब बस खुद को ही है समझना, टटोलना, अपनी पहचान है बनानी,</div>
-    <div class="prose-text pline indent">उठकर, अपने अस्तित्व को संभालना, निखारना है अभी बाकी,</div>
-    <div class="prose-text pline indent">किसी एक दिन ही सिर्फ़ नहीं, हर पल 'नारी उत्सव' है मनाना,</div>
-    <div class="prose-text pline" style="text-align:center;font-size:1.2em;margin-top:1.5rem">तू ही तो शक्ति, है ईश्वरीय वरदान!</div>
-    <div class="pgap"></div>
-    <div class="poem-attr"><div class="pattr-line"></div><div class="pattr-text">— गीतांजलि सक्सेना, जुलाई २०२२</div></div>
+<div class="poem-art-section">
+  <div class="poem-text-area">
+    <div class="poem-display">
+      <div class="poem-title-sm">कविता — जुलाई २०२२</div>
+      <div class="prose-text pline xl">दुनिया तुमसे… नारीत्व</div>
+      <div class="pgap"></div>
+      <div class="prose-text pline">यह कैसे–कहूं, कि क्यों? ऐसी हलचल है मची तन मन में?</div>
+      <div class="prose-text pline">सुन सको…तो बूझो समझो, अन्तर्मन की उस आवाज़ को,</div>
+      <div class="prose-text pline">हल पल, याद है दिलाती, क्यों तू दूसरों में ही रही बहती,</div>
+      <div class="prose-text pline indent">बस अब नहीं…, उलझना इस दुनियादारी के जंजाल में,</div>
+      <div class="prose-text pline indent">जब जागो तब सवेरा, अभी बहुत कुछ है करना बाकी,</div>
+      <div class="prose-text pline indent">बस अब खुद को… आज़मा कर, अपने हित में भी है लड़ना।</div>
+      <div class="pgap"></div>
+      <div class="prose-text pline">कुछ नया करने में संकोच कैसा? पीछे मुड़ कर नहीं है देखना,</div>
+      <div class="prose-text pline indent">छोड़ आस, उम्मीद का दामन, निकल इस आज़माइश के कटघरे से,</div>
+      <div class="prose-text pline indent">कुछ भी तो है नहीं असम्भव, न भूल तुझमें ही हैं वो सब गुण,</div>
+      <div class="prose-text pline indent">कर अपने हौसले बुलंद, हर जंग है लड़नी, ….करनी है जीत हासिल,</div>
+      <div class="prose-text pline indent">हार तो कभी होती नहीं, वह भी छोड़ जाती है एक… 'सीख' अलग सी।</div>
+      <div class="pgap"></div>
+      <div class="prose-text pline indent">अब बस खुद को ही है समझना, टटोलना, अपनी पहचान है बनानी,</div>
+      <div class="prose-text pline indent">उठकर, अपने अस्तित्व को संभालना, निखारना है अभी बाकी,</div>
+      <div class="prose-text pline indent">किसी एक दिन ही सिर्फ़ नहीं, हर पल 'नारी उत्सव' है मनाना,</div>
+      <div class="prose-text pline" style="text-align:center;font-size:1.2em;margin-top:1.5rem">तू ही तो शक्ति, है ईश्वरीय वरदान!</div>
+      <div class="pgap"></div>
+      <div class="poem-attr"><div class="pattr-line"></div><div class="pattr-text">— गीतांजलि सक्सेना, जुलाई २०२२</div></div>
+    </div>
   </div>
+  <div class="poem-art-img-wrap">
+    <img src="../images/naritva-poem-art.png" alt="नारीत्व — नारी शक्ति" class="poem-art-img">
+    <div class="poem-art-caption">नारी शक्ति का प्रतीक</div>
+  </div>
+</div>
 
   </article>
 </div>
