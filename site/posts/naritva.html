@@ -67,7 +67,7 @@ nav.scrolled .nav-logo img{filter:none}
 .breadcrumb .current{color:#1565C0;font-weight:500}
 
 /* MAIN LAYOUT */
-.post-layout{display:grid;grid-template-columns:1fr 300px;gap:0;max-width:1200px;margin:0 auto;padding:0;align-items:start}
+.post-layout{display:grid;grid-template-columns:1fr 300px;gap:0;max-width:1400px;margin:0 auto;padding:0;align-items:start}
 
 /* POEM CONTENT */
 .post-content{padding:80px 80px 80px 80px;border-right:1px solid rgba(0,0,0,0.05);position:relative;overflow:visible;background:linear-gradient(180deg,var(--petal) 0%,var(--warm-white) 100%)}
@@ -245,8 +245,8 @@ footer{background:var(--ink)}
 .poem-display{padding-bottom:48px;position:relative;z-index:1}
 
 /* POEM WITH ART LAYOUT */
-.poem-art-section{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;padding:48px 56px;background:linear-gradient(135deg,#FDF6EE 0%,#F7EDDF 50%,#F2E5D3 100%);border:1px solid rgba(184,135,58,0.15);border-radius:8px;position:relative;overflow:hidden;margin-bottom:40px}
-.poem-art-section::before{content:'';position:absolute;inset:0;background:url('../images/naritva-poem-bg.png') center/cover no-repeat;opacity:0.15;pointer-events:none}
+.poem-art-section{display:grid;grid-template-columns:1fr 240px;gap:36px;align-items:start;padding:48px 56px;background:linear-gradient(135deg,#F0E2CE 0%,#E8D5BC 50%,#DFC8AA 100%);border:1px solid rgba(184,135,58,0.25);border-radius:8px;position:relative;overflow:hidden;margin-bottom:40px}
+.poem-art-section::before{content:'';position:absolute;inset:0;background:url('../images/naritva-poem-bg.png') center/cover no-repeat;opacity:0.25;pointer-events:none}
 .poem-art-section::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold),var(--red))}
 .poem-art-img-wrap{position:relative;z-index:1}
 .poem-art-img{width:100%;border-radius:6px;box-shadow:0 8px 32px rgba(0,0,0,0.15),0 2px 8px rgba(155,14,14,0.1);display:block}
@@ -257,20 +257,22 @@ footer{background:var(--ink)}
   .poem-art-img-wrap{order:0}
   .poem-text-area{order:1}
   .poem-art-img{max-height:400px;object-fit:cover;object-position:top}
+  .prose-text.pline{white-space:normal!important;font-size:17px!important}
 }
 .poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--dust);font-style:italic;margin-bottom:28px;display:block}
 
 /* Override prose-text when used on poem lines — remove the 32px gap */
 .prose-text.pline{
   font-family:'Tiro Devanagari Hindi',serif!important;
-  font-size:22px!important;
-  line-height:1.72!important;
+  font-size:19px!important;
+  line-height:1.75!important;
   margin-bottom:2px!important;
   font-weight:400!important;
   display:block;
+  white-space:nowrap;
 }
 /* Size modifiers */
-.pline.xl,.prose-text.pline.xl{font-size:32px!important;line-height:1.4!important}
+.pline.xl,.prose-text.pline.xl{font-size:28px!important;line-height:1.4!important}
 .pline.lg,.prose-text.pline.lg{font-size:26px!important}
 .pline.md,.prose-text.pline.md{font-size:22px!important}
 .pline.sm,.prose-text.pline.sm{font-size:18px!important;opacity:0.82}
