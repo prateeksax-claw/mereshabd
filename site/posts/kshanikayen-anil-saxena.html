@@ -672,6 +672,54 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:60px 80px 40px}
   </div>
 </footer>
 
+<!-- NAVEENATAM RACHNA TEASER — Peace poem -->
+<style>
+.naveen-teaser{background:linear-gradient(135deg,#080d1c 0%,#160410 50%,#0a0510 100%);padding:64px 80px;border-top:3px solid #9B0E0E}
+.naveen-inner{max-width:860px;margin:0 auto}
+.naveen-top{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.naveen-overline{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:rgba(184,135,58,0.7);font-weight:500;text-transform:uppercase}
+.naveen-overline::before{content:'— '}
+.naveen-new-badge{display:inline-flex;align-items:center;gap:6px;background:#9B0E0E;color:white;font-size:11px;padding:4px 13px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;letter-spacing:0!important}
+.naveen-new-badge::before{content:'★ '}
+.naveen-divider{width:1px;height:20px;background:rgba(255,255,255,0.12)}
+.naveen-card{display:flex;gap:40px;align-items:flex-start}
+.naveen-icon{flex-shrink:0;width:80px;height:80px;border-radius:50%;background:radial-gradient(ellipse at 35% 35%,rgba(255,220,120,0.18) 0%,rgba(155,14,14,0.15) 50%,transparent 75%);border:1px solid rgba(184,135,58,0.25);display:flex;align-items:center;justify-content:center;font-size:36px}
+.naveen-body{flex:1}
+.naveen-title{font-family:'Cormorant Garamond',serif;font-size:30px;color:white;font-weight:600;line-height:1.2;margin-bottom:6px;letter-spacing:0!important}
+.naveen-subtitle{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:rgba(255,255,255,0.45);margin-bottom:20px;letter-spacing:0!important}
+.naveen-preview{border-left:2px solid rgba(184,135,58,0.4);padding:14px 20px;margin-bottom:24px;background:rgba(255,255,255,0.03)}
+.naveen-preview p{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.65);line-height:1.7;font-style:italic;letter-spacing:0!important}
+.naveen-cta{display:inline-flex;align-items:center;gap:10px;background:#9B0E0E;color:white;font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;font-weight:600;padding:12px 28px;text-decoration:none;transition:background 0.2s;letter-spacing:0!important}
+.naveen-cta:hover{background:#6B0A0A}
+.naveen-cta::after{content:'→';font-size:16px;font-family:monospace}
+@media(max-width:700px){
+  .naveen-teaser{padding:40px 24px}
+  .naveen-card{flex-direction:column;gap:20px}
+  .naveen-title{font-size:22px}
+}
+</style>
+
+<section class="naveen-teaser">
+  <div class="naveen-inner">
+    <div class="naveen-top">
+      <span class="naveen-new-badge">नई रचना</span>
+      <span class="naveen-divider"></span>
+      <span class="naveen-overline">नवीनतम कविता</span>
+    </div>
+    <div class="naveen-card">
+      <div class="naveen-icon">🕊</div>
+      <div class="naveen-body">
+        <div class="naveen-title">Peace Alone Can Light The Way</div>
+        <div class="naveen-subtitle">शांति ही प्रकाश है</div>
+        <div class="naveen-preview">
+          <p>Busy roads, few cars, lost in haze,<br>While frightened strangers wander far…</p>
+        </div>
+        <a href="./peace-alone-can-light-the-way.html" class="naveen-cta">पूरी कविता पढ़ें</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PDF MODAL -->
 <div class="pdf-modal" id="pdf-modal">
   <div class="pdf-modal-header">
