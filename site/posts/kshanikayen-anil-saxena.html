@@ -46,6 +46,19 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .hero-notes{position:absolute;font-size:180px;opacity:0.04;line-height:1;top:10%;left:5%;pointer-events:none;font-family:serif;color:var(--gold)}
 .hero-notes2{position:absolute;font-size:120px;opacity:0.04;line-height:1;bottom:15%;right:8%;pointer-events:none;font-family:serif;color:var(--gold)}
 
+/* FLOATING SHABDAVALI */
+.shabdavali{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.shabd{position:absolute;font-family:'Tiro Devanagari Hindi',serif;color:var(--gold);opacity:0;animation:shabdFloat 8s ease-in-out infinite}
+.shabd:nth-child(1){font-size:52px;top:12%;left:6%;opacity:0.13;animation-delay:0s}
+.shabd:nth-child(2){font-size:38px;top:20%;right:8%;opacity:0.10;animation-delay:1.2s}
+.shabd:nth-child(3){font-size:44px;top:55%;left:4%;opacity:0.12;animation-delay:2.4s}
+.shabd:nth-child(4){font-size:34px;bottom:18%;right:6%;opacity:0.09;animation-delay:0.6s}
+.shabd:nth-child(5){font-size:40px;top:38%;left:7%;opacity:0.08;animation-delay:3.6s}
+.shabd:nth-child(6){font-size:30px;bottom:30%;right:10%;opacity:0.10;animation-delay:1.8s}
+.shabd:nth-child(7){font-size:36px;top:72%;left:9%;opacity:0.07;animation-delay:4.2s}
+.shabd:nth-child(8){font-size:28px;top:8%;right:14%;opacity:0.08;animation-delay:2.8s}
+@keyframes shabdFloat{0%,100%{transform:translateY(0px)}50%{transform:translateY(-12px)}}
+
 
 .hero-content{position:relative;z-index:2;max-width:900px}
 .hero-cat{display:inline-flex;align-items:center;gap:8px;background:rgba(184,135,58,0.2);border:1px solid rgba(184,135,58,0.4);color:var(--gold-light);font-size:12px;padding:6px 18px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:32px;text-transform:uppercase}
@@ -225,10 +238,23 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:60px 80px 40px}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('../images/kshanikayen-hero.jpg');background-size:cover;background-position:center"></div>
+  <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
   <div class="hero-notes">♪</div>
   <div class="hero-notes2">𝄞</div>
+
+  <!-- FLOATING SHABDAVALI -->
+  <div class="shabdavali">
+    <span class="shabd">सुर</span>
+    <span class="shabd">ताल</span>
+    <span class="shabd">लय</span>
+    <span class="shabd">छंद</span>
+    <span class="shabd">रस</span>
+    <span class="shabd">भाव</span>
+    <span class="shabd">काव्य</span>
+    <span class="shabd">राग</span>
+  </div>
+
   <div class="hero-content">
     <div class="hero-cat">काव्य संग्रह</div>
     <h1 class="hero-title">सुर-ताल<br><span>जुगलबंदी...काव्य</span></h1>
