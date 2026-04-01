@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --red:#9B0E0E; --ink:#1565C0; --gold:#B8873A; --gold-light:#D4A85A;
+  --red:#9B0E0E; --ink:#1C1410; --gold:#B8873A; --gold-light:#D4A85A;
   --cream:#FAF6F0; --dust:#8A7A6A; --white:#fff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -113,7 +113,23 @@ body{background:var(--cream);color:var(--ink);font-family:'Cormorant Garamond',s
 .collection-band-eyebrow{font-family:monospace;font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase}
 .collection-band-title{font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:white;font-weight:400}
 .collection-band-count{position:relative;margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.4);font-style:italic;align-self:center}
-@media(max-width:900px){.collection-band{padding:24px}.poem-entry.is-new{padding-left:16px}}
+.nav-hamburger{display:none}
+.nav-overlay{display:none}
+@media(max-width:900px){
+.nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:8px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:white;transition:all 0.3s}
+.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
+.nav-links{display:none;position:fixed;top:0;right:0;width:280px;height:100vh;background:rgba(28,20,16,0.97);backdrop-filter:blur(12px);flex-direction:column;padding:80px 32px 32px;gap:8px;z-index:100}
+.nav-links.open{display:flex}
+.nav-links a{color:white!important;font-size:16px!important;text-shadow:none!important;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-links a:last-child{border-bottom:none}
+.nav-links .nav-cta{margin-top:16px;text-align:center}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:99}
+.nav-overlay.open{display:block}
+.hide-sm{display:block}.collection-band{padding:24px}.poem-entry.is-new{padding-left:16px}}
 
 /* EXPAND BUTTON */
 .pe-expand-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--year-color,var(--red));font-style:italic;background:none;border:none;cursor:pointer;padding:8px 0;margin-top:4px;transition:gap .2s}
@@ -197,6 +213,7 @@ footer{background:var(--ink);color:white}
   .footer-sub-strip,.footer-bottom{margin-left:0;padding-left:24px;padding-right:24px}
 }
 @media(max-width:600px){
+  .footer-main{grid-template-columns:1fr!important;padding:32px 20px}
   .hero-art{display:none}
   .post-title{font-size:36px}
   .poem-entry{grid-template-columns:1fr;gap:12px}
@@ -239,7 +256,7 @@ footer{background:var(--ink);color:white}
 
 .en-essence{border-left:2px solid var(--gold);padding:16px 20px;margin-bottom:36px;background:rgba(201,168,76,0.05)}
 .en-essence-label{font-family:monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
-.en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:#1565C0;line-height:1.7;font-style:italic;margin:0;letter-spacing:0}
+.en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:#1C1410;line-height:1.7;font-style:italic;margin:0;letter-spacing:0}
 
 /* ESSAYS / GALLERY GRID */
 .essays-section{padding:48px 80px 60px;max-width:1200px;margin:0 auto}
@@ -281,6 +298,10 @@ footer{background:var(--ink);color:white}
 
 <nav id="mainNav">
   <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="मेरे शब्द"></a>
+  <div class="nav-overlay" id="navOverlay"></div>
+<button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
   <ul class="nav-links">
     <li><a href="../index.html">होम <span class="nav-en">Home</span></a></li>
     <li><a href="../about.html" class="hide-sm">परिचय <span class="nav-en">About</span></a></li>
@@ -336,7 +357,7 @@ footer{background:var(--ink);color:white}
 <!-- KAVYA GALLERY GRID -->
 <div class="essays-section">
   <div class="section-wrap">
-    <p class="section-intro" style="font-family:'Noto Sans Devanagari',sans-serif;color:#1565C0;font-weight:700;font-size:19px;margin-bottom:16px;">कविताओं का सचित्र संग्रह — हर रचना एक भाव, हर शब्द एक संसार</p>
+    <p class="section-intro" style="font-family:'Noto Sans Devanagari',sans-serif;color:#1C1410;font-weight:700;font-size:19px;margin-bottom:16px;">कविताओं का सचित्र संग्रह — हर रचना एक भाव, हर शब्द एक संसार</p>
     <div class="essays-grid">
       <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-vasant-ritu.png')"></div>
@@ -836,6 +857,34 @@ function hidePdfLoading(){
 }
 document.getElementById('pdfOverlay').addEventListener('click',function(e){if(e.target===this)closePDF();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePDF();});
+</script>
+<script>
+// Hamburger menu
+const hamburger = document.getElementById('navHamburger');
+const navLinks = document.querySelector('.nav-links');
+const navOverlay = document.getElementById('navOverlay');
+if(hamburger){
+  hamburger.addEventListener('click',function(){
+    this.classList.toggle('active');
+    navLinks.classList.toggle('open');
+    navOverlay.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  navOverlay.addEventListener('click',function(){
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+      navOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 </script>
 </body>
 </html>
