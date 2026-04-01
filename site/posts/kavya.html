@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>काव्य-धारा - गीतांजलि सक्सेना | हिंदी कविता संग्रह ०২০২২'২০২৫</title>
-  <meta name="description" content="गीतांजलि सक्सेना की सम्पूर्ण काव्य-धारा - World of Magic, डिलीवरी मैन, उपजिंदर के नाम, यादें संग्रह और अन्य कविताएं। अबू धाबी से हिंदी काव्य।">
+  <title>काव्य-धारा — संपूर्ण काव्य संग्रह | गीतांजलि सक्सेना</title>
+  <meta name="description" content="गीतांजलि सक्सेना का संपूर्ण काव्य संग्रह — World of Magic, डिलीवरी मैन, उपजिंदर के नाम और अन्य कविताएं। अबू धाबी से हिंदी काव्य।">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -99,6 +99,21 @@ body{background:var(--cream);color:var(--ink);font-family:'Cormorant Garamond',s
 .pline{font-family:'Tiro Devanagari Hindi',serif;font-size:18px;color:var(--ink);line-height:1.8;margin-bottom:2px;font-weight:400}
 .pline[lang="en"]{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic}
 .pe-more-text{margin-top:4px}
+
+/* NEW POEM BADGE & GLOW */
+.pe-new-badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,#9B0E0E,#C41E1E);color:#fff;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;margin-left:8px;font-style:normal;animation:badgePulse 2.5s ease-in-out infinite}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 4px rgba(155,14,14,0.3)}50%{box-shadow:0 0 14px rgba(155,14,14,0.6)}}
+.poem-entry.is-new{border-left:3px solid var(--red);padding-left:24px;background:linear-gradient(90deg,rgba(155,14,14,0.03) 0%,transparent 40%)}
+
+/* COLLECTION HEADER */
+.collection-band{padding:40px 80px;background:linear-gradient(135deg,#6B0A0A,#3D0808);display:flex;align-items:center;gap:32px;position:relative;overflow:hidden}
+.collection-band-art{position:absolute;right:40px;top:50%;transform:translateY(-50%);font-family:'Tiro Devanagari Hindi',serif;font-size:120px;color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;user-select:none}
+.collection-band-icon{position:relative;font-size:40px;flex-shrink:0}
+.collection-band-info{position:relative;display:flex;flex-direction:column;gap:4px}
+.collection-band-eyebrow{font-family:monospace;font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase}
+.collection-band-title{font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:white;font-weight:400}
+.collection-band-count{position:relative;margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.4);font-style:italic;align-self:center}
+@media(max-width:900px){.collection-band{padding:24px}.poem-entry.is-new{padding-left:16px}}
 
 /* EXPAND BUTTON */
 .pe-expand-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--year-color,var(--red));font-style:italic;background:none;border:none;cursor:pointer;padding:8px 0;margin-top:4px;transition:gap .2s}
@@ -245,7 +260,7 @@ footer{background:var(--ink);color:white}
   <link rel="canonical" href="https://mereshabd.com/posts/kavya">
   <!-- SEO: Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="काव्य-धारा - गीतांजलि सक्सेना | हिंदी कविता संग्रह ०২০২২'২০২৫">
+  <meta property="og:title" content="काव्य-धारा - गीतांजलि सक्सेना | संपूर्ण काव्य संग्रह">
   <meta property="og:description" content="गीतांजलि सक्सेना की हिंदी कविताएं २০২২ से २০२৫ तक - World of Magic, ILA, Upjinder सहित वर्षवार रचनाएं। Hindi kavita collection, Abu Dhabi poet.">
   <meta property="og:url" content="https://mereshabd.com/posts/kavya">
   <meta property="og:image" content="https://mereshabd.com/images/author.jpg">
@@ -255,10 +270,10 @@ footer{background:var(--ink);color:white}
   <meta property="og:locale" content="hi_IN">
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="काव्य-धारा - गीतांजलि सक्सेना | हिंदी कविता संग्रह ०২০২২'২০২৫">
+  <meta name="twitter:title" content="काव्य-धारा - गीतांजलि सक्सेना | संपूर्ण काव्य संग्रह">
   <meta name="twitter:description" content="गीतांजलि सक्सेना की हिंदी कविताएं २০২২ से २০२৫ तक - World of Magic, ILA, Upjinder सहित वर्षवार रचनाएं। Hindi kavita collection, Abu Dhabi poet.">
   <meta name="twitter:image" content="https://mereshabd.com/images/author.jpg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"काव्य-धारा - गीतांजलि सक्सेना | हिंदी कविता संग्रह ०২০২২'২০২৫","description":"गीतांजलि सक्सेना की हिंदी कविताएं २০২২ से २০२৫ तक - World of Magic, ILA, Upjinder सहित वर्षवार रचनाएं। Hindi kavita collection, Abu Dhabi poet.","url":"https://mereshabd.com/posts/kavya","inLanguage":"hi","author":{"@type":"Person","name":"Gitanjali Saxena","url":"https://mereshabd.com/about"},"publisher":{"@type":"Person","name":"Gitanjali Saxena","url":"https://mereshabd.com"},"image":"https://mereshabd.com/images/author.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://mereshabd.com/posts/kavya"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"काव्य-धारा - गीतांजलि सक्सेना | संपूर्ण काव्य संग्रह","description":"गीतांजलि सक्सेना की हिंदी कविताएं २০২২ से २০२৫ तक - World of Magic, ILA, Upjinder सहित वर्षवार रचनाएं। Hindi kavita collection, Abu Dhabi poet.","url":"https://mereshabd.com/posts/kavya","inLanguage":"hi","author":{"@type":"Person","name":"Gitanjali Saxena","url":"https://mereshabd.com/about"},"publisher":{"@type":"Person","name":"Gitanjali Saxena","url":"https://mereshabd.com"},"image":"https://mereshabd.com/images/author.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://mereshabd.com/posts/kavya"}}</script>
 </head>
 <body>
 
@@ -281,10 +296,10 @@ footer{background:var(--ink);color:white}
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-tag">कविता संग्रह</span>
-      <span class="hero-count">१० रचनाएं · ३ वर्ष</span>
+      <span class="hero-count">संपूर्ण काव्य संग्रह</span>
     </div>
     <h1 class="post-title">काव्य-धारा</h1>
-    <p class="hero-sub">संपूर्ण काव्य संग्रह - शब्दों का प्रवाह, भावनाओं का उफान</p>
+    <p class="hero-sub">शब्दों का प्रवाह, भावनाओं का उफान — सभी कविताएं एक स्थान पर</p>
     <div class="hero-meta">
       <div class="hm-author">
         <img src="../images/author.jpg" alt="गीतांजलि सक्सेना">
@@ -311,9 +326,9 @@ footer{background:var(--ink);color:white}
 
 
 <div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">१०</div><div class="stat-label">रचनाएं</div></div>
+  <div class="stat-item"><div class="stat-num">१०</div><div class="stat-label">कविताएं</div></div>
   <div class="stat-sep"></div>
-  <div class="stat-item"><div class="stat-num">३</div><div class="stat-label">वर्ष</div></div>
+  <div class="stat-item"><div class="stat-num">५</div><div class="stat-label">नई रचनाएं</div></div>
   <div class="stat-sep"></div>
   <div class="stat-item"><div class="stat-num">२०२५</div><div class="stat-label">नवीनतम</div></div>
 </div>
@@ -323,7 +338,7 @@ footer{background:var(--ink);color:white}
   <div class="section-wrap">
     <p class="section-intro" style="font-family:'Noto Sans Devanagari',sans-serif;color:#1565C0;font-weight:700;font-size:19px;margin-bottom:16px;">कविताओं का सचित्र संग्रह — हर रचना एक भाव, हर शब्द एक संसार</p>
     <div class="essays-grid">
-      <a href="#y2025" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-vasant-ritu.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -331,7 +346,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2025" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-makar-sankranti.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -339,7 +354,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2025" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-ila-devgan.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -347,7 +362,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2022" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-dhartidhur-mahan.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -355,7 +370,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2022" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-maa-beta.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -363,7 +378,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2025" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-prem-aradhana.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -371,7 +386,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2023" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-bachpan-ke-din.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -379,7 +394,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2022" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-raat.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -387,7 +402,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2025" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-ishwar-mahan.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -395,7 +410,7 @@ footer{background:var(--ink);color:white}
           <span class="essay-cta">पढ़ें</span>
         </div>
       </a>
-      <a href="#y2022" class="essay-card">
+      <a href="#collection" class="essay-card">
         <div class="essay-card-img" style="background-image:url('../images/kavya-sansaar-sagar.png')"></div>
         <div class="essay-card-overlay"></div>
         <div class="essay-card-inner">
@@ -407,31 +422,25 @@ footer{background:var(--ink);color:white}
   </div>
 </div>
 
-<nav class="year-nav" id="yearNav">
-  <div class="year-nav-inner">
-    <a href="#y2025" class="yn-tab active">२०२५ <span>(५)</span></a>
-    <a href="#y2023" class="yn-tab">२०२३ <span>(१)</span></a>
-    <a href="#y2022" class="yn-tab">२०२२ <span>(४)</span></a>
-  </div>
-</nav>
 
-<!-- ══════ 2025 ══════════════════════════════════════════════ -->
-<section class="year-section" id="y2025">
-  <div class="year-band" style="--band-bg:linear-gradient(135deg,#6B0A0A,#3D0808)">
-    <div class="year-band-art">२०२५</div>
-    <div class="year-band-num">२०२५</div>
-    <div class="year-band-info">
-      <div class="year-band-eyebrow">नवीनतम</div>
-      <div class="year-band-title">नवीनतम रचनाएं</div>
+
+<!-- ══════ COLLECTION ══════════════════════════════════════════════ -->
+<section id="collection">
+  <div class="collection-band">
+    <div class="collection-band-art">काव्य</div>
+    <div class="collection-band-icon">📜</div>
+    <div class="collection-band-info">
+      <div class="collection-band-eyebrow">Complete Collection</div>
+      <div class="collection-band-title">संपूर्ण काव्य संग्रह</div>
     </div>
-    <div class="year-band-count">५ रचनाएं</div>
+    <div class="collection-band-count">१० कविताएं</div>
   </div>
   <div class="poems-list">
 
-  <article class="poem-entry" style="--year-color:#8B1414">
+  <article class="poem-entry is-new" style="--year-color:#8B1414">
     <div class="pe-gutter"><span class="pe-num">०१</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२५ · English</div>
+      <div class="pe-cat">कविता · English <span class="pe-new-badge">✨ नई</span></div>
       <h2 class="pe-title">काव्य-जगत</h2>
       <div class="pe-subtitle">World of Magic</div>
       <div class="pe-poem-wrap">
@@ -477,10 +486,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry pdf-only" style="--year-color:#8B1414">
+  <article class="poem-entry pdf-only is-new" style="--year-color:#8B1414">
     <div class="pe-gutter"><span class="pe-num">०२</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२५ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी <span class="pe-new-badge">✨ नई</span></div>
       <h2 class="pe-title">डिलीवरी मैन</h2>
       <div class="pe-subtitle">आसान नहीं डगर...</div>
       <div class="pdf-only-notice">आधुनिक जीवन की आपाधापी में डिलीवरी मैन की संघर्षमय यात्रा पर एक मार्मिक कविता।</div>
@@ -490,10 +499,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry" style="--year-color:#8B1414">
+  <article class="poem-entry is-new" style="--year-color:#8B1414">
     <div class="pe-gutter"><span class="pe-num">०३</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२५ · English</div>
+      <div class="pe-cat">कविता · English <span class="pe-new-badge">✨ नई</span></div>
       <h2 class="pe-title">ILA कविता</h2>
       <div class="pe-subtitle">Jyoti - A Wonderful Experience</div>
       <div class="pe-poem-wrap">
@@ -541,10 +550,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry pdf-only" style="--year-color:#8B1414">
+  <article class="poem-entry pdf-only is-new" style="--year-color:#8B1414">
     <div class="pe-gutter"><span class="pe-num">०४</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२५ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी <span class="pe-new-badge">✨ नई</span></div>
       <h2 class="pe-title">लॉकडाउन कविता</h2>
       <div class="pe-subtitle">महामारी के दिनों की कविता</div>
       <div class="pdf-only-notice">महामारी और लॉकडाउन के कठिन समय में लिखी गई एक भावपूर्ण कविता।</div>
@@ -554,10 +563,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry pdf-only" style="--year-color:#8B1414">
+  <article class="poem-entry pdf-only is-new" style="--year-color:#8B1414">
     <div class="pe-gutter"><span class="pe-num">०५</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२५ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी <span class="pe-new-badge">✨ नई</span></div>
       <h2 class="pe-title">पति-देव</h2>
       <div class="pe-subtitle">प्रेम और जीवन की कविता</div>
       <div class="pdf-only-notice">जीवन-संगी के प्रति स्नेह और आत्मीयता का काव्य-चित्रण।</div>
@@ -566,26 +575,12 @@ footer{background:var(--ink);color:white}
       </div>
     </div>
   </article>
-  </div>
-</section>
 
-<!-- ══════ 2023 ══════════════════════════════════════════════ -->
-<section class="year-section" id="y2023">
-  <div class="year-band" style="--band-bg:linear-gradient(135deg,#2D0A5A,#1A0830)">
-    <div class="year-band-art">२०२३</div>
-    <div class="year-band-num">२०२३</div>
-    <div class="year-band-info">
-      <div class="year-band-eyebrow">वर्ष २०२३</div>
-      <div class="year-band-title">कविता</div>
-    </div>
-    <div class="year-band-count">१ कविता</div>
-  </div>
-  <div class="poems-list">
 
-  <article class="poem-entry" style="--year-color:#4A1A7A">
-    <div class="pe-gutter"><span class="pe-num">०१</span></div>
+  <article class="poem-entry" style="--year-color:#9B0E0E">
+    <div class="pe-gutter"><span class="pe-num">०६</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२३ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी</div>
       <h2 class="pe-title">कवनी - जन्मदिन</h2>
       <div class="pe-subtitle">नन्ही कवू के जन्मदिन पर</div>
       <div class="pe-poem-wrap">
@@ -607,26 +602,12 @@ footer{background:var(--ink);color:white}
       </div>
     </div>
   </article>
-  </div>
-</section>
 
-<!-- ══════ 2022 ══════════════════════════════════════════════ -->
-<section class="year-section" id="y2022">
-  <div class="year-band" style="--band-bg:linear-gradient(135deg,#5A3A08,#2A1A04)">
-    <div class="year-band-art">२०२२</div>
-    <div class="year-band-num">२०२२</div>
-    <div class="year-band-info">
-      <div class="year-band-eyebrow">वर्ष २०२२</div>
-      <div class="year-band-title">कविताएं</div>
-    </div>
-    <div class="year-band-count">४ कविताएं</div>
-  </div>
-  <div class="poems-list">
 
-  <article class="poem-entry" style="--year-color:#7A4A0A">
-    <div class="pe-gutter"><span class="pe-num">०१</span></div>
+  <article class="poem-entry" style="--year-color:#9B0E0E">
+    <div class="pe-gutter"><span class="pe-num">०७</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२२ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी</div>
       <h2 class="pe-title">उपजिंदर के नाम</h2>
       <div class="pe-subtitle">कदर-ए-कीमत</div>
       <div class="pe-poem-wrap">
@@ -661,10 +642,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry pdf-only" style="--year-color:#7A4A0A">
-    <div class="pe-gutter"><span class="pe-num">०२</span></div>
+  <article class="poem-entry pdf-only" style="--year-color:#9B0E0E">
+    <div class="pe-gutter"><span class="pe-num">०८</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२२ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी</div>
       <h2 class="pe-title">माटी</h2>
       <div class="pe-subtitle">सौगंध तेरी...</div>
       <div class="pdf-only-notice">माटी की सोंधी सुगंध और उसके अनेक रूपों का काव्य-चित्रण।</div>
@@ -674,10 +655,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry pdf-only" style="--year-color:#7A4A0A">
-    <div class="pe-gutter"><span class="pe-num">०३</span></div>
+  <article class="poem-entry pdf-only" style="--year-color:#9B0E0E">
+    <div class="pe-gutter"><span class="pe-num">०९</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२२ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी</div>
       <h2 class="pe-title">सालगिरह कविता</h2>
       <div class="pe-subtitle">वर्षगांठ के अवसर पर</div>
       <div class="pdf-only-notice">वर्षगांठ के विशेष अवसर पर लिखी गई एक स्नेहिल कविता।</div>
@@ -687,10 +668,10 @@ footer{background:var(--ink);color:white}
     </div>
   </article>
 
-  <article class="poem-entry pdf-only" style="--year-color:#7A4A0A">
-    <div class="pe-gutter"><span class="pe-num">०४</span></div>
+  <article class="poem-entry pdf-only" style="--year-color:#9B0E0E">
+    <div class="pe-gutter"><span class="pe-num">१०</span></div>
     <div class="pe-body">
-      <div class="pe-cat">कविता · २०२२ · हिंदी</div>
+      <div class="pe-cat">कविता · हिंदी</div>
       <h2 class="pe-title">कोविड़ कविता</h2>
       <div class="pe-subtitle">महामारी के समय की कविता</div>
       <div class="pdf-only-notice">कोविड-19 महामारी के दौरान समाज और जीवन पर लिखी गई कविता।</div>
@@ -818,18 +799,9 @@ const nav=document.getElementById('mainNav'),pb=document.getElementById('progres
 window.addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled',window.scrollY>60);
   pb.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
-  // Year tab highlight
-  const ids=['y2025','y2023','y2022'];
-  let cur='';
-  ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=110)cur=id;});
-  document.querySelectorAll('.yn-tab').forEach(t=>t.classList.toggle('active',t.getAttribute('href').substring(1)===cur));
+
 });
-// Smooth year nav scroll
-document.querySelectorAll('.yn-tab').forEach(t=>t.addEventListener('click',e=>{
-  e.preventDefault();
-  const el=document.getElementById(t.getAttribute('href').substring(1));
-  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-}));
+
 
 // Poem expand/collapse
 function expandPoem(btn){
