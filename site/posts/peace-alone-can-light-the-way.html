@@ -46,6 +46,7 @@ nav.scrolled .nav-logo img{filter:none}
 /* POST HERO — deep navy + dark red (war/peace) */
 .post-hero{min-height:76vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
 .ph-bg{position:absolute;inset:0;background:linear-gradient(155deg,#0A0F1E 0%,#1A0610 30%,#2B0A14 55%,#120818 80%,#050A14 100%)}
+.ph-img{position:absolute;inset:0;background-image:url('../images/peace-hero.jpeg');background-size:cover;background-position:center top;opacity:0.38}
 .ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 70% 35%,rgba(155,14,14,0.18) 0%,transparent 65%),radial-gradient(ellipse 400px 300px at 20% 70%,rgba(184,135,58,0.07) 0%,transparent 60%);pointer-events:none}
 /* Soft light rays */
 .ph-rays{position:absolute;inset:0;background:conic-gradient(from 210deg at 75% 20%,transparent 0deg,rgba(184,135,58,0.04) 8deg,transparent 16deg,rgba(184,135,58,0.02) 24deg,transparent 32deg);pointer-events:none}
@@ -272,6 +273,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 <!-- POST HERO — pure CSS gradient (war/peace: deep navy + dark red) -->
 <section class="post-hero">
   <div class="ph-bg"></div>
+  <div class="ph-img"></div>
   <div class="ph-texture"></div>
   <div class="ph-rays"></div>
   <div class="ph-dove"></div>
