@@ -55,9 +55,15 @@ nav.scrolled .nav-logo img{filter:none}
 .post-hero{min-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px 0}
 .ph-bg{
   position:absolute;inset:0;
-  background:linear-gradient(155deg,#3D0C00 0%,#8B2500 28%,#C45000 52%,#9B1A00 72%,#4A0A00 100%)
+  background:linear-gradient(135deg,#7B0D1E 0%,#C0392B 18%,#E74C3C 32%,#E67E22 50%,#F39C12 65%,#8E44AD 80%,#2980B9 100%)
 }
-.ph-texture{position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 65% 35%,rgba(255,160,60,0.18) 0%,transparent 65%),radial-gradient(ellipse 400px 300px at 20% 70%,rgba(220,80,20,0.12) 0%,transparent 60%);pointer-events:none}
+.ph-texture{position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 500px 400px at 15% 30%,rgba(255,100,180,0.35) 0%,transparent 60%),
+    radial-gradient(ellipse 400px 350px at 80% 20%,rgba(255,220,80,0.3) 0%,transparent 55%),
+    radial-gradient(ellipse 350px 300px at 50% 80%,rgba(100,200,255,0.2) 0%,transparent 55%),
+    radial-gradient(ellipse 300px 250px at 90% 70%,rgba(180,100,255,0.25) 0%,transparent 50%);
+  pointer-events:none}
 .ph-art{position:absolute;right:-20px;bottom:-40px;font-family:'Tiro Devanagari Hindi',serif;font-size:480px;color:rgba(255,255,255,0.05);line-height:1;pointer-events:none;user-select:none;z-index:1}
 .ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
 
@@ -67,7 +73,7 @@ nav.scrolled .nav-logo img{filter:none}
 
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px;margin-right:10px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
-.post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:72px;color:white;line-height:1.1;font-weight:400;margin-bottom:16px}
+.post-title{font-family:'Tiro Devanagari Hindi',serif;font-size:80px;color:white;line-height:1.1;font-weight:700;margin-bottom:16px;text-shadow:0 4px 24px rgba(0,0,0,0.4)}
 .post-subtitle{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.55);font-style:italic;margin-bottom:36px}
 .post-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .pm-author{display:flex;align-items:center;gap:12px}
@@ -99,24 +105,28 @@ nav.scrolled .nav-logo img{filter:none}
 .en-essence-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--dust);line-height:1.7;font-style:italic;margin:0}
 
 /* POEM DISPLAY */
-.poem-display{padding-bottom:48px}
-.poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--dust);font-style:italic;margin-bottom:28px;display:block}
+.poem-display{padding-bottom:48px;background:linear-gradient(135deg,#0D0508 0%,#1A0A1E 40%,#0A0D1A 100%);border-radius:16px;padding:48px 52px 52px;margin-bottom:32px;border:1px solid rgba(200,80,120,0.2);box-shadow:0 8px 48px rgba(0,0,0,0.5)}
+.poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold-light);font-style:italic;margin-bottom:28px;display:block;font-weight:600}
+
+/* Colorful Holi poem heading */
+.holi-poem-heading{font-family:'Tiro Devanagari Hindi',serif;font-size:34px;font-weight:700;background:linear-gradient(90deg,#FF6B6B 0%,#FFD93D 25%,#6BCB77 50%,#4D96FF 75%,#C77DFF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;display:block}
+.holi-poem-subheading{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,220,180,0.75);font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid rgba(255,150,80,0.3);display:block}
 
 .prose-text.pline{
   font-family:'Tiro Devanagari Hindi',serif!important;
   font-size:22px!important;
-  line-height:1.72!important;
+  line-height:1.8!important;
   margin-bottom:2px!important;
-  font-weight:400!important;
+  font-weight:600!important;
   display:block;
-  color:var(--ink);
+  color:rgba(255,248,230,0.92)!important;
 }
 .pline.xl,.prose-text.pline.xl{font-size:32px!important;line-height:1.4!important}
 .pline.lg,.prose-text.pline.lg{font-size:26px!important}
 .pline.md,.prose-text.pline.md{font-size:22px!important}
 .pline.sm,.prose-text.pline.sm{font-size:18px!important;opacity:0.82}
 .pline.indent,.prose-text.pline.indent{padding-left:2.2em}
-.pline:hover{color:var(--red)}
+.pline:hover{color:var(--gold-light)!important}
 .pgap{display:block;height:26px!important;margin:0!important;padding:0!important}
 
 /* Poem attribution */
@@ -354,12 +364,11 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     </div>
 
     <div class="poem-display">
-      <div class="poem-title-sm">कविता — मार्च २०२६</div>
+      <div class="poem-title-sm">✦ कविता — मार्च २०२६</div>
 
-      <!-- Title lines -->
-      <div class="prose-text pline xl">Reflection and Hope</div>
-      <div class="pgap" style="height:8px!important"></div>
-      <div class="prose-text pline xl">कैसी रे होली</div>
+      <!-- Colorful Title -->
+      <span class="holi-poem-heading">'कैसी रे होली'</span>
+      <span class="holi-poem-subheading">Reflection and Hope</span>
       <div class="pgap"></div>
 
       <!-- Stanza 1 -->
