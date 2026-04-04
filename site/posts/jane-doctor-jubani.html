@@ -361,10 +361,11 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 
 /* Health cards grid */
 .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.health-card{display:flex;align-items:center;gap:16px;padding:20px 24px;background:white;border:1px solid rgba(0,0,0,0.07);border-left:4px solid #2D7D5A;text-decoration:none;transition:all 0.25s}
-.hc-thumb{width:68px;height:68px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid rgba(0,0,0,0.06)}
-.hc-text{flex:1;min-width:0}
-.health-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.08);background:var(--petal)}
+.health-card{display:flex;flex-direction:column;background:white;border:1px solid rgba(0,0,0,0.07);border-radius:10px;text-decoration:none;transition:all 0.25s;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.hc-thumb{width:100%;height:180px;object-fit:cover;display:block;flex-shrink:0;transition:transform 0.4s cubic-bezier(.25,.46,.45,.94)}
+.health-card:hover .hc-thumb{transform:scale(1.05)}
+.hc-text{flex:1;padding:18px 20px 20px;border-top:3px solid #2D7D5A}
+.health-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.12)}
 .health-card:hover .hc-cta{color:var(--red);opacity:1}
 .hc-title{font-family:'Tiro Devanagari Hindi',serif;font-size:19px;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.4}
 .hc-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:var(--dust);margin-bottom:16px}
@@ -383,10 +384,11 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .hf-thumb{width:100px;height:100px;align-self:center}
   .hf-title{font-size:26px}
   .post-nav-bar .pnav-item{padding:24px}
+  .hc-thumb{height:140px}
 }
 @media(max-width:600px){
   .health-grid{grid-template-columns:1fr}
-  .hc-thumb{width:56px;height:56px}
+  .hc-thumb{height:180px}
 }
 
 /* READ MORE SECTION */
