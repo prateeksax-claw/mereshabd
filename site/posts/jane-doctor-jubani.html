@@ -499,6 +499,18 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .meb-symbols{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
 .meb-sym{position:absolute;font-size:52px;opacity:0;animation:sym-float var(--sdur,7s) ease-in-out var(--sdelay,0s) infinite;filter:drop-shadow(0 0 12px rgba(184,135,58,0.6));}
 @keyframes sym-float{0%{opacity:0;transform:translateY(40px) scale(0.7)}15%{opacity:0.75}50%{opacity:0.9;transform:translateY(-25px) scale(1.1)}85%{opacity:0.75}100%{opacity:0;transform:translateY(40px) scale(0.7)}}
+
+/* INVEST CAPTION BANNER */
+.invest-caption-banner{position:relative;padding:64px 80px;text-align:center;background:linear-gradient(135deg,#0a0612 0%,#150a20 40%,#0a1020 70%,#0a0612 100%);overflow:hidden;}
+.invest-caption-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(184,135,58,0.10) 0%,transparent 70%);}
+.icb-overlay{position:absolute;inset:0;pointer-events:none;}
+.icb-content{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+.icb-eyebrow{display:block;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:3px;margin-bottom:20px;}
+.icb-title{display:block;font-family:'Cormorant Garamond',serif;font-size:44px;color:white;font-weight:700;font-style:italic;line-height:1.25;margin-bottom:16px;text-shadow:0 3px 20px rgba(0,0,0,0.4);}
+.icb-subtitle{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold-light);font-style:italic;line-height:1.5;}
+.icb-line{display:block;width:80px;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:24px auto 0;}
+@media(max-width:900px){.invest-caption-banner{padding:48px 32px;}.icb-title{font-size:32px;}.icb-subtitle{font-size:19px;}}
+@media(max-width:600px){.invest-caption-banner{padding:40px 20px;}.icb-title{font-size:26px;}.icb-subtitle{font-size:16px;}}
 </style>
 
   <!-- SEO: Canonical -->
@@ -639,15 +651,18 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
           <div class="hc-cta">पढ़ें →</div>
         </div>
       </a>
-    <a href="./health-is-wealth.html" class="health-card">
-        <img src="../images/health-is-wealth-hero.png" alt="Health is Wealth" class="hc-thumb" loading="lazy">
-        <div class="hc-text">
-          <h3 class="hc-title">Health is Wealth</h3>
-          <p class="hc-desc">नेक तंदुरुस्ती लाख नियामत — निवेश करें स्वास्थ्य में</p>
-          <div class="hc-cta">पढ़ें →</div>
-        </div>
-      </a>
+    
     </div>
+
+<div class="invest-caption-banner">
+  <div class="icb-overlay"></div>
+  <div class="icb-content">
+    <span class="icb-eyebrow">✦ A Vision for Tomorrow</span>
+    <span class="icb-title">"Invest in Women's Health and Education"</span>
+    <span class="icb-subtitle">Is the key to build strong families</span>
+    <span class="icb-line"></span>
+  </div>
+</div>
   
 <!-- MEET THE DOCTOR -->
 
