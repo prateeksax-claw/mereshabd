@@ -475,6 +475,17 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .md-photo-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 100%);display:flex;align-items:flex-end;}
 .md-card-animated{animation:card-float 4s ease-in-out infinite;}
 @keyframes card-float{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,0.10);transform:translateY(0)}50%{box-shadow:0 12px 36px rgba(184,135,58,0.20);transform:translateY(-4px)}}
+/* MEET THE EXPERTS BANNER */
+.meet-experts-banner{position:relative;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background-image:url('../images/doctor-one-placeholder.jpg');background-size:cover;background-position:center top;}
+.meet-experts-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,6,4,0.72) 0%,rgba(10,6,4,0.45) 50%,rgba(10,6,4,0.75) 100%);}
+.meb-caption-block{position:relative;z-index:2;padding:36px 60px 0;border-left:3px solid var(--gold);margin:32px 60px 0;background:rgba(0,0,0,0.25);padding:18px 24px;}
+.meb-caption{display:block;font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.92);font-style:italic;margin-bottom:6px;letter-spacing:0;}
+.meb-caption-sub{display:block;font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold-light);font-style:italic;letter-spacing:0;}
+.meb-title-block{position:relative;z-index:2;padding:0 60px 40px;text-align:center;}
+.meb-title{font-family:'Cormorant Garamond',serif;font-size:64px;color:white;font-weight:700;display:block;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
+@media(max-width:900px){.meb-caption-block{margin:24px 24px 0;}.meb-title-block{padding:0 24px 32px;}.meb-title{font-size:42px;}.meb-caption{font-size:16px;}.meb-caption-sub{font-size:14px;}}
+@media(max-width:600px){.meb-title{font-size:32px;}.meb-caption{font-size:14px;}}
+
 </style>
 
   <!-- SEO: Canonical -->
@@ -626,6 +637,16 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     </div>
   
 <!-- MEET THE DOCTOR -->
+
+<div class="meet-experts-banner">
+  <div class="meb-caption-block">
+    <span class="meb-caption">Empower Women with Knowledge and Care;</span>
+    <span class="meb-caption-sub">A Healthier Future Starts Today</span>
+  </div>
+  <div class="meb-title-block">
+    <span class="meb-title">Meet the Experts</span>
+  </div>
+</div>
 <div class="meet-doctor-section">
   <div class="meet-doctor-heading">
     <span class="mds-title">Meet the Doctor</span>
