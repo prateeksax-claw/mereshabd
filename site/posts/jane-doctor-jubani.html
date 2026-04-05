@@ -495,6 +495,10 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 @media(max-width:900px){.meet-experts-banner::after{font-size:140px;}.meb-caption-block{margin:24px 24px 0;}.meb-title-block{padding:0 24px 36px;}.meb-title{font-size:50px;}.meb-caption{font-size:20px;}.meb-caption-sub{font-size:17px;}}
 @media(max-width:600px){.meet-experts-banner::after{display:none;}.meb-title{font-size:36px;}.meb-caption{font-size:17px;}.meb-caption-sub{font-size:15px;}}
 
+/* FLOATING MEDICAL SYMBOLS */
+.meb-symbols{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
+.meb-sym{position:absolute;font-size:48px;opacity:0;animation:sym-float var(--sdur,8s) ease-in-out var(--sdelay,0s) infinite;}
+@keyframes sym-float{0%{opacity:0;transform:translateY(30px) scale(0.8)}20%{opacity:0.18}50%{opacity:0.22;transform:translateY(-20px) scale(1.05)}80%{opacity:0.18}100%{opacity:0;transform:translateY(30px) scale(0.8)}}
 </style>
 
   <!-- SEO: Canonical -->
@@ -648,6 +652,15 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 <!-- MEET THE DOCTOR -->
 
 <div class="meet-experts-banner">
+  <div class="meb-symbols">
+    <span class="meb-sym" style="left:5%;top:15%;--sdur:9s;--sdelay:0s">🩺</span>
+    <span class="meb-sym" style="left:20%;top:60%;--sdur:7s;--sdelay:1.5s">💊</span>
+    <span class="meb-sym" style="left:45%;top:10%;--sdur:11s;--sdelay:0.8s">❤️</span>
+    <span class="meb-sym" style="left:65%;top:70%;--sdur:8s;--sdelay:2s">🩺</span>
+    <span class="meb-sym" style="left:78%;top:20%;--sdur:10s;--sdelay:0.3s">💊</span>
+    <span class="meb-sym" style="left:88%;top:55%;--sdur:7.5s;--sdelay:1s">❤️</span>
+    <span class="meb-sym" style="left:33%;top:80%;--sdur:9.5s;--sdelay:1.8s">🩺</span>
+  </div>
   <div class="meb-particles">
     <span class="meb-particle" style="left:10%;top:20%;--dur:2.8s;--delay:0s"></span>
     <span class="meb-particle" style="left:25%;top:65%;--dur:3.5s;--delay:0.5s"></span>
