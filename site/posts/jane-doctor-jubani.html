@@ -475,30 +475,19 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .md-photo-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 100%);display:flex;align-items:flex-end;}
 .md-card-animated{animation:card-float 4s ease-in-out infinite;}
 @keyframes card-float{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,0.10);transform:translateY(0)}50%{box-shadow:0 12px 36px rgba(184,135,58,0.20);transform:translateY(-4px)}}
-/* MEET THE EXPERTS BANNER */
-.meet-experts-banner{position:relative;min-height:420px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(135deg,#0D0608 0%,#1A0A10 30%,#0A0D18 60%,#0D0608 100%);animation:banner-float 6s ease-in-out infinite;}
-@keyframes banner-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.meet-experts-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#1a0a18 0%,#0a0d20 33%,#180a0a 66%,#0a1418 100%);background-size:400% 400%;animation:gradient-shift 8s ease infinite;}
-@keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.meet-experts-banner::after{content:'⚕';position:absolute;right:8%;top:50%;transform:translateY(-50%);font-size:220px;color:rgba(184,135,58,0.07);line-height:1;pointer-events:none;animation:symbol-rotate 20s linear infinite;transform-origin:center;}
-@keyframes symbol-rotate{0%{transform:translateY(-50%) rotate(0deg)}100%{transform:translateY(-50%) rotate(360deg)}}
-.meb-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.meb-particle{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0;animation:twinkle var(--dur,3s) ease-in-out var(--delay,0s) infinite;}
-@keyframes twinkle{0%,100%{opacity:0;transform:scale(0.5)}50%{opacity:0.6;transform:scale(1.2)}}
-.meb-caption-block{position:relative;z-index:2;margin:40px 60px 0;padding:24px 32px;border-left:4px solid var(--gold);background:linear-gradient(to right,rgba(184,135,58,0.13),transparent);}
-.meb-caption-eyebrow{display:block;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;}
-.meb-caption{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;color:rgba(255,255,255,0.95);font-style:italic;margin-bottom:6px;line-height:1.5;letter-spacing:0;}
-.meb-caption-sub{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-light);font-style:italic;line-height:1.5;letter-spacing:0;}
-.meb-title-block{position:relative;z-index:2;padding:0 60px 52px;text-align:center;}
-.meb-title{font-family:'Cormorant Garamond',serif;font-size:80px;color:white;font-weight:700;display:block;text-shadow:0 4px 28px rgba(0,0,0,0.6),0 0 60px rgba(184,135,58,0.15);line-height:1;}
-.meb-title-underline{display:block;width:80px;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:16px auto 0;}
-@media(max-width:900px){.meet-experts-banner::after{font-size:140px;}.meb-caption-block{margin:24px 24px 0;}.meb-title-block{padding:0 24px 36px;}.meb-title{font-size:50px;}.meb-caption{font-size:20px;}.meb-caption-sub{font-size:17px;}}
-@media(max-width:600px){.meet-experts-banner::after{display:none;}.meb-title{font-size:36px;}.meb-caption{font-size:17px;}.meb-caption-sub{font-size:15px;}}
 
-/* FLOATING MEDICAL SYMBOLS */
-.meb-symbols{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
-.meb-sym{position:absolute;font-size:52px;opacity:0;animation:sym-float var(--sdur,7s) ease-in-out var(--sdelay,0s) infinite;filter:drop-shadow(0 0 12px rgba(184,135,58,0.6));}
-@keyframes sym-float{0%{opacity:0;transform:translateY(40px) scale(0.7)}15%{opacity:0.75}50%{opacity:0.9;transform:translateY(-25px) scale(1.1)}85%{opacity:0.75}100%{opacity:0;transform:translateY(40px) scale(0.7)}}
+/* INVEST BANNER */
+.invest-banner{position:relative;min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;text-align:center;}
+.invest-banner-bg{position:absolute;inset:0;background-image:url('../images/surya-chandra-banner.jpg');background-size:cover;background-position:center;}
+.invest-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,4,2,0.65) 0%,rgba(8,4,2,0.50) 50%,rgba(8,4,2,0.70) 100%);}
+.invest-banner-content{position:relative;z-index:2;padding:48px 80px;max-width:860px;}
+.invest-eyebrow{display:block;font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:3px;margin-bottom:20px;}
+.invest-title{display:block;font-family:'Cormorant Garamond',serif;font-size:52px;color:white;font-weight:700;line-height:1.2;margin-bottom:16px;text-shadow:0 3px 20px rgba(0,0,0,0.5);}
+.invest-title em{color:var(--gold-light);font-style:italic;}
+.invest-subtitle{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;color:rgba(255,255,255,0.82);font-style:italic;line-height:1.5;}
+.invest-line{display:block;width:60px;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:20px auto 0;}
+@media(max-width:900px){.invest-banner-content{padding:40px 32px;}.invest-title{font-size:36px;}.invest-subtitle{font-size:20px;}}
+@media(max-width:600px){.invest-banner{min-height:300px;}.invest-title{font-size:28px;}.invest-subtitle{font-size:17px;}.invest-banner-content{padding:32px 20px;}}
 </style>
 
   <!-- SEO: Canonical -->
@@ -650,38 +639,14 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     </div>
   
 <!-- MEET THE DOCTOR -->
-
-<div class="meet-experts-banner">
-  <div class="meb-symbols">
-    <span class="meb-sym" style="left:4%;top:12%;--sdur:8s;--sdelay:0s;font-size:60px">🩺</span>
-    <span class="meb-sym" style="left:18%;top:55%;--sdur:6.5s;--sdelay:1.2s;font-size:50px">💊</span>
-    <span class="meb-sym" style="left:38%;top:8%;--sdur:9s;--sdelay:0.5s;font-size:55px">❤️</span>
-    <span class="meb-sym" style="left:60%;top:65%;--sdur:7s;--sdelay:2.2s;font-size:58px">🩺</span>
-    <span class="meb-sym" style="left:75%;top:15%;--sdur:8.5s;--sdelay:0.8s;font-size:52px">💊</span>
-    <span class="meb-sym" style="left:85%;top:50%;--sdur:7.5s;--sdelay:1.6s;font-size:56px">❤️</span>
-    <span class="meb-sym" style="left:28%;top:72%;--sdur:9.5s;--sdelay:0.3s;font-size:54px">🏥</span>
-    <span class="meb-sym" style="left:52%;top:35%;--sdur:6s;--sdelay:1.8s;font-size:50px">💉</span>
-  </div>
-  <div class="meb-particles">
-    <span class="meb-particle" style="left:10%;top:20%;--dur:2.8s;--delay:0s"></span>
-    <span class="meb-particle" style="left:25%;top:65%;--dur:3.5s;--delay:0.5s"></span>
-    <span class="meb-particle" style="left:40%;top:35%;--dur:2.2s;--delay:1s"></span>
-    <span class="meb-particle" style="left:55%;top:75%;--dur:4s;--delay:0.3s"></span>
-    <span class="meb-particle" style="left:70%;top:25%;--dur:3s;--delay:1.5s"></span>
-    <span class="meb-particle" style="left:80%;top:55%;--dur:2.5s;--delay:0.8s"></span>
-    <span class="meb-particle" style="left:15%;top:80%;--dur:3.8s;--delay:1.2s"></span>
-    <span class="meb-particle" style="left:90%;top:40%;--dur:2.9s;--delay:0.2s"></span>
-    <span class="meb-particle" style="left:60%;top:15%;--dur:3.3s;--delay:1.8s"></span>
-    <span class="meb-particle" style="left:35%;top:90%;--dur:2.6s;--delay:0.7s"></span>
-  </div>
-  <div class="meb-caption-block">
-    <span class="meb-caption-eyebrow">❖ A Message of Hope</span>
-    <span class="meb-caption">“Empower Women with Knowledge and Care;</span>
-    <span class="meb-caption-sub">A Healthier Future Starts Today”</span>
-  </div>
-  <div class="meb-title-block">
-    <span class="meb-title">Meet the Experts</span>
-    <span class="meb-title-underline"></span>
+<div class="invest-banner">
+  <div class="invest-banner-bg"></div>
+  <div class="invest-banner-overlay"></div>
+  <div class="invest-banner-content">
+    <span class="invest-eyebrow">✦ A Vision for Tomorrow</span>
+    <span class="invest-title"><em>"Invest in Women's Health and Education"</em></span>
+    <span class="invest-subtitle">Is the key to build strong families</span>
+    <span class="invest-line"></span>
   </div>
 </div>
 <div class="meet-doctor-section">
