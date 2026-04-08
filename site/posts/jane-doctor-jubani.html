@@ -47,9 +47,9 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .ph-texture{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,32,24,0.85) 0%,rgba(8,32,24,0.6) 50%,rgba(8,32,24,0.3) 100%)}
 .ph-img{display:none}
 .ph-art{display:none}
-.hero-english-copy{position:absolute;right:84px;top:108px;z-index:3;max-width:470px;display:flex;flex-direction:column;gap:16px;align-items:flex-end;text-align:right;padding:24px 28px;border:1px solid rgba(255,211,106,0.22);background:linear-gradient(135deg,rgba(84,21,14,0.18),rgba(10,38,30,0.08));backdrop-filter:blur(2px);box-shadow:0 14px 40px rgba(0,0,0,0.18)}
-.hero-english-copy .hero-line-main{font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1.02;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#FFD36A;text-shadow:0 4px 18px rgba(0,0,0,0.38)}
-.hero-english-copy .hero-line-sub{font-family:'Cormorant Garamond',serif;font-size:27px;line-height:1.15;font-weight:600;letter-spacing:0.9px;color:#FFF2C7;text-shadow:0 4px 18px rgba(0,0,0,0.35)}
+.hero-english-copy{position:relative;z-index:3;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.hero-english-copy .hero-line-main{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.1;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#FFD36A;text-shadow:0 3px 12px rgba(0,0,0,0.35)}
+.hero-english-copy .hero-line-sub{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.1;font-weight:600;letter-spacing:0.7px;color:#FFF2C7;text-shadow:0 3px 12px rgba(0,0,0,0.35)}
 .hero-english-copy .hero-line-sub em{font-style:italic;color:#8FE3FF}
 .post-meta{display:flex;align-items:center;gap:14px}
 .ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
@@ -208,9 +208,9 @@ footer{background:var(--ink)}
 .nav-hamburger{display:none}
 .nav-overlay{display:none}
 @media(max-width:900px){
-.hero-english-copy{right:16px;left:16px;top:108px;max-width:none;gap:10px;padding:16px 18px;align-items:flex-start;text-align:left}
-.hero-english-copy .hero-line-main{font-size:22px;line-height:1.12}
-.hero-english-copy .hero-line-sub{font-size:18px;line-height:1.2}
+.hero-english-copy{gap:6px;margin-bottom:12px}
+.hero-english-copy .hero-line-main{font-size:17px;line-height:1.15}
+.hero-english-copy .hero-line-sub{font-size:17px;line-height:1.15}
 .nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:8px}
 .nav-hamburger span{display:block;width:24px;height:2px;background:white;transition:all 0.3s}
 .nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -575,11 +575,11 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   <div class="ph-texture"></div>
   <div class="ph-img"></div>
   <div class="ph-art">डॉ</div>
-  <div class="hero-english-copy">
-    <div class="hero-line-main">PRECAUTION IS BETTER THAN CARE</div>
-    <div class="hero-line-sub">DOCTOR CORNER’ Series <em>@ mereshabd.com</em></div>
-  </div>
   <div class="ph-content">
+    <div class="hero-english-copy">
+      <div class="hero-line-main">PRECAUTION IS BETTER THAN CARE</div>
+      <div class="hero-line-sub">• DOCTOR CORNER’ Series <em>@ mereshabd.com</em></div>
+    </div>
     <span class="post-cat lekh" style="background:#4A5568">लेख</span>
     <h1 class="post-title">जानें डॉक्टर ज़ुबानी</h1>
     <div class="post-meta">
