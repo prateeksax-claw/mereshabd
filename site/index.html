@@ -49,14 +49,16 @@ nav.scrolled .nav-logo img{filter:none}
 .hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(90,10,10,0.5) 100%);border-radius:180px 180px 0 0}
 .hero-divider{position:absolute;top:50%;left:60px;right:52%;height:1px;background:linear-gradient(to right,rgba(196,154,60,0.5),transparent);z-index:3}
 .hero-content{position:relative;z-index:4;padding:0 60px 80px;max-width:52%}
-.hero-overline{font-size:14px;color:var(--gold-light);font-weight:500;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero-overline{font-size:17px;color:var(--gold-light);font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px}
 .hero-overline::before{content:'';width:28px;height:1px;background:var(--gold-light)}
+.hero-overline-en{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.75);font-weight:600;margin-left:6px}
 .hero-name{font-family:'Tiro Devanagari Hindi',serif;font-size:92px;color:#fff;line-height:1;font-weight:400;margin-bottom:8px}
-.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.65);letter-spacing:6px;font-style:italic;margin-bottom:28px;font-weight:500}
-.hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;color:rgba(255,255,255,0.65);line-height:2;max-width:400px;margin-bottom:36px;font-weight:300}
+.hero-name-en{font-family:'Cormorant Garamond',serif;font-size:24px;color:rgba(255,255,255,0.78);letter-spacing:6px;font-style:italic;margin-bottom:30px;font-weight:600}
+.hero-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:24px;color:rgba(255,255,255,0.9);line-height:1.75;max-width:720px;margin-bottom:22px;font-weight:500}
+.hero-desc-en{font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.74);font-style:italic;font-weight:600;margin-top:-2px;margin-bottom:20px;line-height:1.7}
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px}
 .badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.72);font-size:13px;padding:7px 16px;font-family:'Noto Sans Devanagari',sans-serif;backdrop-filter:blur(4px)}
-.hero-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.72);font-style:italic;font-weight:500;margin-bottom:28px;margin-top:-20px;line-height:1.6}
+.hero-en-sub{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.82);font-style:italic;font-weight:600;margin-bottom:28px;margin-top:-6px;line-height:1.7}
 .hero-cta{display:inline-flex;align-items:center;gap:12px;color:white;text-decoration:none;font-size:17px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.35);transition:all 0.3s}
 .hero-cta:hover{border-color:var(--gold);color:var(--gold-light)}
 .scroll-hint{position:absolute;bottom:28px;right:56px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -229,6 +231,12 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .fbrand{grid-column:1/-1}
   .hero-content,.hero-text{padding:0 24px 56px;max-width:100%}
   .hero-name{font-size:52px!important}
+  .hero-overline{font-size:15px}
+  .hero-overline-en{font-size:13px}
+  .hero-name-en{font-size:19px}
+  .hero-desc{font-size:19px;line-height:1.7;max-width:100%}
+  .hero-desc-en{font-size:15px;line-height:1.6}
+  .hero-en-sub{font-size:16px;line-height:1.55}
   .hero-tag,.hero-sub{font-size:14px}
   .mag-head,.archive-head,.intro-block,.section-wrap{padding:40px 24px}
   .mag-grid,.posts-grid,.featured-grid{grid-template-columns:1fr!important;padding:0 24px 48px}
@@ -249,6 +257,12 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 @media(max-width:600px){
   .footer-main{grid-template-columns:1fr!important;padding:32px 20px}
   .hero-name{font-size:36px!important}
+  .hero-overline{font-size:13px}
+  .hero-overline-en{font-size:12px}
+  .hero-name-en{font-size:17px}
+  .hero-desc{font-size:17px;line-height:1.65}
+  .hero-desc-en{font-size:14px}
+  .hero-en-sub{font-size:15px}
   .mag-title{font-size:26px!important}
   .xl{font-size:28px!important}
   .qi-text{font-size:22px!important}
@@ -376,11 +390,11 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   </div>
   <div class="hero-divider"></div>
   <div class="hero-content">
-    <div class="hero-overline">अबू धाबी से हिंदी की आवाज़ <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(255,255,255,0.55);font-weight:500;margin-left:6px">Hindi voice from Abu Dhabi</span></div>
+    <div class="hero-overline">अबू धाबी से हिंदी की आवाज़ <span class="hero-overline-en">Hindi voice from Abu Dhabi</span></div>
     <h1 class="hero-name">गीतांजलि<br>सक्सेना</h1>
     <p class="hero-name-en">Gitanjali Saxena</p>
     <p class="hero-desc">नवभारत टाइम्स की पत्रकार · PIB-मान्यता प्राप्त · जयोति संपादक</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.62);font-style:italic;font-weight:500;margin-top:-10px;margin-bottom:20px;line-height:1.6">Journalist · PIB Accredited · Jyoti Magazine Editor</p>
+    <p class="hero-desc-en">Journalist · PIB Accredited · Jyoti Magazine Editor</p>
     <p class="hero-en-sub">Words from the heart — Hindi poetry &amp; literature from Abu Dhabi</p>
     <div class="hero-badges">
       <span class="badge">कवयित्री <span class="badge-en">Poet</span></span>
