@@ -47,10 +47,11 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 .ph-texture{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,32,24,0.85) 0%,rgba(8,32,24,0.6) 50%,rgba(8,32,24,0.3) 100%)}
 .ph-img{display:none}
 .ph-art{display:none}
-.hero-english-copy{position:absolute;right:80px;top:140px;z-index:3;max-width:420px;display:flex;flex-direction:column;gap:14px;align-items:flex-end;text-align:right}
-.hero-english-copy .hero-line-main{font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1.05;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#FFD36A;text-shadow:0 4px 18px rgba(0,0,0,0.35)}
-.hero-english-copy .hero-line-sub{font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:0.8px;color:#FFE7A8;text-shadow:0 4px 18px rgba(0,0,0,0.35)}
+.hero-english-copy{position:absolute;right:84px;top:108px;z-index:3;max-width:470px;display:flex;flex-direction:column;gap:16px;align-items:flex-end;text-align:right;padding:24px 28px;border:1px solid rgba(255,211,106,0.22);background:linear-gradient(135deg,rgba(84,21,14,0.18),rgba(10,38,30,0.08));backdrop-filter:blur(2px);box-shadow:0 14px 40px rgba(0,0,0,0.18)}
+.hero-english-copy .hero-line-main{font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1.02;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#FFD36A;text-shadow:0 4px 18px rgba(0,0,0,0.38)}
+.hero-english-copy .hero-line-sub{font-family:'Cormorant Garamond',serif;font-size:27px;line-height:1.15;font-weight:600;letter-spacing:0.9px;color:#FFF2C7;text-shadow:0 4px 18px rgba(0,0,0,0.35)}
 .hero-english-copy .hero-line-sub em{font-style:italic;color:#8FE3FF}
+.post-meta{display:flex;align-items:center;gap:14px}
 .ph-content{position:relative;z-index:3;max-width:860px;padding:0 80px}
 .post-cat{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:13px;padding:6px 16px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;margin-bottom:24px}
 .post-cat::before{content:'·';font-size:14px;opacity:0.7}
@@ -207,7 +208,7 @@ footer{background:var(--ink)}
 .nav-hamburger{display:none}
 .nav-overlay{display:none}
 @media(max-width:900px){
-.hero-english-copy{right:24px;top:120px;max-width:260px;gap:10px}
+.hero-english-copy{right:16px;left:16px;top:108px;max-width:none;gap:10px;padding:16px 18px;align-items:flex-start;text-align:left}
 .hero-english-copy .hero-line-main{font-size:22px;line-height:1.12}
 .hero-english-copy .hero-line-sub{font-size:18px;line-height:1.2}
 .nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:8px}
@@ -582,11 +583,6 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <span class="post-cat lekh" style="background:#4A5568">लेख</span>
     <h1 class="post-title">जानें डॉक्टर ज़ुबानी</h1>
     <div class="post-meta">
-      <div class="pm-author">
-        <img src="../images/author.jpg" alt="गीतांजलि सक्सेना">
-        <span class="pm-author-name">गीतांजलि सक्सेना</span>
-      </div>
-      <span class="pm-sep"></span>
       <span class="pm-date">जुलाई</span>
     </div>
   </div>
