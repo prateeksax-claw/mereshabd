@@ -295,6 +295,18 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .prose-body ul{padding-left:18px;margin-bottom:20px}
 .prose-body ul li{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--ink);line-height:2;font-weight:600;margin-bottom:4px}
 .prose-body strong{font-weight:600;color:var(--ink)}
+.article-intro-block{background:linear-gradient(180deg,rgba(184,135,58,0.08),rgba(184,135,58,0.02));border:1px solid rgba(184,135,58,0.18);padding:28px 30px;margin:10px 0 34px;max-width:760px}
+.article-intro-title{font-family:'Tiro Devanagari Hindi',serif;font-size:28px;line-height:1.35;color:var(--red);font-weight:400;margin-bottom:12px}
+.article-intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;line-height:2;color:var(--ink);font-weight:500;margin-bottom:16px}
+.article-intro-text:last-child{margin-bottom:0}
+.doctor-inline-card{display:flex;align-items:flex-start;gap:18px;padding:18px 20px;margin:28px 0 18px;background:var(--cream);border-left:3px solid var(--gold);max-width:560px;text-decoration:none;transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease}
+.doctor-inline-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,0.08);background:#fbf6ee}
+.doctor-inline-photo{width:92px;height:110px;object-fit:cover;object-position:top center;border-radius:10px;flex-shrink:0;border:1px solid rgba(0,0,0,0.08)}
+.doctor-inline-meta{display:flex;flex-direction:column;gap:6px}
+.doctor-inline-label{font-family:monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.doctor-inline-name{font-family:'Tiro Devanagari Hindi',serif;font-size:24px;line-height:1.3;color:var(--ink);font-weight:400}
+.doctor-inline-role{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--dust);font-style:italic;font-weight:600;line-height:1.6}
+@media(max-width:600px){.article-intro-block{padding:22px 18px}.article-intro-title{font-size:22px}.article-intro-text{font-size:16px;line-height:1.9}.doctor-inline-card{gap:14px;padding:16px;max-width:100%}.doctor-inline-photo{width:76px;height:92px}.doctor-inline-name{font-size:20px}.doctor-inline-role{font-size:14px}}
 
 /* ── TAGS & SHARE ──────────────────────────────────────────── */
 .tags-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.06)}
@@ -483,8 +495,22 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <p class="prose-text">The role of Community and Government also plays a big role in supporting health investments. Affordable Health insurance Policies promote clean water and air pollution free schemes. Above all, health educational programs empower everyone, specifically women and children who are under privileged in resources.</p>
     
     <h3 class="prose-text" style="font-weight:700;color:#9B0E0E;margin-top:1.5rem">Towards a Healthier Tomorrow… With Expert guidance</h3>
-    <p class="prose-text"><span style="color:#9B0E0E;font-weight:700;">Welcome to this first Chapter, in new column @Mereshabd.com.</span> I believe that the path to a healthier future begins with knowledge and expert guidance. This special column space is dedicated to empower you all with insight from leading Medical Specialist Experts from all across the medical field.</p>
-    
+    <div class="article-intro-block">
+      <h4 class="article-intro-title">Article Start from here</h4>
+      <p class="article-intro-text">We invite experts and ask some insightful questions.</p>
+      <p class="article-intro-text">The path to a healthier future begins with knowledge and expert guidance. This special column space is dedicated to empowering you all with insight from leading Medical Specialist Experts from across the medical field. They will share some practical tips and suggestions.</p>
+      <p class="article-intro-text">This would help you to understand how to take small, meaningful actions today, to ensure a better and healthier tomorrow. Our mission is simple: To empower women for making better informed decisions for their future well-being.</p>
+    </div>
+
+    <a href="./jane-doctor-jubani.html#meet-doctor-gynec" class="doctor-inline-card">
+      <img src="../images/doctor-aruna-kumari.jpg" alt="डॉ. अरुणा कुमारी" class="doctor-inline-photo">
+      <div class="doctor-inline-meta">
+        <span class="doctor-inline-label">Expert Interview</span>
+        <div class="doctor-inline-name">Dr. Aruna Kumari</div>
+        <div class="doctor-inline-role">Gynecologist • Click here to open the full interview.</div>
+      </div>
+    </a>
+
     <p class="prose-text">Health is our most precious asset. By investing in our health today, we give ourselves and our loved ones a precious gift… a healthier, and stronger tomorrow. Let's begin this journey together… because your health deserves attention now, today… to build a better tomorrow.</p>
     
     <p class="prose-text" style="font-style:italic;color:var(--dust);text-align:right;font-weight:700">— Gitanjali Saxena</p>
