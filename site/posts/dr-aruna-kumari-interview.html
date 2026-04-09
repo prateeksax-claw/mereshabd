@@ -106,10 +106,10 @@ body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--warm-white);
 
 /* DOCTOR PROFILE CARD */
 .doctor-profile{padding:60px 80px;background:var(--warm-white)}
-.doctor-card{display:flex;align-items:stretch;background:linear-gradient(135deg,#082018 0%,#0A3020 50%,#062814 100%);border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.18);max-width:900px}
-.doctor-card-photo{width:280px;flex-shrink:0;overflow:hidden}
-.doctor-card-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.doctor-card-info{flex:1;padding:48px 48px;display:flex;flex-direction:column;justify-content:center}
+.doctor-card{display:flex;align-items:center;background:linear-gradient(135deg,#082018 0%,#0A3020 50%,#062814 100%);border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.18);max-width:900px}
+.doctor-card-photo{width:240px;flex-shrink:0;padding:22px 18px 22px 22px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04)}
+.doctor-card-photo img{width:100%;height:auto;max-height:540px;object-fit:contain;object-position:center top;display:block;border-radius:8px;box-shadow:0 12px 28px rgba(0,0,0,0.22)}
+.doctor-card-info{flex:1;padding:42px 48px;display:flex;flex-direction:column;justify-content:center}
 .doctor-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;display:block}
 .doctor-speciality{font-family:'Noto Sans Devanagari',sans-serif;font-size:20px;color:#90CAF9;font-weight:700;margin-bottom:20px;display:block}
 .doctor-intro{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.72);line-height:1.8;font-style:italic}
@@ -214,9 +214,9 @@ footer{background:var(--ink)}
   .intro-section{padding:40px 24px}
   .doctor-profile{padding:40px 24px}
   .doctor-card{flex-direction:column}
-  .doctor-card-photo{width:100%;height:280px}
-  .doctor-card-photo img{object-position:center 20%}
-  .doctor-card-info{padding:32px 28px}
+  .doctor-card-photo{width:100%;height:auto;padding:24px 24px 0;background:rgba(255,255,255,0.04)}
+  .doctor-card-photo img{max-width:220px;max-height:none}
+  .doctor-card-info{padding:28px 28px 32px}
   .animated-name{font-size:36px!important}
   .interview-section{padding:40px 24px}
   .closing-section{padding:40px 24px}
