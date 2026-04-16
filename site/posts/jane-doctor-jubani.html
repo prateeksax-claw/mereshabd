@@ -483,26 +483,10 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .md-photo-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 100%);display:flex;align-items:flex-end;}
 .md-card-animated{animation:card-float 4s ease-in-out infinite;}
 @keyframes card-float{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,0.10);transform:translateY(0)}50%{box-shadow:0 12px 36px rgba(184,135,58,0.20);transform:translateY(-4px)}}
-.md-card-img-doctor{background:radial-gradient(circle at top,rgba(255,255,255,0.96),rgba(248,238,224,0.95) 34%,rgba(237,222,202,0.98) 100%);min-height:280px;overflow:hidden}
-.md-card-img-doctor::before{content:'';position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(184,135,58,0.22);background:linear-gradient(180deg,rgba(255,255,255,0.28),rgba(255,255,255,0.05));pointer-events:none}
-.md-doctor-orb{position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.95),rgba(255,220,160,0.86) 42%,rgba(190,30,45,0.20) 100%);box-shadow:0 18px 45px rgba(155,14,14,0.14);animation:doctor-orb-float 5s ease-in-out infinite}
-.md-doctor-orb.one{top:30px;left:36px}
-.md-doctor-orb.two{right:24px;bottom:34px;width:88px;height:88px;animation-delay:1s;opacity:0.78}
-@keyframes doctor-orb-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.03)}}
-.md-doctor-main{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:148px;height:148px;border-radius:50%;background:linear-gradient(160deg,#fffdfb,#f6ece0);border:1px solid rgba(184,135,58,0.28);box-shadow:0 18px 40px rgba(92,63,33,0.12)}
-.md-doctor-main span{font-size:72px;line-height:1;filter:drop-shadow(0 8px 14px rgba(0,0,0,0.10));animation:doctor-main-bob 4.5s ease-in-out infinite}
-@keyframes doctor-main-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.md-doctor-ring{position:absolute;inset:50%;width:214px;height:214px;margin:-107px 0 0 -107px;border-radius:50%;border:1px dashed rgba(184,135,58,0.34);animation:doctor-ring-spin 18s linear infinite}
-@keyframes doctor-ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.md-doctor-float{position:absolute;z-index:2;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.92);box-shadow:0 10px 24px rgba(71,45,21,0.12);font-size:24px;animation:doctor-float 4.2s ease-in-out infinite}
-.md-doctor-float.one{top:38px;right:34px}
-.md-doctor-float.two{left:36px;bottom:36px;animation-delay:1.4s}
-.md-doctor-float.three{right:72px;bottom:48px;animation-delay:0.8s}
-@keyframes doctor-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.md-doctor-pulse{position:absolute;left:26px;right:26px;bottom:20px;height:42px;z-index:1;opacity:0.75}
-.md-doctor-pulse svg{width:100%;height:100%}
-.md-doctor-pulse path{fill:none;stroke:#C00000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:180;stroke-dashoffset:180;animation:doctor-pulse-draw 3.8s ease-in-out infinite}
-@keyframes doctor-pulse-draw{0%{stroke-dashoffset:180;opacity:0.1}20%{opacity:1}65%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-180;opacity:0.1}}
+.md-card-img-doctor{min-height:280px;overflow:hidden;background-image:url('../images/lady-doctor-diagnosing-patient.png.jpeg');background-size:cover;background-position:center;animation:doctor-card-zoom 8s ease-in-out infinite}
+.md-card-img-doctor::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,248,238,0.08) 0%,rgba(121,42,34,0.06) 48%,rgba(19,10,8,0.34) 100%);pointer-events:none}
+.md-card-img-doctor::after{content:'';position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(255,255,255,0.26);box-shadow:inset 0 0 0 1px rgba(184,135,58,0.12);pointer-events:none}
+@keyframes doctor-card-zoom{0%,100%{background-size:cover;transform:scale(1)}50%{background-size:cover;transform:scale(1.03)}}
 
 /* DOCTOR CORNER FEATURE */
 .doctor-corner-feature{display:none;margin-top:32px;scroll-margin-top:110px;background:linear-gradient(145deg,#fffdf9 0%,#fcf5ee 46%,#f8eee5 100%);border:1px solid rgba(184,135,58,0.26);box-shadow:0 30px 80px rgba(78,50,26,0.10);padding:38px;border-radius:36px;position:relative;overflow:hidden}
@@ -792,18 +776,6 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <a href="#meet-doctor-gynec" class="md-card md-card-animated">
       <div class="md-card-img md-card-img-doctor">
         <div class="md-shimmer-overlay"></div>
-        <div class="md-doctor-orb one"></div>
-        <div class="md-doctor-orb two"></div>
-        <div class="md-doctor-ring"></div>
-        <div class="md-doctor-main"><span>🧑‍⚕️</span></div>
-        <div class="md-doctor-float one">🩺</div>
-        <div class="md-doctor-float two">💊</div>
-        <div class="md-doctor-float three">❤️</div>
-        <div class="md-doctor-pulse" aria-hidden="true">
-          <svg viewBox="0 0 320 42" preserveAspectRatio="none">
-            <path d="M0 24 H70 L96 24 L112 10 L132 34 L154 16 L178 24 H320" />
-          </svg>
-        </div>
         <div class="md-photo-overlay">
           <span class="md-speciality">स्त्री रोग विशेषज्ञ</span>
         </div>
