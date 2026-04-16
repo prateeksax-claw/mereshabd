@@ -485,7 +485,9 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 @keyframes card-float{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,0.10);transform:translateY(0)}50%{box-shadow:0 12px 36px rgba(184,135,58,0.20);transform:translateY(-4px)}}
 
 /* DOCTOR CORNER FEATURE */
-.doctor-corner-feature{margin-top:56px;scroll-margin-top:110px;background:linear-gradient(145deg,#fffdf9 0%,#fcf5ee 46%,#f8eee5 100%);border:1px solid rgba(184,135,58,0.26);box-shadow:0 30px 80px rgba(78,50,26,0.10);padding:38px;border-radius:36px;position:relative;overflow:hidden}
+.doctor-corner-feature{display:none;margin-top:32px;scroll-margin-top:110px;background:linear-gradient(145deg,#fffdf9 0%,#fcf5ee 46%,#f8eee5 100%);border:1px solid rgba(184,135,58,0.26);box-shadow:0 30px 80px rgba(78,50,26,0.10);padding:38px;border-radius:36px;position:relative;overflow:hidden}
+.doctor-corner-feature:target{display:block;animation:doctor-feature-reveal 0.35s ease}
+@keyframes doctor-feature-reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .doctor-corner-feature::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(76,148,216,0.12),transparent 34%),radial-gradient(circle at bottom left,rgba(192,0,0,0.08),transparent 30%),linear-gradient(135deg,rgba(255,255,255,0.78),rgba(255,255,255,0));pointer-events:none}
 .doctor-corner-feature::after{content:'';position:absolute;top:0;left:40px;right:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(184,135,58,0.8),transparent);pointer-events:none}
 .doctor-corner-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto}
@@ -761,7 +763,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <span class="meb-title-underline"></span>
   </div>
 </div>
-<div class="meet-doctor-section">
+<div class="meet-doctor-section" id="meet-the-doctor">
   <div class="meet-doctor-heading">
     <span class="mds-title">डॉक्टर की ज़ुबानी</span>
     <span class="mds-subtitle">विशेषज्ञों से सीधी बात — स्वास्थ्य, देखभाल और जीवन</span>
