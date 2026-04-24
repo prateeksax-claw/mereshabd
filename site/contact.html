@@ -252,6 +252,12 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .contact-item-icon{width:44px;height:44px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .contact-item-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:var(--ink);line-height:2;font-weight:300}
 .contact-item-text strong{font-weight:600;color:var(--ink);display:block;margin-bottom:2px}
+.contact-author-card{margin-top:40px;padding:28px 30px;background:linear-gradient(135deg,rgba(155,14,14,0.05) 0%,rgba(184,135,58,0.12) 100%);border:1px solid rgba(155,14,14,0.12);position:relative;overflow:hidden}
+.contact-author-card::after{content:'';position:absolute;right:-30px;bottom:-34px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(155,14,14,0.10) 0%,transparent 70%)}
+.author-card-tag{font-family:monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:block;position:relative;z-index:1}
+.author-card-name{font-family:'Tiro Devanagari Hindi',serif;font-size:34px;line-height:1.2;color:var(--ink);margin-bottom:8px;position:relative;z-index:1}
+.author-card-email{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--red);margin-bottom:18px;word-break:break-word;position:relative;z-index:1}
+.author-card-meta{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;line-height:1.9;color:rgba(28,20,16,0.82);position:relative;z-index:1}
 .contact-form-col{}
 .contact-section .fs-label{color:var(--ink);font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;font-weight:600}
 .contact-section .fs-input{background:var(--cream);border:1.5px solid rgba(0,0,0,0.12);color:var(--ink);padding:14px 16px;font-size:16px;font-family:'Noto Sans Devanagari',sans-serif;width:100%;transition:border-color 0.2s}
@@ -337,7 +343,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
       <div class="contact-item">
         <div class="contact-item-icon">✍️</div>
         <div class="contact-item-text">
-          <strong>प्रकाशन</strong><br>नवभारत टाइम्स · जयोति पत्रिका
+          <strong>प्रकाशन</strong><br>दैनिक भास्कर · नवभारत टाइम्स · ज्योति पत्रिका
         </div>
       </div>
 
@@ -346,6 +352,13 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
         <div class="contact-item-text">
           <strong>वेबसाइट</strong><br>mereshabd.com
         </div>
+      </div>
+
+      <div class="contact-author-card">
+        <span class="author-card-tag">लेखिका परिचय</span>
+        <div class="author-card-name">Gitanjali Saxena</div>
+        <div class="author-card-email">gitanjalisaxena@hotmail.com</div>
+        <div class="author-card-meta">अबू धाबी से हिंदी लेखन की अपनी आत्मीय आवाज़ — प्रकाशित रचनाएँ: दैनिक भास्कर, नवभारत टाइम्स और ज्योति पत्रिका।</div>
       </div>
     </div>
 
