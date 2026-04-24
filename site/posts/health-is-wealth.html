@@ -713,5 +713,61 @@ if(hamburger){
   });
 }
 </script>
+
+<!-- sunny-floating-sitemap -->
+<style>
+.sunny-floating-sitemap{position:fixed;right:20px;bottom:20px;z-index:140;font-family:'Noto Sans Devanagari',sans-serif}
+.sunny-sitemap-toggle{border:none;background:linear-gradient(135deg,#8B1A1A 0%,#B8873A 100%);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:0 14px 34px rgba(28,20,16,0.22);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
+.sunny-sitemap-toggle:hover{transform:translateY(-1px)}
+.sunny-sitemap-panel{position:absolute;right:0;bottom:58px;width:min(280px,calc(100vw - 32px));background:rgba(253,250,245,0.98);border:1px solid rgba(139,26,26,0.14);box-shadow:0 24px 60px rgba(28,20,16,0.18);padding:14px;border-radius:18px;display:none;backdrop-filter:blur(12px)}
+.sunny-sitemap-panel.open{display:block}
+.sunny-sitemap-title{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:#8B1A1A;margin-bottom:6px}
+.sunny-sitemap-sub{font-size:12px;color:rgba(28,20,16,0.62);margin-bottom:12px;line-height:1.6}
+.sunny-sitemap-links{display:grid;gap:8px}
+.sunny-sitemap-link{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:12px;text-decoration:none;background:#fff;color:#1C1410;border:1px solid rgba(0,0,0,0.05);font-size:14px}
+.sunny-sitemap-link:hover{border-color:rgba(139,26,26,0.22);color:#8B1A1A}
+.sunny-sitemap-link small{font-size:10px;color:rgba(28,20,16,0.45);text-transform:uppercase;letter-spacing:1px}
+.sunny-sitemap-top{margin-top:10px;width:100%;border:none;background:rgba(139,26,26,0.08);color:#8B1A1A;padding:10px 12px;border-radius:12px;font-size:13px;cursor:pointer}
+@media (max-width:600px){
+  .sunny-floating-sitemap{right:14px;bottom:14px}
+  .sunny-sitemap-toggle{padding:11px 14px;font-size:13px}
+  .sunny-sitemap-panel{bottom:54px}
+}
+</style>
+<div class="sunny-floating-sitemap" data-sitemap>
+  <button class="sunny-sitemap-toggle" type="button" aria-expanded="false">☰ <span>Site map</span></button>
+  <div class="sunny-sitemap-panel" role="dialog" aria-label="Site map">
+    <div class="sunny-sitemap-title">साइट मैप</div>
+    <div class="sunny-sitemap-sub">यहाँ से वेबसाइट के मुख्य पेज जल्दी खोलिए।</div>
+    <div class="sunny-sitemap-links">
+      <a class="sunny-sitemap-link" href="../index.html"><span>होम</span><small>Home</small></a>
+      <a class="sunny-sitemap-link" href="../about.html"><span>परिचय</span><small>About</small></a>
+      <a class="sunny-sitemap-link" href="../archive.html"><span>रचनाएं</span><small>Works</small></a>
+      <a class="sunny-sitemap-link" href="../gallery.html"><span>गैलरी</span><small>Gallery</small></a>
+      <a class="sunny-sitemap-link" href="../contact.html"><span>संपर्क</span><small>Contact</small></a>
+    </div>
+    <button class="sunny-sitemap-top" type="button">↑ ऊपर जाएँ</button>
+  </div>
+</div>
+<script>
+(function(){
+  const root = document.querySelector('.sunny-floating-sitemap[data-sitemap]');
+  if(!root) return;
+  const toggle = root.querySelector('.sunny-sitemap-toggle');
+  const panel = root.querySelector('.sunny-sitemap-panel');
+  const topBtn = root.querySelector('.sunny-sitemap-top');
+  const close = () => { panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+  toggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  panel.addEventListener('click', function(e){ e.stopPropagation(); });
+  document.addEventListener('click', function(){ close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); close(); });
+})();
+</script>
+
 </body>
 </html>
