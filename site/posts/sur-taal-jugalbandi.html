@@ -877,5 +877,48 @@ if(hamburger){
 })();
 </script>
 
+
+<!-- sunny-visitor-counter -->
+<style>
+.sunny-visitor-counter{position:fixed;left:20px;bottom:20px;z-index:139;font-family:'Noto Sans Devanagari',sans-serif}
+.sunny-visitor-pill{display:inline-flex;align-items:center;gap:8px;padding:11px 14px;border-radius:999px;background:rgba(253,250,245,0.96);border:1px solid rgba(139,26,26,0.14);box-shadow:0 12px 32px rgba(28,20,16,0.14);color:#1C1410;font-size:13px;backdrop-filter:blur(10px)}
+.sunny-visitor-dot{width:8px;height:8px;border-radius:50%;background:#B8873A;box-shadow:0 0 0 4px rgba(184,135,58,0.16)}
+.sunny-visitor-label{color:rgba(28,20,16,0.62)}
+.sunny-visitor-value{font-weight:700;color:#8B1A1A;min-width:24px;text-align:right}
+@media (max-width:600px){
+  .sunny-visitor-counter{left:14px;bottom:72px}
+  .sunny-visitor-pill{padding:10px 12px;font-size:12px}
+}
+</style>
+<div class="sunny-visitor-counter" data-visitor-counter>
+  <div class="sunny-visitor-pill">
+    <span class="sunny-visitor-dot" aria-hidden="true"></span>
+    <span class="sunny-visitor-label">Visitors</span>
+    <span class="sunny-visitor-value" data-visitor-value>…</span>
+  </div>
+</div>
+<script>
+(function(){
+  const root = document.querySelector('.sunny-visitor-counter[data-visitor-counter]');
+  if(!root) return;
+  const valueEl = root.querySelector('[data-visitor-value]');
+  const namespace = 'mereshabd';
+  const key = 'site-visits';
+  const hitUrl = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+  const getUrl = `https://api.countapi.xyz/get/${namespace}/${key}`;
+  const today = new Date().toISOString().slice(0, 10);
+  const seenKey = 'mereshabd-visitor-counter-date';
+  const url = localStorage.getItem(seenKey) === today ? getUrl : hitUrl;
+  fetch(url)
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(url === hitUrl){ localStorage.setItem(seenKey, today); }
+      const value = data && typeof data.value !== 'undefined' ? data.value : '—';
+      valueEl.textContent = value;
+    })
+    .catch(function(){ valueEl.textContent = '—'; });
+})();
+</script>
+
 </body>
 </html>
