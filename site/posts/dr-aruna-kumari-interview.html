@@ -22,58 +22,36 @@
     <p style="margin:0;"><a href="./jane-doctor-jubani.html#meet-doctor-gynec">Open Dr. Aruna Kumari in Doctor Corner</a></p>
   </div>
 
-<!-- sunny-floating-sitemap -->
+<!-- sunny-quick-links -->
 <style>
-.sunny-floating-sitemap{position:fixed;right:20px;bottom:20px;z-index:140;font-family:'Noto Sans Devanagari',sans-serif}
-.sunny-sitemap-toggle{border:none;background:linear-gradient(135deg,#8B1A1A 0%,#B8873A 100%);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:0 14px 34px rgba(28,20,16,0.22);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
-.sunny-sitemap-toggle:hover{transform:translateY(-1px)}
-.sunny-sitemap-panel{position:absolute;right:0;bottom:58px;width:min(280px,calc(100vw - 32px));background:rgba(253,250,245,0.98);border:1px solid rgba(139,26,26,0.14);box-shadow:0 24px 60px rgba(28,20,16,0.18);padding:14px;border-radius:18px;display:none;backdrop-filter:blur(12px)}
-.sunny-sitemap-panel.open{display:block}
-.sunny-sitemap-title{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:#8B1A1A;margin-bottom:6px}
-.sunny-sitemap-sub{font-size:12px;color:rgba(28,20,16,0.62);margin-bottom:12px;line-height:1.6}
-.sunny-sitemap-links{display:grid;gap:8px}
-.sunny-sitemap-link{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:12px;text-decoration:none;background:#fff;color:#1C1410;border:1px solid rgba(0,0,0,0.05);font-size:14px}
-.sunny-sitemap-link:hover{border-color:rgba(139,26,26,0.22);color:#8B1A1A}
-.sunny-sitemap-link small{font-size:10px;color:rgba(28,20,16,0.45);text-transform:uppercase;letter-spacing:1px}
-.sunny-sitemap-top{margin-top:10px;width:100%;border:none;background:rgba(139,26,26,0.08);color:#8B1A1A;padding:10px 12px;border-radius:12px;font-size:13px;cursor:pointer}
+.sunny-quick-links{position:fixed;right:20px;bottom:20px;z-index:140;font-family:'Noto Sans Devanagari',sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.sunny-quick-label{font-size:11px;color:rgba(28,20,16,0.58);background:rgba(253,250,245,0.92);border:1px solid rgba(139,26,26,0.12);box-shadow:0 10px 28px rgba(28,20,16,0.12);padding:6px 10px;border-radius:999px;backdrop-filter:blur(10px)}
+.sunny-quick-action{border:none;text-decoration:none;background:linear-gradient(135deg,#8B1A1A 0%,#B8873A 100%);color:#fff;min-width:118px;padding:11px 14px;border-radius:999px;box-shadow:0 14px 34px rgba(28,20,16,0.22);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .18s ease,box-shadow .18s ease}
+.sunny-quick-action:hover{transform:translateY(-1px);box-shadow:0 18px 42px rgba(28,20,16,0.26)}
+.sunny-quick-icon{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.16);font-family:Arial,sans-serif;font-size:14px;line-height:1;flex-shrink:0}
+.sunny-quick-text{flex:1;text-align:left;letter-spacing:0!important}
 @media (max-width:600px){
-  .sunny-floating-sitemap{right:14px;bottom:14px}
-  .sunny-sitemap-toggle{padding:11px 14px;font-size:13px}
-  .sunny-sitemap-panel{bottom:54px}
+  .sunny-quick-links{right:14px;bottom:14px;gap:7px}
+  .sunny-quick-label{font-size:10px;padding:5px 9px}
+  .sunny-quick-action{min-width:104px;padding:10px 12px;font-size:13px}
+  .sunny-quick-icon{width:20px;height:20px;font-size:13px}
 }
 </style>
-<div class="sunny-floating-sitemap" data-sitemap>
-  <button class="sunny-sitemap-toggle" type="button" aria-expanded="false">☰ <span>Site map</span></button>
-  <div class="sunny-sitemap-panel" role="dialog" aria-label="Site map">
-    <div class="sunny-sitemap-title">साइट मैप</div>
-    <div class="sunny-sitemap-sub">यहाँ से वेबसाइट के मुख्य पेज जल्दी खोलिए।</div>
-    <div class="sunny-sitemap-links">
-      <a class="sunny-sitemap-link" href="../index.html"><span>होम</span><small>Home</small></a>
-      <a class="sunny-sitemap-link" href="../about.html"><span>परिचय</span><small>About</small></a>
-      <a class="sunny-sitemap-link" href="../archive.html"><span>रचनाएं</span><small>Works</small></a>
-      <a class="sunny-sitemap-link" href="../gallery.html"><span>गैलरी</span><small>Gallery</small></a>
-      <a class="sunny-sitemap-link" href="../contact.html"><span>संपर्क</span><small>Contact</small></a>
-    </div>
-    <button class="sunny-sitemap-top" type="button">↑ ऊपर जाएँ</button>
-  </div>
+<div class="sunny-quick-links" aria-label="Quick links">
+  <div class="sunny-quick-label">Quick links</div>
+  <button class="sunny-quick-action" type="button" data-sunny-back aria-label="Back"><span class="sunny-quick-icon">‹</span><span class="sunny-quick-text">Back</span></button>
+  <button class="sunny-quick-action" type="button" data-sunny-top aria-label="Top"><span class="sunny-quick-icon">↑</span><span class="sunny-quick-text">Top</span></button>
+  <a class="sunny-quick-action" href="../index.html" aria-label="Home"><span class="sunny-quick-icon">⌂</span><span class="sunny-quick-text">Home</span></a>
 </div>
 <script>
 (function(){
-  const root = document.querySelector('.sunny-floating-sitemap[data-sitemap]');
-  if(!root) return;
-  const toggle = root.querySelector('.sunny-sitemap-toggle');
-  const panel = root.querySelector('.sunny-sitemap-panel');
-  const topBtn = root.querySelector('.sunny-sitemap-top');
-  const close = () => { panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
-  toggle.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = panel.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const back = document.querySelector('[data-sunny-back]');
+  const topBtn = document.querySelector('[data-sunny-top]');
+  if(back) back.addEventListener('click', function(){
+    if(window.history.length > 1) window.history.back();
+    else window.location.href = '../index.html';
   });
-  panel.addEventListener('click', function(e){ e.stopPropagation(); });
-  document.addEventListener('click', function(){ close(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
-  topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); close(); });
+  if(topBtn) topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
 </script>
 

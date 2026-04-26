@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
@@ -277,7 +277,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .rs-eyebrow{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--gold);font-weight:600;letter-spacing:0;text-transform:uppercase;margin-bottom:14px}
 .rs-title{font-family:'Tiro Devanagari Hindi',serif;font-size:44px;color:var(--ink);font-weight:400;margin-bottom:12px;line-height:1.2}
 .rs-sub{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dust);font-style:italic}
-.rs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
 .rs-card{padding:28px 24px;text-decoration:none;transition:all 0.25s;display:flex;flex-direction:column;gap:10px}
 .rs-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
 .rs-icon{font-size:28px;line-height:1}
@@ -375,7 +375,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <li><a href="archive.html">रचनाएं <span class="nav-en">Works</span></a></li>
     <li><a href="gallery.html" class="hide-sm">गैलरी <span class="nav-en">Gallery</span></a></li>
     <li><a href="contact.html" class="hide-sm">संपर्क <span class="nav-en">Connect</span></a></li>
-    <li><a href="archive.html" class="nav-cta">रचनाएं देखें<span class="nav-cta-en">Read Works</span></a></li>
+    <li><a href="#rachnaon-ka-sansar" class="nav-cta">रचनाएं देखें<span class="nav-cta-en">Read Works</span></a></li>
   </ul>
 </nav>
 
@@ -402,7 +402,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
       <span class="badge">पत्रकार <span class="badge-en">Journalist</span></span>
     </div>
     <div class="hero-ctas">
-      <a href="archive.html" class="hero-cta">रचनाएं पढ़ें <span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.6);font-weight:500;margin-left:4px">Read My Works →</span></a>
+      <a href="#rachnaon-ka-sansar" class="hero-cta">रचनाएँ देखें <span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.6);font-weight:500;margin-left:4px">Read My Works →</span></a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -584,46 +584,62 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <div style="font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.6);font-style:italic;font-weight:500;margin-bottom:10px">Which form calls to you?</div>
     <div class="rs-sub">Browse by category — pick what calls you</div>
   </div>
-  <div class="rs-grid">
-    <a href="archive.html?cat=kavita" class="rs-card" style="background:rgba(155,14,14,0.06);border:1px solid rgba(155,14,14,0.2);border-top:3px solid #9B0E0E">
-      <div class="rs-icon" style="color:#9B0E0E">♥</div>
-      <div class="rs-name" style="color:#9B0E0E">कविता</div>
-      <span class="rs-en-label">Poetry</span>
-      <div class="rs-count">3 रचनाएं</div>
-      <div class="rs-desc">मन की गहराइयों से निकले शब्द — माँ, नारीत्व, प्रकृति और जीवन की लय।</div>
-      <div class="rs-cta" style="color:#9B0E0E">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(155,14,14,0.7)">Browse</span></div>
-    </a>
-    <a href="archive.html?cat=lekh" class="rs-card" style="background:rgba(184,135,58,0.06);border:1px solid rgba(184,135,58,0.2);border-top:3px solid #B8873A">
-      <div class="rs-icon" style="color:#B8873A">✍</div>
-      <div class="rs-name" style="color:#B8873A">लेख</div>
-      <span class="rs-en-label">Essays</span>
-      <div class="rs-count">5 रचनाएं</div>
-      <div class="rs-desc">समाज, स्वास्थ्य, जीवन-दर्शन और संस्कृति पर विचारपूर्ण लेखन।</div>
-      <div class="rs-cta" style="color:#B8873A">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(184,135,58,0.8)">Browse</span></div>
-    </a>
-    <a href="archive.html?cat=sansmaran" class="rs-card" style="background:rgba(45,106,79,0.06);border:1px solid rgba(45,106,79,0.2);border-top:3px solid #2D6A4F">
-      <div class="rs-icon" style="color:#2D6A4F">❁</div>
-      <div class="rs-name" style="color:#2D6A4F">संस्मरण</div>
-      <span class="rs-en-label">Memoirs</span>
-      <div class="rs-count">2 रचनाएं</div>
-      <div class="rs-desc">यादों की दुनिया — गुरु और परिवार को समर्पित भावपूर्ण संस्मरण।</div>
-      <div class="rs-cta" style="color:#2D6A4F">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(45,106,79,0.8)">Browse</span></div>
-    </a>
-    <a href="archive.html?cat=pravasi" class="rs-card" style="background:rgba(26,58,107,0.06);border:1px solid rgba(26,58,107,0.2);border-top:3px solid #1A3A6B">
+    <div class="rs-grid">
+    <a href="archive.html?cat=najrana-pardesh-se" class="rs-card" style="background:#1A3A6B0F;border:1px solid #1A3A6B33;border-top:3px solid #1A3A6B">
       <div class="rs-icon" style="color:#1A3A6B">✈</div>
-      <div class="rs-name" style="color:#1A3A6B">प्रवासी मन</div>
-      <span class="rs-en-label">Diaspora Heart</span>
-      <div class="rs-count">1 रचनाएं</div>
-      <div class="rs-desc">परदेश से मातृभूमि की याद — अबू धाबी से हिंदी साहित्य की आवाज़।</div>
-      <div class="rs-cta" style="color:#1A3A6B">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(26,58,107,0.8)">Browse</span></div>
+      <div class="rs-name" style="color:#1A3A6B">नज़राना परदेश से..</div>
+      <span class="rs-en-label">Travelogues</span>
+      <div class="rs-count">यात्रा-वृत्तांत</div>
+      <div class="rs-desc">परदेश, प्रवास और यात्राओं से जुड़ी यादें और अनुभव।</div>
+      <div class="rs-cta" style="color:#1A3A6B">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#1A3A6BCC">Browse</span></div>
     </a>
-    <a href="archive.html?cat=vishesh" class="rs-card" style="background:rgba(107,47,160,0.06);border:1px solid rgba(107,47,160,0.2);border-top:3px solid #6B2FA0">
+    <a href="archive.html?cat=naritva" class="rs-card" style="background:#9B0E0E0F;border:1px solid #9B0E0E33;border-top:3px solid #9B0E0E">
+      <div class="rs-icon" style="color:#9B0E0E">♥</div>
+      <div class="rs-name" style="color:#9B0E0E">दुनिया तुमसे... नारीत्व</div>
+      <span class="rs-en-label">Womanhood</span>
+      <div class="rs-count">कविता</div>
+      <div class="rs-desc">नारी की शक्ति, संवेदना और गरिमा को समर्पित रचना।</div>
+      <div class="rs-cta" style="color:#9B0E0E">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#9B0E0ECC">Browse</span></div>
+    </a>
+    <a href="archive.html?cat=jivan-darshan" class="rs-card" style="background:#B8873A0F;border:1px solid #B8873A33;border-top:3px solid #B8873A">
+      <div class="rs-icon" style="color:#B8873A">☀</div>
+      <div class="rs-name" style="color:#B8873A">जीवनदर्शन..</div>
+      <span class="rs-en-label">Life Philosophy</span>
+      <div class="rs-count">लेख संग्रह</div>
+      <div class="rs-desc">जीवन, अनुभव, रिश्तों और आत्म-चिंतन पर विचार।</div>
+      <div class="rs-cta" style="color:#B8873A">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#B8873ACC">Browse</span></div>
+    </a>
+    <a href="archive.html?cat=sur-taal-jugalbandi" class="rs-card" style="background:#6B2FA00F;border:1px solid #6B2FA033;border-top:3px solid #6B2FA0">
       <div class="rs-icon" style="color:#6B2FA0">♫</div>
-      <div class="rs-name" style="color:#6B2FA0">विशेष</div>
-      <span class="rs-en-label">Special</span>
-      <div class="rs-count">1 रचनाएं</div>
-      <div class="rs-desc">सुर-ताल जुगलबंदी — ২৩ कविताओं का संपूर्ण संग्रह एक साथ।</div>
-      <div class="rs-cta" style="color:#6B2FA0">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:rgba(107,47,160,0.8)">Browse</span></div>
+      <div class="rs-name" style="color:#6B2FA0">सुर-ताल जुगलबंदी (काव्य संग्रह)</div>
+      <span class="rs-en-label">Poetry Collection</span>
+      <div class="rs-count">काव्य संग्रह</div>
+      <div class="rs-desc">गीत, कविता और क्षणिकाओं का संपूर्ण काव्य-संग्रह।</div>
+      <div class="rs-cta" style="color:#6B2FA0">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#6B2FA0CC">Browse</span></div>
+    </a>
+    <a href="archive.html?cat=jane-doctor-jubani" class="rs-card" style="background:#2D6A4F0F;border:1px solid #2D6A4F33;border-top:3px solid #2D6A4F">
+      <div class="rs-icon" style="color:#2D6A4F">✚</div>
+      <div class="rs-name" style="color:#2D6A4F">जाने डाक्टर जुबानी..</div>
+      <span class="rs-en-label">Doctor Column</span>
+      <div class="rs-count">स्वास्थ्य लेख</div>
+      <div class="rs-desc">डॉक्टरों की ज़ुबानी स्वास्थ्य, योग और जीवनशैली पर लेख।</div>
+      <div class="rs-cta" style="color:#2D6A4F">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#2D6A4FCC">Browse</span></div>
+    </a>
+    <a href="archive.html?cat=yadon-ke-pannon-se" class="rs-card" style="background:#8A4B2A0F;border:1px solid #8A4B2A33;border-top:3px solid #8A4B2A">
+      <div class="rs-icon" style="color:#8A4B2A">☷</div>
+      <div class="rs-name" style="color:#8A4B2A">यादों के पन्नों से..</div>
+      <span class="rs-en-label">Pages of Memory</span>
+      <div class="rs-count">संस्मरण</div>
+      <div class="rs-desc">स्मृतियों के पन्नों में सहेजे हुए रिश्ते और श्रद्धांजलि।</div>
+      <div class="rs-cta" style="color:#8A4B2A">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#8A4B2ACC">Browse</span></div>
+    </a>
+    <a href="archive.html?cat=yadon-ke-jharokhon-se" class="rs-card" style="background:#5B3A6B0F;border:1px solid #5B3A6B33;border-top:3px solid #5B3A6B">
+      <div class="rs-icon" style="color:#5B3A6B">❁</div>
+      <div class="rs-name" style="color:#5B3A6B">यादों के झरोखों से..</div>
+      <span class="rs-en-label">Memory Windows</span>
+      <div class="rs-count">परिवारिक स्मृतियाँ</div>
+      <div class="rs-desc">परिवार, विरासत और पिताजी की यादों को समर्पित संकलन।</div>
+      <div class="rs-cta" style="color:#5B3A6B">देखें → <span style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;font-weight:500;color:#5B3A6BCC">Browse</span></div>
     </a>
   </div>
 </section>
@@ -677,11 +693,13 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
       <div class="fcol-label">रचनाएं</div>
       <span class="fcol-label-en">Writings</span>
       <ul>
-        <li><a href="archive.html?cat=kavita">कविता <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Poetry</span></a></li>
-        <li><a href="archive.html?cat=lekh">लेख <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Essays</span></a></li>
-        <li><a href="archive.html?cat=sansmaran">संस्मरण <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Memoirs</span></a></li>
-        <li><a href="archive.html?cat=pravasi">प्रवासी मन <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Diaspora</span></a></li>
-        <li><a href="archive.html?cat=vishesh">विशेष <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Special</span></a></li>
+        <li><a href="archive.html?cat=najrana-pardesh-se">नज़राना परदेश से <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Travel</span></a></li>
+        <li><a href="archive.html?cat=naritva">दुनिया तुमसे... नारीत्व <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Womanhood</span></a></li>
+        <li><a href="archive.html?cat=jivan-darshan">जीवनदर्शन <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Life</span></a></li>
+        <li><a href="archive.html?cat=sur-taal-jugalbandi">सुर-ताल जुगलबंदी <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Poetry</span></a></li>
+        <li><a href="archive.html?cat=jane-doctor-jubani">जाने डाक्टर जुबानी <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Health</span></a></li>
+        <li><a href="archive.html?cat=yadon-ke-pannon-se">यादों के पन्नों से <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Memories</span></a></li>
+        <li><a href="archive.html?cat=yadon-ke-jharokhon-se">यादों के झरोखों से <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.3)">Memoir</span></a></li>
       </ul>
     </div>
     <div class="fcol">
@@ -748,58 +766,36 @@ if(hamburger){
 }
 </script>
 
-<!-- sunny-floating-sitemap -->
+<!-- sunny-quick-links -->
 <style>
-.sunny-floating-sitemap{position:fixed;right:20px;bottom:20px;z-index:140;font-family:'Noto Sans Devanagari',sans-serif}
-.sunny-sitemap-toggle{border:none;background:linear-gradient(135deg,#8B1A1A 0%,#B8873A 100%);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:0 14px 34px rgba(28,20,16,0.22);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
-.sunny-sitemap-toggle:hover{transform:translateY(-1px)}
-.sunny-sitemap-panel{position:absolute;right:0;bottom:58px;width:min(280px,calc(100vw - 32px));background:rgba(253,250,245,0.98);border:1px solid rgba(139,26,26,0.14);box-shadow:0 24px 60px rgba(28,20,16,0.18);padding:14px;border-radius:18px;display:none;backdrop-filter:blur(12px)}
-.sunny-sitemap-panel.open{display:block}
-.sunny-sitemap-title{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:#8B1A1A;margin-bottom:6px}
-.sunny-sitemap-sub{font-size:12px;color:rgba(28,20,16,0.62);margin-bottom:12px;line-height:1.6}
-.sunny-sitemap-links{display:grid;gap:8px}
-.sunny-sitemap-link{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:12px;text-decoration:none;background:#fff;color:#1C1410;border:1px solid rgba(0,0,0,0.05);font-size:14px}
-.sunny-sitemap-link:hover{border-color:rgba(139,26,26,0.22);color:#8B1A1A}
-.sunny-sitemap-link small{font-size:10px;color:rgba(28,20,16,0.45);text-transform:uppercase;letter-spacing:1px}
-.sunny-sitemap-top{margin-top:10px;width:100%;border:none;background:rgba(139,26,26,0.08);color:#8B1A1A;padding:10px 12px;border-radius:12px;font-size:13px;cursor:pointer}
+.sunny-quick-links{position:fixed;right:20px;bottom:20px;z-index:140;font-family:'Noto Sans Devanagari',sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.sunny-quick-label{font-size:11px;color:rgba(28,20,16,0.58);background:rgba(253,250,245,0.92);border:1px solid rgba(139,26,26,0.12);box-shadow:0 10px 28px rgba(28,20,16,0.12);padding:6px 10px;border-radius:999px;backdrop-filter:blur(10px)}
+.sunny-quick-action{border:none;text-decoration:none;background:linear-gradient(135deg,#8B1A1A 0%,#B8873A 100%);color:#fff;min-width:118px;padding:11px 14px;border-radius:999px;box-shadow:0 14px 34px rgba(28,20,16,0.22);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .18s ease,box-shadow .18s ease}
+.sunny-quick-action:hover{transform:translateY(-1px);box-shadow:0 18px 42px rgba(28,20,16,0.26)}
+.sunny-quick-icon{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.16);font-family:Arial,sans-serif;font-size:14px;line-height:1;flex-shrink:0}
+.sunny-quick-text{flex:1;text-align:left;letter-spacing:0!important}
 @media (max-width:600px){
-  .sunny-floating-sitemap{right:14px;bottom:14px}
-  .sunny-sitemap-toggle{padding:11px 14px;font-size:13px}
-  .sunny-sitemap-panel{bottom:54px}
+  .sunny-quick-links{right:14px;bottom:14px;gap:7px}
+  .sunny-quick-label{font-size:10px;padding:5px 9px}
+  .sunny-quick-action{min-width:104px;padding:10px 12px;font-size:13px}
+  .sunny-quick-icon{width:20px;height:20px;font-size:13px}
 }
 </style>
-<div class="sunny-floating-sitemap" data-sitemap>
-  <button class="sunny-sitemap-toggle" type="button" aria-expanded="false">☰ <span>Site map</span></button>
-  <div class="sunny-sitemap-panel" role="dialog" aria-label="Site map">
-    <div class="sunny-sitemap-title">साइट मैप</div>
-    <div class="sunny-sitemap-sub">यहाँ से वेबसाइट के मुख्य पेज जल्दी खोलिए।</div>
-    <div class="sunny-sitemap-links">
-      <a class="sunny-sitemap-link" href="index.html"><span>होम</span><small>Home</small></a>
-      <a class="sunny-sitemap-link" href="about.html"><span>परिचय</span><small>About</small></a>
-      <a class="sunny-sitemap-link" href="archive.html"><span>रचनाएं</span><small>Works</small></a>
-      <a class="sunny-sitemap-link" href="gallery.html"><span>गैलरी</span><small>Gallery</small></a>
-      <a class="sunny-sitemap-link" href="contact.html"><span>संपर्क</span><small>Contact</small></a>
-    </div>
-    <button class="sunny-sitemap-top" type="button">↑ ऊपर जाएँ</button>
-  </div>
+<div class="sunny-quick-links" aria-label="Quick links">
+  <div class="sunny-quick-label">Quick links</div>
+  <button class="sunny-quick-action" type="button" data-sunny-back aria-label="Back"><span class="sunny-quick-icon">‹</span><span class="sunny-quick-text">Back</span></button>
+  <button class="sunny-quick-action" type="button" data-sunny-top aria-label="Top"><span class="sunny-quick-icon">↑</span><span class="sunny-quick-text">Top</span></button>
+  <a class="sunny-quick-action" href="index.html" aria-label="Home"><span class="sunny-quick-icon">⌂</span><span class="sunny-quick-text">Home</span></a>
 </div>
 <script>
 (function(){
-  const root = document.querySelector('.sunny-floating-sitemap[data-sitemap]');
-  if(!root) return;
-  const toggle = root.querySelector('.sunny-sitemap-toggle');
-  const panel = root.querySelector('.sunny-sitemap-panel');
-  const topBtn = root.querySelector('.sunny-sitemap-top');
-  const close = () => { panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
-  toggle.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = panel.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const back = document.querySelector('[data-sunny-back]');
+  const topBtn = document.querySelector('[data-sunny-top]');
+  if(back) back.addEventListener('click', function(){
+    if(window.history.length > 1) window.history.back();
+    else window.location.href = 'index.html';
   });
-  panel.addEventListener('click', function(e){ e.stopPropagation(); });
-  document.addEventListener('click', function(){ close(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
-  topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); close(); });
+  if(topBtn) topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
 </script>
 
