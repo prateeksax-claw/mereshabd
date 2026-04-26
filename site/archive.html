@@ -592,21 +592,20 @@ if(hamburger){
   const root = document.querySelector('.sunny-visitor-counter[data-visitor-counter]');
   if(!root) return;
   const valueEl = root.querySelector('[data-visitor-value]');
-  const namespace = 'mereshabd';
-  const key = 'site-visits';
-  const hitUrl = `https://api.countapi.xyz/hit/${namespace}/${key}`;
-  const getUrl = `https://api.countapi.xyz/get/${namespace}/${key}`;
+  const key = 'mereshabd-site-visits';
+  const apiBase = 'https://countapi.mileshilliard.com/api/v1';
   const today = new Date().toISOString().slice(0, 10);
   const seenKey = 'mereshabd-visitor-counter-date';
-  const url = localStorage.getItem(seenKey) === today ? getUrl : hitUrl;
-  fetch(url)
-    .then(function(res){ return res.json(); })
+  const hasVisitedToday = localStorage.getItem(seenKey) === today;
+  const url = hasVisitedToday ? `${apiBase}/get/${key}` : `${apiBase}/hit/${key}`;
+  fetch(url, { cache: 'no-store' })
+    .then(function(res){ return res.ok ? res.json() : Promise.reject(res); })
     .then(function(data){
-      if(url === hitUrl){ localStorage.setItem(seenKey, today); }
-      const value = data && typeof data.value !== 'undefined' ? data.value : '—';
-      valueEl.textContent = value;
+      if(!hasVisitedToday){ localStorage.setItem(seenKey, today); }
+      const value = data && typeof data.value !== 'undefined' ? data.value : '?';
+      valueEl.textContent = Number(value).toLocaleString('en-IN');
     })
-    .catch(function(){ valueEl.textContent = '—'; });
+    .catch(function(){ valueEl.textContent = '?'; });
 })();
 </script>
 
