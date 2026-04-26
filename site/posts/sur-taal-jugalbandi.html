@@ -582,6 +582,33 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   </div>
 </section>
 
+
+<!-- LATEST POETRY COLLECTION BANNER -->
+<style>
+.latest-collection-banner{background:linear-gradient(135deg,#130515 0%,#2b0712 48%,#08030d 100%);padding:70px 80px 78px;border-top:1px solid rgba(184,135,58,0.18);border-bottom:1px solid rgba(184,135,58,0.18);position:relative;overflow:hidden}
+.latest-collection-banner::before{content:'';position:absolute;inset:-30%;background:radial-gradient(circle at 18% 25%,rgba(255,160,70,0.16),transparent 28%),radial-gradient(circle at 82% 20%,rgba(66,180,170,0.13),transparent 30%),radial-gradient(circle at 50% 90%,rgba(184,135,58,0.16),transparent 34%);pointer-events:none}
+.latest-collection-inner{position:relative;max-width:1120px;margin:0 auto}
+.latest-collection-kicker{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;color:rgba(212,168,82,0.82);font-weight:600;margin-bottom:18px;letter-spacing:0!important;text-align:center}
+.latest-collection-frame{border:1px solid rgba(212,168,82,0.26);background:rgba(253,250,245,0.035);box-shadow:0 30px 80px rgba(0,0,0,0.38);padding:12px;border-radius:26px}
+.latest-collection-frame img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 46px rgba(0,0,0,0.28)}
+.latest-collection-note{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.62);font-style:italic;text-align:center;margin-top:18px;letter-spacing:0!important}
+@media(max-width:700px){
+  .latest-collection-banner{padding:42px 20px 48px}
+  .latest-collection-frame{padding:8px;border-radius:18px}
+  .latest-collection-frame img{border-radius:12px}
+  .latest-collection-note{font-size:15px}
+}
+</style>
+<section class="latest-collection-banner" aria-label="Latest Poetry Collection">
+  <div class="latest-collection-inner">
+    <div class="latest-collection-kicker">??? ????? ?????? ? Latest Poetry Collection</div>
+    <div class="latest-collection-frame">
+      <img src="../images/har-pal-kavya-navras-banner.png" alt="?? ?? ????? ???? ? Latest Poetry Collection">
+    </div>
+    <div class="latest-collection-note">?? ??????? ???? ??? ??? ????? ???????</div>
+  </div>
+</section>
+
 <!-- PREV/NEXT -->
 
 <!-- AND MORE SECTION -->
