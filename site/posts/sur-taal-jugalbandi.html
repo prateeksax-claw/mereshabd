@@ -594,7 +594,8 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .latest-collection-note{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.62);font-style:italic;text-align:center;margin-top:18px;letter-spacing:0!important}
 .latest-placecards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
 .latest-placecard{position:relative;min-height:190px;border-radius:20px;overflow:hidden;text-decoration:none;background:linear-gradient(145deg,rgba(255,248,232,0.10),rgba(212,168,82,0.06));border:1px solid rgba(212,168,82,0.24);box-shadow:0 18px 48px rgba(0,0,0,0.24)}
-.latest-placecard::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 10%,rgba(212,168,82,0.24),transparent 34%),linear-gradient(135deg,rgba(15,5,18,0.25),rgba(0,0,0,0.34));pointer-events:none}
+.latest-placecard-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(0.95);transform:scale(1.01)}
+.latest-placecard::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 10%,rgba(212,168,82,0.24),transparent 34%),linear-gradient(to top,rgba(0,0,0,0.78) 0%,rgba(20,6,24,0.36) 58%,rgba(0,0,0,0.14) 100%);pointer-events:none;z-index:1}
 .latest-placecard-inner{position:relative;z-index:1;height:100%;min-height:190px;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left}
 .latest-placecard-num{position:absolute;top:16px;left:18px;font-family:'Cormorant Garamond',serif;font-size:13px;color:#F4D58A;background:rgba(0,0,0,0.35);border:1px solid rgba(244,213,138,0.24);padding:5px 10px;border-radius:999px}
 .latest-placecard-kicker{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:rgba(244,213,138,0.88);font-weight:700;margin-bottom:8px}
@@ -622,11 +623,12 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <!-- LATEST POEM PLACE CARDS -->
     <div class="latest-placecards" aria-label="Har Pal Navras new poem placeholders">
       <div class="latest-placecard">
+        <div class="latest-placecard-img" style="background-image:url('../images/samudra-manthan-placecard-opt.webp')"></div>
         <div class="latest-placecard-inner">
           <div class="latest-placecard-num">01</div>
           <div class="latest-placecard-kicker">हर पल नवरस</div>
-          <h3 class="latest-placecard-title">नई कविता</h3>
-          <p class="latest-placecard-desc">इस स्थान पर पहली नई कविता जोड़ी जाएगी।</p>
+          <h3 class="latest-placecard-title">समुद्र मंथन</h3>
+          <p class="latest-placecard-desc">नई कविता — पाठ यहाँ जोड़ा जाएगा।</p>
           <span class="latest-placecard-badge">जल्द प्रकाशित</span>
         </div>
       </div>
