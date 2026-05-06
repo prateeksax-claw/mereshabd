@@ -602,7 +602,8 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .latest-placecard-title{font-family:'Tiro Devanagari Hindi',serif;font-size:26px;line-height:1.25;color:#FFF8EA;font-weight:400;margin:0 0 8px}
 .latest-placecard-desc{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;line-height:1.7;color:rgba(255,255,255,0.70);margin:0}
 .latest-placecard-badge{display:inline-flex;width:max-content;margin-top:14px;padding:7px 12px;border-radius:999px;background:rgba(212,168,82,0.16);border:1px solid rgba(212,168,82,0.26);color:#F4D58A;font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;font-weight:700}
-.samudra-poem-panel{margin-top:34px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(135deg,#f8fbff 0%,#dff2ff 34%,#fff3d7 100%);border:1px solid rgba(22,88,126,0.18);box-shadow:0 24px 70px rgba(0,0,0,0.30)}
+.samudra-poem-panel{display:none;margin-top:34px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(135deg,#f8fbff 0%,#dff2ff 34%,#fff3d7 100%);border:1px solid rgba(22,88,126,0.18);box-shadow:0 24px 70px rgba(0,0,0,0.30)}
+.samudra-poem-panel:target{display:block}
 .samudra-poem-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,64,102,0.13),rgba(255,255,255,0.50)),url('../images/samudra-manthan-placecard-opt.webp');background-size:cover;background-position:center;opacity:0.30;filter:saturate(1.12)}
 .samudra-poem-inner{position:relative;z-index:1;padding:46px 52px;background:linear-gradient(to bottom,rgba(255,255,255,0.76),rgba(255,248,231,0.88))}
 .samudra-poem-kicker{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;font-weight:800;color:#0C6C91;letter-spacing:0!important;margin-bottom:8px;text-align:center}
@@ -633,7 +634,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <div class="latest-collection-frame">
       <img src="../images/har-pal-kavya-navras-banner-opt.webp" alt="हर पल काव्य नवरस — Latest Poetry Collection" loading="lazy" decoding="async">
     </div>
-    <div class="latest-collection-note">नई कविता सुंदर रंगीन रूप में प्रस्तुत है।</div>
+    <div class="latest-collection-note">कविता पढ़ने के लिए place card पर click करें।</div>
 
     <!-- LATEST POEM PLACE CARDS -->
     <div class="latest-placecards" aria-label="Har Pal Navras new poem placeholders">
