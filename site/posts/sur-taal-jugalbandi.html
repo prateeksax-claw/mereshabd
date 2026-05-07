@@ -605,6 +605,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .samudra-poem-panel{display:none;margin-top:34px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(135deg,#f8fbff 0%,#dff2ff 34%,#fff3d7 100%);border:1px solid rgba(22,88,126,0.18);box-shadow:0 24px 70px rgba(0,0,0,0.30)}
 .samudra-poem-panel:target{display:block}
 .samudra-poem-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,64,102,0.13),rgba(255,255,255,0.50)),url('../images/samudra-manthan-placecard-opt.webp');background-size:cover;background-position:center;opacity:0.30;filter:saturate(1.12)}
+#different-day-poem::before{background:linear-gradient(135deg,rgba(255,188,66,0.16),rgba(255,255,255,0.48)),url('../images/a-different-day-sunrise-placecard.webp');background-size:cover;background-position:center;opacity:0.34;filter:saturate(1.15) brightness(1.04)}
 .samudra-poem-inner{position:relative;z-index:1;padding:46px 52px;background:linear-gradient(to bottom,rgba(255,255,255,0.76),rgba(255,248,231,0.88))}
 .samudra-poem-kicker{font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;font-weight:800;color:#0C6C91;letter-spacing:0!important;margin-bottom:8px;text-align:center}
 .samudra-poem-title{font-family:'Tiro Devanagari Hindi',serif;font-size:46px;line-height:1.22;font-weight:700;margin:0;color:#063A5A;text-align:center;text-shadow:0 2px 0 rgba(255,255,255,0.75)}
@@ -648,15 +649,16 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
           <span class="latest-placecard-badge">कविता पढ़ें</span>
         </div>
       </a>
-      <div class="latest-placecard">
+      <a href="#different-day-poem" class="latest-placecard">
+        <div class="latest-placecard-img" style="background-image:url('../images/a-different-day-sunrise-placecard.webp')"></div>
         <div class="latest-placecard-inner">
           <div class="latest-placecard-num">02</div>
-          <div class="latest-placecard-kicker">हर पल नवरस</div>
-          <h3 class="latest-placecard-title">नई कविता</h3>
-          <p class="latest-placecard-desc">इस स्थान पर अगली नई कविता जोड़ी जाएगी।</p>
-          <span class="latest-placecard-badge">जल्द प्रकाशित</span>
+          <div class="latest-placecard-kicker">एक अलग दिन · A Different Day</div>
+          <h3 class="latest-placecard-title">एक अलग दिन</h3>
+          <p class="latest-placecard-desc">A Different Day — glowing memories, blessings, and a red sunrise of hope.</p>
+          <span class="latest-placecard-badge">कविता पढ़ें</span>
         </div>
-      </div>
+      </a>
       <div class="latest-placecard">
         <div class="latest-placecard-inner">
           <div class="latest-placecard-num">03</div>
@@ -682,6 +684,26 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
           <div class="samudra-stanza">जीवन मंथन में प्रयत्नशील रहने में छिपें है जटिल उपाय,<br>जीवन की गहराइयों से निकला अमृत ही है <strong>‘ईश्वरीय वरदान’</strong><br>जब जागो तब सवेरा...यही प्रकृति नियम, यही जीवन सत्य।</div>
         </div>
         <div class="samudra-author">— गीतांजलि सक्सेना · 2026</div>
+      </div>
+    </article>
+
+    <article id="different-day-poem" class="samudra-poem-panel" aria-label="एक अलग दिन कविता">
+      <div class="samudra-poem-inner">
+        <div class="samudra-poem-kicker">एक अलग दिन · A Different Day</div>
+        <h2 class="samudra-poem-title">एक अलग दिन</h2>
+        <div class="samudra-poem-sub">A Different Day · Red Glowing Sun</div>
+        <div class="samudra-poem-body">
+          <div class="samudra-stanza">Don’t let that glowing light fade,<br>Life wears rainbows, beautifully made.<br>Moments may pass, moments may fly,<br>Yet treasured memories never die.</div>
+          <div class="samudra-stanza">Hold them close, with love’s embrace,<br>Relations bloom in a sacred space.<br>Each step may carry trials unknown,<br>Yet your resolve has brightly shone.</div>
+          <div class="samudra-stanza">The pride of success, the joy in your eyes,<br>Reflects the truth of how high you rise.<br>The road was rough, the journey long,<br>Yet wisdom and courage made you strong.</div>
+          <div class="samudra-stanza">Success is born from steady will,<br>From dreams you chased with passion still.<br>You shaped your name, your identity,<br>And filled our hearts with dignity.</div>
+          <div class="samudra-stanza">God’s blessings walk beside your way,<br>Guiding your steps every day.<br>May every dream you hold come true,<br>Our prayers will always follow you.</div>
+          <div class="samudra-stanza">In every bond, you stand sincere,<br>With honest heart and vision clear.<br>You read emotions through the eyes,<br>A rare gift, gentle and wise.</div>
+          <div class="samudra-stanza">With generous soul and caring art,<br>You touch each life, you touch each heart.<br>A model, an example, precious and true,<br>Our lives feel richer because of you.</div>
+          <div class="samudra-stanza">Every joy, every reason we live,<br>Begins with all the love you give.<br>May success and happiness forever run,<br>As you shine bright — our red glowing sun.</div>
+          <div class="samudra-stanza">Our blessings stay, forever near,<br>With endless love, year after year.</div>
+        </div>
+        <div class="samudra-author">— 7th January 2026</div>
       </div>
     </article>
   </div>
@@ -1007,4 +1029,5 @@ if(hamburger){
 
 </body>
 </html>
+
 
