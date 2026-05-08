@@ -593,6 +593,8 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .latest-collection-frame img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 46px rgba(0,0,0,0.28)}
 .latest-collection-note{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.62);font-style:italic;text-align:center;margin-top:18px;letter-spacing:0!important}
 .latest-placecards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.latest-placecards.new-row{margin-top:18px;grid-template-columns:repeat(2,minmax(0,1fr));max-width:740px;margin-left:auto;margin-right:auto}
+.latest-placecards-new-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:#F4D58A;text-align:center;font-weight:800;margin:28px 0 0;letter-spacing:0!important}
 .latest-placecard{position:relative;min-height:190px;border-radius:20px;overflow:hidden;text-decoration:none;background:linear-gradient(145deg,rgba(255,248,232,0.10),rgba(212,168,82,0.06));border:1px solid rgba(212,168,82,0.24);box-shadow:0 18px 48px rgba(0,0,0,0.24)}
 .latest-placecard-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(0.95);transform:scale(1.01)}
 .latest-placecard::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 10%,rgba(212,168,82,0.24),transparent 34%),linear-gradient(to top,rgba(0,0,0,0.78) 0%,rgba(20,6,24,0.36) 58%,rgba(0,0,0,0.14) 100%);pointer-events:none;z-index:1}
@@ -632,6 +634,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .latest-collection-frame img{border-radius:12px}
   .latest-collection-note{font-size:15px}
   .latest-placecards{grid-template-columns:1fr;gap:14px;margin-top:20px}
+  .latest-placecards.new-row{grid-template-columns:1fr;max-width:none}
   .latest-placecard-inner{min-height:165px;padding:20px}
   .latest-placecard-title{font-size:23px}
   .samudra-poem-inner{padding:32px 22px}
@@ -680,6 +683,10 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
           <span class="latest-placecard-badge">कविता पढ़ें</span>
         </div>
       </a>
+    </div>
+
+    <div class="latest-placecards-new-title">नये placecards</div>
+    <div class="latest-placecards new-row" aria-label="New poem placecards">
       <a href="#mere-humdam-poem" class="latest-placecard">
         <div class="latest-placecard-img" style="background-image:url('../images/mere-humdam-mere-dost-placecard.webp')"></div>
         <div class="latest-placecard-inner">
