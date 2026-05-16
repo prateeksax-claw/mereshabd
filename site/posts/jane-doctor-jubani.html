@@ -478,15 +478,22 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 @media(max-width:600px){.meet-doctor-grid{grid-template-columns:1fr}}
 
 /* ANIMATED DOCTOR CARD */
-.md-card-animated .md-shimmer-overlay{position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,215,100,0.18) 50%,transparent 65%);background-size:300% 100%;animation:shimmer-sweep 3.5s ease-in-out infinite;}
+.md-card-animated .md-shimmer-overlay{position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,215,100,0.18) 50%,transparent 65%);background-size:300% 100%;animation:shimmer-sweep 2.2s ease-in-out infinite;}
 @keyframes shimmer-sweep{0%{background-position:300% 0}100%{background-position:-300% 0}}
 .md-photo-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 100%);display:flex;align-items:flex-end;}
-.md-card-animated{animation:card-float 4s ease-in-out infinite;}
+.md-card-animated{animation:card-float 2.8s ease-in-out infinite;}
 @keyframes card-float{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,0.10);transform:translateY(0)}50%{box-shadow:0 12px 36px rgba(184,135,58,0.20);transform:translateY(-4px)}}
-.md-card-img-doctor{min-height:280px;overflow:hidden;background-image:url('../images/doctor-aruna-card-crop.jpg');background-size:cover;background-position:center top;background-color:#F7F2EA;animation:doctor-card-zoom 8s ease-in-out infinite}
+.md-card-img-doctor{min-height:280px;overflow:hidden;background-image:url('../images/doctor-aruna-card-crop.jpg');background-size:cover;background-position:center top;background-color:#F7F2EA;animation:doctor-card-zoom 5s ease-in-out infinite}
 .md-card-img-doctor::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,248,238,0.08) 0%,rgba(121,42,34,0.06) 48%,rgba(19,10,8,0.34) 100%);pointer-events:none}
 .md-card-img-doctor::after{content:'';position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(255,255,255,0.26);box-shadow:inset 0 0 0 1px rgba(184,135,58,0.12);pointer-events:none}
 @keyframes doctor-card-zoom{0%,100%{background-size:cover;transform:scale(1)}50%{background-size:cover;transform:scale(1.03)}}
+.md-card-img-nephro{min-height:280px;overflow:hidden;background:#F46A2D;transform-origin:center}
+.md-card-img-nephro::before{content:'';position:absolute;inset:-12px;background:linear-gradient(180deg,rgba(255,248,238,0.04) 0%,rgba(225,70,26,0.04) 46%,rgba(34,13,9,0.48) 100%),url('../images/doctor-anil-saxena-kidney-painting.jpg');background-size:cover;background-position:center center;filter:blur(8px) saturate(1.08);transform:scale(1.05);pointer-events:none;z-index:0}
+.md-card-img-nephro::after{content:'';position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(255,255,255,0.28);box-shadow:inset 0 0 0 1px rgba(184,135,58,0.14);pointer-events:none;z-index:4}
+.md-nephro-full-painting{position:absolute;z-index:1;inset:0;margin:auto;height:100%;width:auto;max-width:none;object-fit:contain;filter:drop-shadow(0 18px 28px rgba(62,18,8,0.28)) saturate(1) brightness(1);animation:nephro-painting-glow 5.5s ease-in-out infinite}
+.md-card-img-nephro .md-shimmer-overlay{z-index:2}
+.md-card-img-nephro .md-photo-overlay{z-index:3}
+@keyframes nephro-painting-glow{0%,100%{filter:drop-shadow(0 18px 28px rgba(62,18,8,0.28)) saturate(1) brightness(1)}50%{filter:drop-shadow(0 20px 30px rgba(62,18,8,0.32)) saturate(1.08) brightness(1.04)}}
 
 /* DOCTOR CORNER FEATURE */
 .doctor-corner-feature{display:none;margin-top:32px;scroll-margin-top:110px;background:linear-gradient(145deg,#fffdf9 0%,#fcf5ee 46%,#f8eee5 100%);border:1px solid rgba(184,135,58,0.26);box-shadow:0 30px 80px rgba(78,50,26,0.10);padding:38px;border-radius:36px;position:relative;overflow:hidden}
@@ -524,8 +531,11 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .dc-question .label{background:rgba(33,94,153,0.12);color:#215E99;font-weight:700}
 .dc-answer .label{background:rgba(192,0,0,0.10);color:#C00000;font-weight:700}
 .dc-closing{margin-top:34px;padding:24px 26px;border-radius:24px;background:linear-gradient(135deg,rgba(33,94,153,0.10),rgba(255,255,255,0.92));border:1px solid rgba(76,148,216,0.20);font-family:'Noto Sans Devanagari',sans-serif;font-size:18px;line-height:1.95;color:#215E99;font-weight:700;box-shadow:0 14px 30px rgba(33,94,153,0.06)}
+.dc-caption-banner{margin-top:36px;border-radius:28px;padding:42px 34px;background:linear-gradient(135deg,#0a0612 0%,#150a20 42%,#0a1020 78%,#0a0612 100%);box-shadow:0 22px 52px rgba(28,20,16,0.18)}
+.dc-caption-banner .icb-title{font-size:30px;margin-bottom:12px}
+.dc-caption-banner .icb-subtitle{font-size:22px}
 @media(max-width:900px){.doctor-corner-feature{padding:24px 18px 30px;border-radius:28px}.doctor-corner-feature::after{left:20px;right:20px}.dc-feature-top{grid-template-columns:1fr;gap:20px;padding:22px 18px 24px}.dc-photo-wrap{justify-self:start;align-items:flex-start}.dc-title{font-size:36px}.dc-chapter-line{font-size:24px}.dc-category-title{font-size:21px}.dc-question{font-size:17px}.dc-answer{font-size:16px;line-height:1.9;margin-left:0}.dc-qa-item::before{top:20px;bottom:20px}}
-@media(max-width:600px){.dc-title{font-size:30px}.dc-series{font-size:14px;padding:7px 12px}.dc-lead-strong,.dc-lead,.dc-honored,.dc-closing,.dc-journey{font-size:15px;line-height:1.85}.dc-chapter-line{font-size:22px}.dc-theme-band{padding:16px}.dc-theme-text{font-size:22px}.dc-category-head{padding:14px 16px}.dc-category-no{width:36px;height:36px;font-size:21px}.dc-category-title{font-size:18px}.dc-qa-item{padding:20px 16px 18px}.dc-question{font-size:16px;line-height:1.75;padding-left:10px}.dc-answer{font-size:15px;padding:15px 14px;margin-left:10px}.dc-question .label,.dc-answer .label{min-width:40px;padding:4px 8px;margin-right:8px}.dc-doctor-photo{width:152px}}
+@media(max-width:600px){.dc-title{font-size:30px}.dc-series{font-size:14px;padding:7px 12px}.dc-lead-strong,.dc-lead,.dc-honored,.dc-closing,.dc-journey{font-size:15px;line-height:1.85}.dc-chapter-line{font-size:22px}.dc-theme-band{padding:16px}.dc-theme-text{font-size:22px}.dc-category-head{padding:14px 16px}.dc-category-no{width:36px;height:36px;font-size:21px}.dc-category-title{font-size:18px}.dc-qa-item{padding:20px 16px 18px}.dc-question{font-size:16px;line-height:1.75;padding-left:10px}.dc-answer{font-size:15px;padding:15px 14px;margin-left:10px}.dc-question .label,.dc-answer .label{min-width:40px;padding:4px 8px;margin-right:8px}.dc-doctor-photo{width:152px}.dc-caption-banner{padding:32px 18px;border-radius:22px}.dc-caption-banner .icb-title{font-size:22px}.dc-caption-banner .icb-subtitle{font-size:17px}}
 
 /* MEET THE EXPERTS BANNER */
 .meet-experts-banner{position:relative;min-height:420px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(135deg,#0D0608 0%,#1A0A10 30%,#0A0D18 60%,#0D0608 100%);animation:banner-float 6s ease-in-out infinite;}
@@ -786,6 +796,20 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
         <div class="md-cta">Interview पढ़ें →</div>
       </div>
     </a>
+    <a href="#meet-doctor-nephro" class="md-card md-card-animated">
+      <div class="md-card-img md-card-img-nephro">
+        <img src="../images/doctor-anil-saxena-kidney-painting.jpg" alt="Kidney painting for Dr. Anil Saxena" class="md-nephro-full-painting" loading="lazy" decoding="async">
+        <div class="md-shimmer-overlay"></div>
+        <div class="md-photo-overlay">
+          <span class="md-speciality">किडनी विशेषज्ञ</span>
+        </div>
+      </div>
+      <div class="md-card-body">
+        <div class="md-name" style="color:#174D80;font-weight:700;">Dr. Anil Saxena</div>
+        <div class="md-month" style="color:#0C6E65;font-size:22px;font-style:normal;font-weight:700;">Nephrologist</div>
+        <div class="md-cta">Interview पढ़ें →</div>
+      </div>
+    </a>
     <a href="#" class="md-card" style="pointer-events:none;opacity:0.85">
       <div class="md-card-img" style="background:linear-gradient(135deg,#0d4f3c 0%,#1a7a5e 100%)">
         <div class="md-icon">❤️</div>
@@ -961,6 +985,150 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
       </div>
 
       <div class="dc-closing">These expert conversations can help women establish a preventive plan, monitor early changes in time, identify issues earlier, and move toward better management and healthier outcomes.</div>
+    </div>
+  </section>
+
+  <section id="meet-doctor-nephro" class="doctor-corner-feature">
+    <div class="doctor-corner-inner">
+      <div class="dc-feature-top">
+        <div>
+          <div class="dc-series">DOCTOR CORNER Series @ mereshabd.com</div>
+          <h2 class="dc-title">Hey Kidneys, How are you?</h2>
+          <p class="dc-lead-strong">Precaution is Better Than Cure</p>
+          <p class="dc-lead">At Mereshabd.com, we are pleased to feature Dr. Anil Saxena, MD, FRCP, FASN - a leading Nephrologist practicing in the UAE.</p>
+          <p class="dc-lead">Kidneys are vital for our survival. They work round the clock, tirelessly and in silence, filtering waste, balancing fluids, and regulating blood pressure. Sadly, they also fail in silence.</p>
+          <p class="dc-chapter-line">That is why it is important to regularly ask them - "Hey Kidneys, How are you?"</p>
+          <p class="dc-honored">Urine is the mirror of kidney health. It is a messenger of the kidney as well.</p>
+          <div class="dc-theme-band">
+            <span class="dc-theme-label">Theme</span>
+            <span class="dc-theme-text">Early detection is the best protection</span>
+          </div>
+          <p class="dc-journey">Two simple routine tests everyone should do are Urine Analysis and Blood Creatinine test to calculate eGFR.</p>
+        </div>
+        <div class="dc-photo-wrap">
+          <img src="../images/doctor-anil-saxena.jpg" alt="Dr. Anil Saxena" class="dc-doctor-photo" loading="lazy" decoding="async">
+          <div class="dc-photo-name">Dr. Anil Saxena</div>
+          <div class="dc-photo-role">Nephrologist</div>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">1</span>
+          <h3 class="dc-category-title">Kidney Awareness and Routine Tests</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Which simple routine tests should everyone do?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Two simple routine tests are Urine Analysis, which checks for protein, sugar and blood, and Blood Creatinine test, which helps calculate eGFR or estimated Glomerular Filtration Rate.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Why are urine protein and microalbuminuria important?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Normally, little or no protein should be present in urine. Its presence is an early warning sign of kidney damage. Microalbuminuria is a sensitive test that detects tiny amounts of albumin in urine, often before routine tests show any problem, and is especially important for people with diabetes and hypertension.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> How common are kidney diseases and kidney stones?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Kidney diseases are more common than anticipated, globally affecting 10-14% of adults, which means every 7th to 10th person. In the UAE, kidney stones are particularly common because of the hot climate and dehydration.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Why is kidney health important even when a person feels healthy?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Kidneys can lose significant function before symptoms appear. Regular checkups detect early issues like high blood pressure, diabetes damage, protein or microalbuminuria in urine, or falling eGFR.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What are the early signs of kidney problems?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Swelling in feet or face, frequent urination at night, foamy or bloody urine, persistent fatigue, loss of appetite, high blood pressure and difficulty concentrating can all be warning signs. Many people have no symptoms in early stages.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> How often should kidney function be checked?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Healthy adults should check at least once a year. High-risk individuals should check every 6 months. Key tests include Urine Analysis, Blood Creatinine for eGFR, and Microalbuminuria, especially for diabetics and hypertensives.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> When should someone consult a nephrologist?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Consult a nephrologist for persistent swelling, abnormal urine reports, protein or microalbuminuria, recurrent kidney stones, uncontrolled blood pressure, reduced kidney function, diabetes with kidney concerns, or a family history of kidney disease.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">2</span>
+          <h3 class="dc-category-title">Risk Factors, Diabetes and Blood Pressure</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Who is at higher risk?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> People with diabetes, high blood pressure, obesity, heart disease, family history of kidney disease, smokers, long-term painkiller users and those above 40 years are at higher risk.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Can high blood pressure damage kidneys?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Diabetes and high blood pressure are called silent killers because they often show no symptoms until they cause serious damage to kidneys, heart and eyes. Uncontrolled BP weakens kidney blood vessels over time.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Is diabetes harmful to kidneys?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Diabetes is a leading cause of kidney failure. Almost 40% of patients on dialysis suffer from kidney failure due to uncontrolled diabetes mellitus. Microalbuminuria testing, or Urine Albumin-to-Creatinine Ratio, can detect kidney damage at a very early and reversible stage.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Are painkillers harmful to kidneys?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Frequent or long-term use of certain painkillers, especially NSAIDs like Brufen, without medical supervision can damage kidneys. Avoid self-medication.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">3</span>
+          <h3 class="dc-category-title">Hydration, Food and Lifestyle</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> How much water should a person drink daily?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> A 70 kg adult should drink 2 to 2.5 liters of water daily, and more in hot climates like the UAE, to support kidney function and prevent stones.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What foods help maintain kidney health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Reduce salt and processed foods, eat plenty of fresh fruits and vegetables, maintain moderate protein intake, avoid excess sugary drinks, and keep a healthy weight.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Does lifestyle affect kidney health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Sedentary lifestyle, obesity, smoking, stress and poor diet increase the risk of diabetes and hypertension, the two major threats to kidneys.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Can regular exercise help kidneys?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Moderate exercise helps control weight, blood pressure and blood sugar, all of which support kidney health.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">4</span>
+          <h3 class="dc-category-title">Prevention, Kidney Stones and Key Message</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Can kidney disease be prevented?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Most kidney diseases can be prevented or delayed through regular checkups, control of diabetes and blood pressure, healthy diet, exercise and adequate hydration. Once kidneys are permanently damaged, the only solutions are dialysis and subsequent kidney transplantation.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Are kidney stones preventable?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Drink 2.5-3+ liters of fluid daily, reduce salt intake, get enough calcium from food, moderate animal protein, eat more fruits and vegetables, and maintain a healthy weight.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What is the most important secret for kidney care?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Kidney diseases are often silent but largely preventable. Awareness, timely screening and healthy habits can protect your kidneys and improve quality of life. Invest time in your health today - prevention is always easier, safer and less costly than treatment.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="invest-caption-banner dc-caption-banner">
+        <div class="icb-overlay"></div>
+        <div class="icb-content">
+          <span class="icb-eyebrow">Timeless Message</span>
+          <span class="icb-title">Healthy kidneys are the foundation of a healthy life.</span>
+          <span class="icb-subtitle">Small preventive steps today can save you from major complications tomorrow. Your health is your most asset nurture it with care.</span>
+          <span class="icb-line"></span>
+        </div>
+      </div>
     </div>
   </section>
 
