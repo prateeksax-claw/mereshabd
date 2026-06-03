@@ -601,6 +601,14 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .icb-line{display:block;width:80px;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:24px auto 0;}
 @media(max-width:900px){.invest-caption-banner{padding:48px 32px;}.icb-title{font-size:28px;}.icb-subtitle{font-size:24px;}}
 @media(max-width:600px){.invest-caption-banner{padding:40px 20px;}.icb-title{font-size:22px;}.icb-subtitle{font-size:18px;}}
+.cardio-message-banner{background:linear-gradient(135deg,#062B4D 0%,#0A4F84 38%,#123A78 70%,#071B3A 100%);box-shadow:0 24px 58px rgba(6,35,76,0.24);}
+.cardio-message-banner::before{background:radial-gradient(circle at 18% 18%,rgba(120,205,255,0.20),transparent 34%),radial-gradient(circle at 82% 24%,rgba(255,213,114,0.16),transparent 30%),linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));}
+.cardio-message-banner.dc-caption-banner .icb-eyebrow{color:#FFD572;font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;letter-spacing:4px;margin-bottom:18px;}
+.cardio-message-banner.dc-caption-banner .icb-title{font-family:'Cormorant Garamond',serif;font-size:42px;color:#FFFFFF;font-weight:700;font-style:italic;line-height:1.22;margin-bottom:14px;text-shadow:0 5px 28px rgba(0,24,60,0.55),0 0 28px rgba(120,205,255,0.16);}
+.cardio-message-banner.dc-caption-banner .icb-subtitle{font-family:'Cormorant Garamond',serif;font-size:27px;color:#FFE1A1;font-weight:700;font-style:italic;line-height:1.45;text-shadow:0 4px 22px rgba(0,24,60,0.45);}
+.cardio-message-banner .icb-line{background:linear-gradient(to right,transparent,#FFD572,transparent);}
+@media(max-width:900px){.cardio-message-banner.dc-caption-banner .icb-title{font-size:32px}.cardio-message-banner.dc-caption-banner .icb-subtitle{font-size:22px}}
+@media(max-width:600px){.cardio-message-banner.dc-caption-banner .icb-title{font-size:26px}.cardio-message-banner.dc-caption-banner .icb-subtitle{font-size:18px}}
 </style>
 
   <!-- SEO: Canonical -->
@@ -1304,7 +1312,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
         </div>
       </div>
 
-      <div class="invest-caption-banner dc-caption-banner">
+      <div class="invest-caption-banner dc-caption-banner cardio-message-banner">
         <div class="icb-overlay"></div>
         <div class="icb-content">
           <span class="icb-eyebrow">Doctor Column</span>
