@@ -494,6 +494,22 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .md-card-img-nephro .md-shimmer-overlay{z-index:2}
 .md-card-img-nephro .md-photo-overlay{z-index:3}
 @keyframes nephro-painting-glow{0%,100%{filter:drop-shadow(0 18px 28px rgba(62,18,8,0.28)) saturate(1) brightness(1)}50%{filter:drop-shadow(0 20px 30px rgba(62,18,8,0.32)) saturate(1.08) brightness(1.04)}}
+.md-card-img-cardio{min-height:280px;overflow:hidden;background:#07343A;isolation:isolate}
+.md-card-img-cardio::before{content:'';position:absolute;inset:-14px;background:linear-gradient(180deg,rgba(255,248,238,0.02) 0%,rgba(6,42,48,0.08) 48%,rgba(8,4,8,0.48) 100%),url('../images/doctor-cardiologist-heart-painting.jpg');background-size:cover;background-position:center center;filter:blur(9px) saturate(1.10);transform:scale(1.06);pointer-events:none;z-index:0}
+.md-card-img-cardio::after{content:'';position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(255,255,255,0.28);box-shadow:inset 0 0 0 1px rgba(255,218,150,0.12);pointer-events:none;z-index:5}
+.md-cardio-painting{position:absolute;z-index:1;inset:0;margin:auto;width:100%;height:100%;object-fit:cover;object-position:center center;filter:drop-shadow(0 18px 28px rgba(13,36,34,0.30)) saturate(1) brightness(1);transform-origin:50% 45%;animation:cardio-painting-heartbeat 1.55s ease-in-out infinite;will-change:transform,filter}
+.md-cardio-hotspot{position:absolute;z-index:2;left:50%;top:42%;width:150px;height:150px;border-radius:999px;background:radial-gradient(circle,rgba(255,96,68,0.52) 0%,rgba(255,184,87,0.28) 42%,rgba(255,184,87,0) 74%);mix-blend-mode:screen;transform:translate(-50%,-50%) scale(0.68);opacity:0;animation:cardio-hotspot-beat 1.55s ease-in-out infinite;pointer-events:none}
+.md-cardio-pulse-ring{position:absolute;z-index:2;left:50%;top:42%;width:158px;height:158px;border:2px solid rgba(255,222,162,0.70);border-radius:999px;transform:translate(-50%,-50%) scale(0.52);opacity:0;animation:cardio-ring-beat 1.55s ease-out infinite;pointer-events:none}
+.md-cardio-ecg{position:absolute;z-index:3;left:8%;right:8%;bottom:64px;width:84%;height:52px;filter:drop-shadow(0 0 8px rgba(255,205,93,0.50))}
+.md-cardio-ecg path{fill:none;stroke:#FFD572;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.md-cardio-ecg-base{opacity:0.24}
+.md-cardio-ecg-pulse{stroke-dasharray:360;stroke-dashoffset:360;animation:cardio-ecg-run 1.55s linear infinite}
+.md-card-img-cardio .md-shimmer-overlay{z-index:4}
+.md-card-img-cardio .md-photo-overlay{z-index:4}
+@keyframes cardio-painting-heartbeat{0%,20%,48%,100%{transform:translate3d(0,0,0) scale(1);filter:drop-shadow(0 18px 28px rgba(13,36,34,0.30)) saturate(1) brightness(1)}10%{transform:translate3d(0,-4px,0) scale(1.085);filter:drop-shadow(0 24px 38px rgba(124,18,18,0.44)) saturate(1.18) brightness(1.10)}31%{transform:translate3d(0,-6px,0) scale(1.13);filter:drop-shadow(0 28px 44px rgba(124,18,18,0.54)) saturate(1.24) brightness(1.16)}62%{transform:translate3d(0,2px,0) scale(1.025);filter:drop-shadow(0 20px 32px rgba(13,36,34,0.34)) saturate(1.06) brightness(1.04)}}
+@keyframes cardio-hotspot-beat{0%,20%,48%,100%{opacity:0;transform:translate(-50%,-50%) scale(0.68)}10%{opacity:0.88;transform:translate(-50%,-50%) scale(1.08)}31%{opacity:1;transform:translate(-50%,-50%) scale(1.28)}}
+@keyframes cardio-ring-beat{0%{opacity:0;transform:translate(-50%,-50%) scale(0.52)}10%{opacity:0.95}52%,100%{opacity:0;transform:translate(-50%,-50%) scale(1.55)}}
+@keyframes cardio-ecg-run{0%{stroke-dashoffset:360;opacity:0.18}18%{opacity:1}72%{stroke-dashoffset:0;opacity:0.92}100%{stroke-dashoffset:0;opacity:0.22}}
 
 /* DOCTOR CORNER FEATURE */
 .doctor-corner-feature{display:none;margin-top:32px;scroll-margin-top:110px;background:linear-gradient(145deg,#fffdf9 0%,#fcf5ee 46%,#f8eee5 100%);border:1px solid rgba(184,135,58,0.26);box-shadow:0 30px 80px rgba(78,50,26,0.10);padding:38px;border-radius:36px;position:relative;overflow:hidden}
@@ -810,16 +826,24 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
         <div class="md-cta">Interview पढ़ें →</div>
       </div>
     </a>
-    <a href="#" class="md-card" style="pointer-events:none;opacity:0.85">
-      <div class="md-card-img" style="background:linear-gradient(135deg,#0d4f3c 0%,#1a7a5e 100%)">
-        <div class="md-icon">❤️</div>
-        <span class="md-speciality">हृदय रोग विशेषज्ञ</span>
-        <div class="md-coming">जल्द आ रहा है...</div>
+    <a href="#meet-doctor-cardio" class="md-card md-card-animated">
+      <div class="md-card-img md-card-img-cardio">
+        <img src="../images/doctor-cardiologist-heart-painting.jpg" alt="Heart painting for Dr. Srinath Kidambi cardiologist interview" class="md-cardio-painting" loading="lazy" decoding="async">
+        <span class="md-cardio-hotspot" aria-hidden="true"></span>
+        <span class="md-cardio-pulse-ring" aria-hidden="true"></span>
+        <svg class="md-cardio-ecg" viewBox="0 0 320 60" aria-hidden="true" focusable="false">
+          <path class="md-cardio-ecg-base" d="M0 32 H62 L74 32 L86 12 L104 50 L120 32 H180 L194 32 L206 20 L222 44 L238 32 H320"></path>
+          <path class="md-cardio-ecg-pulse" d="M0 32 H62 L74 32 L86 12 L104 50 L120 32 H180 L194 32 L206 20 L222 44 L238 32 H320"></path>
+        </svg>
+        <div class="md-shimmer-overlay"></div>
+        <div class="md-photo-overlay">
+          <span class="md-speciality">हृदय रोग विशेषज्ञ</span>
+        </div>
       </div>
       <div class="md-card-body">
-        <div class="md-name">डॉ. [नाम शीघ्र]</div>
-        <div class="md-month"></div>
-        <div class="md-cta-soon">शीघ्र प्रकाशित</div>
+        <div class="md-name" style="color:#8F1B1D;font-weight:700;">Dr. Srinath Kidambi</div>
+        <div class="md-month" style="color:#0C6E65;font-size:22px;font-style:normal;font-weight:700;">Cardiologist</div>
+        <div class="md-cta">Interview पढ़ें →</div>
       </div>
     </a>
     <a href="#" class="md-card" style="pointer-events:none;opacity:0.85">
@@ -1126,6 +1150,166 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
           <span class="icb-eyebrow">Timeless Message</span>
           <span class="icb-title">Healthy kidneys are the foundation of a healthy life.</span>
           <span class="icb-subtitle">Small preventive steps today can save you from major complications tomorrow. Your health is your most asset nurture it with care.</span>
+          <span class="icb-line"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="meet-doctor-cardio" class="doctor-corner-feature">
+    <div class="doctor-corner-inner">
+      <div class="dc-feature-top">
+        <div>
+          <div class="dc-series">DOCTOR CORNER Series @ mereshabd.com</div>
+          <h2 class="dc-title">Stay Ahead of Heart Disease</h2>
+          <p class="dc-lead-strong">Precaution is Always Better Than Cure</p>
+          <p class="dc-lead">Under this theme, our goal is simple: to empower women to make better informed decisions for their well-being.</p>
+          <p class="dc-lead">In this Doctor Column at Mereshabd.com, we meet experts to understand their guidance on heart health, prevention, early detection and healthy lifestyle habits, especially for women above 50.</p>
+          <p class="dc-honored">We are honored to feature Dr. Srinath Kidambi, leading Cardiologist at SSMC Abu Dhabi.</p>
+          <div class="dc-theme-band">
+            <span class="dc-theme-label">Theme</span>
+            <span class="dc-theme-text">Heart Health for Women Above 50</span>
+          </div>
+          <p class="dc-journey">Healthy lifestyle habits, regular screening and early medical advice can greatly reduce heart disease risk.</p>
+        </div>
+        <div class="dc-photo-wrap">
+          <img src="../images/dr-srinath-kidambi.jpg" alt="Dr. Srinath Kidambi" class="dc-doctor-photo" loading="lazy" decoding="async">
+          <div class="dc-photo-name">Dr. Srinath Kidambi</div>
+          <div class="dc-photo-role">Cardiologist</div>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">1</span>
+          <h3 class="dc-category-title">Prevention and Daily Heart Care</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Why is prevention important for women's heart health after 50?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> After age 50, women may experience hormonal and metabolic changes that increase the risk associated with high blood pressure, high cholesterol, diabetes and heart disease. Early prevention and regular checkups can reduce complications.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What daily habits help protect women's heart health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Regular walking or exercise, eating healthy foods, managing stress, sleeping well, avoiding smoking, avoiding excess alcohol and maintaining a healthy weight all help protect heart health.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Can midlife stress affect the heart in women?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Chronic stress may increase blood pressure, heart rate, anxiety-related symptoms, worsen diabetes and increase heart disease risk over time. Acute stress can lead to Broken Heart Syndrome, a serious heart condition which can sometimes be fatal. Stress management is important for heart protection.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Does menopause affect heart health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Lower estrogen levels after menopause may increase cholesterol, blood pressure and weight gain, and hence increase heart disease risk.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">2</span>
+          <h3 class="dc-category-title">Symptoms, Warning Signs and Risk Factors</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Are heart attack symptoms different in women?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. The classical symptoms may be absent in many women. Women may also be more tolerant to pain and may ignore mild chest pain. They may experience breathlessness, upper back or jaw pain, mild chest discomfort, general uneasiness, fatigue or nausea. Symptoms may not always be dramatic or severe.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What increases heart disease risk in women after 50?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> High blood pressure, high cholesterol, diabetes, obesity, smoking, family history, physical inactivity and menopause-related changes can increase risk.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What warning signs should never be ignored?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Seek medical attention for chest pain or pressure on effort, breathlessness on effort, fainting, sudden sweating, pain in the jaw, shoulder or arm, and fast or irregular heartbeat.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Can fatigue and shortness of breath be signs of heart disease in women?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes, they can be related to heart disease, lung disease, anemia or lack of fitness. Unusual or persistent fatigue can be a warning sign. Women may experience exhaustion weeks before a cardiac event. Fatigue with breathlessness or chest discomfort should be evaluated urgently.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Is irregular heartbeat common after 50?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Palpitations can occur from stress, caffeine, thyroid issues or arrhythmia. Persistent or fast irregular heartbeat requires evaluation. Atrial fibrillation increases with age and can lead to brain stroke or heart failure.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">3</span>
+          <h3 class="dc-category-title">Screening, Cholesterol, Diabetes and Blood Pressure</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Why is cholesterol testing important for women?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> High cholesterol can silently block arteries and increase heart attack and stroke risk. Women above 50 should have their lipid profile checked regularly. All women should check their lipid profile at least once in their mid-30s, especially if there is a strong family history of heart disease.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Can diabetes affect women's heart health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Yes. Diabetes significantly increases the risk of heart disease, stroke and peripheral artery disease affecting the legs. Blood vessel damage can occur, so blood sugar control is very important for prevention.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> How often should women above 50 have heart checkups?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Regular yearly checkups are helpful, especially for women with diabetes, high blood pressure, high cholesterol, abnormal ECG/EKG, family history of heart disease or obesity. Preventive care can identify risks early.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What is the blood pressure range at this age?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Ideal blood pressure is generally below 120/80 mmHg. Persistent readings above 130/80 may require monitoring or treatment. Blood pressure often rises after menopause.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Do women need a cardiac stress test?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Stress tests may help evaluate chest pain, breathlessness or exercise intolerance. They are especially useful with diabetes, strong family history or abnormal ECG findings.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Should women get a calcium score test at this age?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Coronary calcium scoring may help assess hidden plaque buildup. It is often considered for women with intermediate cardiovascular risk and can guide prevention strategies. A high calcium score increases future cardiovascular risk.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">4</span>
+          <h3 class="dc-category-title">Lifestyle as Prevention</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> How much exercise is recommended after 50?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Most women benefit from at least 150 minutes of moderate exercise weekly, including walking, cycling, swimming or yoga. Light strength training also helps. Exercise supports weight control, blood pressure and stress management.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> How important is sleep for heart health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Poor sleep can increase blood pressure, stress hormones and heart disease risk. Good sleep is important for heart recovery and health. Obstructive sleep apnea is common and often underdiagnosed in women, especially if obese. Snoring, daytime fatigue and morning headaches may need evaluation for OSA.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What diet supports women's heart health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> A Mediterranean-style diet with fruits and vegetables is helpful. Reduce salt and processed foods with high sodium content. Include healthy fats, fiber, whole grains, nuts and seeds with a good amount of Omega-3 fatty acids, and focus on weight management.</p>
+          </article>
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> Is weight gain after menopause affecting my heart?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Menopause-related hormonal changes can increase abdominal fat. Excess weight raises blood pressure, cholesterol and diabetes risk. Waist circumference is an important risk indicator.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dc-category">
+        <div class="dc-category-head">
+          <span class="dc-category-no">5</span>
+          <h3 class="dc-category-title">Most Important Message</h3>
+        </div>
+        <div class="dc-qa-list">
+          <article class="dc-qa-item">
+            <p class="dc-question"><span class="label">Q.</span> What is the most important message about women's heart health?</p>
+            <p class="dc-answer"><span class="label">Ans.</span> Precautions are better than cure. Healthy lifestyle habits, regular screening and early medical advice can greatly reduce heart disease risk in women at 50.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="invest-caption-banner dc-caption-banner">
+        <div class="icb-overlay"></div>
+        <div class="icb-content">
+          <span class="icb-eyebrow">Doctor Column</span>
+          <span class="icb-title">Stay Ahead of Heart Disease</span>
+          <span class="icb-subtitle">Prevention, screening and timely advice protect the heart before symptoms become serious.</span>
           <span class="icb-line"></span>
         </div>
       </div>
