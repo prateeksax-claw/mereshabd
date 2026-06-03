@@ -601,14 +601,18 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 .icb-line{display:block;width:80px;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:24px auto 0;}
 @media(max-width:900px){.invest-caption-banner{padding:48px 32px;}.icb-title{font-size:28px;}.icb-subtitle{font-size:24px;}}
 @media(max-width:600px){.invest-caption-banner{padding:40px 20px;}.icb-title{font-size:22px;}.icb-subtitle{font-size:18px;}}
-.cardio-message-banner{background:linear-gradient(135deg,#062B4D 0%,#0A4F84 38%,#123A78 70%,#071B3A 100%);box-shadow:0 24px 58px rgba(6,35,76,0.24);}
-.cardio-message-banner::before{background:radial-gradient(circle at 18% 18%,rgba(120,205,255,0.20),transparent 34%),radial-gradient(circle at 82% 24%,rgba(255,213,114,0.16),transparent 30%),linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));}
+.cardio-message-banner{min-height:260px;background:linear-gradient(135deg,#052A50 0%,#075B91 38%,#123F83 70%,#071A38 100%);box-shadow:0 28px 68px rgba(6,35,76,0.28);border:1px solid rgba(173,220,255,0.16);}
+.cardio-message-banner::before{background:radial-gradient(circle at 18% 18%,rgba(120,205,255,0.24),transparent 34%),radial-gradient(circle at 78% 28%,rgba(255,213,114,0.18),transparent 30%),linear-gradient(120deg,rgba(255,255,255,0.07),rgba(255,255,255,0) 46%),linear-gradient(135deg,rgba(3,22,55,0.14),rgba(255,255,255,0));}
+.cardio-message-banner::after{content:'';position:absolute;left:10%;right:10%;top:50%;height:72px;transform:translateY(-50%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 90'%3E%3Cpath d='M0 48 H130 L152 48 L172 18 L204 72 L230 48 H360 L382 48 L406 28 L436 66 L462 48 H600' fill='none' stroke='%23FFD572' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' opacity='.34'/%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none;opacity:0.55;filter:drop-shadow(0 0 16px rgba(255,213,114,0.18));}
 .cardio-message-banner.dc-caption-banner .icb-eyebrow{color:#FFD572;font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;letter-spacing:4px;margin-bottom:18px;}
 .cardio-message-banner.dc-caption-banner .icb-title{font-family:'Cormorant Garamond',serif;font-size:42px;color:#FFFFFF;font-weight:700;font-style:italic;line-height:1.22;margin-bottom:14px;text-shadow:0 5px 28px rgba(0,24,60,0.55),0 0 28px rgba(120,205,255,0.16);}
 .cardio-message-banner.dc-caption-banner .icb-subtitle{font-family:'Cormorant Garamond',serif;font-size:27px;color:#FFE1A1;font-weight:700;font-style:italic;line-height:1.45;text-shadow:0 4px 22px rgba(0,24,60,0.45);}
 .cardio-message-banner .icb-line{background:linear-gradient(to right,transparent,#FFD572,transparent);}
-@media(max-width:900px){.cardio-message-banner.dc-caption-banner .icb-title{font-size:32px}.cardio-message-banner.dc-caption-banner .icb-subtitle{font-size:22px}}
-@media(max-width:600px){.cardio-message-banner.dc-caption-banner .icb-title{font-size:26px}.cardio-message-banner.dc-caption-banner .icb-subtitle{font-size:18px}}
+.cardio-message-banner .icb-content{max-width:720px;padding:0 118px;position:relative;z-index:3;}
+.icb-heart-mark{position:absolute;z-index:2;right:34px;top:50%;width:112px;height:112px;border-radius:28px;object-fit:cover;object-position:center;transform:translateY(-50%) rotate(4deg);box-shadow:0 18px 38px rgba(0,22,58,0.34),0 0 0 1px rgba(255,255,255,0.20),0 0 34px rgba(255,213,114,0.18);animation:banner-heart-float 3.8s ease-in-out infinite;}
+@keyframes banner-heart-float{0%,100%{transform:translateY(-50%) rotate(4deg) scale(1)}50%{transform:translateY(-56%) rotate(1deg) scale(1.04)}}
+@media(max-width:900px){.cardio-message-banner .icb-content{padding:0 96px 0 0}.icb-heart-mark{width:82px;height:82px;right:22px;border-radius:22px}.cardio-message-banner.dc-caption-banner .icb-title{font-size:32px}.cardio-message-banner.dc-caption-banner .icb-subtitle{font-size:22px}}
+@media(max-width:600px){.cardio-message-banner{min-height:260px}.cardio-message-banner::after{left:4%;right:4%;opacity:0.38}.cardio-message-banner .icb-content{padding:0}.icb-heart-mark{position:relative;right:auto;top:auto;display:block;margin:0 auto 18px;transform:none;width:76px;height:76px;border-radius:20px}.cardio-message-banner.dc-caption-banner .icb-title{font-size:26px}.cardio-message-banner.dc-caption-banner .icb-subtitle{font-size:18px}}
 </style>
 
   <!-- SEO: Canonical -->
@@ -1313,6 +1317,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
       </div>
 
       <div class="invest-caption-banner dc-caption-banner cardio-message-banner">
+        <img src="../images/doctor-cardiologist-heart-painting.jpg" alt="" class="icb-heart-mark" loading="lazy" decoding="async" aria-hidden="true">
         <div class="icb-overlay"></div>
         <div class="icb-content">
           <span class="icb-eyebrow">Doctor Column</span>
