@@ -87,27 +87,31 @@ nav.scrolled .nav-logo img{filter:none}
 
 /* POEM FULLBLEED */
 /* POEM SECTION — full-width with navvarsh background image */
-.poem-section{background:linear-gradient(rgba(0,0,0,0.55), rgba(20,8,4,0.62)), url('images/navvarsh-bg.jpg') center 40%/cover no-repeat;display:block;min-height:520px;overflow:hidden;position:relative}
-.poem-text-col{padding:72px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;max-width:900px;margin:0 auto}
+.poem-section{background:radial-gradient(circle at 50% 18%,rgba(255,237,188,0.12),transparent 32%),linear-gradient(180deg,rgba(68,28,8,0.16) 0%,rgba(26,13,8,0.54) 55%,rgba(14,8,8,0.64) 100%),url('images/navvarsh-golden-ocean-sunrise.jpg') center center/cover no-repeat;display:flex;align-items:center;justify-content:center;min-height:640px;overflow:hidden;position:relative;padding:92px 28px;text-align:center}
+.poem-section::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.4),transparent 30%,transparent 70%,rgba(0,0,0,0.36));pointer-events:none}
+.poem-section::after{content:'शब्द';position:absolute;right:5vw;bottom:-18px;font-family:'Tiro Devanagari Hindi',serif;font-size:150px;color:rgba(255,255,255,0.045);line-height:1;pointer-events:none}
+.poem-text-col{padding:0;display:block;position:relative;z-index:2;max-width:780px;margin:0 auto;width:100%}
 .poem-bg{display:none}
 .poem-art{display:none}
-.poem-label{display:flex;align-items:center;gap:12px;margin-bottom:28px}
-.poem-label::before{content:'';width:18px;height:1px;background:var(--gold)}
-.poem-label span{font-size:13px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;font-weight:500}
+.poem-label{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:8px}
+.poem-label::before,.poem-label::after{content:'';width:28px;height:1px;background:rgba(212,168,82,0.72)}
+.poem-label span{font-size:13px;color:#F0C46F;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
 .poem-wrap{position:relative;z-index:2;width:100%}
-.poem-title-sm{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);font-style:italic;margin-bottom:40px;opacity:0.85}
-.pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.9);line-height:1.65;display:block;cursor:default;transition:all 0.2s}
+.poem-title-sm{font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:#fff;font-style:normal;font-weight:700;margin-bottom:8px;text-shadow:0 3px 22px rgba(0,0,0,0.7)}
+.poem-lines{margin:34px auto 0;max-width:680px}
+.poem-line-group{margin-bottom:22px}
+.pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.97);line-height:1.56;display:block;cursor:default;transition:all 0.2s;text-align:center;text-shadow:0 3px 22px rgba(0,0,0,0.82);font-weight:700}
 .pline:hover{color:white}
-.pline.xl{font-size:54px}
-.pline.lg{font-size:40px;padding-left:40px;opacity:0.82}
-.pline.md{font-size:30px;padding-left:80px;opacity:0.72}
-.pline.sm{font-size:23px;padding-left:28px;opacity:0.62}
-.pgap{height:16px;display:block}
-.poem-attr{margin-top:44px;display:flex;align-items:center;gap:18px}
-.pattr-line{width:36px;height:1px;background:var(--gold);opacity:0.5}
-.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.65);font-weight:400}
-.pread{margin-left:auto;color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:3px;text-decoration:none;font-family:monospace;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
-.pread:hover{color:var(--gold);border-color:var(--gold)}
+.pline.xl{font-size:clamp(36px,5vw,58px)}
+.pline.lg{font-size:clamp(28px,3.5vw,42px);padding-left:0;opacity:0.92}
+.pline.md{font-size:clamp(23px,2.6vw,31px);padding-left:0;opacity:0.86}
+.pline.sm{font-size:clamp(21px,2.2vw,26px);padding-left:0;opacity:0.8}
+.pgap{display:none}
+.poem-attr{margin-top:38px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.pattr-line{width:44px;height:1px;background:rgba(212,168,82,0.7);opacity:1}
+.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.76);font-weight:400;line-height:1.7;text-shadow:0 2px 12px rgba(0,0,0,0.6)}
+.pread{margin-left:0;color:#fff;font-size:13px;letter-spacing:0;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;padding:12px 20px;border:1px solid rgba(255,255,255,0.32);border-radius:6px;transition:all 0.2s;background:rgba(255,255,255,0.08);backdrop-filter:blur(6px);display:inline-flex;align-items:center;gap:8px;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
+.pread:hover{color:#fff;border-color:#D4A852;background:rgba(180,128,50,0.26)}
 
 /* MAGAZINE GRID */
 .mag-section{background:var(--warm-white);padding:96px 0 80px}
@@ -251,6 +255,18 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .mi-sm .mi-excerpt{display:block}
   .intro-grid,.about-grid{grid-template-columns:1fr!important;padding:0 24px}
   .xl{font-size:36px!important}.lg{font-size:26px!important}
+  .poem-section{min-height:auto;padding:72px 22px;background-position:center center}
+  .poem-section::after{font-size:92px;right:-10px;bottom:-8px}
+  .poem-text-col{max-width:640px}
+  .poem-title-sm{font-size:24px}
+  .poem-lines{margin-top:28px}
+  .poem-line-group{margin-bottom:20px}
+  .poem-section .pline.xl{font-size:38px!important}
+  .poem-section .pline.lg{font-size:30px!important}
+  .poem-section .pline.md{font-size:24px!important}
+  .poem-section .pline.sm{font-size:22px!important}
+  .poem-attr{flex-direction:column;gap:14px}
+  .pattr-line{width:36px}
   .mag-title,.intro-headline{font-size:32px!important}
   .ar-name{font-size:36px!important}
   .qi-text{font-size:28px!important}
@@ -273,6 +289,17 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .hero-en-sub{font-size:15px}
   .mag-title{font-size:26px!important}
   .xl{font-size:28px!important}
+  .poem-section{padding:64px 18px}
+  .poem-label{gap:10px}
+  .poem-label::before,.poem-label::after{width:20px}
+  .poem-title-sm{font-size:22px}
+  .poem-en-label,.poem-en-title,.poem-stanza-en{font-size:14px}
+  .poem-stanza-en{max-width:320px;padding:0 4px}
+  .poem-section .pline.xl{font-size:32px!important}
+  .poem-section .pline.lg{font-size:26px!important}
+  .poem-section .pline.md{font-size:21px!important}
+  .poem-section .pline.sm{font-size:20px!important}
+  .pread{width:100%;justify-content:center;max-width:260px}
   .qi-text{font-size:22px!important}
   .mi-xl .mi-title{font-size:28px}
   .mi-md .mi-title{font-size:20px}
@@ -303,8 +330,8 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 }
 
 /* English subtitle/translation styles */
-.poem-en-label{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.72);font-style:italic;font-weight:500;margin-bottom:20px;margin-top:-20px;line-height:1.6}
-.poem-en-title{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:500;margin-top:-32px;margin-bottom:36px;line-height:1.6}
+.poem-en-label{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.72);font-style:italic;font-weight:600;margin-bottom:28px;margin-top:0;line-height:1.6;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
+.poem-en-title{font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(255,255,255,0.76);font-style:italic;font-weight:600;margin-top:0;margin-bottom:0;line-height:1.6;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
 .section-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.62);font-style:italic;font-weight:500;margin-top:-16px;margin-bottom:20px;line-height:1.6}
 .mag-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.62);font-style:italic;font-weight:500;margin-top:4px;line-height:1.6}
 
@@ -312,7 +339,10 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 [class*="-en"], [class*="en-"] { font-size: 14px; font-weight: 500; opacity: 0.72; }
 
 /* Poem stanza English translations */
-.poem-stanza-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:500;display:block;margin-top:8px;margin-bottom:20px;padding-left:4px;line-height:1.7;opacity:1}
+.poem-stanza-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:600;display:block;margin:8px auto 0;padding:0 8px;line-height:1.65;opacity:1;width:100%;max-width:460px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,0.5);overflow-wrap:break-word}
+@media(max-width:600px){
+  .poem-stanza-en{max-width:300px;font-size:13px!important;padding:0 6px}
+}
 
 /* Author section English */
 .aq-en{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.65);font-style:italic;font-weight:500;display:block;margin-top:8px;line-height:1.6;margin-bottom:16px}
@@ -438,27 +468,34 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 
 
 <!-- POEM SECTION -->
-<section class="poem-section">
+<section class="poem-section" id="poem-area">
   <div class="poem-text-col">
     <div class="poem-label"><span>नूतन वर्ष · जनवरी २०२६</span></div>
     <p class="poem-en-label">New Year · January 2026</p>
     <div class="poem-wrap">
       <div class="poem-title-sm">— नववर्ष पर शब्दों की भेंट</div>
       <p class="poem-en-title">A gift of words for the New Year</p>
-      <span class="pline xl">नववर्ष भरा रहे</span>
-      <span class="pline lg">अच्छे स्वास्थ्य से,</span>
-      <span class="poem-stanza-en">"May the New Year be filled with good health…"</span>
-      <span class="pgap"></span>
-      <span class="pline md">सुख-समृद्धि दे दस्तक जीवन में,</span>
-      <span class="pline md">जीवन ही तो है उत्सव, है अनमोल,</span>
-      <span class="poem-stanza-en">"May prosperity knock on your door, for life itself is a celebration…"</span>
-      <span class="pgap"></span>
-      <span class="pline lg">शब्द पिरोकर कुछ</span>
-      <span class="pline xl">कहने-सुनने का…</span>
-      <span class="poem-stanza-en">"Stringing words together, to speak and to listen…"</span>
-      <span class="pgap"></span>
-      <span class="pline sm">शब्दों का मोल जीवन में जानें…</span>
-      <span class="poem-stanza-en">"Know the value of words in your life…"</span>
+      <div class="poem-lines">
+        <div class="poem-line-group">
+          <span class="pline xl">नववर्ष भरा रहे</span>
+          <span class="pline lg">अच्छे स्वास्थ्य से,</span>
+          <span class="poem-stanza-en">"May the New Year be filled with good health…"</span>
+        </div>
+        <div class="poem-line-group">
+          <span class="pline md">सुख-समृद्धि दे दस्तक जीवन में,</span>
+          <span class="pline md">जीवन ही तो है उत्सव, है अनमोल,</span>
+          <span class="poem-stanza-en">"May prosperity knock on your door, for life itself is a celebration…"</span>
+        </div>
+        <div class="poem-line-group">
+          <span class="pline lg">शब्द पिरोकर कुछ</span>
+          <span class="pline xl">कहने-सुनने का…</span>
+          <span class="poem-stanza-en">"Stringing words together, to speak and to listen…"</span>
+        </div>
+        <div class="poem-line-group">
+          <span class="pline sm">शब्दों का मोल जीवन में जानें…</span>
+          <span class="poem-stanza-en">"Know the value of words in your life…"</span>
+        </div>
+      </div>
       <div class="poem-attr">
         <div class="pattr-line"></div>
         <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२६<br><span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.55);font-weight:500">Gitanjali Saxena, January 2026</span></div>
