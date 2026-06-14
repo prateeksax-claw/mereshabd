@@ -67,27 +67,39 @@ nav.scrolled .nav-logo img{filter:none}
 .scroll-text{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.3);writing-mode:vertical-rl;font-family:monospace}
 
 /* MARQUEE */
-.marquee{background:var(--red);padding:14px 0;overflow:hidden;white-space:nowrap}
-.marquee-inner{display:inline-flex;animation:mq 28s linear infinite;will-change:transform}
-.marquee-item{font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:rgba(255,255,255,0.72);padding:0 36px;display:inline-flex;align-items:center;gap:36px}
-.marquee-item::after{content:'\00B7';color:var(--gold-light);font-size:18px;font-weight:400;line-height:1}
+.marquee{position:relative;background:linear-gradient(90deg,#5b0707 0%,#8b1515 45%,#a21b1b 55%,#5b0707 100%);padding:16px 0;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,221,150,0.34);border-bottom:1px solid rgba(255,221,150,0.34);box-shadow:0 12px 34px rgba(70,8,8,0.24)}
+.marquee::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.08),transparent 55%,rgba(0,0,0,0.14));pointer-events:none}
+.marquee-inner{position:relative;z-index:1;display:inline-flex;animation:mq 46s linear infinite;will-change:transform}
+.marquee-item{font-family:'Tiro Devanagari Hindi',serif;font-size:20px;color:#ffe7b3;padding:0 36px;display:inline-flex;align-items:center;gap:36px;font-weight:700;text-shadow:0 2px 12px rgba(0,0,0,0.42)}
+.marquee-item:nth-child(7n+1){font-family:'Cormorant Garamond',serif;font-size:22px;color:#fffdf0;font-weight:700;font-style:italic}
+.marquee-item:nth-child(4n+2){color:#fff8dc}
+.marquee-item::after{content:'\00B7';color:#f3c56f;font-size:20px;font-weight:700;line-height:1;text-shadow:0 0 14px rgba(243,197,111,0.52)}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* EDITORIAL INTRO */
-.editorial-intro{display:grid;grid-template-columns:120px 1fr;min-height:55vh;background:var(--cream)}
+.editorial-intro{display:grid;grid-template-columns:120px minmax(360px,0.64fr) minmax(560px,1.12fr);min-height:55vh;background:var(--cream)}
 .intro-side{padding:80px 32px 80px 60px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(0,0,0,0.05)}
 .intro-label-v{writing-mode:vertical-rl;font-family:monospace;font-size:9px;letter-spacing:0;color:var(--dust);text-transform:uppercase;margin-bottom:32px}
 .intro-num{font-family:'Cormorant Garamond',serif;font-size:72px;color:var(--red);line-height:1;font-weight:300;opacity:0.18}
-.intro-body{padding:80px 80px 80px 56px;display:flex;flex-direction:column;justify-content:center}
+.intro-body{padding:80px 36px 80px 56px;display:flex;flex-direction:column;justify-content:center}
+.intro-scroll-panel{padding:42px 36px 42px 0;display:flex;align-items:center;justify-content:center}
+.identity-scroll-link{display:block;width:min(100%,860px);color:inherit;text-decoration:none}
+.identity-scroll{position:relative;width:min(100%,860px);aspect-ratio:1.78;border-radius:6px;background:url('images/identity-ancient-writing-pad.png') center center/cover no-repeat;box-shadow:0 26px 48px rgba(64,35,12,0.22);overflow:hidden}
+.identity-scroll-title{position:absolute;left:24%;top:13%;width:52%;padding:0;transform:rotate(-5deg);text-align:center;color:#3f1e07;background:transparent;border:0;border-radius:0;box-shadow:none;text-shadow:0 1px 0 rgba(255,245,210,0.96),0 0 10px rgba(255,232,150,0.36);animation:identityPadTextFlash 2.2s ease-in-out infinite}
+.identity-scroll-title span{display:block;font-family:Arial,sans-serif;font-size:clamp(12px,1.05vw,17px);font-weight:900;letter-spacing:0;color:#7b120b;text-transform:uppercase;margin-bottom:8px}
+.identity-scroll-title strong{display:block;font-family:Georgia,serif;font-size:clamp(24px,2.35vw,40px);line-height:1.08;font-weight:800}
+.identity-scroll-title p{margin:11px auto 0;font-family:Arial,sans-serif;font-size:clamp(14px,1.18vw,19px);font-weight:950;line-height:1.34;color:#8b120c;max-width:500px;text-shadow:0 1px 0 rgba(255,246,214,0.96),0 0 10px rgba(255,238,150,0.72),0 0 1px rgba(80,24,5,0.75)}
+@keyframes identityPadTextFlash{0%,100%{transform:rotate(-5deg) translateY(0);filter:brightness(1)}50%{transform:rotate(-5deg) translateY(-3px);filter:brightness(1.18);text-shadow:0 1px 0 rgba(255,245,210,0.98),0 0 18px rgba(255,232,150,0.72)}}
+.identity-scroll-paper,.identity-scroll-roller,.identity-quill{display:none}
 .intro-tag{font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:22px;font-family:'Noto Sans Devanagari',sans-serif}
-.intro-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:56px;color:var(--ink);line-height:1.25;font-weight:400;margin-bottom:28px}
+.intro-headline{font-family:'Tiro Devanagari Hindi',serif;font-size:56px;color:var(--ink);line-height:1.25;font-weight:700;margin-bottom:28px}
 .intro-headline em{font-style:italic;color:var(--red)}
-.intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:22px;line-height:2.1;color:var(--dust);max-width:540px;font-weight:300;margin-bottom:36px}
+.intro-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:22px;line-height:2.1;color:#5f4a3f;max-width:540px;font-weight:700;margin-bottom:36px}
 .intro-read{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-size:16px;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500;padding-bottom:4px;border-bottom:1px solid rgba(155,14,14,0.3);transition:all 0.2s;width:fit-content}
 
 /* POEM FULLBLEED */
 /* POEM SECTION — full-width with navvarsh background image */
-.poem-section{background:radial-gradient(circle at 50% 18%,rgba(255,237,188,0.12),transparent 32%),linear-gradient(180deg,rgba(68,28,8,0.16) 0%,rgba(26,13,8,0.54) 55%,rgba(14,8,8,0.64) 100%),url('images/navvarsh-golden-ocean-sunrise.jpg') center center/cover no-repeat;display:flex;align-items:center;justify-content:center;min-height:640px;overflow:hidden;position:relative;padding:92px 28px;text-align:center}
+.poem-section{background:radial-gradient(circle at 50% 18%,rgba(255,237,188,0.12),transparent 32%),linear-gradient(180deg,rgba(68,28,8,0.16) 0%,rgba(26,13,8,0.54) 55%,rgba(14,8,8,0.64) 100%),url('images/navvarsh-golden-ocean-sunrise.jpg') center center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:640px;overflow:hidden;position:relative;padding:92px 28px;text-align:center}
 .poem-section::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.4),transparent 30%,transparent 70%,rgba(0,0,0,0.36));pointer-events:none}
 .poem-section::after{content:'शब्द';position:absolute;right:5vw;bottom:-18px;font-family:'Tiro Devanagari Hindi',serif;font-size:150px;color:rgba(255,255,255,0.045);line-height:1;pointer-events:none}
 .poem-text-col{padding:0;display:block;position:relative;z-index:2;max-width:780px;margin:0 auto;width:100%}
@@ -96,9 +108,9 @@ nav.scrolled .nav-logo img{filter:none}
 .poem-label{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:8px}
 .poem-label::before,.poem-label::after{content:'';width:28px;height:1px;background:rgba(212,168,82,0.72)}
 .poem-label span{font-size:13px;color:#F0C46F;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
-.poem-wrap{position:relative;z-index:2;width:100%}
+.poem-wrap{position:relative;z-index:2;width:100%;max-width:680px;margin:0 auto;padding:26px 28px 28px;background:rgba(12,8,7,0.28);border:1px solid rgba(255,232,170,0.56);border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,0.34),inset 0 1px rgba(255,255,255,0.18)}
 .poem-title-sm{font-family:'Tiro Devanagari Hindi',serif;font-size:28px;color:#fff;font-style:normal;font-weight:700;margin-bottom:8px;text-shadow:0 3px 22px rgba(0,0,0,0.7)}
-.poem-lines{margin:34px auto 0;max-width:680px}
+.poem-lines{margin:30px auto 0;max-width:620px}
 .poem-line-group{margin-bottom:22px}
 .pline{font-family:'Tiro Devanagari Hindi',serif;color:rgba(255,255,255,0.97);line-height:1.56;display:block;cursor:default;transition:all 0.2s;text-align:center;text-shadow:0 3px 22px rgba(0,0,0,0.82);font-weight:700}
 .pline:hover{color:white}
@@ -107,12 +119,41 @@ nav.scrolled .nav-logo img{filter:none}
 .pline.md{font-size:clamp(23px,2.6vw,31px);padding-left:0;opacity:0.86}
 .pline.sm{font-size:clamp(21px,2.2vw,26px);padding-left:0;opacity:0.8}
 .pgap{display:none}
-.poem-attr{margin-top:38px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.poem-attr{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
 .pattr-line{width:44px;height:1px;background:rgba(212,168,82,0.7);opacity:1}
-.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:rgba(255,255,255,0.76);font-weight:400;line-height:1.7;text-shadow:0 2px 12px rgba(0,0,0,0.6)}
+.pattr-text{font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;color:#2b1708;font-weight:700;line-height:1.7;text-shadow:none;background:rgba(255,247,225,0.84);border:1px solid rgba(255,255,255,0.46);border-radius:6px;padding:7px 14px;box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.pattr-en{font-family:Arial,sans-serif;font-size:15px!important;font-style:normal;color:#062f5f;font-weight:900!important;opacity:1!important}
 .pread{margin-left:0;color:#fff;font-size:13px;letter-spacing:0;text-decoration:none;font-family:'Noto Sans Devanagari',sans-serif;padding:12px 20px;border:1px solid rgba(255,255,255,0.32);border-radius:6px;transition:all 0.2s;background:rgba(255,255,255,0.08);backdrop-filter:blur(6px);display:inline-flex;align-items:center;gap:8px;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
 .pread:hover{color:#fff;border-color:#D4A852;background:rgba(180,128,50,0.26)}
-
+.poem-banner-stack{position:absolute;right:clamp(24px,4vw,64px);top:50%;transform:translateY(-50%);z-index:2;width:clamp(360px,36vw,560px);display:flex;flex-direction:column;align-items:center;gap:28px;pointer-events:none}
+.poem-banner-link{display:flex;flex-direction:column;align-items:center;gap:28px;width:100%;color:inherit;text-decoration:none;pointer-events:auto}
+.poem-event-card{position:relative;width:clamp(132px,12vw,190px)}
+.poem-banner-picture{display:block;width:100%;border-radius:8px;box-shadow:0 20px 42px rgba(0,0,0,0.38);border:1px solid rgba(255,255,255,0.54);background:#fff}
+.poem-event-year{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-family:Georgia,serif;font-size:18px;font-weight:700;color:#231305;background:rgba(255,244,219,0.9);border:1px solid rgba(80,43,12,0.18);border-radius:999px;padding:3px 14px;box-shadow:0 8px 16px rgba(0,0,0,0.18)}
+.poem-scroll-banner{position:relative;width:100%;aspect-ratio:1.62;filter:drop-shadow(0 34px 48px rgba(0,0,0,0.5))}
+.scroll-parchment{position:absolute;inset:12% 9%;display:flex;align-items:center;justify-content:center;text-align:center;padding:27px 64px;background:radial-gradient(ellipse at 50% 47%,rgba(255,246,207,0.98) 0%,rgba(244,205,121,0.96) 46%,rgba(185,101,26,0.98) 76%,rgba(45,15,2,0.98) 100%);border-radius:42% 38% 40% 36%/12% 13% 14% 13%;box-shadow:0 0 32px rgba(255,208,80,0.28),inset 0 0 48px rgba(77,30,2,0.42),inset 0 15px 24px rgba(255,255,255,0.34),inset 0 -20px 36px rgba(58,19,0,0.48);overflow:hidden;animation:ancientFlashGlow 1.8s ease-in-out infinite}
+.scroll-parchment::before{content:'';position:absolute;inset:-2%;background:linear-gradient(90deg,rgba(24,5,0,0.72),rgba(91,36,3,0.34) 12%,transparent 28%,transparent 72%,rgba(91,36,3,0.34) 88%,rgba(24,5,0,0.72)),repeating-radial-gradient(circle at 28% 36%,rgba(86,35,4,0.09) 0 1px,transparent 1px 13px);pointer-events:none;z-index:0}
+.scroll-parchment::after{content:'';position:absolute;left:2%;right:2%;height:22%;background:linear-gradient(90deg,rgba(18,4,0,0.9),rgba(94,38,4,0.68) 18%,rgba(229,151,50,0.32) 50%,rgba(94,38,4,0.68) 82%,rgba(18,4,0,0.9));filter:blur(8px);opacity:0.9;bottom:-7%;border-radius:58% 56% 0 0;pointer-events:none;z-index:0}
+.scroll-parchment-edge{position:absolute;inset:9% 8%;border-radius:42% 38% 40% 36%/12% 13% 14% 13%;box-shadow:inset 0 0 0 1px rgba(255,231,155,0.24),inset 25px 0 34px rgba(44,12,0,0.4),inset -25px 0 34px rgba(44,12,0,0.4);z-index:1;pointer-events:none}
+.scroll-banner-copy{position:relative;z-index:2;color:#4e2106;text-shadow:0 1px 0 rgba(255,238,185,0.72);max-width:82%;margin:12px auto 0}
+.scroll-banner-copy .scroll-kicker{display:block;font-family:Arial,sans-serif;font-size:clamp(11px,0.95vw,14px);font-weight:900;letter-spacing:0;color:#7b120b;text-transform:uppercase;margin-bottom:7px}
+.scroll-banner-copy strong{display:block;font-family:Georgia,serif;font-size:clamp(16px,1.65vw,25px);font-weight:800;line-height:1.12;color:#542004}
+.scroll-banner-copy p{margin:8px auto 0;font-family:Arial,sans-serif;font-size:clamp(10px,0.9vw,14px);font-weight:700;line-height:1.35;color:#442005;max-width:360px}
+.scroll-banner-copy span{display:inline-block;margin-top:10px;font-family:Arial,sans-serif;font-size:clamp(11px,0.95vw,14px);font-weight:800;letter-spacing:0;color:#7b120b;background:rgba(255,246,214,0.56);border:1px solid rgba(96,48,8,0.14);border-radius:999px;padding:4px 11px}
+.scroll-banner-copy .flash-card-cta{display:inline-block;margin-top:9px;font-family:Arial,sans-serif;font-size:clamp(10px,0.86vw,13px);font-weight:900;color:#fff;background:#8b120c;border-radius:999px;padding:5px 12px;box-shadow:0 6px 14px rgba(80,20,2,0.22)}
+.scroll-roller{display:block;position:absolute;top:1%;bottom:1%;width:18%;border-radius:999px;background:linear-gradient(90deg,#321003 0%,#8a420b 18%,#e8a642 42%,#fff1b5 55%,#b96315 78%,#321003 100%);box-shadow:inset 15px 0 19px rgba(35,10,0,0.58),inset -12px 0 24px rgba(255,230,156,0.32),0 13px 34px rgba(0,0,0,0.36)}
+.scroll-roller::before,.scroll-roller::after{content:'';display:block;position:absolute;left:3%;right:3%;height:21%;border-radius:999px;background:linear-gradient(90deg,#240903,#88400b,#f3b44c,#fff0ae,#7a3107);box-shadow:0 4px 13px rgba(0,0,0,0.26)}
+.scroll-roller::before{top:-4%}.scroll-roller::after{bottom:-4%}
+.scroll-roller-left{left:0}.scroll-roller-right{right:0}
+@keyframes ancientFlashGlow{0%,100%{filter:brightness(1);box-shadow:0 0 22px rgba(255,208,80,0.18),inset 0 0 48px rgba(77,30,2,0.42),inset 0 15px 24px rgba(255,255,255,0.34),inset 0 -20px 36px rgba(58,19,0,0.48)}50%{filter:brightness(1.08);box-shadow:0 0 38px rgba(255,208,80,0.5),inset 0 0 48px rgba(77,30,2,0.42),inset 0 15px 24px rgba(255,255,255,0.4),inset 0 -20px 36px rgba(58,19,0,0.48)}}
+@media(min-width:1101px){
+  .poem-text-col{margin-left:clamp(52px,7vw,112px);margin-right:auto;max-width:650px}
+}
+@media(max-width:1100px){
+  .poem-banner-stack{position:relative;right:auto;top:auto;transform:none;width:min(88vw,360px);margin:34px auto 0}
+  .poem-event-card{width:min(56vw,190px)}
+  .scroll-parchment{padding:22px 44px}
+}
 /* MAGAZINE GRID */
 .mag-section{background:var(--warm-white);padding:96px 0 80px}
 .mag-head{padding:0 60px 56px;display:flex;align-items:baseline;gap:20px;border-bottom:1px solid rgba(0,0,0,0.05)}
@@ -253,19 +294,25 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .mi-1{min-height:380px!important}
   .mi-2,.mi-3,.mi-4,.mi-5,.mi-6,.mi-7{min-height:260px!important}
   .mi-sm .mi-excerpt{display:block}
+  .editorial-intro{grid-template-columns:1fr;min-height:auto}
+  .intro-side{display:none}
+  .intro-body{padding:56px 24px}
+  .intro-scroll-panel{padding:0 12px 56px}
+  .identity-scroll-link{width:min(100%,560px);max-width:96vw}
+  .identity-scroll{width:min(100%,560px);max-width:96vw}
   .intro-grid,.about-grid{grid-template-columns:1fr!important;padding:0 24px}
   .xl{font-size:36px!important}.lg{font-size:26px!important}
-  .poem-section{min-height:auto;padding:72px 22px;background-position:center center}
+  .poem-section{min-height:100svh;padding:56px 22px;background-position:center center}
   .poem-section::after{font-size:92px;right:-10px;bottom:-8px}
   .poem-text-col{max-width:640px}
   .poem-title-sm{font-size:24px}
   .poem-lines{margin-top:28px}
-  .poem-line-group{margin-bottom:20px}
+  .poem-line-group{margin-bottom:18px}
   .poem-section .pline.xl{font-size:38px!important}
   .poem-section .pline.lg{font-size:30px!important}
   .poem-section .pline.md{font-size:24px!important}
   .poem-section .pline.sm{font-size:22px!important}
-  .poem-attr{flex-direction:column;gap:14px}
+  .poem-attr{flex-direction:column;gap:12px}
   .pattr-line{width:36px}
   .mag-title,.intro-headline{font-size:32px!important}
   .ar-name{font-size:36px!important}
@@ -288,8 +335,10 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
   .hero-desc-en{font-size:14px}
   .hero-en-sub{font-size:15px}
   .mag-title{font-size:26px!important}
+  .marquee{padding:13px 0}
+  .marquee-item{font-size:17px;padding:0 24px}
   .xl{font-size:28px!important}
-  .poem-section{padding:64px 18px}
+  .poem-section{padding:48px 18px}
   .poem-label{gap:10px}
   .poem-label::before,.poem-label::after{width:20px}
   .poem-title-sm{font-size:22px}
@@ -330,18 +379,19 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 }
 
 /* English subtitle/translation styles */
-.poem-en-label{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.72);font-style:italic;font-weight:600;margin-bottom:28px;margin-top:0;line-height:1.6;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
-.poem-en-title{font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(255,255,255,0.76);font-style:italic;font-weight:600;margin-top:0;margin-bottom:0;line-height:1.6;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
-.section-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.62);font-style:italic;font-weight:500;margin-top:-16px;margin-bottom:20px;line-height:1.6}
+.poem-en-label{font-family:Arial,sans-serif;font-size:16px!important;color:#062f5f;font-style:normal;font-weight:900!important;margin:0 auto 28px;line-height:1.45;text-shadow:none;opacity:1!important;display:inline-block;background:rgba(255,250,226,0.96);border-radius:5px;padding:5px 12px}
+.poem-en-title{font-family:Arial,sans-serif;font-size:17px!important;color:#062f5f;font-style:normal;font-weight:900!important;margin:0 auto;line-height:1.45;text-shadow:none;opacity:1!important;display:inline-block;background:rgba(255,250,226,0.96);border-radius:5px;padding:5px 12px}
+.section-en-sub{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--red);font-style:italic;font-weight:800;margin-top:-16px;margin-bottom:20px;line-height:1.6}
 .mag-en-sub{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.62);font-style:italic;font-weight:500;margin-top:4px;line-height:1.6}
 
 /* GLOBAL English translation elements — bolder and more visible */
 [class*="-en"], [class*="en-"] { font-size: 14px; font-weight: 500; opacity: 0.72; }
 
 /* Poem stanza English translations */
-.poem-stanza-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,0.7);font-style:italic;font-weight:600;display:block;margin:8px auto 0;padding:0 8px;line-height:1.65;opacity:1;width:100%;max-width:460px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,0.5);overflow-wrap:break-word}
+.poem-stanza-en{font-family:Arial,sans-serif;font-size:16px!important;color:#062f5f;font-style:normal;font-weight:900!important;display:block;margin:9px auto 0;padding:5px 11px;line-height:1.45;opacity:1!important;width:fit-content;max-width:min(540px,100%);text-align:center;text-shadow:none;background:rgba(255,250,226,0.96);border-radius:5px;overflow-wrap:break-word}
 @media(max-width:600px){
-  .poem-stanza-en{max-width:300px;font-size:13px!important;padding:0 6px}
+  .poem-en-label,.poem-en-title{font-size:15px!important;padding:4px 9px}
+  .poem-stanza-en{max-width:330px;font-size:15px!important;padding:5px 9px}
 }
 
 /* Author section English */
@@ -366,7 +416,7 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 
 /* Intro section English */
 .intro-tag-en{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(26,16,8,0.55);font-style:italic;font-weight:500;display:block;margin-top:-14px;margin-bottom:18px}
-.intro-text-en{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(26,16,8,0.6);font-style:italic;font-weight:500;margin-bottom:24px;margin-top:-24px;max-width:540px;line-height:1.8}
+.intro-text-en{font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(26,16,8,0.72);font-style:italic;font-weight:700;margin-bottom:24px;margin-top:-24px;max-width:540px;line-height:1.8}
 
 /* Hero badges English */
 .badge-en{font-family:'Cormorant Garamond',serif;font-size:11px;color:rgba(255,255,255,0.55);font-style:italic;font-weight:500;margin-left:4px}
@@ -450,18 +500,22 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee">
+<div class="marquee" aria-label="नववर्ष कविता पंक्तियाँ">
   <div class="marquee-inner">
-    <span class="marquee-item">कविता <span class="marquee-en">Poetry</span></span>
-    <span class="marquee-item">लेख <span class="marquee-en">Essays</span></span>
-    <span class="marquee-item">संस्मरण <span class="marquee-en">Memoirs</span></span>
-    <span class="marquee-item">प्रवासी मन <span class="marquee-en">Diaspora</span></span>
-    <span class="marquee-item">विशेष <span class="marquee-en">Special</span></span>
-    <span class="marquee-item">कविता <span class="marquee-en">Poetry</span></span>
-    <span class="marquee-item">लेख <span class="marquee-en">Essays</span></span>
-    <span class="marquee-item">संस्मरण <span class="marquee-en">Memoirs</span></span>
-    <span class="marquee-item">प्रवासी मन <span class="marquee-en">Diaspora</span></span>
-    <span class="marquee-item">विशेष <span class="marquee-en">Special</span></span>
+    <span class="marquee-item">International Yoga Day · 21 June 2026</span>
+    <span class="marquee-item">अच्छे स्वास्थ्य से</span>
+    <span class="marquee-item">सुख-समृद्धि दे दस्तक जीवन में</span>
+    <span class="marquee-item">जीवन ही तो है उत्सव, है अनमोल</span>
+    <span class="marquee-item">शब्द पिरोकर कुछ</span>
+    <span class="marquee-item">कहने-सुनने का</span>
+    <span class="marquee-item">शब्दों का मोल जीवन में जानें</span>
+    <span class="marquee-item">International Yoga Day · 21 June 2026</span>
+    <span class="marquee-item">अच्छे स्वास्थ्य से</span>
+    <span class="marquee-item">सुख-समृद्धि दे दस्तक जीवन में</span>
+    <span class="marquee-item">जीवन ही तो है उत्सव, है अनमोल</span>
+    <span class="marquee-item">शब्द पिरोकर कुछ</span>
+    <span class="marquee-item">कहने-सुनने का</span>
+    <span class="marquee-item">शब्दों का मोल जीवन में जानें</span>
   </div>
 </div>
 
@@ -498,11 +552,33 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
       </div>
       <div class="poem-attr">
         <div class="pattr-line"></div>
-        <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२६<br><span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.55);font-weight:500">Gitanjali Saxena, January 2026</span></div>
+        <div class="pattr-text">गीतांजलि सक्सेना, जनवरी २०२६<br><span class="pattr-en">Gitanjali Saxena, January 2026</span></div>
         <a href="posts/navvarsh-2025.html" class="pread" title="Read full poem">पूरी कविता → <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;font-weight:500">Full poem</span></a>
       </div>
     </div>
   </div>
+  <aside class="poem-banner-stack" aria-label="International Yoga Day banner">
+    <a class="poem-banner-link" href="posts/jane-doctor-jubani.html#yoga-day-article" aria-label="Read Yoga articles">
+      <div class="poem-event-card">
+        <img class="poem-banner-picture" src="images/international-yoga-day-banner.jpg" alt="Happy International Yoga Day" loading="lazy" decoding="async">
+        <span class="poem-event-year">2026</span>
+      </div>
+      <div class="poem-scroll-banner" aria-hidden="true">
+        <div class="scroll-parchment">
+          <div class="scroll-parchment-edge"></div>
+          <div class="scroll-banner-copy">
+            <span class="scroll-kicker">Importance of the Date</span>
+            <strong>Astronomical &amp; Spiritual Significance</strong>
+            <p>The summer solstice brings the longest period of daylight, a time viewed in yogic traditions as highly potent for spiritual practice, inner reflection, and renewal.</p>
+            <span>21st June 2026</span>
+            <b class="flash-card-cta">Read Yoga Articles →</b>
+          </div>
+        </div>
+        <div class="scroll-roller scroll-roller-left"></div>
+        <div class="scroll-roller scroll-roller-right"></div>
+      </div>
+    </a>
+  </aside>
 </section>
 <!-- EDITORIAL INTRO -->
 <section class="editorial-intro">
@@ -517,6 +593,17 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
     <p class="intro-text">सिर्फ शब्दों से खिलवाड़ ही नहीं, माला में पिरोना भी है फ़ितरत। कभी भी न थमने वाला लेखन सिलसिला यूं ही जारी रहेगा हमेशा...</p>
     <p class="intro-text-en">Not just playing with words, but stringing them into a garland — a writing journey that will never stop, always continuing…</p>
     <a href="about.html" class="intro-read">पूरा परिचय पढ़ें → <span style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;font-weight:500;color:rgba(155,14,14,0.65)">Read Full Profile</span></a>
+  </div>
+  <div class="intro-scroll-panel">
+    <a class="identity-scroll-link" href="posts/jane-doctor-jubani.html#yoga-day-article" aria-label="Read International Yoga Day article">
+      <div class="identity-scroll">
+        <div class="identity-scroll-title">
+          <span>June 2026 Theme</span>
+          <strong>Yoga For Healthy Ageing</strong>
+          <p>Yoga is about union,<br>creating balance between<br>the mind, body and spirit<br>while fostering harmony with others.</p>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 <!-- MAGAZINE GRID -->
