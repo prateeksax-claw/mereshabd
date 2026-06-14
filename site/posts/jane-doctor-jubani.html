@@ -1444,6 +1444,11 @@ function openPDF(title, url) {
     parts[parts.length - 1] = encodeURIComponent(filename);
     url = parts.join('/');
   }
+  const isMobilePdfView = window.matchMedia('(max-width: 760px)').matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  if (isMobilePdfView) {
+    window.location.href = url;
+    return;
+  }
   document.getElementById('pdfTitle').textContent = title;
   document.getElementById('pdfDownload').href = url;
   document.getElementById('pdfDownload').download = title;
