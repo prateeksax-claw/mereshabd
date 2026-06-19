@@ -511,6 +511,40 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
 @keyframes cardio-hotspot-beat{0%,20%,48%,100%{opacity:0;transform:translate(-50%,-50%) scale(0.68)}10%{opacity:0.88;transform:translate(-50%,-50%) scale(1.08)}31%{opacity:1;transform:translate(-50%,-50%) scale(1.28)}}
 @keyframes cardio-ring-beat{0%{opacity:0;transform:translate(-50%,-50%) scale(0.52)}10%{opacity:0.95}52%,100%{opacity:0;transform:translate(-50%,-50%) scale(1.55)}}
 @keyframes cardio-ecg-run{0%{stroke-dashoffset:360;opacity:0.18}18%{opacity:1}72%{stroke-dashoffset:0;opacity:0.92}100%{stroke-dashoffset:0;opacity:0.22}}
+.md-card-eye-soon{pointer-events:none;opacity:0.94}
+.md-card-img-eye{min-height:300px;overflow:hidden;background:linear-gradient(145deg,#082f3b 0%,#145775 48%,#d9a95d 100%);isolation:isolate}
+.md-card-img-eye::before{content:'';position:absolute;inset:-22px;background:radial-gradient(circle at 24% 18%,rgba(255,236,184,0.48),transparent 28%),radial-gradient(circle at 78% 20%,rgba(92,187,204,0.42),transparent 30%),radial-gradient(circle at 50% 82%,rgba(18,41,53,0.56),transparent 36%),linear-gradient(135deg,rgba(255,255,255,0.06),rgba(8,24,30,0.28));filter:blur(2px);pointer-events:none;z-index:0}
+.md-card-img-eye::after{content:'';position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(255,255,255,0.28);box-shadow:inset 0 0 0 1px rgba(255,218,150,0.14);pointer-events:none;z-index:5}
+.md-card-img-eye .md-shimmer-overlay{z-index:4}
+.md-card-img-eye .md-photo-overlay{z-index:4}
+.md-card-img-eye .md-coming{z-index:4}
+.md-eye-pair{position:relative;z-index:1;width:min(88%,330px);display:flex;align-items:center;justify-content:center;gap:12px;margin-top:-10px}
+.md-eye-art{position:relative;z-index:1;width:min(76%,270px);aspect-ratio:1.7;margin-top:-12px;filter:drop-shadow(0 20px 28px rgba(4,22,28,0.34));animation:eye-art-drift 5.8s ease-in-out infinite}
+.md-eye-pair .md-eye-art{width:48%;max-width:150px;margin-top:0;flex:0 1 150px}
+.md-eye-art-left{transform-origin:right center}
+.md-eye-art-right{transform-origin:left center}
+.md-eye-wash{position:absolute;border-radius:999px;filter:blur(0.4px);opacity:0.72;mix-blend-mode:screen;pointer-events:none}
+.md-eye-wash-one{left:2%;right:0;top:18%;height:34%;background:linear-gradient(90deg,rgba(255,224,154,0),rgba(255,224,154,0.62),rgba(255,224,154,0));transform:rotate(-7deg)}
+.md-eye-wash-two{left:13%;right:9%;bottom:13%;height:22%;background:linear-gradient(90deg,rgba(79,184,198,0),rgba(79,184,198,0.56),rgba(79,184,198,0));transform:rotate(6deg)}
+.md-eye-shape{position:absolute;left:5%;right:5%;top:24%;height:48%;background:linear-gradient(145deg,#fff7e9 0%,#efd6b6 55%,#d39b75 100%);border:3px solid rgba(58,31,25,0.70);border-radius:78% 22% 78% 22% / 58% 42% 58% 42%;transform:rotate(-3deg) skewX(-8deg);overflow:hidden;box-shadow:inset 0 10px 18px rgba(255,255,255,0.44),inset 0 -12px 18px rgba(95,42,37,0.26)}
+.md-eye-shape::before,.md-eye-shape::after{content:'';position:absolute;left:-3%;right:-3%;height:7px;background:linear-gradient(90deg,rgba(77,39,34,0),rgba(77,39,34,0.68),rgba(77,39,34,0));z-index:4;pointer-events:none}
+.md-eye-shape::before{top:4px;transform:rotate(-1deg)}
+.md-eye-shape::after{bottom:5px;opacity:0.46;transform:rotate(2deg)}
+.md-eye-iris{position:absolute;left:50%;top:50%;width:78px;height:78px;border-radius:999px;background:radial-gradient(circle at 36% 32%,#9ce5ef 0 8%,#2e9bb5 9% 28%,#0e647a 29% 55%,#053644 56% 100%);transform:translate(-50%,-50%) skewX(8deg);box-shadow:0 0 0 5px rgba(7,55,66,0.18),inset 0 0 18px rgba(255,255,255,0.22);animation:eye-iris-focus 5.8s ease-in-out infinite}
+.md-eye-pupil{position:absolute;left:50%;top:50%;width:28px;height:28px;border-radius:999px;background:#08242b;transform:translate(-50%,-50%);box-shadow:0 0 14px rgba(6,27,32,0.40)}
+.md-eye-catchlight{position:absolute;left:25%;top:22%;width:17px;height:17px;border-radius:999px;background:rgba(255,255,255,0.92);box-shadow:20px 16px 0 -9px rgba(255,255,255,0.72)}
+.md-eye-lid{position:absolute;left:-2%;right:-2%;height:58%;background:linear-gradient(180deg,#d6a176 0%,#8c5141 100%);z-index:5;pointer-events:none}
+.md-eye-lid-top{top:-3%;border-bottom:3px solid rgba(66,36,31,0.72);transform:translateY(-104%);animation:eye-lid-top-blink 4.8s ease-in-out infinite}
+.md-eye-lid-bottom{bottom:-3%;border-top:3px solid rgba(66,36,31,0.56);transform:translateY(104%);animation:eye-lid-bottom-blink 4.8s ease-in-out infinite}
+.md-eye-lash{position:absolute;width:36px;height:3px;background:rgba(39,24,22,0.70);border-radius:999px;z-index:3;box-shadow:0 0 0 1px rgba(255,221,154,0.10)}
+.md-eye-lash-one{left:13%;top:22%;transform:rotate(35deg)}
+.md-eye-lash-two{left:25%;top:17%;transform:rotate(58deg)}
+.md-eye-lash-three{right:18%;top:18%;transform:rotate(-48deg)}
+.md-eye-lash-four{right:7%;top:26%;transform:rotate(-30deg)}
+@keyframes eye-art-drift{0%,100%{transform:translate3d(0,0,0) rotate(-1deg);filter:drop-shadow(0 20px 28px rgba(4,22,28,0.34)) saturate(1)}50%{transform:translate3d(0,-5px,0) rotate(1deg);filter:drop-shadow(0 24px 34px rgba(4,22,28,0.40)) saturate(1.08)}}
+@keyframes eye-iris-focus{0%,100%{transform:translate(-50%,-50%) skewX(8deg) scale(1)}42%{transform:translate(-46%,-51%) skewX(8deg) scale(1.02)}65%{transform:translate(-54%,-49%) skewX(8deg) scale(1.02)}}
+@keyframes eye-lid-top-blink{0%,74%,100%{transform:translateY(-104%)}78%,82%{transform:translateY(-8%)}}
+@keyframes eye-lid-bottom-blink{0%,74%,100%{transform:translateY(104%)}78%,82%{transform:translateY(12%)}}
 
 /* DOCTOR CORNER FEATURE */
 .doctor-corner-feature{display:none;margin-top:32px;scroll-margin-top:110px;background:linear-gradient(145deg,#fffdf9 0%,#fcf5ee 46%,#f8eee5 100%);border:1px solid rgba(184,135,58,0.26);box-shadow:0 30px 80px rgba(78,50,26,0.10);padding:38px;border-radius:36px;position:relative;overflow:hidden}
@@ -859,16 +893,40 @@ nav.scrolled .nav-hamburger span{background:var(--ink,#1C1410)}
         <div class="md-cta">Interview पढ़ें →</div>
       </div>
     </a>
-    <a href="#" class="md-card" style="pointer-events:none;opacity:0.85">
-      <div class="md-card-img" style="background:linear-gradient(135deg,#1a3a6b 0%,#2d5fa8 100%)">
-        <div class="md-icon">👁️</div>
-        <span class="md-speciality">नेत्र विशेषज्ञ</span>
-        <div class="md-coming">जल्द आ रहा है...</div>
+    <a href="#" class="md-card md-card-eye-soon">
+      <div class="md-card-img md-card-img-eye">
+        <div class="md-eye-pair" aria-hidden="true">
+          <div class="md-eye-art md-eye-art-left">
+            <span class="md-eye-wash md-eye-wash-one"></span>
+            <span class="md-eye-wash md-eye-wash-two"></span>
+            <span class="md-eye-lash md-eye-lash-one"></span>
+            <span class="md-eye-lash md-eye-lash-two"></span>
+            <span class="md-eye-lash md-eye-lash-three"></span>
+            <span class="md-eye-lash md-eye-lash-four"></span>
+            <div class="md-eye-shape">
+              <span class="md-eye-iris"><span class="md-eye-pupil"><span class="md-eye-catchlight"></span></span></span>
+              <span class="md-eye-lid md-eye-lid-top"></span>
+              <span class="md-eye-lid md-eye-lid-bottom"></span>
+            </div>
+          </div>
+          <div class="md-eye-art md-eye-art-right">
+            <span class="md-eye-wash md-eye-wash-one"></span>
+            <span class="md-eye-wash md-eye-wash-two"></span>
+            <span class="md-eye-lash md-eye-lash-one"></span>
+            <span class="md-eye-lash md-eye-lash-two"></span>
+            <span class="md-eye-lash md-eye-lash-three"></span>
+            <span class="md-eye-lash md-eye-lash-four"></span>
+            <div class="md-eye-shape">
+              <span class="md-eye-iris"><span class="md-eye-pupil"><span class="md-eye-catchlight"></span></span></span>
+              <span class="md-eye-lid md-eye-lid-top"></span>
+              <span class="md-eye-lid md-eye-lid-bottom"></span>
+            </div>
+          </div>
+        </div>
+        <div class="md-shimmer-overlay"></div>
       </div>
       <div class="md-card-body">
         <div class="md-name">डॉ. [नाम शीघ्र]</div>
-        <div class="md-month"></div>
-        <div class="md-cta-soon">शीघ्र प्रकाशित</div>
       </div>
     </a>
   </div>
