@@ -130,9 +130,9 @@ nav.scrolled .nav-logo img{filter:none}
 .pread:hover{color:#fff;border-color:#D4A852;background:rgba(180,128,50,0.26)}
 .poem-banner-stack{position:absolute;right:clamp(24px,4vw,64px);top:50%;transform:translateY(-50%);z-index:2;width:clamp(360px,36vw,560px);display:flex;flex-direction:column;align-items:center;gap:28px;pointer-events:none}
 .poem-banner-link{display:flex;flex-direction:column;align-items:center;gap:28px;width:100%;color:inherit;text-decoration:none;pointer-events:auto}
-.poem-event-card{position:relative;width:clamp(132px,12vw,190px)}
-.poem-banner-picture{display:block;width:100%;border-radius:8px;box-shadow:0 20px 42px rgba(0,0,0,0.38);border:1px solid rgba(255,255,255,0.54);background:#fff}
-.poem-event-year{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-family:Georgia,serif;font-size:18px;font-weight:700;color:#231305;background:rgba(255,244,219,0.9);border:1px solid rgba(80,43,12,0.18);border-radius:999px;padding:3px 14px;box-shadow:0 8px 16px rgba(0,0,0,0.18)}
+.poem-event-card{position:relative;width:clamp(148px,13vw,210px);aspect-ratio:566/800;box-sizing:border-box;padding:8px;display:flex;align-items:center;justify-content:center;border-radius:10px;box-shadow:0 20px 42px rgba(0,0,0,0.38);border:1px solid rgba(255,255,255,0.58);background:#fff}
+.poem-banner-picture{display:block;width:100%;height:100%;object-fit:contain;border-radius:7px;background:#fff}
+.poem-event-year{display:none}
 .poem-scroll-banner{position:relative;width:100%;aspect-ratio:1.62;filter:drop-shadow(0 34px 48px rgba(0,0,0,0.5))}
 .scroll-parchment{position:absolute;inset:12% 9%;display:flex;align-items:center;justify-content:center;text-align:center;padding:27px 64px;background:radial-gradient(ellipse at 50% 47%,rgba(255,246,207,0.98) 0%,rgba(244,205,121,0.96) 46%,rgba(185,101,26,0.98) 76%,rgba(45,15,2,0.98) 100%);border-radius:42% 38% 40% 36%/12% 13% 14% 13%;box-shadow:0 0 32px rgba(255,208,80,0.28),inset 0 0 48px rgba(77,30,2,0.42),inset 0 15px 24px rgba(255,255,255,0.34),inset 0 -20px 36px rgba(58,19,0,0.48);overflow:hidden;animation:ancientFlashGlow 1.8s ease-in-out infinite}
 .scroll-parchment::before{content:'';position:absolute;inset:-2%;background:linear-gradient(90deg,rgba(24,5,0,0.72),rgba(91,36,3,0.34) 12%,transparent 28%,transparent 72%,rgba(91,36,3,0.34) 88%,rgba(24,5,0,0.72)),repeating-radial-gradient(circle at 28% 36%,rgba(86,35,4,0.09) 0 1px,transparent 1px 13px);pointer-events:none;z-index:0}
@@ -154,7 +154,7 @@ nav.scrolled .nav-logo img{filter:none}
 }
 @media(max-width:1100px){
   .poem-banner-stack{position:relative;right:auto;top:auto;transform:none;width:min(88vw,360px);margin:34px auto 0}
-  .poem-event-card{width:min(56vw,190px)}
+  .poem-event-card{width:min(64vw,230px)}
   .scroll-parchment{padding:22px 44px}
 }
 /* MAGAZINE GRID */
